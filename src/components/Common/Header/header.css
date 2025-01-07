@@ -1,0 +1,60 @@
+/* Logo adjustment */
+.logo {
+  height: 40px;
+}
+
+/* Navbar toggle button */
+.navbar-toggler {
+  border: none;
+}
+
+/* Navbar link styling */
+.navbar-nav .nav-link {
+  text-decoration: none;
+  color: #050101;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+}
+
+.navbar-nav .nav-link.active {
+  color: #007bff;
+}
+
+/* Adjust E-SYSTEM button for mobile */
+.navbar .btn-warning {
+  font-weight: bold;
+  width: 100%; /* Full width for small screens */
+  padding: 8px 12px; /* Add some padding for better appearance */
+  white-space: nowrap; /* Prevent text from breaking into two lines */
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 991.98px) {
+  /* Navbar toggle button adjustments */
+  .navbar-toggler {
+    margin-bottom: 0px;
+  }
+
+  /* Move E-SYSTEM button to the left and add margin */
+  .navbar .btn-warning {
+    margin-left: 15px; /* Add margin to the left */
+    margin-top: 0px; /* Add spacing under toggle */
+    width: auto; /* Set to auto width so it doesn’t stretch */
+    white-space: nowrap; /* Ensure text stays on one line */
+  }
+
+  /* Reduce the font size for navigation links on small screens */
+  .navbar-nav .nav-link {
+    font-size: 14px;
+  }
+
+  /* Adjust the E-SYSTEM button font size and padding on small screens */
+  .navbar .btn-warning {
+    font-size: 14px;
+    margin-right: 20px;
+  }
+}

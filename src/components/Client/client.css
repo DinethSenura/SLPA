@@ -1,0 +1,75 @@
+/* Slideshow container */
+.slideshow-container1 {
+  width: 100%;
+  height: auto; /* Adjust height based on content */
+  position: relative;
+  overflow: hidden;
+  display: flex; /* Ensures proper centering */
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 10px; /* Add padding for smaller screens */
+}
+
+/* Slideshow group */
+.slideshow1 {
+  display: flex;
+  animation: slideEffect 10s linear infinite;
+  width: fit-content;
+  position: relative;
+}
+
+/* Images in the slideshow */
+.side-image1 {
+  flex-shrink: 0;
+  width: auto;
+  height: 100%; /* Scale height to fit the container */
+  max-height: 150px; /* Limit max height for smaller screens */
+  object-fit: contain; /* Ensure the full image is visible without cropping */
+  margin-right: 10px;
+}
+
+/* Remove margin from the last image */
+.side-image1:last-child {
+  margin-right: 0;
+}
+
+/* Keyframe animation for sliding effect */
+@keyframes slideEffect {
+  0% {
+    transform: translateX(100%); /* Start off-screen to the right */
+  }
+  30% {
+    transform: translateX(0); /* Stop fully visible */
+  }
+  60% {
+    transform: translateX(0); /* Pause fully visible */
+  }
+  100% {
+    transform: translateX(-100%); /* Move off-screen to the left */
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .slideshow-container1 {
+    padding: 0 5px; /* Smaller padding for tablets */
+  }
+
+  .side-image1 {
+    max-height: 120px; /* Reduce image height for tablets */
+    margin-right: 8px; /* Adjust spacing between images */
+  }
+}
+
+@media (max-width: 576px) {
+  .slideshow-container1 {
+    flex-direction: column; /* Stack images vertically if needed */
+    padding: 0; /* No padding for very small screens */
+  }
+
+  .side-image1 {
+    max-height: 100px; /* Further reduce image height for mobile */
+    margin-right: 5px; /* Narrow spacing between images */
+  }
+}

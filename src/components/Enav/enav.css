@@ -1,0 +1,72 @@
+.custom-box {
+    position: relative;
+    width: 100%; /* Adjust width of the box */
+    height: 200px;
+    margin: 20px auto; /* Center the box and add spacing */
+    margin-top: 70px;
+    padding: 40px; /* Inner spacing */
+    background-color: #11101B; 
+    color: #000000; /* Text color */
+    border: 1px solid #ddd; /* Light border for definition */
+    border-radius: 0px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: left; 
+    font-family: Arial, sans-serif; /* Font style */
+    
+}
+
+.custom-box::before {
+    content: ""; /* Required for the pseudo-element */
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: url('../../assets/images/enav.png'); 
+    background-size: cover; /* Make the image cover the entire box */
+    background-position: center; /* Center the image */
+    opacity: 5%; /* Adjust the opacity */
+    margin-bottom: 20%;
+}
+
+.box-content {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    padding: 10px;
+} 
+
+.link-list li a img.icon {
+    margin-right: 10px; /* Small gap between the icon and the text */
+    vertical-align: middle; 
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+}
+
+
+.link-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four equally spaced columns */
+    gap: 10px 20px; /* Spacing between items */
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove padding */
+    margin: 10px; /* Remove margin */
+    justify-content: right; /* Align the entire list to the right */
+    text-align: left; /* Align text within items to the right */
+    margin-left: 100px;
+    top: 0;
+}
+
+.link-list li a {
+    text-decoration: none; /* Remove underline */
+    color: #fff; /* White text color */
+    font-size: 16px; /* Font size */
+    /* padding: 5px 10px;  */
+    transition: color 0.3s ease; /* Smooth hover effect */
+    display: inline-block; /* Ensure consistent spacing */
+}
+
+.link-list li a:hover {
+    color: #ffcc00; /* Change color on hover */
+}

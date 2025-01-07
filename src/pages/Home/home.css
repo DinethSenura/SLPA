@@ -1,0 +1,62 @@
+.responsive-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #221f45;
+  color: #fff;
+  border: none;
+  border-radius: 0px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+  margin: 0;
+}
+
+/* Hover effect */
+.responsive-button:hover {
+  background-color: #000;
+  transform: scale(1.02);
+}
+
+/* Add this CSS in your main stylesheet or a dedicated CSS file */
+
+/* Default Social Media Icon Size */
+.social-media-box a {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.social-media-box a svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* Responsive Styles for Smaller Screens */
+@media (max-width: 576px) {
+  .social-media-box {
+    right: 5px; /* Adjust position for smaller screens */
+    padding: 5px; /* Reduce padding */
+  }
+
+  .social-media-box a svg {
+    width: 20px; /* Reduce icon size */
+    height: 20px;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .responsive-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

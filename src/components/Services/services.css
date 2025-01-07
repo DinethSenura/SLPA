@@ -1,0 +1,111 @@
+.services {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #221f45;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 36px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-color: #221f45;
+}
+
+.service {
+  flex: 1;
+  max-width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.service img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.service h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #000;
+  border-width: 0;
+  border-style: solid;
+  border-color: #ffffff;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  width: 250px;
+}
+
+.service p {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.service button {
+  padding: 10px 20px;
+  background-color: #ffc000;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+}
+
+.service button:hover {
+  background-color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .service {
+    max-width: 100%;
+    padding: 20px 10px;
+  }
+
+  .service img {
+    width: 80%;
+    height: auto;
+  }
+
+  .service h3 {
+    width: 100%;
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .service p {
+    font-size: 14px;
+  }
+
+  .service button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}

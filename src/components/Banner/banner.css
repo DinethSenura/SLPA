@@ -1,0 +1,148 @@
+/* Banner styling */
+.banner {
+    width: 100%;
+    height: 60px;
+    background: #221F45;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    z-index: 1000;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Banner text styling */
+  .banner-text {
+    margin: 0;
+    color: azure;
+    font-size: 16px;
+    letter-spacing: 3px;
+  }
+  
+  /* Notice button styling */
+  .notice-button {
+    background-color: #FFC000;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  .notice-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  
+  /* Contact info styling */
+  .contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFC000;
+    font-size: 16px;
+  }
+  
+  .inquiry-point {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .inquiry-number {
+    font-size: 18px;
+    color: #FFC000;
+  }
+  
+  .inquiry-label {
+    font-size: 12px;
+    color: #FFC000;
+  }
+  
+  .call-button {
+    background-color: transparent;
+    border: none;
+    color: #FFC000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+    gap: 10px;
+  }
+  
+  .phone-icon {
+    font-size: 24px;
+    color: #FFC000;
+ 
+    
+  }
+  
+  /* Language buttons styling */
+  .language-buttons button {
+    background-color: #FFC000;
+    color: rgb(0, 0, 0);
+    padding: 3px 12px;
+    font-size: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 40px;
+  }
+  
+  .language-buttons button:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+  
+  /* Help desk button styling */
+  .help-desk-button {
+    background-color: #FFC000;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  .help-desk-button:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .banner {
+      padding: 0 10px;
+    }
+  
+    .banner-text {
+      font-size: 10px;
+    }
+  
+    .help-desk-button,
+    .language-buttons button,
+    .notice-button {
+      font-size: 10px;
+      padding: 3px 8px;
+    }
+  
+    .phone-icon {
+      font-size: 18px;
+      margin-right: 10px;
+    }
+  
+    .inquiry-number {
+      font-size: 13px;
+      margin-left: 10px;
+    }
+  
+    .inquiry-label {
+      font-size: 8px;
+      margin-left: 10px;
+    }
+  }
+  
