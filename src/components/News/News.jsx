@@ -12,12 +12,10 @@ const News = () => {
         {/* News 11 */}
         <div className="news-item_11">
           <img src={news1} alt="News 1" className="news-image_11" />
-          <div className='image23'>
           <p className="news-description1">
             “With ongoing developments we are confident in the Port of Colombo's evolution as the hub of South Asia” – Keith D. Bernard, Chairman SLPA
           </p>
           <button className="news-button1">Read more</button>
-          </div>
         </div>
 
         {/* News 31 */}
