@@ -79,7 +79,7 @@
     height: 30px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
     .custom-box {
         padding: 15px;
     }
@@ -99,7 +99,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 950px) {
     .custom-box {
         padding: 10px;
     }

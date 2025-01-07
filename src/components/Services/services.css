@@ -78,24 +78,26 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 970px) {
   .services-container {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: column; /* Stack the services vertically */
+    align-items: center; /* Center-align each service */
+    gap: 20px; /* Add spacing between services */
+    width: 100%;
+    height: auto;
   }
 
   .service {
-    max-width: 100%;
-    padding: 20px 10px;
+    max-width: 90%; /* Reduce the width for smaller screens */
   }
 
   .service img {
-    width: 80%;
+    width: 90%; /* Adjust the image size to fit smaller screens */
     height: auto;
   }
 
   .service h3 {
-    width: 100%;
+    width: 100%; /* Ensure heading spans full width */
     font-size: 16px;
     padding: 15px;
   }
