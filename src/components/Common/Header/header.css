@@ -32,29 +32,33 @@
   white-space: nowrap; /* Prevent text from breaking into two lines */
 }
 
-/* Responsive adjustments for small screens */
+/* Mobile Dropdown Menu Styling */
 @media (max-width: 991.98px) {
-  /* Navbar toggle button adjustments */
-  .navbar-toggler {
-    margin-bottom: 0px;
+  .navbar-nav .nav-item {
+    background-color: #f8f9fa; /* Light background for dropdown items */
+    border-bottom: 1px solid #ddd; /* Add subtle separators between items */
   }
 
-  /* Move E-SYSTEM button to the left and add margin */
-  .navbar .btn-warning {
-    margin-left: 15px; /* Add margin to the left */
-    margin-top: 0px; /* Add spacing under toggle */
-    width: auto; /* Set to auto width so it doesn’t stretch */
-    white-space: nowrap; /* Ensure text stays on one line */
+  .navbar-nav .nav-item:last-child {
+    border-bottom: none; /* Remove border for the last item */
   }
 
-  /* Reduce the font size for navigation links on small screens */
   .navbar-nav .nav-link {
-    font-size: 14px;
+    padding: 12px 20px; /* Add padding for a touch-friendly design */
+    font-size: 16px; /* Ensure readability */
+    color: #050101; /* Default text color */
+    text-transform: uppercase; /* Make text stand out */
+    font-weight: bold; /* Emphasize menu items */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
   }
 
-  /* Adjust the E-SYSTEM button font size and padding on small screens */
-  .navbar .btn-warning {
-    font-size: 14px;
-    margin-right: 20px;
+  .navbar-nav .nav-link:hover {
+    background-color: #ffc000; /* Highlight background on hover */
+    color: #fff; /* Change text color on hover */
+  }
+
+  .navbar-nav .nav-link.active {
+    background-color: #007bff; /* Active link background */
+    color: #fff; /* Active link text color */
   }
 }
