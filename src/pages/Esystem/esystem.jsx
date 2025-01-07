@@ -39,6 +39,7 @@ const Esystem = () => {
             <button type="submit" className="search-button">search</button>
           </form>
         </div>
+        
         <div className="berthing-system">
           <table className="berthing-table">
             <thead>
@@ -74,7 +75,7 @@ const Esystem = () => {
               </tr>
             </tbody>
           </table>
-          <button>read more</button>
+          {/* <button>read more</button> */}
         </div>
       </div>
       </>
