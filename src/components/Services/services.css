@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   background-color: #221f45;
+  background-position: center;
   padding: 40px 0;
   text-align: center;
 }
