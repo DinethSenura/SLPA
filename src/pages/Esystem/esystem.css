@@ -14,40 +14,47 @@
   text-align: center;
 }
 
-/* Esystem Background */
-.esystem {
-  background-image: url('../../assets/images/e-system.jpg'); /* Ensure correct path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/* Default background image */
+
+/* High-resolution screens (Retina, 2x DPI) */
+@media screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .esystem {
+    background-image: url('../../assets/images/e-system.jpg'); /* High-res image */
+  }
 }
 
-/* Media Queries for Responsiveness */
+/* Ultra-high-resolution screens (3x DPI) */
+@media screen and (min-resolution: 288dpi), screen and (min-resolution: 3dppx) {
+  .esystem {
+    background-image: url('../../assets/images/e-system.jpg'); /* Ultra-high-res image */
+    background-size: contain; 
+  }
+}
+
+/* Screens with max-width 1200px (medium-sized screens) */
 @media screen and (max-width: 1200px) {
   .esystem {
-    background-size: contain; /* Adjust size for medium screens */
-    background-position: top; /* Position adjustment */
+    background-image: url('../../assets/images/e-system.jpg'); /* Optimized for medium screens */
+    background-size: contain; /* Adjust background size */
   }
 }
 
+/* Screens with max-width 768px (tablet or small devices) */
 @media screen and (max-width: 768px) {
   .esystem {
-    background-size: 100%; /* Full width for smaller screens */
-    background-position: center top; /* Adjust position */
+    background-image: url('../../assets/images/e-system.jpg'); /* Optimized for smaller screens */
+    background-size: 100%;
   }
 }
 
+/* Screens with max-width 480px (phones) */
 @media screen and (max-width: 480px) {
   .esystem {
-    background-size: cover; /* Default to cover for very small screens */
-    background-position: center;
+    background-image: url('../../assets/images/e-system.jpg'); /* Optimized for very small screens */
+    background-position: center top;
   }
 }
+
 
 .exchange-widget {
     width: 400px; /* Bigger width */
@@ -256,7 +263,7 @@
 
   .exchange-widget,
   .berthing-system {
-    width: 500px; /* Full width */
+    width: 400px; /* Full width */
     padding: 10px; /* Adjust padding */
   }
 
