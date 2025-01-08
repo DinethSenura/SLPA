@@ -20,23 +20,42 @@
 
 .services-container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  gap: 20px;
-  flex-wrap: wrap;
-  border-style: solid;
-  border-color: #221f45;
+  justify-content: center; /* Center the services horizontally */
+  align-items: flex-start; /* Align items at the top */
+  gap: 20px; /* Space between each service */
+  width: 80%; /* Ensure there's space on both sides */
+  margin: 0 auto; /* Center the container within the page */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .service {
   flex: 1;
-  max-width: 30%;
+  max-width: 30%; /* Ensure each service takes up a proportionate width */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
+  border: 3px solid transparent; /* Default border style */
+}
+
+
+/* Specific borders for each service */
+.service:nth-child(1) {
+  border: 3px solid #ffff; /* Red border for Terminals */
+  border-radius: 40px;
+  
+ 
+}
+
+.service:nth-child(2) {
+  border: 3px solid #ffff; /* Blue border for Facilities */
+  border-radius: 40px;
+}
+
+.service:nth-child(3) {
+  border: 3px solid #ffff; /* Green border for Logistics */
+  border-radius: 40px;
 }
 
 .service img {

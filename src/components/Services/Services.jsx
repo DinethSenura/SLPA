@@ -4,6 +4,7 @@ import service_1 from '../../assets/images/terminal.jpg';
 import service_2 from '../../assets/images/facilities.jpg';
 import service_3 from '../../assets/images/logistics.jpg';
 
+
 const Services = () => {
   return (
     <div className="services">
