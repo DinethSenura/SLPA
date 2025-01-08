@@ -31,6 +31,58 @@
   padding: 8px 12px; /* Add some padding for better appearance */
   white-space: nowrap; /* Prevent text from breaking into two lines */
 }
+/* Dropdown menu styling */
+.dropdown-menu {
+  background-color: #ffffff; /* White background for dropdown menu */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  padding: 10px 0; /* Space for items */
+  min-width: 200px; /* Ensure a consistent width */
+}
+
+/* Dropdown menu items */
+.dropdown-item {
+  color: #050101; /* Text color */
+  font-size: 16px; /* Consistent font size */
+  font-weight: bold; /* Bold text for emphasis */
+  padding: 10px 20px; /* Padding for touch-friendly design */
+  text-align: left; /* Align text to the left */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+  background-color: #ffc000; /* Highlight background */
+  color: #ffffff; /* Change text color on hover */
+  border-radius: 4px; /* Add slight rounding on hover */
+}
+
+/* Active dropdown item */
+.dropdown-item.active {
+  background-color: #007bff; /* Active link background */
+  color: #fff; /* Active link text color */
+}
+
+/* Mobile Dropdown Menu Styling */
+@media (max-width: 991.98px) {
+  .navbar-nav .dropdown-menu {
+    border: none; /* Remove border for mobile dropdown */
+    box-shadow: none; /* Remove shadow for simplicity */
+    background-color: #f8f9fa; /* Light background for mobile dropdown */
+  }
+
+  .navbar-nav .dropdown-item {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 10px 15px; /* Reduce padding for compact design */
+  }
+
+  .navbar-nav .dropdown-item:hover {
+    background-color: #007bff; /* Highlight background */
+    color: #fff; /* Change text color on hover */
+  }
+}
+
 
 /* Mobile Dropdown Menu Styling */
 @media (max-width: 991.98px) {
