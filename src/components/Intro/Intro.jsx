@@ -3,6 +3,7 @@ import '../Intro/intro.css';
 import intro_1 from '../../assets/images/intro1.jpg';
 import intro_2 from '../../assets/images/intro2.jpg';
 import intro_3 from '../../assets/images/intro3.jpg';
+import intro_4 from '../../assets/images/intro4.jpg'; // New image import
 
 const Intro = () => {
   return (
@@ -30,6 +31,7 @@ const Intro = () => {
             </p>
           </div>
 
+
           {/* Images Section */}
           <div className="imagesa col-12 col-lg-6">
             <div className="row">
@@ -39,8 +41,11 @@ const Intro = () => {
               <div className="col-6 mb-3">
                 <img className="intro_image_2 img-fluid" src={intro_2} alt="Intro 2" />
               </div>
-              <div className="col-12">
+              <div className="col-6 mb-3">
                 <img className="intro_image_3 img-fluid" src={intro_3} alt="Intro 3" />
+              </div>
+              <div className="col-6 mb-3">
+                <img className="intro_image_4 img-fluid" src={intro_4} alt="Intro 4" />
               </div>
             </div>
           </div>
