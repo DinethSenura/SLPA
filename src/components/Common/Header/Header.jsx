@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './header.css';
@@ -6,9 +6,29 @@ import logo from '../../../assets/images/logo.png';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const navRef = useRef(null);
+
+  const handleToggle = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
+  const handleClickOutside = (event) => {
+    if (navRef.current && !navRef.current.contains(event.target)) {
+      setIsNavOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div className="container">
+      <div className="container" ref={navRef}>
         {/* Logo */}
         <NavLink to="/" className="navbar-brand">
           <img src={logo} alt="Logo" className="logo" />
@@ -18,17 +38,18 @@ const Header = () => {
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
+          onClick={handleToggle}
+          aria-expanded={isNavOpen}
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         {/* Collapsible Content */}
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div
+          className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`}
+          id="navbarNav"
+        >
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <NavLink to="/" className="nav-link" activeClassName="active">
@@ -49,9 +70,16 @@ const Header = () => {
                 ABOUT
               </NavLink>
               <ul className="dropdown-menu" aria-labelledby="aboutDropdown">
-                <li><NavLink to="/about/history" className="dropdown-item">History</NavLink></li>
-                <li><NavLink to="/about/team" className="dropdown-item">Team</NavLink></li>
-                <li><NavLink to="/about/mission" className="dropdown-item">Mission</NavLink></li>
+                <li><NavLink to="/about/slpa" className="dropdown-item">SLPA</NavLink></li>
+                <li><NavLink to="/about/vision&mission" className="dropdown-item"> Vision & Mission</NavLink></li>
+                <li><NavLink to="/about/bordofdirectors" className="dropdown-item">Bord of Directors</NavLink></li>
+                <li><NavLink to="/about/act" className="dropdown-item">ACT</NavLink></li>
+                <li><NavLink to="/about/procedures" className="dropdown-item">Procedures</NavLink></li>
+                <li><NavLink to="/about/circulars" className="dropdown-item">Circulars</NavLink></li>
+                <li><NavLink to="/about/awards" className="dropdown-item">Awards</NavLink></li>
+                <li><NavLink to="/about/annualreports" className="dropdown-item">Annual Reports</NavLink></li>
+                <li><NavLink to="/about/tariff" className="dropdown-item">Tariff</NavLink></li>
+                <li><NavLink to="/about/righttoinformation" className="dropdown-item">Right To Information</NavLink></li>
               </ul>
             </li>
 
@@ -68,9 +96,12 @@ const Header = () => {
                 PORTS
               </NavLink>
               <ul className="dropdown-menu" aria-labelledby="portsDropdown">
-                <li><NavLink to="/ports/terminal1" className="dropdown-item">Terminal 1</NavLink></li>
-                <li><NavLink to="/ports/terminal2" className="dropdown-item">Terminal 2</NavLink></li>
-                <li><NavLink to="/ports/terminal3" className="dropdown-item">Terminal 3</NavLink></li>
+                <li><NavLink to="/ports/colombo" className="dropdown-item">Colombo</NavLink></li>
+                <li><NavLink to="/ports/galle" className="dropdown-item">Galle</NavLink></li>
+                <li><NavLink to="/ports/trincomalee" className="dropdown-item">Trincomalee</NavLink></li>
+                <li><NavLink to="/ports/hip" className="dropdown-item">HIP</NavLink></li>
+                <li><NavLink to="/ports/oluvil" className="dropdown-item">Oluvil</NavLink></li>
+                <li><NavLink to="/ports/kankesanthurai" className="dropdown-item">Kankesanthurai</NavLink></li>
               </ul>
             </li>
 
@@ -87,8 +118,7 @@ const Header = () => {
                 PROJECTS
               </NavLink>
               <ul className="dropdown-menu" aria-labelledby="projectsDropdown">
-                <li><NavLink to="/projects/ongoing" className="dropdown-item">Ongoing</NavLink></li>
-                <li><NavLink to="/projects/completed" className="dropdown-item">Completed</NavLink></li>
+                <li><NavLink to="/projects/project" className="dropdown-item">Project</NavLink></li>
               </ul>
             </li>
 
@@ -105,8 +135,10 @@ const Header = () => {
                 PROCUREMENT
               </NavLink>
               <ul className="dropdown-menu" aria-labelledby="procurementDropdown">
-                <li><NavLink to="/procurement/tenders" className="dropdown-item">Tenders</NavLink></li>
-                <li><NavLink to="/procurement/bids" className="dropdown-item">Bids</NavLink></li>
+                <li><NavLink to="/procurement/contactsgeneralinfo" className="dropdown-item">Contacts-General Info</NavLink></li>
+                <li><NavLink to="/procurement/foreignpurchases" className="dropdown-item">Foreign-Purchases</NavLink></li>
+                <li><NavLink to="/procurement/localpurchases" className="dropdown-item">Local Purchases</NavLink></li>
+                <li><NavLink to="/procurement/other" className="dropdown-item">Other</NavLink></li>
               </ul>
             </li>
 
@@ -123,8 +155,15 @@ const Header = () => {
                 CONTACT
               </NavLink>
               <ul className="dropdown-menu" aria-labelledby="contactDropdown">
-                <li><NavLink to="/contact/support" className="dropdown-item">Support</NavLink></li>
-                <li><NavLink to="/contact/feedback" className="dropdown-item">Feedback</NavLink></li>
+                <li><NavLink to="/contact/ministry" className="dropdown-item">Ministry</NavLink></li>
+                <li><NavLink to="/contact/chairman&directors" className="dropdown-item">Chairman & Directors</NavLink></li>
+                <li><NavLink to="/contact/managementteam" className="dropdown-item">Management Team</NavLink></li>
+                <li><NavLink to="/contact/mahapolaacademy" className="dropdown-item">Mahapola Academy</NavLink></li>
+                <li><NavLink to="/contact/helpdesk" className="dropdown-item">Help Desk</NavLink></li>
+                <li><NavLink to="/contact/slpaports" className="dropdown-item">SLPA Ports</NavLink></li>
+                <li><NavLink to="/contact/shippingdirectory" className="dropdown-item">Shipping Directory</NavLink></li>
+                <li><NavLink to="/contact/isps" className="dropdown-item">ISPS</NavLink></li>
+                <li><NavLink to="/contact/educationalvisits" className="dropdown-item">Educational Visits</NavLink></li>
               </ul>
             </li>
           </ul>
