@@ -11,6 +11,7 @@ import Header from './components/Common/Header/Header';
 import Footer from './components/Common/Footer/Footer';
 import Banner from './components/Banner/Banner';
 
+
 function App() {
   const location = useLocation();
 
