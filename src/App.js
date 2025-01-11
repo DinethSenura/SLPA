@@ -10,6 +10,7 @@ import Esystem from './pages/Esystem/esystem';
 import Header from './components/Common/Header/Header';
 import Footer from './components/Common/Footer/Footer';
 import Banner from './components/Banner/Banner';
+import Colombo from './pages/Ports/Colombo/colombo';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="procurement" element={<Procurement />} />
           <Route path="contact" element={<Contact />} />
           <Route path="esystem" element={<Esystem />} />
+          <Route path="colombo" element={<Colombo />}/>
         </Routes>
       </div>
       <Footer />

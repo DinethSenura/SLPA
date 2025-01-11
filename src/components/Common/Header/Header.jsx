@@ -97,8 +97,9 @@ const Header = () => {
                 PORTS
               </NavLink>
               <ul className="dropdown-menu" aria-labelledby="portsDropdown">
-                <li><NavLink to="/ports/colombo" className="dropdown-item">Colombo</NavLink></li>
-                <li><NavLink to="/ports/galle" className="dropdown-item">Galle</NavLink></li>
+                <li><NavLink to="/colombo" className="dropdown-item">Colombo</NavLink></li>
+                {/* <NavLink to="/esystem" className="btn btn-warning"> E-SYSTEM</NavLink> */}
+                <li><NavLink to="/Ports/galle" className="dropdown-item">Galle</NavLink></li>
                 <li><NavLink to="/ports/trincomalee" className="dropdown-item">Trincomalee</NavLink></li>
                 <li><NavLink to="/ports/hip" className="dropdown-item">HIP</NavLink></li>
                 <li><NavLink to="/ports/oluvil" className="dropdown-item">Oluvil</NavLink></li>
