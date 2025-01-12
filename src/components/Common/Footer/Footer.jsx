@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './footer.css';
 import logo from '../../../assets/images/logo.png';
 import facebook from '../../../assets/images/facebook.png';
@@ -6,15 +6,37 @@ import twitter from '../../../assets/images/twitter.png';
 import linkdin from '../../../assets/images/linkdin.png';
 import instagram from '../../../assets/images/instagram.png';
 import youtube from '../../../assets/images/youtube.png';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaTelegramPlane } from 'react-icons/fa'; // Importing icons
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaTelegramPlane, FaArrowUp } from 'react-icons/fa'; // Importing arrow icon
 
 const Footer = () => {
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const footerTop = document.querySelector('.footer').getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      // Show button only when the footer is fully in view
+      setShowButton(footerTop <= windowHeight);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section address-section">
           <img src={logo} alt="" className="logo1" />
-          <p><FaMapMarkerAlt /> Level 7, HQ Colombo, No. 464, <br/> T.B. Jaya Mawatha, Colombo 10.</p> {/* Added map marker icon */}
+          <p><FaMapMarkerAlt /> Level 7, HQ Colombo, No. 464, <br /> T.B. Jaya Mawatha, Colombo 10.</p>
           <p><FaPhoneAlt /> <a href="tel:+94112421231">+94 112 42 12 31 / +94 112 42 12 01</a></p>
           <p><FaEnvelope /> <a href="mailto:info@slpa.lk">info@slpa.lk</a></p>
           <p><FaTelegramPlane /> <a href="https://t.me/PORTSLANKA" target="_blank" rel="noreferrer">Telegrams : PORTS LANKA</a></p>
@@ -67,14 +89,20 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-  <div className="footer-bottom-left">
-    <p>Copyright © Ports Authority 2023. All rights reserved.</p>
-  </div>
-  <div className="footer-bottom-right">
-    <p>Created by: Ports Authority IS Division</p>
-  </div>
-</div>
+        <div className="footer-bottom-left">
+          <p>Copyright © Ports Authority 2023. All rights reserved.</p>
+        </div>
+        <div className="footer-bottom-right">
+          <p>Created by: Ports Authority IS Division</p>
+        </div>
+      </div>
 
+      {/* Scroll-to-Top Button */}
+      {showButton && (
+        <div className="scroll-to-top" onClick={scrollToTop}>
+          <FaArrowUp />
+        </div>
+      )}
     </footer>
   );
 };
