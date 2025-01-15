@@ -1,0 +1,148 @@
+.ports-container {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 0; /* Remove padding to make the header image full width */
+  }
+  
+  /* Header Section */
+  .header-section {
+    position: relative; /* Enable positioning for child elements */
+    width: 100vw; /* Full viewport width */
+    height: 50vh; /* Set height to 50% of the viewport */
+    margin: 0; /* Remove any margin */
+    margin-top: 70px;
+  }
+  
+  .header-section h1,
+  .header-section p {
+    position: absolute;
+    text-align: right;
+    color: white; /* Ensure text is visible on the image */
+    margin: 0;
+  }
+  
+  .header-section h1 {
+    bottom: 20px; /* Adjust positioning from the bottom */
+    left: 20px; /* Position from the right */
+    font-size: 2.5rem;
+  }
+  
+  .header-section p {
+    bottom: 10px; /* Adjust positioning from the bottom */
+    left: 20px; /* Position from the right */
+    font-size: 1rem;
+    color: #ccc; /* Lighter text color for a subtle look */
+  }
+  
+  /* Content Section */
+  .content-section {
+    text-align: left;
+    padding: 20px; /* Add padding for content section */
+  }
+  
+  .content-section h2 {
+    font-size: 2rem;
+    margin-top: 20px;
+    width: 50%;
+  }
+  
+  .content-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    width: 60%;
+  }
+  
+  /* Header Image Styling */
+  .header-image {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Content Image Styling */
+  .content-image {
+    width: 60%;
+    height: 30%;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 1024px) {
+    /* Adjust styles for tablets */
+    .header-section h1 {
+      font-size: 2rem;
+      left: 10px;
+    }
+  
+    .header-section p {
+      font-size: 0.9rem;
+      left: 10px;
+    }
+  
+    .content-section h2,
+    .content-section p {
+      width: 70%; /* Increase width for better readability */
+    }
+  
+    .content-image {
+      width: 80%; /* Resize images for smaller screens */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* Adjust styles for smaller tablets and large phones */
+    .header-section {
+      height: 40vh; /* Reduce header height */
+    }
+  
+    .header-section h1 {
+      font-size: 1.8rem;
+      left: 5px;
+    }
+  
+    .header-section p {
+      font-size: 0.8rem;
+      left: 5px;
+    }
+  
+    .content-section h2,
+    .content-section p {
+      width: 90%; /* Make content fit smaller screens */
+    }
+  
+    .content-image {
+      width: 90%; /* Further reduce image size */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Adjust styles for mobile phones */
+    .header-section {
+      height: 30vh; /* Further reduce header height */
+    }
+  
+    .header-section h1 {
+      font-size: 1.5rem;
+      left: 5px;
+      bottom: 15px;
+    }
+  
+    .header-section p {
+      font-size: 0.7rem;
+      left: 5px;
+      bottom: 5px;
+    }
+  
+    .content-section h2,
+    .content-section p {
+      width: 100%; /* Use full width for small devices */
+      text-align: center; /* Center align for better readability */
+    }
+  
+    .content-image {
+      width: 100%; /* Full width images */
+      height: auto; /* Maintain aspect ratio */
+    }
+  }
+  
