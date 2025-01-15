@@ -30,7 +30,7 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-  margin-top: 10px;
+  margin-top: 50px;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
   transform-style: preserve-3d; /* Enable 3D rendering */
   perspective: 1000px; /* Add perspective for 3D effect */
