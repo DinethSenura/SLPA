@@ -94,6 +94,53 @@ const Home = () => {
       {/* Render the Services component */}
       <Services />
 
+      {/* Main Content */}
+  <div className="e-system-container">
+    {/* Left Section */}
+    <div className="e-system-left-section">
+      <h1>Explore Our E-System</h1>
+      <button className="e-system-explore-button">E-SYSTEM</button>
+    </div>
+
+    {/* Right Section */}
+    <div className="e-system-berthing-section">
+      <table className="e-system-berthing-table">
+        <thead>
+          <tr>
+            <th>Vessel</th>
+            <th>ETA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MSC DHANTIA F</td>
+            <td>EX: 1MN</td>
+          </tr>
+          <tr>
+            <td>GANTA BHUM</td>
+            <td>0200 5/12</td>
+          </tr>
+          <tr>
+            <td>ARTENOS</td>
+            <td>1400 5/12</td>
+          </tr>
+          <tr>
+            <td>NAVIOS UNITE</td>
+            <td>1400 6/12</td>
+          </tr>
+          <tr>
+            <td>MSC SHRISTI</td>
+            <td>1000 5/12</td>
+          </tr>
+          <tr>
+            <td>MSC SKY II</td>
+            <td>1800 11/12</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
       <News />
 
       {/* Add an image above the button */}
