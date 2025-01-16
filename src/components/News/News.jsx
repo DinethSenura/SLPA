@@ -55,8 +55,6 @@ const LatestNews = () => {
             
             <div className="news-item">
                 
-
-                
               <img src={news1} alt="" className="news-image" />
               <p className="news-description">
                 “With ongoing developments we are confident in the Port of Colombo's evolution as the hub of South Asia” – Keith D. Bernard, Chairman SLPA
