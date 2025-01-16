@@ -43,12 +43,12 @@ const Services = () => {
       description: `The modern infrastructure facilities in SLPA-owned CFS 
                     support rising business transportation needs in Sri Lanka.`,
     },
-    {
-      img: service_3,
-      title: "Logistics",
-      description: `SLPA Terminals equipped with tomorrow's technology 
-                    are geared for handling the rising demand in cargo transportation.`,
-    },
+    // {
+    //   img: service_3,
+    //   title: "Logistics",
+    //   description: `SLPA Terminals equipped with tomorrow's technology 
+    //                 are geared for handling the rising demand in cargo transportation.`,
+    // },
   ];
 
   return (
