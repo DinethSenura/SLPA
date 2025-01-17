@@ -9,6 +9,7 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react
 import News from '../../components/News/News';
 import imageAboveButton from '../../assets/images/clients/banner.jpg'; // Replace with your image path
 import '../Home/home.css';
+import { NavLink } from 'react-router-dom';
 
 // Social Media Box Component
 const SocialMediaBox = () => {
@@ -99,10 +100,13 @@ const Home = () => {
     {/* Left Section */}
     <div className="e-system-left-section">
       <h1>Explore Our E-System</h1>
-      <button className="e-system-explore-button">E-SYSTEM</button>
+      <NavLink to="/esystem" className="btn btn-warning">
+            E-SYSTEM
+          </NavLink>
     </div>
 
     {/* Right Section */}
+    {/* <div><h2>Berthing Programme</h2></div> */}
     <div className="e-system-berthing-section">
       <table className="e-system-berthing-table">
         <thead>

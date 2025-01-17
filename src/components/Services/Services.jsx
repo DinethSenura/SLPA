@@ -49,6 +49,12 @@ const Services = () => {
       description: `SLPA Terminals equipped with tomorrow's technology 
                     are geared for handling the rising demand in cargo transportation.`,
     },
+    {
+      img: service_2,
+      title: "Facilities",
+      description: `The modern infrastructure facilities in SLPA-owned CFS 
+                    support rising business transportation needs in Sri Lanka.`,
+    },
   ];
 
   return (
@@ -60,13 +66,14 @@ const Services = () => {
         grabCursor={true}
         centeredSlides={true}
         slidesPerView="auto"
-        initialSlide={2}
+        initialSlide={3}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
           depth: 100,
           modifier: 1,
           slideShadows: true,
+          
         }}
         pagination={{ clickable: true }}
         navigation={true}

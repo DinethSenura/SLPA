@@ -254,25 +254,25 @@
   }
 }
 
-/* Add media queries for very small screens (e.g., phones) */
+/* Add media queries for very small screens (e.g., phones)
 @media screen and (max-width: 1400px) {
   .hero {
-    font-size: 18px; /* Smaller font size */
-    height: 50vh; /* Smaller height */
+    font-size: 18px; 
+    height: 50vh; 
   }
 
   .exchange-widget,
   .berthing-system {
-    width: 400px; /* Full width */
-    padding: 10px; /* Adjust padding */
+    width: 400px; 
+    padding: 10px; 
   }
 
   .search-button {
-    font-size: 14px; /* Smaller font */
-    padding: 8px 20px; /* Adjust padding */
+    font-size: 14px; 
+    padding: 8px 20px; 
   }
 
   .currency-display {
-    font-size: 14px; /* Adjust font size */
+    font-size: 14px; 
   }
-}
+} */

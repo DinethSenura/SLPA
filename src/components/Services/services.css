@@ -131,6 +131,13 @@
   z-index: 10;
 }
 
+/* Add border radius to the shadow of services on either side of the middle service */
+.swiper-slide:nth-child(2),
+.swiper-slide:nth-last-child(2) {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px; /* Add border radius */
+}
+
 .swiper-button-prev {
   left: 0px; /* Push the left arrow further to the left */
 }
@@ -148,7 +155,7 @@
 
 /* Adjusting the pagination dots */
 .swiper-pagination {
-  bottom: -50px; /* Lower the dots below the slider */
+  margin-bottom: -13px; /* Lower the dots below the slider */
   text-align: center;
 }
 
@@ -165,6 +172,33 @@
   opacity: 1;
   background-color: #ffffff; /* Change active dot color */
 }
+
+/* Slideshow container */
+.services-swiper {
+  width: 80%;
+  padding: 20px 0;
+  border-radius: 20px; /* Add border radius for the slideshow */
+  overflow: hidden; /* Ensure child elements do not overflow the border radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Optional: Enhance shadow effect */
+}
+
+/* Add border radius to slide shadows */
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  border-radius: 20px; /* Add border radius */
+  overflow: hidden; /* Ensure content stays within the rounded corners */
+  background: rgba(0, 0, 0, 0.1); /* Optional: Adjust shadow intensity */
+}
+
+/* Highlight shadowed slides */
+.swiper-slide {
+  transition: box-shadow 0.3s ease;
+}
+
+.swiper-slide-active {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Enhance shadow for active slide */
+}
+
 
 
 /* Responsive Design */
