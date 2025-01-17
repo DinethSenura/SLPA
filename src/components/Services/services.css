@@ -148,7 +148,7 @@
 
 /* Adjusting the pagination dots */
 .swiper-pagination {
-  bottom: -50px; /* Lower the dots below the slider */
+  margin-bottom: -13px; /* Lower the dots below the slider */
   text-align: center;
 }
 
