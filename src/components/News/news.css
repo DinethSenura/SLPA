@@ -8,7 +8,7 @@
 .section-title {
   font-size: 2.5rem;
   margin-top: 10px;
-  margin-bottom: 110px;
+  margin-bottom: 75px;
   color: #fff;
 }
 
@@ -55,6 +55,10 @@
 
 .news-item:hover .news-image {
   transform: scale(1.1);
+}
+
+.news-item:hover .news-button {
+  transform: scale(0.9);
 }
 
 .news-item:hover .news-content {
@@ -104,7 +108,7 @@
 */
 .news-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 6px 12px;
   background-color: #ffc000;
   color: #000;
   margin-top: 5px;
@@ -120,8 +124,8 @@
 .more-news-button {
   display: inline-block;
   padding: 10px 20px;
-  margin-top: 110px;
-  margin-bottom: 20px;
+  margin-top: 70px;
+  margin-bottom: 5px;
   background-color: #ffc000;
   color: #000;
   text-decoration: none;
@@ -152,5 +156,37 @@
   .news-item:hover .news-image {
     transform: none; /* Disable the zooming effect */
     transition: none; /* Disable the transition */
-} 
- }
+  }
+}
+
+/* Extra Small Devices (Max Width: 480px) */
+@media (max-width: 480px) {
+  .news-item:hover .news-image {
+    transform: none; /* Disable the zooming effect */
+    transition: none; /* Disable the transition */
+  }
+}
+
+/* Large Devices (Min Width: 1024px) */
+@media (min-width: 1024px) {
+  .news-item {
+    width: 280px; /* Adjusted width for larger screens */
+    height: 350px;
+  }
+
+  .news-container {
+    gap: 40px;
+  } 
+}
+
+/* Extra Large Devices (Min Width: 1440px) */
+@media (min-width: 1440px) {
+  .news-item {
+    width: 320px;
+    height: 400px;
+  }
+
+  .news-container {
+    gap: 50px;
+  }
+}

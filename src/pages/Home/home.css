@@ -60,3 +60,115 @@
     padding: 10px;
   }
 }
+
+/* Global Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fc;
+}
+
+/* Main Container */
+.e-system-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f0f4f8; /* Fallback background color */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  gap: 20px;
+}
+
+/* Left Section with Full Background Image */
+.e-system-left-section {
+  flex: 1;
+  color: #fff; /* Text color for better contrast */
+  background-image: url('../../assets/images/e-system.jpg'); /* Add your image URL here */
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  height: 100vh; /* Make the section full height */
+  padding: 50px; /* Adjust padding for content spacing */
+  display: flex; /* Use flex for aligning content */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: flex-start; /* Align content to the left */
+  box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add inner shadow for effect */
+}
+
+
+
+.e-system-left-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.e-system-explore-button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.e-system-explore-button:hover {
+  background-color: #0056b3;
+}
+
+/* Right Section */
+.e-system-berthing-section {
+  flex: 1;
+  max-width: 600px;
+  background-color: #11101B; /* Dark background for the section */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden;
+  color: white; /* Text color for dark background */
+}
+
+/* Table Styling */
+.berthing-table {
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Remove gaps between cells */
+  text-align: center; /* Center-align text in cells */
+  font-family: Arial, sans-serif; /* Clean font */
+  color: white; /* Text color */
+}
+
+/* Header Styling */
+.berthing-table thead {
+  background-color: #6c63ff; /* Header background */
+  color: #fff; /* Header text color */
+  font-weight: bold; /* Bold text for header */
+}
+
+.berthing-table th {
+  padding: 12px; /* Padding for cells */
+  border-bottom: 2px solid #444; /* Separate header from body */
+}
+
+/* Body Row Styling */
+.berthing-table tbody tr {
+  background-color: #222; /* Default row color */
+}
+
+.berthing-table tbody tr:nth-child(odd) {
+  background-color: #333; /* Alternate row color */
+}
+
+.berthing-table tbody tr:hover {
+  background-color: #444; /* Highlight row on hover */
+}
+
+/* Cell Styling */
+.berthing-table td {
+  padding: 12px; /* Cell padding */
+  border-bottom: 1px solid #444; /* Cell bottom border */
+}
