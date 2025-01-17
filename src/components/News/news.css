@@ -112,7 +112,7 @@
   background-color: #ffc000;
   color: #000;
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-decoration: none;
   border-color: #ffc000;
   border-radius: 5px;
@@ -139,9 +139,12 @@
   border-color: #fff;
 }
 
+
 .more-news-button:hover{
   background-color: #fff;
+  transform: scale(1.2);
 }
+
 /* Responsive Design */
  @media (max-width: 768px) {
   .news-item {
@@ -165,9 +168,7 @@
     transform: none; /* Disable the zooming effect */
     transition: none; /* Disable the transition */
   }
-}
-
-/* Large Devices (Min Width: 1024px) */
+  /* Large Devices (Min Width: 1024px) */
 @media (min-width: 1024px) {
   .news-item {
     width: 280px; /* Adjusted width for larger screens */
@@ -189,4 +190,5 @@
   .news-container {
     gap: 50px;
   }
+}
 }
