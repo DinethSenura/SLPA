@@ -108,6 +108,7 @@ const Home = () => {
     {/* Right Section */}
     {/* <div><h2>Berthing Programme</h2></div> */}
     <div className="e-system-berthing-section">
+    <h3>BERTHING PROGRAMME</h3>
       <table className="e-system-berthing-table">
         <thead>
           <tr>
