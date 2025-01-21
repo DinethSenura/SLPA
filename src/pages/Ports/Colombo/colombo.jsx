@@ -17,6 +17,26 @@ const Ports = () => {
         <img src={portImage} alt="Colombo Port Overview" className="header-image" />
       </div>
 
+      {/* Small Boxes Section */}
+      <div className="small-boxes-container">
+        {[
+          { title: "About" },
+          { title: "Location" },
+          { title: "Location" },
+          { title: "Port Facilities" },
+          { title: "General Cargo Services" },
+          { title: "Entrance" },
+          { title: "Compliance" },
+          { title: "Mahapola Academy" }
+        ].map((box, i) => (
+          <div key={i} className="small-box">
+            {box.title}
+          </div>
+        ))}
+      </div>
+
+
+      {/* Content Section */}
       <div className="main-content">
         <div className="content-section">
           <img src={portImage1} alt="Colombo Port View" className="content-image" />
