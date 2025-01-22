@@ -1,6 +1,6 @@
 import React from 'react'
 
-const galle = () => {
+const ect = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const galle = () => {
   )
 }
 
-export default galle
+export default ect
