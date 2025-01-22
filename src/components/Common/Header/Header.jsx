@@ -71,16 +71,16 @@ const Header = () => {
                 ABOUT
               </NavLink>
               <ul className="dropdown-menu" aria-labelledby="aboutDropdown">
-                <li><NavLink to="/about/slpa" className="dropdown-item"> <span className="dropdown-icon me-2"> &gt; </span>SLPA</NavLink></li>
-                <li><NavLink to="/about/vision&mission" className="dropdown-item"> <span className="dropdown-icon me-2"> &gt; </span> Vision & Mission</NavLink></li>
-                <li><NavLink to="/about/bordofdirectors" className="dropdown-item"> <span className="dropdown-icon me-2"> &gt; </span>Bord of Directors</NavLink></li>
-                <li><NavLink to="/about/act" className="dropdown-item"> <span className="dropdown-icon me-2"> &gt; </span>ACT</NavLink></li>
-                <li><NavLink to="/about/procedures" className="dropdown-item"> <span className="dropdown-icon me-2"> &gt; </span>Procedures</NavLink></li>
-                <li><NavLink to="/about/circulars" className="dropdown-item"> <span className="dropdown-icon me-2"> &gt; </span>Circulars</NavLink></li>
-                <li><NavLink to="/about/awards" className="dropdown-item"> <span className="dropdown-icon me-2"> &gt; </span>Awards</NavLink></li>
-                <li><NavLink to="/about/annualreports" className="dropdown-item"> <span className="dropdown-icon me-2"> &gt; </span>Annual Reports</NavLink></li>
-                <li><NavLink to="/about/tariff" className="dropdown-item"> <span className="dropdown-icon me-2"> &gt; </span>Tariff</NavLink></li>
-                <li><NavLink to="/about/righttoinformation" className="dropdown-item"> <span className="dropdown-icon me-2"> &gt; </span>Right To Information</NavLink></li>
+                <li><NavLink to="/about/slpa" className="dropdown-item"> SLPA</NavLink></li>
+                <li><NavLink to="/about/vision&mission" className="dropdown-item">  Vision & Mission</NavLink></li>
+                <li><NavLink to="/about/bordofdirectors" className="dropdown-item"> Bord of Directors</NavLink></li>
+                <li><NavLink to="/about/act" className="dropdown-item"> ACT</NavLink></li>
+                <li><NavLink to="/about/procedures" className="dropdown-item"> Procedures</NavLink></li>
+                <li><NavLink to="/about/circulars" className="dropdown-item"> Circulars</NavLink></li>
+                <li><NavLink to="/about/awards" className="dropdown-item"> Awards</NavLink></li>
+                <li><NavLink to="/about/annualreports" className="dropdown-item"> Annual Reports</NavLink></li>
+                <li><NavLink to="/about/tariff" className="dropdown-item"> Tariff</NavLink></li>
+                <li><NavLink to="/about/righttoinformation" className="dropdown-item"> Right To Information</NavLink></li>
               </ul>
             </li>
 

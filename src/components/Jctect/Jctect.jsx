@@ -10,7 +10,7 @@ const Jctect = () => {
     <div className="slideshow-container">
       <div className="slideshow">
         {/* Use Link to navigate to the respective pages */}
-        <Link to="/Ect">
+        <Link to="/pages/Ect">
           <img src={left} alt="Left Side" className="side-image" />
         </Link>
         <Link to="/jct">
