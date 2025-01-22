@@ -30,6 +30,7 @@
   width: 100%; /* Full width for small screens */
   padding: 8px 12px; /* Add some padding for better appearance */
   white-space: nowrap; /* Prevent text from breaking into two lines */
+  color: #050101;
 }
 /* Dropdown menu styling */
 .dropdown-menu {
