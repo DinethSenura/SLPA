@@ -40,21 +40,28 @@
   object-fit: cover;
 }
 
+.navbar {
+  margin-bottom: 0; /* Reduce extra space under the navigation bar */
+}
+
+
 /* Container for Small Boxes */
-/* Sticky Small Boxes Section */
 .small-boxes-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
   margin: 20px 0;
-  padding: 0 15px;
+  padding: 15px;
   position: sticky; /* Makes the container sticky */
-  top: 70px; /* Adjusts the position under the navigation bar */
+  top: 60px; /* Adjust this value to reduce/increase the gap under the navigation bar */
   background-color: #ffffff; /* Add background to prevent overlapping */
   z-index: 10; /* Ensures it stays above other content */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Shadow for better visibility */
+  width: 90%;
+  margin-left: 70px;
 }
+
 
 /* Individual Small Box */
 .small-box {
