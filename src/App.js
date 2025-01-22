@@ -12,6 +12,7 @@ import Footer from './components/Common/Footer/Footer';
 import Banner from './components/Banner/Banner';
 import Colombo from './pages/Ports/Colombo/colombo';
 import Galle from './pages/Ports/Galle/galle';
+import Ect from './pages/Ect/ect';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="esystem" element={<Esystem />} />
           <Route path="colombo" element={<Colombo />}/>
           <Route path="galle" element={<Galle />}/>
+          <Route path="ect" element={<Ect />}/>
         </Routes>
       </div>
       <Footer />

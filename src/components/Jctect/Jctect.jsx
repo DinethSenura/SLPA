@@ -10,7 +10,7 @@ const Jctect = () => {
     <div className="slideshow-container">
       <div className="slideshow">
         {/* Use Link to navigate to the respective pages */}
-        <Link to="/pages/Ect">
+        <Link to="/ect">
           <img src={left} alt="Left Side" className="side-image" />
         </Link>
         <Link to="/jct">
@@ -19,7 +19,7 @@ const Jctect = () => {
         <Link to="/plink">
           <img src={plink} alt="Right Side Duplicate" className="side-image" />
         </Link>
-        <Link to="/Ect">
+        <Link to="/ect">
           <img src={left} alt="Left Side Duplicate" className="side-image" />
         </Link>
         <Link to="/jct">
@@ -29,7 +29,7 @@ const Jctect = () => {
           <img src={plink} alt="Right Side Duplicate" className="side-image" />
         </Link>
         {/* Duplicate the images for seamless looping */}
-        <Link to="/Ect">
+        <Link to="/ect">
           <img src={left} alt="Left Side Duplicate 2" className="side-image" />
         </Link>
         <Link to="/jct">

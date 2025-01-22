@@ -1,8 +1,8 @@
 import React from 'react'
 import '../Ect/ect.css'
-import ect from "../../../assets/images/Ports/PortColomboHero.jpg";
+import ect from "../../assets/images/Ports/PortColomboHero.jpg";
 
-const ect = () => {
+const ect1 = () => {
   return (
     <div className="project-development-progress">
       {/* Hero Section */}
@@ -43,84 +43,9 @@ const ect = () => {
         </p>
       </div>
 
-      {/* Timeline Section */}
-      <div className="timeline-container">
-        <h2>Project Milestones</h2>
-        <Timeline position="alternate">
-          {/* Timeline Item 1 */}
-          <TimelineItem>
-            <TimelineSeparator>
-              <TimelineDot variant="outlined" />
-              <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent>
-              <div>
-                <h4>Eat</h4>
-                <img
-                  src={eatImage}
-                  alt="Eating"
-                  style={{ width: "100%", height: "auto", maxWidth: "200px" }}
-                />
-              </div>
-            </TimelineContent>
-          </TimelineItem>
-
-          {/* Timeline Item 2 */}
-          <TimelineItem>
-            <TimelineSeparator>
-              <TimelineDot variant="outlined" color="primary" />
-              <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent>
-              <div>
-                <h4>Code</h4>
-                <img
-                  src={eatImage}
-                  alt="Coding"
-                  style={{ width: "100%", height: "auto", maxWidth: "200px" }}
-                />
-              </div>
-            </TimelineContent>
-          </TimelineItem>
-
-          {/* Timeline Item 3 */}
-          <TimelineItem>
-            <TimelineSeparator>
-              <TimelineDot variant="outlined" color="secondary" />
-              <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent>
-              <div>
-                <h4>Sleep</h4>
-                <img
-                  src={eatImage}
-                  alt="Sleeping"
-                  style={{ width: "100%", height: "auto", maxWidth: "200px" }}
-                />
-              </div>
-            </TimelineContent>
-          </TimelineItem>
-
-          {/* Timeline Item 4 */}
-          <TimelineItem>
-            <TimelineSeparator>
-              <TimelineDot variant="outlined" />
-            </TimelineSeparator>
-            <TimelineContent>
-              <div>
-                <h4>Repeat</h4>
-                <img
-                  src={eatImage}
-                  alt="Repeating"
-                  style={{ width: "100%", height: "auto", maxWidth: "200px" }}
-                />
-              </div>
-            </TimelineContent>
-          </TimelineItem>
-        </Timeline>
-      </div>
+      
     </div>
   );
 }
 
-export default ect
+export default ect1
