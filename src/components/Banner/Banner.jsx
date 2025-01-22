@@ -35,7 +35,7 @@ const Banner = () => {
       </div>
 
       {/* Language Buttons */}
-      <div className="language-buttons d-flex flex-column me-2">
+      <div className="language-buttons  flex-column me-2">
         <button className="sinhala-button mb-2">සිංහල</button>
         <button className="tamil-button">தமிழ்</button>
       </div>
