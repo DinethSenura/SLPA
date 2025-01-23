@@ -7,38 +7,23 @@ import plink from '../../assets/images/jctect/plink.jpg';
 
 const Jctect = () => {
   return (
-    <div className="slideshow-container">
-      <div className="slideshow">
-        {/* Use Link to navigate to the respective pages */}
-        <Link to="/ect">
-          <img src={left} alt="Left Side" className="side-image" />
-        </Link>
-        <Link to="/jct">
-          <img src={right} alt="Right Side" className="side-image" />
-        </Link>
-        <Link to="/plink">
-          <img src={plink} alt="Right Side Duplicate" className="side-image" />
-        </Link>
-        <Link to="/ect">
-          <img src={left} alt="Left Side Duplicate" className="side-image" />
-        </Link>
-        <Link to="/jct">
-          <img src={right} alt="Right Side Duplicate" className="side-image" />
-        </Link>
-        <Link to="/plink">
-          <img src={plink} alt="Right Side Duplicate" className="side-image" />
-        </Link>
-        {/* Duplicate the images for seamless looping */}
-        <Link to="/ect">
-          <img src={left} alt="Left Side Duplicate 2" className="side-image" />
-        </Link>
-        <Link to="/jct">
-          <img src={right} alt="Right Side Duplicate 2" className="side-image" />
-        </Link>
-        <Link to="/plink">
-          <img src={plink} alt="Right Side Duplicate" className="side-image" />
-        </Link>
-      </div>
+    <div className="horizontal-images">
+      {/* Use Link to navigate to the respective pages */}
+      <Link to="/ect" className="image-link">
+        <div className="image-container">
+          <img src={left} alt="Left Side" className="image" />
+        </div>
+      </Link>
+      <Link to="/jct" className="image-link">
+        <div className="image-container">
+          <img src={right} alt="Right Side" className="image" />
+        </div>
+      </Link>
+      <Link to="/plink" className="image-link">
+        <div className="image-container">
+          <img src={plink} alt="Plink Side" className="image" />
+        </div>
+      </Link>
     </div>
   );
 };
