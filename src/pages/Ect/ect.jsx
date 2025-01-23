@@ -1,17 +1,18 @@
 import React, { useEffect } from "react";
 import "../Ect/ect.css";
 import ect from "../../assets/images/Ports/PortColomboHero.jpg";
+import intro1 from "../../assets/images/terminal.jpg"; // Import the images
 
 const timelineData = [
-  { year: "2023 - August", image: "C:/Users/user/Documents/GitHub/SLPA/src/assets/images/intro1.jpg" },
-  { year: "2023 - June", image: "C:/Users/user/Documents/GitHub/SLPA/src/assets/images/intro1.jpg" },
-  { year: "2023 - March", image: "C:/Users/user/Documents/GitHub/SLPA/src/assets/images/intro1.jpg" },
+  { year: "2023 - August", image: intro1 },
+  { year: "2023 - June", image: intro1 },
+  { year: "2023 - March", image: intro1 },
   { year: "2022", discovery: "Electromagnetic Induction", scientist: "Michael Faraday" },
   { year: "2022", discovery: "Dynamite", scientist: "Alfred Nobel" },
   { year: "2022", discovery: "X Rays", scientist: "Roentgen" },
   { year: "2021", discovery: "Electron", scientist: "J.J. Thomson" },
   { year: "2021", discovery: "Radium", scientist: "Madam Curie" },
-  { year: "2021", discovery: "Quantum Theory", scientist: "Max Plank" },
+  { year: "2021", discovery: "Quantum Theory", scientist: "Max Planck" },
   { year: "2020", discovery: "Principle of Relativity", scientist: "Albert Einstein" },
   { year: "2020", discovery: "Photoelectric Effect", scientist: "Albert Einstein" },
   { year: "2020", discovery: "Nuclear Reactor", scientist: "Enrico Fermi" },
