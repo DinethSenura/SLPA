@@ -14,54 +14,34 @@
   text-align: center;
 }
 
-/* Default background image */
-
-/* High-resolution screens (Retina, 2x DPI) */
-@media screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
-  .esystem {
-    background-image: url('../../assets/images/e-system.jpg'); /* High-res image */
-  }
-}
-
-/* Ultra-high-resolution screens (3x DPI) */
-@media screen and (min-resolution: 288dpi), screen and (min-resolution: 3dppx) {
-  .esystem {
-    background-image: url('../../assets/images/e-system.jpg'); /* Ultra-high-res image */
-    background-size: contain; 
-  }
-}
-
-/* Screens with max-width 1200px (medium-sized screens) */
 @media screen and (max-width: 1200px) {
   .esystem {
-    background-image: url('../../assets/images/e-system.jpg'); /* Optimized for medium screens */
-    background-size: contain; /* Adjust background size */
+    background-image: url('../../assets/images/esystem/e-system.jpg');
+    background-size: contain;
   }
 }
 
-/* Screens with max-width 768px (tablet or small devices) */
 @media screen and (max-width: 768px) {
   .esystem {
-    background-image: url('../../assets/images/e-system.jpg'); /* Optimized for smaller screens */
+    background-image: url('../../assets/images/esystem/e-system.jpg');
     background-size: 100%;
   }
 }
 
-/* Screens with max-width 480px (phones) */
 @media screen and (max-width: 480px) {
   .esystem {
-    background-image: url('../../assets/images/e-system.jpg'); /* Optimized for very small screens */
+    background-image: url('../../assets/images/esystem/e-system.jpg'); 
     background-position: center top;
   }
 }
 
 
 .exchange-widget {
-    width: 400px; /* Bigger width */
-    height: 300px; /* Bigger height */
-    margin: 0 auto; /* Center horizontally */
+    width: 400px; 
+    height: 300px; 
+    margin: 0 auto; 
     padding: 30px;
-    background-color: #11101B; /* Background color */
+    background-color: #11101B;/* Background color */
     color: #fff; /* Text color */
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
