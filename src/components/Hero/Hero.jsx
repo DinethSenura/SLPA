@@ -1,5 +1,5 @@
 import React from 'react';
-import shipImage from '../../assets/images/ship.jpg'; // Adjust path based on your folder structure
+import shipImage from '../../assets/images/home/ship.jpg'; // Adjust path based on your folder structure
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './hero.css';
 

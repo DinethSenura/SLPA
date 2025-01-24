@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "../Ect/ect.css";
 import ect from "../../assets/images/Ports/PortColomboHero.jpg";
-import intro1 from "../../assets/images/terminal.jpg"; // Import the images
+import intro1 from "../../assets/images/services/terminal.jpg"; // Import the images
 
 const timelineData = [
   { year: "2023 - August", image: intro1 },

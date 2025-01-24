@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './header.css';
-import logo from '../../../assets/images/logo.png';
+import logo from '../../../assets/images/home/logo.png';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {

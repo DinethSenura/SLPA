@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './footer.css';
-import logo from '../../../assets/images/logo.png';
+import logo from '../../../assets/images/home/logo.png';
 import facebook from '../../../assets/images/social-media/facebook.png';
 import twitter from '../../../assets/images/social-media/twitter.png';
 import linkdin from '../../../assets/images/social-media/linkdin.png';

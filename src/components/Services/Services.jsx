@@ -7,9 +7,9 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./services.css";
 
-import service_1 from "../../assets/images/terminal.jpg";
-import service_2 from "../../assets/images/facilities.jpg";
-import service_3 from "../../assets/images/logistics.jpg";
+import service_1 from "../../assets/images/services/terminal.jpg";
+import service_2 from "../../assets/images/services/facilities.jpg";
+import service_3 from "../../assets/images/services/logistics.jpg";
 
 const Services = () => {
   const services = [

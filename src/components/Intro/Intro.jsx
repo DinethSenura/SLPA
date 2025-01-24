@@ -1,9 +1,9 @@
 import React from 'react';
 import '../Intro/intro.css';
-import intro_1 from '../../assets/images/intro1.jpg';
-import intro_2 from '../../assets/images/intro2.jpg';
-import intro_3 from '../../assets/images/intro3.jpg';
-import intro_4 from '../../assets/images/intro4.jpg'; // New image import
+import intro_1 from '../../assets/images/intro/intro1.jpg';
+import intro_2 from '../../assets/images/intro/intro2.jpg';
+import intro_3 from '../../assets/images/intro/intro3.jpg';
+import intro_4 from '../../assets/images/intro/intro4.jpg'; // New image import
 
 const Intro = () => {
   return (
