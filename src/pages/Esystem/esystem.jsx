@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Esystem/esystem.css';
-import EsystemImage from '../../assets/images/e-system.jpg'; // Correct image import
+import EsystemImage from '../../assets/images/esystem/e-system.jpg'; 
 import Enav from '../../components/Enav/Enav';
 
 

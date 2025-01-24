@@ -85,7 +85,7 @@ body {
 .e-system-left-section {
   flex: 1;
   color: #fff; /* Text color for better contrast */
-  background-image: url('../../assets/images/e-system.jpg'); /* Add your image URL here */
+  background-image: url('../../assets/images/esystem/e-system.jpg'); /* Add your image URL here */
   background-size: cover; /* Ensure the image covers the entire section */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent image repetition */
