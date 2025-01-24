@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './footer.css';
 import logo from '../../../assets/images/logo.png';
-import facebook from '../../../assets/images/facebook.png';
-import twitter from '../../../assets/images/twitter.png';
-import linkdin from '../../../assets/images/linkdin.png';
-import instagram from '../../../assets/images/instagram.png';
-import youtube from '../../../assets/images/youtube.png';
+import facebook from '../../../assets/images/social-media/facebook.png';
+import twitter from '../../../assets/images/social-media/twitter.png';
+import linkdin from '../../../assets/images/social-media/linkdin.png';
+import instagram from '../../../assets/images/social-media/instagram.png';
+import youtube from '../../../assets/images/social-media/youtube.png';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaTelegramPlane, FaArrowUp } from 'react-icons/fa'; // Importing arrow icon
 
 const Footer = () => {
