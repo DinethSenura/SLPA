@@ -6,8 +6,10 @@ import Services from '../../components/Services/Services';
 import Client from '../../components/Client/Client';
 import Intro from '../../components/Intro/Intro';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
-import News from '../../components/News/News';
 import imageAboveButton from '../../assets/images/clients/banner.jpg'; // Replace with your image path
+import news1 from '../../assets/images/News/News_1.jpg'; 
+import news2 from '../../assets/images/News/News_2.jpg';
+import news3 from '../../assets/images/News/News_3.jpg';
 import '../Home/home.css';
 import { NavLink } from 'react-router-dom';
 
@@ -95,7 +97,7 @@ const Home = () => {
       {/* Render the Services component */}
       <Services />
 
-      {/* Main Content */}
+    {/* E-system */}
   <div className="e-system-container">
     {/* Left Section */}
     <div className="e-system-left-section">
@@ -106,7 +108,6 @@ const Home = () => {
     </div>
 
     {/* Right Section */}
-    {/* <div><h2>Berthing Programme</h2></div> */}
     <div className="e-system-berthing-section">
     <h3>BERTHING PROGRAMME</h3>
       <table className="e-system-berthing-table">
@@ -146,7 +147,42 @@ const Home = () => {
     </div>
   </div>
 
-      <News />
+{/* News */}
+  <div className="latest-news">
+          <h2 className="section-title">Latest News</h2>
+          <div className="news-container">
+            
+            <div className="news-item">
+                
+              <img src={news1} alt="" className="news-image" />
+              <p className="news-description">
+                “With ongoing developments we are confident in the Port of Colombo's evolution as the hub of South Asia” – Keith D. Bernard, Chairman SLPA
+              </p>
+              <button className="news-button">Read more</button>
+            </div>
+            
+            <div className="news-item">
+              <img src={news2} alt="News 2" className="news-image" />
+              <p className="news-description">
+                “The optimum usage of energy is a mandatory requirement” – Eng. Ganaka Hemachandra, Managing Director, SLPA
+              </p>
+              <button className="news-button">Read more</button>
+            </div>
+    
+            
+            <div className="news-item">
+              <img src={news3} alt="News 3" className="news-image" />
+              <p className="news-description">
+                Steering Towards a Safer Future: World Maritime Day 2024
+              </p>
+              <button className="news-button">Read more</button>
+            </div>
+                
+          </div>
+    
+          
+          <button className="more-news-button">MORE LATEST NEWS →</button>
+        </div>
 
       {/* Add an image above the button */}
       <div>
