@@ -6,8 +6,7 @@
   width: 100%; /* Ensure it spans full width */
   gap: 5px; /* Space between images */
   perspective: 1000px; /* Add perspective for the 3D effect */
-  background-color: #d9d9d9; /* Light background for mobile dropdown */
-    
+  background-color: #d9d9d9; /* Light background */
 }
 
 /* Image container for the 3D effect */
@@ -37,14 +36,16 @@
 @media (max-width: 768px) {
   .horizontal-images {
     flex-direction: column; /* Stack images vertically */
+    gap: 5px; /* Increase spacing between images */
   }
 
   .image-container {
-    width: 100%; /* Adjust container width on smaller screens */
-    height: auto; /* Adjust container height automatically */
+    width: 100%; /* Adjust container width to fit mobile screens */
+    height: 90px; /* Reduce height for smaller screens */
+    margin: auto; /* Center images */
   }
 
   .image {
-    border-radius: 8px; /* Slightly smaller border radius */
+    border-radius: 5px; /* Slightly smaller border radius */
   }
 }
