@@ -1,6 +1,6 @@
 /* Home Img - Video */
 .hero-container {
-  margin-top: 100px; /* Adjust to prevent overlap with fixed elements like navbar */
+  margin-top: 100px; 
 }
 
 .hero-image {
@@ -11,13 +11,13 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .hero-image {
-    height: 300px; /* Reduce height for small screens */
+    height: 300px; 
   }
 }
 
 @media (max-width: 576px) {
   .hero-image {
-    height: 200px; /* Further reduce height for extra small screens */
+    height: 200px; 
   }
 }
 
@@ -56,7 +56,7 @@
   height: auto;
   object-fit: cover;
   margin-top: 50px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
   transform-style: preserve-3d; /* Enable 3D rendering */
   perspective: 1000px; /* Add perspective for 3D effect */
 }
@@ -66,10 +66,10 @@
 .intro_image_3:hover,
 .intro_image_4:hover {
   transform: rotateX(10deg) rotateY(10deg) scale(1.05); /* Apply 3D rotation and scaling */
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
-  border: 3px solid #ffc000; /* Add a border on hover */
-  border-radius: 10px; /* Rounded corners for the hover border */
-  cursor: pointer; /* Change cursor to pointer for interactivity */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  border: 3px solid #ffc000;
+  border-radius: 10px; 
+  cursor: pointer; 
 }
 
 /* Responsive adjustments */
@@ -108,7 +108,7 @@
   transform: scale(1.02);
 }
 
-/* Add this CSS in your main stylesheet or a dedicated CSS file */
+
 
 /* Default Social Media Icon Size */
 .social-media-box a {
@@ -125,12 +125,12 @@
 /* Responsive Styles for Smaller Screens */
 @media (max-width: 576px) {
   .social-media-box {
-    right: 5px; /* Adjust position for smaller screens */
-    padding: 5px; /* Reduce padding */
+    right: 5px; 
+    padding: 5px; 
   }
 
   .social-media-box a svg {
-    width: 20px; /* Reduce icon size */
+    width: 20px; 
     height: 20px;
   }
 }
@@ -163,7 +163,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f0f4f8; /* Fallback background color */
+  background: #f0f4f8; 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -174,18 +174,18 @@ body {
 /* Left Section with Full Background Image */
 .e-system-left-section {
   flex: 1;
-  color: #fff; /* Text color for better contrast */
-  background-image: url('../../assets/images/esystem/e-system.jpg'); /* Add your image URL here */
-  background-size: cover; /* Ensure the image covers the entire section */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent image repetition */
-  height: 100vh; /* Make the section full height */
-  padding: 50px; /* Adjust padding for content spacing */
-  display: flex; /* Use flex for aligning content */
-  flex-direction: column; /* Stack items vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: flex-start; /* Align content to the left */
-  box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add inner shadow for effect */
+  color: #fff; 
+  background-image: url('../../assets/images/esystem/e-system.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 100vh; 
+  padding: 50px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: flex-start; 
+  box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 
@@ -215,25 +215,25 @@ body {
 .e-system-berthing-section {
   flex: 1;
   max-width: 600px;
-  background-color: #11101B; /* Dark background for the section */
+  background-color: #11101B; 
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
   overflow: hidden;
-  color: white; /* Text color for dark background */
+  color: white; 
 }
 
 /* Table Styling */
 .e-system-berthing-table {
-  width: 100%; /* Full width */
-  border-collapse: collapse; /* Remove gaps between cells */
-  text-align: center; /* Center-align text in cells */
+  width: 100%; 
+  border-collapse: collapse;
+  text-align: center; 
 }
 
 /* Header Styling */
 .e-system-berthing-table thead {
-  background-color: #6c63ff; /* Header background */
-  color: #fff; /* Header text color */
+  background-color: #6c63ff; 
+  color: #fff; 
 }
 
 .e-system-berthing-table th {
@@ -244,27 +244,26 @@ body {
 
 /* Body Row Styling */
 .e-system-berthing-table tbody tr {
-  background-color: #222; /* Default row color */
+  background-color: #222; 
 }
 
 .e-system-berthing-table tbody tr:nth-child(odd) {
-  background-color: #333; /* Alternate row color */
+  background-color: #333; 
 }
 
 .e-system-berthing-table tbody tr:hover {
-  background-color: #444; /* Highlight row on hover */
+  background-color: #444; 
 }
 
 /* Cell Styling */
 .e-system-berthing-table td {
-  padding: 12px; /* Cell padding */
-  border-bottom: 1px solid #444; /* Cell bottom border */
+  padding: 12px; 
+  border-bottom: 1px solid #444; 
 }
 
 
 /* Responsive Styles for Smaller Screens */
 @media (max-width: 768px) {
-  /* Adjust sections to stack vertically */
   .e-system-container {
     flex-direction: column;
     gap: 10px;
@@ -272,12 +271,12 @@ body {
 
   .e-system-left-section {
     height: auto;
-    text-align: center; /* Center-align content */
+    text-align: center; 
     align-items: center;
   }
 
   .e-system-left-section h1 {
-    font-size: 2.5rem; /* Smaller heading font */
+    font-size: 2.5rem; 
   }
 
   .e-system-explore-button {
@@ -286,14 +285,14 @@ body {
   }
 
   .e-system-berthing-section {
-    max-width: 100%; /* Full width on smaller screens */
+    max-width: 100%; 
     margin-bottom: 10px;
   }
 
   /* Adjust berthing table for smaller screens */
   .e-system-berthing-table th {
-    font-size: 12px; /* Smaller font size */
-    padding: 8px; /* Reduce padding */
+    font-size: 12px; 
+    padding: 8px; 
   }
 }
 
@@ -406,11 +405,7 @@ body {
   font-weight: bold;
   font: #000;
 }
-/*
-.news-description:hover{
-  font-size: 0.5rem;
-}
-*/
+
 .news-button {
   display: inline-block;
   padding: 6px 12px;
@@ -462,21 +457,21 @@ body {
   }
 
   .news-item:hover .news-image {
-    transform: none; /* Disable the zooming effect */
-    transition: none; /* Disable the transition */
+    transform: none; 
+    transition: none; 
   }
 }
 
 /* Extra Small Devices (Max Width: 480px) */
 @media (max-width: 480px) {
   .news-item:hover .news-image {
-    transform: none; /* Disable the zooming effect */
-    transition: none; /* Disable the transition */
+    transform: none; 
+    transition: none; 
   }
   /* Large Devices (Min Width: 1024px) */
 @media (min-width: 1024px) {
   .news-item {
-    width: 280px; /* Adjusted width for larger screens */
+    width: 280px; 
     height: 350px;
   }
 

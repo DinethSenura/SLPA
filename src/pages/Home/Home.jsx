@@ -84,7 +84,7 @@ const Home = () => {
       {/* Floating Social Media Box */}
       <SocialMediaBox />
 
-      {/* Render the Banner component */}
+      
       <Banner />
 
       {/* Hero- Home page image / Video*/}
@@ -246,10 +246,10 @@ const Home = () => {
   src={imageAboveButton}
   alt="Example"
   style={{
-    width: '100%', // Adjust to parent container width
-    maxWidth: '100vw', // Ensure it doesn't exceed the viewport width
-    height: 'auto', // Maintain aspect ratio
-    display: 'block', // Eliminate extra whitespace
+    width: '100%', 
+    maxWidth: '100vw', 
+    height: 'auto', 
+    display: 'block', 
   }}
 />
 
@@ -269,7 +269,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Render the Client component */}
+      {/* Client*/}
       <Client />
     </>
   );
