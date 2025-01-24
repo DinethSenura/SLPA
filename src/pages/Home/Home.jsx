@@ -1,15 +1,17 @@
 import React from 'react';
 import Banner from '../../components/Banner/Banner';
-import Hero from '../../components/Hero/Hero';
 import Jctect from '../../components/Jctect/Jctect';
 import Services from '../../components/Services/Services';
 import Client from '../../components/Client/Client';
 import Intro from '../../components/Intro/Intro';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
-import imageAboveButton from '../../assets/images/clients/banner.jpg'; // Replace with your image path
+import shipImage from '../../assets/images/home/ship.jpg';
 import news1 from '../../assets/images/News/News_1.jpg'; 
 import news2 from '../../assets/images/News/News_2.jpg';
 import news3 from '../../assets/images/News/News_3.jpg';
+import imageAboveButton from '../../assets/images/clients/banner.jpg'; 
+
+
 import '../Home/home.css';
 import { NavLink } from 'react-router-dom';
 
@@ -82,8 +84,15 @@ const Home = () => {
       {/* Render the Banner component */}
       <Banner />
 
-      {/* Render the Hero component */}
-      <Hero />
+      {/* Hero- Home page image / Video*/}
+      
+      <div className="hero-container">
+      <img 
+        src={shipImage} 
+        alt="Hero Banner" 
+        className="img-fluid hero-image" 
+      />
+    </div>
 
       {/* Add spacing above Jctect */}
       <div style={{ marginTop: '5px' }}>
