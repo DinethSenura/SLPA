@@ -1,21 +1,25 @@
 import React, { useEffect } from "react";
 import "../Ect/ect.css";
 import ect from "../../assets/images/Ports/PortColomboHero.jpg";
-import intro1 from "../../assets/images/services/terminal.jpg"; // Import the images
+import ect1_1 from "../../assets/images/ect/ect 1.1.jpg"; // Import the images
+import ect2_1 from "../../assets/images/ect/ect 2.1.jpg"; // Import the images
+import ect3_1 from "../../assets/images/ect/ect 3.1.jpg"; // Import the images
+import ect4_1 from "../../assets/images/ect/ect 4.1.jpg"; // Import the images
+
 
 const timelineData = [
-  { year: "2023 - August", image: intro1 },
-  { year: "2023 - June", image: intro1 },
-  { year: "2023 - March", image: intro1 },
-  { year: "2022", discovery: "Electromagnetic Induction", scientist: "Michael Faraday" },
-  { year: "2022", discovery: "Dynamite", scientist: "Alfred Nobel" },
-  { year: "2022", discovery: "X Rays", scientist: "Roentgen" },
-  { year: "2021", discovery: "Electron", scientist: "J.J. Thomson" },
-  { year: "2021", discovery: "Radium", scientist: "Madam Curie" },
-  { year: "2021", discovery: "Quantum Theory", scientist: "Max Planck" },
-  { year: "2020", discovery: "Principle of Relativity", scientist: "Albert Einstein" },
-  { year: "2020", discovery: "Photoelectric Effect", scientist: "Albert Einstein" },
-  { year: "2020", discovery: "Nuclear Reactor", scientist: "Enrico Fermi" },
+  { year: "2023 - August", image: ect1_1 },
+  { year: "2023 - June", image: ect2_1 },
+  { year: "2023 - March", image: ect3_1 },
+  { year: "2022 - December", image: ect4_1 },
+  { year: "2022 - August", image: ect1_1 },
+  { year: "2022 - May", image: ect2_1 },
+  { year: "2021 - November", image: ect3_1 },
+  { year: "2021 - September", image: ect4_1 },
+  { year: "2021 - April", image: ect1_1 },
+  { year: "2020 - July", image: ect2_1 },
+  { year: "2020 - March", image: ect3_1 },
+  { year: "2020 - January", image: ect4_1 },
 ];
 
 const Ect1 = () => {
@@ -96,17 +100,11 @@ const Ect1 = () => {
             <li key={index}>
               <div>
                 <time>{event.year}</time>
-                {event.image ? (
-                  <div className="discovery">
+                
+                  <div className="timeline_image">
                     <img src={event.image} alt={`Event in ${event.year}`} />
                   </div>
-                ) : (
-                  <div className="discovery">
-                    <p>
-                      {event.discovery} by {event.scientist}
-                    </p>
-                  </div>
-                )}
+               
               </div>
             </li>
           ))}

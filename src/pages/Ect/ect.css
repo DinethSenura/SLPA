@@ -154,40 +154,38 @@ body {
       }
       div {
         position: relative;
+        margin-left: 15px;
+        margin-right: 50px;
         bottom: 0;
-        width: 400px;
-        height: 300px;
-        padding: 20px;
-        background: #221F45;
-        border-radius: 5px;
+        width: 450px;
+        height: 370px;
+        background: #221f45;
         display: flex;
         align-items: center;
         time {
           position: absolute;
           color: #000;
           background: #f5af19;
-          width: 150px;
+          width: 455px;
           height: 30px;
-          top: -15px;
+          top: -30px;
           border-radius: 5px;
           display: flex;
           justify-content: center;
           align-items: center;
           letter-spacing: 2px;
         }
-        div {
-          height: 100px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
+       
+        .timeline_image {
+          img{
+          width: 420px; /* Make the image responsive to its container */
+          max-width: 420px; /* Limit the maximum width of the image */
+          height: 350px; /* Maintain the aspect ratio */
+          max-height: 350px; /* Limit the maximum height of the image */
+          margin: 10px 0; /* Optional: Add spacing around the image */
           align-items: center;
-          p {
-            text-align: center;
+          margin-right: 20px;
           }
-        }
-        .discovery {
-          width: 50px;
-          height: 10px;
         }
         .scientist {
             size:  0;
@@ -196,11 +194,12 @@ body {
       &:nth-of-type(odd) {
         > div {
           left: 45px;
+
         }
       }
       &:nth-of-type(even) {
         > div {
-          left: -439px;
+          left: -525px;
         }
       }
     }
