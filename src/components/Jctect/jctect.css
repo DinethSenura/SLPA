@@ -7,12 +7,14 @@
   gap: 5px; /* Space between images */
   perspective: 1000px; /* Add perspective for the 3D effect */
   background-color: #d9d9d9; /* Light background */
+  padding: 0 20px; /* Add space on either side of the images */
+  box-sizing: border-box; /* Include padding in the container's width */
 }
 
 /* Image container for the 3D effect */
 .image-container {
-  width: 600px; /* Set the width of each image container */
-  height: 130px; /* Set the height of each image container */
+  width: 400px; /* Default width for images */
+  height: 80px; /* Default height for images */
   transform-style: preserve-3d; /* Enable 3D transformations */
   transition: transform 0.6s ease; /* Smooth transition */
   transform: rotateY(0deg); /* Initial position */
@@ -32,17 +34,18 @@
   border-radius: 0px; /* Add rounded corners */
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Responsive adjustments for mobile view */
+@media (max-width: 1200px) {
   .horizontal-images {
     flex-direction: column; /* Stack images vertically */
-    gap: 5px; /* Increase spacing between images */
+    gap: 10px; /* Increase spacing between images */
+    padding: 0 10px; /* Reduce padding on smaller screens while keeping space on sides */
   }
 
   .image-container {
-    width: 100%; /* Adjust container width to fit mobile screens */
-    height: 90px; /* Reduce height for smaller screens */
-    margin: auto; /* Center images */
+    width: 80%; /* Adjust container width to fit mobile screens */
+    height: auto; /* Adjust height proportionally */
+    margin: auto; /* Center align the images */
   }
 
   .image {
