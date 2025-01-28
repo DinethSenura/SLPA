@@ -98,7 +98,7 @@ const Ect1 = () => {
         <ul>
           {timelineData.map((event, index) => (
             <li key={index}>
-              <div>
+              <div className="timeline_section">
                 <time>{event.year}</time>
                 
                   <div className="timeline_image">

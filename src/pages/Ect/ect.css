@@ -152,7 +152,8 @@ body {
         z-index: 2;
         background: #f5af19;
       }
-      div {
+      
+      .timeline_section {
         position: relative;
         margin-left: 15px;
         margin-right: 50px;
@@ -162,6 +163,9 @@ body {
         background: #221f45;
         display: flex;
         align-items: center;
+        transform: none !important; /* Disable transform for the first section */
+        visibility: visible !important; /* Always visible */
+        opacity: 1 !important; /* Fully opaque */
         time {
           position: absolute;
           color: #000;
@@ -185,7 +189,12 @@ body {
           margin: 10px 0; /* Optional: Add spacing around the image */
           align-items: center;
           margin-right: 20px;
+          margin-left: 14px;
           }
+
+         
+          
+
         }
         .scientist {
             size:  0;
@@ -258,7 +267,7 @@ body {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 780px) {
   .timeline {
     ul {
       li {
@@ -275,3 +284,4 @@ body {
     }
   }
 }
+
