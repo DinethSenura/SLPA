@@ -105,11 +105,11 @@ const Ect1 = () => {
                     <img src={event.image} alt={`Event in ${event.year}`} />
                   </div>
                
-              </div>
+              </div>              
             </li>
           ))}
         </ul>
-      </section>
+     </section>  
     </div>
   );
 };
