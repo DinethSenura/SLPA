@@ -16,8 +16,7 @@ const Ect1 = () => {
         <div className="hero-content">
           <h1>PROJECT DEVELOPMENT PROGRESS</h1>
           <p>
-            <span className="breadcrumb">HOME</span> › PROJECT DEVELOPMENT
-            PROGRESS
+            <span className="breadcrumb">HOME › PROJECT › DEVELOPMENT › PROGRESS </span>
           </p>
         </div>
       </div>
