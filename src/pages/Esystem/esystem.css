@@ -159,9 +159,10 @@
 
 /* Berthing Table */
 .berthing-table {
-  width: 100%; 
+  width: 120%; 
   border-collapse: collapse;
   text-align: left;
+  margin-left: -20px;
 }
 
 .berthing-table thead {

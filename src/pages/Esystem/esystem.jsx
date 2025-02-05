@@ -27,7 +27,7 @@ const Esystem = () => {
   //     .catch((error) => console.error("Error fetching data:", error));
   // }, []);
   useEffect(() => {
-    // const apiUrl = 'https://jsonplaceholder.typicode.com/posts'; // API URLhttps://www.slpa.lk/berthing-programme/mobile_api/get_all_schedule
+    
     const apiUrl = 'https://www.slpa.lk/berthing-programme/mobile_api/get_all_schedule';
     axios.get(apiUrl)
       .then((response) => {
@@ -133,7 +133,7 @@ const Esystem = () => {
                 ))
               ) : (
                 <tr>
-                  <td colSpan="2">No berthing data available</td>
+                  {/* <td colSpan="2">No berthing data available</td> */}
                 </tr>
               )}
             </tbody>
