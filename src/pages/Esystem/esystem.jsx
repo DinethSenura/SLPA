@@ -98,6 +98,7 @@ const Esystem = () => {
           ) : error ? (
             <p>Error fetching data: {error}</p>
           ) : (
+            <div className="scroll-container">
             <table className="berthing-table">
               <thead>
                 <tr>
@@ -114,6 +115,7 @@ const Esystem = () => {
                 ))}
               </tbody>
             </table>
+            </div>
           )}
         </div>
       </div>

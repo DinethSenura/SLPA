@@ -175,10 +175,16 @@
     transform: translateY(-50%);
   }
 }
-
 .berthing-table {
-  width: 100%;
+  width: 100%; 
   border-collapse: collapse;
+  text-align: center;
+}
+.berthing-table thead {
+  background-color: #6c63ff;
+  color: #fff;
+  position: sticky;
+  top: 0; /* Keep the header fixed during scroll */
 }
 
 .berthing-table th, .berthing-table td {
