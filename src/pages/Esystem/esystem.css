@@ -47,9 +47,9 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
   
     /* Center the box vertically and horizontally on the page */
-    position: absolute;
+    position:sticky;
     top: 100%;
-    left: 50%;
+    left: 60%;
     transform: translate(-50%, -50%);
     z-index: 1;
   }
@@ -158,18 +158,14 @@
   overflow: hidden; /* Remove Scrollbar */
 }
 
+
 /* Scroll Container */
-scroll-container {
-  height: 320px; /* Fixed height for data rows */
-  overflow: hidden;
-  position: relative;
+.scroll-container {
+  display: block;
+  height: 100%;
+  animation: scroll-up 10s linear infinite;
 }
 
-.scroll-content {
-  animation: scroll-up 10s linear infinite;
-  position: absolute;
-  width: 100%;
-}
 
 @keyframes scroll-up {
   0% {
@@ -180,17 +176,9 @@ scroll-container {
   }
 }
 
-
-/* Berthing Table */
 .berthing-table {
   width: 100%;
   border-collapse: collapse;
-}
-.berthing-table thead {
-  background-color: #6c63ff;
-  color: #fff;
-  position: sticky;
-  top: 0; /* Keep header visible during scrolling */
 }
 
 .berthing-table th, .berthing-table td {
@@ -201,26 +189,11 @@ scroll-container {
 }
 
 .berthing-table tbody tr:nth-child(odd) {
-  background-color: #222; 
+  background-color: #222;
 }
 
 .berthing-table tbody tr:nth-child(even) {
-  background-color: #333; 
-}
-
-.berthing-system button {
-  background-color: transparent; 
-  color: #fff; 
-  border: none;
-  padding: 10px 20px; 
-  font-size: 14px; 
-  font-weight: bold; 
-  cursor: pointer; 
-  margin-top: 10px; 
-  transition: background-color 0.3s ease; 
-  position: absolute; 
-  right: 10px; 
-  bottom: 1px; 
+  background-color: #333;
 }
 
 /* Add media queries for responsiveness */
@@ -239,6 +212,7 @@ scroll-container {
     position: static; 
     transform: none; 
     margin-top: 20px; 
+  
   }
 
   /* Adjust .berthing-system for smaller screens */
