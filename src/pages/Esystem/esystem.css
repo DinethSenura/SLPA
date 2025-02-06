@@ -141,7 +141,7 @@
 
 /* Berthing System */
 .berthing-system {
-  width: 450px;
+  width: 400px;
   height: 400px;
   margin: 0;
   background-color: #11101B;
@@ -155,17 +155,27 @@
   left: 12%;
   transform: translateY(-50%);
   z-index: 2;
-  overflow: hidden; /* Remove Scrollbar */
+  overflow: hidden; /* Hide overflow */
 }
-
+/* Table Container */
+.table-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
 /* Scroll Container */
 .scroll-container {
-  display: block;
-  height: 100%;
-  animation: scroll-up 10s linear infinite;
+  overflow: hidden; /* Hide scrollbar */
+  height: 300px; /* Adjust height as needed */
+  position: relative;
+  width: 110%;
 }
-
+.scroll-content {
+  animation: scroll-up 80s linear infinite;
+  position: absolute;
+  width: 100%;
+}
 
 @keyframes scroll-up {
   0% {
@@ -176,7 +186,7 @@
   }
 }
 .berthing-table {
-  width: 100%; 
+  width: 103%; 
   border-collapse: collapse;
   text-align: center;
 }
@@ -185,10 +195,11 @@
   color: #fff;
   position: sticky;
   top: 0; /* Keep the header fixed during scroll */
+  z-index: 1; /* Ensure header stays above the body */
 }
 
 .berthing-table th, .berthing-table td {
-  padding: 10px;
+  padding: 12px;
   border-bottom: 1px solid #ccc;
   text-align: center;
   color: #fff;
@@ -223,9 +234,9 @@
 
   /* Adjust .berthing-system for smaller screens */
   .berthing-system {
-    width: 400px; 
+    width: 350px; 
     margin: 20px auto; 
-    padding: 20px; 
+    padding: 30px; 
     position: static; 
     transform: none; 
   }
@@ -234,6 +245,6 @@
   .berthing-table th,
   .berthing-table td {
     font-size: 12px; 
-    padding: 8px; 
+    padding: 18px; 
   }
 }
