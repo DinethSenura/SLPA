@@ -13,6 +13,8 @@ import Banner from './components/Banner/Banner';
 import Colombo from './pages/Ports/Colombo/colombo';
 import Galle from './pages/Ports/Galle/galle';
 import Ect from './pages/Ect/ect';
+import BirthingProgram from './components/BirthingProgram/Birthingprogram';
+
 
 
 function App() {
@@ -35,6 +37,7 @@ function App() {
           <Route path="colombo" element={<Colombo />}/>
           <Route path="galle" element={<Galle />}/>
           <Route path="ect" element={<Ect />}/>
+          <Route path="BirthinProgram" element={<BirthingProgram />}/>
         </Routes>
       </div>
       <Footer />
