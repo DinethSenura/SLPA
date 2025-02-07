@@ -208,36 +208,7 @@ const Home = () => {
           <Birthingprogram />
         </div>
       </div>
-  {/* Responsive Styling for Mobile Screens */}
-<style>
-    @media (max-width: 1024px) {
-      .e-system-section {
-        flex-direction: column;
-        height: auto;
-        text-align: center;
-        padding: 40px 20px;
-      }
-
-      .birthing-program-container {
-        margin-left: 0px;
-        text-align: center;
-        margin-top: 20px;
-      }
-
-      .e-system-section div {
-        width: 100%;
-      }
-
-      .e-system-section h1 {
-        font-size: 24px;
-      }
-
-      .e-system-section a {
-        font-size: 16px;
-        padding: 8px 15px;
-      }
-    }
-</style>
+  
 
 {/* News */}
   <div className="latest-news">
