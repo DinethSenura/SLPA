@@ -2,6 +2,7 @@ import React from 'react';
 import '../Colombo/colombo.css';
 import portImage from '../../../assets/images/Ports/PortColomboHero.jpg';
 import portImage1 from '../../../assets/images/Ports/colombo_prt1.jpg';
+import { Link } from 'react-router-dom'; // Import Link from React Router
 
 const Ports = () => {
   return (
@@ -42,24 +43,40 @@ const Ports = () => {
           <img src={portImage1} alt="Colombo Port View" className="content-image" />
           <h2>COLOMBO PORT</h2>
           <p>
-          Colombo Port is a rapidly growing maritime hub of the South Asia Region. Cargo originating from and destined to Europe, East and South Asia, the Persian Gulf, and East Africa is conveniently and efficiently connected through the Colombo Port.<br/>
+          Colombo Port is a rapidly growing maritime hub of the South Asia Region. Cargo originating from and destined to<br/> Europe, East and South Asia, the Persian Gulf, and East Africa is conveniently and efficiently connected through<br/>the Colombo Port.<br/>
 
-          The Colombo Port is primarily a container port. In 2015, it handled about 5.1 million TEU of containerized cargo.<br/>
+          <br/>  The Colombo Port is primarily a container port. In 2015, it handled about 5.1 million TEU of containerized cargo.
 
-          The original port had a harbour area of 184 hectares. In 2008, the South Harbour area (285 hectares) was developed to accommodate deep water berths and the latest generation of mainline vessels. The harbour is served by a two-way channel with an initial depth of 20m and a width of 570m.<br/>
+          <br/>      The original port had a harbour area of 184 hectares. In 2008, the South Harbour area (285 hectares) was <br/>developed to accommodate deep water berths and the latest generation of mainline vessels. The harbour is <br/>served by a two-way channel with an initial depth of 20m and a width of 570m.<br/>
 
-          In addition to the container terminals in the original port area, SLPA planned to develop three terminals (each having capacity of 2.4 million TEU) in the South Harbour, the first of which was built and in operation on a build operate-transfer (BOT) basis by Colombo International Container Terminals Limited (CICT), a joint venture company of China Merchants Holding (International) Co. Ltd and SLPA
-          </p>
+In addition to the container terminals in the original port area, SLPA planned to develop three terminals (each having capacity of 2.4 million TEU) in the South Harbour, the first of which was built and in operation on a build operate-transfer (BOT) basis by Colombo International Container Terminals Limited (CICT), a joint venture company of China Merchants Holding (International) Co. Ltd and SLPA</p>
         </div>
 
         {/* Advertisement Section */}
         <div className="ads-section">
-          <div className="small-ads">
-            <div className="ad ad-small">Ad 1</div>
-            <div className="ad ad-small">Ad 2</div>
-            <div className="ad ad-small">Ad 3</div>
+            <div className="ad ad-small">
+                 <Link to="/ect" className="image-link">
+                     <div className="image-container">
+                        <img src="src/assets/images/jctect/left.jpg" alt="Left Side" className="image" />
+                     </div>
+                 </Link>
+            </div>
+            <div className="ad ad-small">
+                 <Link to="/jct" className="image-link">
+                     <div className="image-container">
+                        <img src="src/assets/images/jctect/jct.jpg" alt="Right Side" className="image" />
+                     </div>
+                 </Link>
+            </div>
+            <div className="ad ad-small">
+                <Link to="/plink" className="image-link">
+                   <div className="image-container">
+                      <img src="src/assets/images/jctect/plink.jpg" alt="Plink Side" className="image" />
+                   </div>
+                </Link>
+            
           </div>
-          <div className="ad ad-large">Large Ad</div>
+          <div className="ad_1 ad-large">Large Ad</div>
         </div>
       </div>
     </div>

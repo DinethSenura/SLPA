@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+// import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -8,7 +9,6 @@ import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeli
 import "react-vertical-timeline-component/style.min.css";
 import "../Ect/ect.css";
 import ectImage from "../../assets/images/Ports/PortColomboHero.jpg";
-import AnchorIcon from "../../assets/images/ect/ectAnchorIcon.png.webp"
 
 // Import Slider Images
 import ect2023_1 from "../../assets/images/ect/ect 1.1.jpg";
@@ -65,12 +65,12 @@ const EctPage = () => {
       {isClient && (
         <VerticalTimeline>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            // contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            className="vertical-timeline-element"
+            contentStyle={{ background: "#221F45", color: "#fff" }}
             // contentArrowStyle={{ borderRight: "7px solid rgb(33, 150, 243)" }}
             // date="2011 - present"
             // iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-            icon={<img src={AnchorIcon} alt="Anchor Icon" width="60" height="60" style={{ borderRadius: "50%" }} /> }
+            // icon={<img src={AnchorIcon} alt="Anchor Icon" width="60" height="60" style={{ borderRadius: "50%" }} /> }
             // icon={<AnchorIcon />}
           >
             <h3 className="vertical-timeline-element-title">2023</h3>
@@ -78,10 +78,11 @@ const EctPage = () => {
             
             {/* Swiper Slider inside Timeline */}
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
+              // modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Pagination]}
               navigation
               pagination={{ clickable: true }}
-              autoplay={{ delay: 3000 }}
+              // autoplay={{ delay: 3000 }}
               loop={true}
               className="timeline-swiper"
             >
@@ -94,18 +95,17 @@ const EctPage = () => {
           </VerticalTimelineElement>
 
           <VerticalTimelineElement
-            className="vertical-timeline-element--education"
-            icon={<img src={AnchorIcon} alt="Anchor Icon" width="60" height="60" style={{ borderRadius: "50%" }} /> }
+            className="vertical-timeline-element"
+            contentStyle={{ background: "#221F45", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">2022</h3>
             {/* <h4 className="vertical-timeline-element-subtitle"></h4> */}
             
             {/* Another Swiper inside Timeline */}
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Pagination]}
               navigation
               pagination={{ clickable: true }}
-              autoplay={{ delay: 3000 }}
               loop={true}
               className="timeline-swiper"
             >
@@ -118,18 +118,17 @@ const EctPage = () => {
           </VerticalTimelineElement>
 
           <VerticalTimelineElement
-            className="vertical-timeline-element--education"
-            icon={<img src={AnchorIcon} alt="Anchor Icon" width="60" height="60" style={{ borderRadius: "50%" }} /> }
+            className="vertical-timeline-elemen"
+            contentStyle={{ background: "#221F45", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">2021</h3>
             {/* <h4 className="vertical-timeline-element-subtitle"></h4> */}
             
             {/* Another Swiper inside Timeline */}
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Pagination]}
               navigation
               pagination={{ clickable: true }}
-              autoplay={{ delay: 3000 }}
               loop={true}
               className="timeline-swiper"
             >
@@ -142,18 +141,17 @@ const EctPage = () => {
           </VerticalTimelineElement>
 
           <VerticalTimelineElement
-            className="vertical-timeline-element--education"
-            icon={<img src={AnchorIcon} alt="Anchor Icon" width="60" height="60" style={{ borderRadius: "50%" }} /> }
+            className="vertical-timeline-element"
+            contentStyle={{ background: "#221F45", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">2020</h3>
             {/* <h4 className="vertical-timeline-element-subtitle"></h4> */}
             
             {/* Another Swiper inside Timeline */}
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Pagination]}
               navigation
               pagination={{ clickable: true }}
-              autoplay={{ delay: 3000 }}
               loop={true}
               className="timeline-swiper"
             >
@@ -167,18 +165,17 @@ const EctPage = () => {
 
 
           <VerticalTimelineElement
-            className="vertical-timeline-element--education"
-            icon={<img src={AnchorIcon} alt="Anchor Icon" width="60" height="60" style={{ borderRadius: "50%" }} /> }
+            className="vertical-timeline-element"
+            contentStyle={{ background: "#221F45", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">2020</h3>
             {/* <h4 className="vertical-timeline-element-subtitle"></h4> */}
             
             {/* Another Swiper inside Timeline */}
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Pagination]}
               navigation
               pagination={{ clickable: true }}
-              autoplay={{ delay: 3000 }}
               loop={true}
               className="timeline-swiper"
             >
@@ -192,18 +189,17 @@ const EctPage = () => {
 
 
           <VerticalTimelineElement
-            className="vertical-timeline-element--education"
-            icon={<img src={AnchorIcon} alt="Anchor Icon" width="60" height="60" style={{ borderRadius: "50%" }} /> }
+            className="vertical-timeline-element"
+            contentStyle={{ background: "#221F45", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">2020</h3>
             {/* <h4 className="vertical-timeline-element-subtitle"></h4> */}
             
             {/* Another Swiper inside Timeline */}
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Pagination]}
               navigation
               pagination={{ clickable: true }}
-              autoplay={{ delay: 3000 }}
               loop={true}
               className="timeline-swiper"
             >
@@ -218,18 +214,17 @@ const EctPage = () => {
 
 
           <VerticalTimelineElement
-            className="vertical-timeline-element--education"
-            icon={<img src={AnchorIcon} alt="Anchor Icon" width="60" height="60" style={{ borderRadius: "50%" }} /> }
+            className="vertical-timeline-element"
+            contentStyle={{ background: "#221F45", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">2020</h3>
             {/* <h4 className="vertical-timeline-element-subtitle"></h4> */}
             
             {/* Another Swiper inside Timeline */}
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Pagination]}
               navigation
               pagination={{ clickable: true }}
-              autoplay={{ delay: 3000 }}
               loop={true}
               className="timeline-swiper"
             >
@@ -243,18 +238,17 @@ const EctPage = () => {
 
 
           <VerticalTimelineElement
-            className="vertical-timeline-element--education"
-            icon={<img src={AnchorIcon} alt="Anchor Icon" width="60" height="60" style={{ borderRadius: "50%" }} /> }
+            className="vertical-timeline-element"
+            contentStyle={{ background: "#221F45", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">2020</h3>
             {/* <h4 className="vertical-timeline-element-subtitle"></h4> */}
             
             {/* Another Swiper inside Timeline */}
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Pagination]}
               navigation
               pagination={{ clickable: true }}
-              autoplay={{ delay: 3000 }}
               loop={true}
               className="timeline-swiper"
             >
