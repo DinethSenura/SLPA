@@ -92,19 +92,23 @@ const Esystem = () => {
         </div>
 
         {/* Birthing Program Section */}
-       
         <div
           className="birthing-program-container"
           style={{
             flex: "1",
             maxWidth: "50%",
             textAlign: "right",
-            marginRight: "800px"
+            marginRight: "800px",
           }}
         >
-          <Birthingprogram />
+          {loading ? (
+            <p>Loading berthing program data...</p>
+          ) : error ? (
+            <p>Error: {error}</p>
+          ) : (
+            <Birthingprogram data={data} />
+          )}
         </div>
-        
       </div>
     </>
   );
