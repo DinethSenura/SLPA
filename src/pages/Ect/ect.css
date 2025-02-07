@@ -60,19 +60,21 @@
 }
 
 .btn-left {
-  background-color: #007bff;
+  background-color: #221F45;
   color: white;
   border-radius: 5px;
 }
 
 .btn-right {
-  background-color: #007bff;
+  background-color: #221F45;
   color: white;
   border-radius: 5px;
 }
 
 .btn:hover {
   opacity: 0.8;
+  background-color: #ffc000;
+  color: white;
 }
 
 /* Content Section */
@@ -94,7 +96,7 @@
 }
 
 .timeline {
-  background-color: #007bff;
+  background-color: #f4f4f4;
 }
 
 /* Vertical Timeline */
@@ -120,7 +122,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #007bff;
+  background-color: #ffc000;
 }
 
 .vertical-timeline-element-icon img {
@@ -145,11 +147,11 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #fff !important;
+  color: #ffc000 !important;
 }
 
 .swiper-pagination-bullet {
-  background: #fff !important;
+  background: #ffc000 !important;
 }
 
 /* Mobile Responsive */
