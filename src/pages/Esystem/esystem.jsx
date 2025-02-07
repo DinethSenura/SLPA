@@ -3,6 +3,7 @@ import axios from "axios";
 import "../Esystem/esystem.css";
 import EsystemImage from "../../assets/images/esystem/e-system.jpg";
 import Enav from "../../components/Enav/Enav";
+import Birthingprogram from "../../components/BirthingProgram/Birthingprogram";
 
 const API_URL = "https://www.slpa.lk/berthing-programme/mobile_api/get_all_schedule";
 
@@ -90,45 +91,20 @@ const Esystem = () => {
           )}
         </div>
 
-        {/* Berthing Programme Section */}
-        <div className="berthing-system">
-  <h3>BERTHING PROGRAMME</h3>
-  {loading ? (
-    <p>Loading data...</p>
-  ) : error ? (
-    <p>Error fetching data: {error}</p>
-  ) : (
-    <div className="table-container">
-      <table className="berthing-table">
-        <thead>
-          <tr>
-            <th>Vessel</th>
-            <th>ETA</th>
-          </tr>
-        </thead>
-      </table>
-      <div className="scroll-container">
-                <table className="berthing-table">
-                  <tbody className="scroll-content">
-                    {data.map((item, index) => (
-                      <tr key={index}>
-                        <td>{item.vName}</td>
-                        <td>{item.dEta}</td>
-                      </tr>
-                    ))}
-                    {/* Duplicate data for smooth scrolling */}
-                    {data.map((item, index) => (
-                      <tr key={`repeat-${index}`}>
-                        <td>{item.vName}</td>
-                        <td>{item.dEta}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-  )}
-</div>
+        {/* Birthing Program Section */}
+       
+        <div
+          className="birthing-program-container"
+          style={{
+            flex: "1",
+            maxWidth: "50%",
+            textAlign: "right",
+            marginRight: "800px"
+          }}
+        >
+          <Birthingprogram />
+        </div>
+        
       </div>
     </>
   );

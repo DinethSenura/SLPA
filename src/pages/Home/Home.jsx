@@ -13,6 +13,9 @@ import news1 from '../../assets/images/News/News_1.jpg';
 import news2 from '../../assets/images/News/News_2.jpg';
 import news3 from '../../assets/images/News/News_3.jpg';
 import imageAboveButton from '../../assets/images/clients/banner.jpg'; 
+import backgroundImageEsystem from '../../assets/images/esystem/e-system.jpg';
+import Birthingprogram from '../../components/BirthingProgram/Birthingprogram';
+
 
 
 import '../Home/home.css';
@@ -87,6 +90,7 @@ const Home = () => {
       
       <Banner />
 
+
       {/* Hero- Home page image / Video*/}
       
       <div className="hero-container">
@@ -125,7 +129,7 @@ const Home = () => {
               does not receive financial allocations from the government but operates on its own revenue and resources.
             </p>
           </div>
-
+         
 
           {/* Images Section */}
           <div className="imagesa col-12 col-lg-6">
@@ -151,56 +155,89 @@ const Home = () => {
       </div>
 
       <Services />
+      
 
-    {/* E-system */}
-  <div className="e-system-container">
-    {/* Left Section */}
-    <div className="e-system-left-section">
-      <h1>Explore Our E-System</h1>
-      <NavLink to="/esystem" className="btn btn-warning">
+   {/* E-system section */}
+      <div 
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        // padding: '10px',
+        // marginTop: '20px',
+        backgroundImage: `url(${backgroundImageEsystem})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        height: '500px',
+        width: '1403px',
+        color: '#fff' // Ensures text remains visible on the background
+      }}
+      >
+        {/* Left Section */}
+        <div style={{ flex: 1, textAlign: 'left', paddingRight: '20px', marginLeft: '40px',color: '#000'}}>
+          <h1>Explore Our E-System</h1>
+          <NavLink to="/esystem" style={{
+            display: 'inline-block',
+            padding: '10px 20px',
+            backgroundColor: '#ffc107',
+            color: '#000 ',
+            fontWeight: 'bold',
+            textDecoration: 'none',
+            borderRadius: '5px',
+            marginTop: '20px',
+          
+          }}>
             E-SYSTEM
           </NavLink>
-    </div>
+        </div>
 
-    {/* Right Section */}
-    <div className="e-system-berthing-section">
-    <h3>BERTHING PROGRAMME</h3>
-      <table className="e-system-berthing-table">
-        <thead>
-          <tr>
-            <th>Vessel</th>
-            <th>ETA</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>MSC DHANTIA F</td>
-            <td>EX: 1MN</td>
-          </tr>
-          <tr>
-            <td>GANTA BHUM</td>
-            <td>0200 5/12</td>
-          </tr>
-          <tr>
-            <td>ARTENOS</td>
-            <td>1400 5/12</td>
-          </tr>
-          <tr>
-            <td>NAVIOS UNITE</td>
-            <td>1400 6/12</td>
-          </tr>
-          <tr>
-            <td>MSC SHRISTI</td>
-            <td>1000 5/12</td>
-          </tr>
-          <tr>
-            <td>MSC SKY II</td>
-            <td>1800 11/12</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+        {/* Birthing Program Section */}
+       
+        <div
+          className="birthing-program-container"
+          style={{
+            flex: "1",
+            // maxWidth: "100%",
+            textAlign: "right",
+            marginLeft: "400px",
+            marginTop: "25% "
+          }}
+        >
+          <Birthingprogram />
+        </div>
+      </div>
+  {/* Responsive Styling for Mobile Screens */}
+<style>
+    @media (max-width: 1024px) {
+      .e-system-section {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .birthing-program-container {
+        margin-left: 0px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .e-system-section div {
+        width: 100%;
+      }
+
+      .e-system-section h1 {
+        font-size: 24px;
+      }
+
+      .e-system-section a {
+        font-size: 16px;
+        padding: 8px 15px;
+      }
+    }
+</style>
 
 {/* News */}
   <div className="latest-news">

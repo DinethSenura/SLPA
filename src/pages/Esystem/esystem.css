@@ -140,7 +140,7 @@
 
 
 /* Berthing System */
-.berthing-system {
+/* .berthing-system {
   width: 400px;
   height: 400px;
   margin: 0;
@@ -155,19 +155,19 @@
   left: 12%;
   transform: translateY(-50%);
   z-index: 2;
-  overflow: hidden; /* Hide overflow */
-}
+  overflow: hidden; 
+} */
 /* Table Container */
-.table-container {
+/* .table-container {
   display: flex;
   flex-direction: column;
   height: 100%;
-}
+} */
 
 /* Scroll Container */
-.scroll-container {
-  overflow: hidden; /* Hide scrollbar */
-  height: 300px; /* Adjust height as needed */
+/* .scroll-container {
+  overflow: hidden; 
+  height: 300px; 
   position: relative;
   width: 110%;
 }
@@ -194,8 +194,8 @@
   background-color: #6c63ff;
   color: #fff;
   position: sticky;
-  top: 0; /* Keep the header fixed during scroll */
-  z-index: 1; /* Ensure header stays above the body */
+  top: 0; 
+  z-index: 1;
 }
 
 .berthing-table th, .berthing-table td {
@@ -211,7 +211,7 @@
 
 .berthing-table tbody tr:nth-child(even) {
   background-color: #333;
-}
+} */
 
 /* Add media queries for responsiveness */
 @media screen and (max-width: 1400px) {
@@ -232,19 +232,23 @@
   
   }
 
+  .e-system-birthing{
+    display: inherit;
+  }
+
   /* Adjust .berthing-system for smaller screens */
-  .berthing-system {
+  /* .berthing-system {
     width: 350px; 
     margin: 20px auto; 
     padding: 30px; 
     position: static; 
     transform: none; 
-  }
+  } */
 
   /* Adjust berthing table for smaller screens */
-  .berthing-table th,
+  /* .berthing-table th,
   .berthing-table td {
     font-size: 12px; 
     padding: 18px; 
-  }
+  } */
 }

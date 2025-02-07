@@ -152,14 +152,16 @@
 }
 
 /* E - system */
-body {
+/* body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f4f7fc;
-}
+  
+  
+} */
 
 /* Main Container */
-.e-system-container {
+/* .e-system-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -169,12 +171,12 @@ body {
   background-position: center;
   min-height: 100vh;
   gap: 20px;
-}
+} */
 
 /* Left Section with Full Background Image */
-.e-system-left-section {
+/* .e-system-left-section {
   flex: 1;
-  color: #fff; 
+  color: #ca6666; 
   background-image: url('../../assets/images/esystem/e-system.jpg'); 
   background-size: cover; 
   background-position: center; 
@@ -186,11 +188,11 @@ body {
   justify-content: center; 
   align-items: flex-start; 
   box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.2); 
-}
+} */
 
 
 
-.e-system-left-section h1 {
+/* .e-system-left-section h1 {
   font-size: 3rem;
   margin-bottom: 20px;
   color: #1a1a1a;
@@ -209,57 +211,10 @@ body {
 
 .e-system-explore-button:hover {
   background-color: #0056b3;
-}
+} */
 
 /* Right Section */
-.e-system-berthing-section {
-  flex: 1;
-  max-width: 600px;
-  background-color: #11101B; 
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  overflow: hidden;
-  color: white; 
-}
 
-/* Table Styling */
-.e-system-berthing-table {
-  width: 100%; 
-  border-collapse: collapse;
-  text-align: center; 
-}
-
-/* Header Styling */
-.e-system-berthing-table thead {
-  background-color: #6c63ff; 
-  color: #fff; 
-}
-
-.e-system-berthing-table th {
-  padding: 12px;
-  border-bottom: 1px solid #ccc;
-  text-align: center;
-}
-
-/* Body Row Styling */
-.e-system-berthing-table tbody tr {
-  background-color: #222; 
-}
-
-.e-system-berthing-table tbody tr:nth-child(odd) {
-  background-color: #333; 
-}
-
-.e-system-berthing-table tbody tr:hover {
-  background-color: #444; 
-}
-
-/* Cell Styling */
-.e-system-berthing-table td {
-  padding: 12px; 
-  border-bottom: 1px solid #444; 
-}
 
 
 /* Responsive Styles for Smaller Screens */
