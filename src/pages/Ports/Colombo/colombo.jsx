@@ -55,23 +55,23 @@ In addition to the container terminals in the original port area, SLPA planned t
         {/* Advertisement Section */}
         <div className="ads-section">
             <div className="ad ad-small">
-                 <Link to="/ect" className="image-link">
-                     <div className="image-container">
-                        <img src="src/assets/images/jctect/left.jpg" alt="Left Side" className="image" />
+                 <Link to="/ect" className="image-link_1">
+                     <div className="image-container_1">
+                        <img src="src/assets/images/jctect/left.jpg" alt="Left Side" className="image_1" />
                      </div>
                  </Link>
             </div>
             <div className="ad ad-small">
-                 <Link to="/jct" className="image-link">
-                     <div className="image-container">
-                        <img src="src/assets/images/jctect/jct.jpg" alt="Right Side" className="image" />
+                 <Link to="/jct" className="image-link_1">
+                     <div className="image-container_1">
+                        <img src="src/assets/images/jctect/jct.jpg" alt="Right Side" className="image_1" />
                      </div>
                  </Link>
             </div>
             <div className="ad ad-small">
-                <Link to="/plink" className="image-link">
-                   <div className="image-container">
-                      <img src="src/assets/images/jctect/plink.jpg" alt="Plink Side" className="image" />
+                <Link to="/plink" className="image-link_1">
+                   <div className="image-container_1">
+                      <img src="src/assets/images/jctect/plink.jpg" alt="Plink Side" className="image_1" />
                    </div>
                 </Link>
             

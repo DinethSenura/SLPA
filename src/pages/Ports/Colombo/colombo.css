@@ -208,7 +208,7 @@
 }
 
 /* Image container for the 3D effect */
-.image-container {
+.image-container_1 {
   width: 400px; /* Default width for images */
   height: 80px; /* Default height for images */
   transform-style: preserve-3d; /* Enable 3D transformations */
@@ -217,13 +217,13 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
 
-.image-container:hover {
+.image-container_1:hover {
   transform: rotateY(15deg); /* Rotate on hover */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
 }
 
 /* Individual image styling */
-.image {
+.image_1 {
   width: 100px; /* Make the image fit the container */
   height: 100%; /* Make the image fit the container */
   object-fit: cover; /* Maintain aspect ratio */
