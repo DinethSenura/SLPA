@@ -92,32 +92,43 @@ const Esystem = () => {
 
         {/* Berthing Programme Section */}
         <div className="berthing-system">
-          <h3>BERTHING PROGRAMME</h3>
-          {loading ? (
-            <p>Loading data...</p>
-          ) : error ? (
-            <p>Error fetching data: {error}</p>
-          ) : (
-            <div className="scroll-container">
-            <table className="berthing-table">
-              <thead>
-                <tr>
-                  <th>Vessel</th>
-                  <th>ETA</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item.vName}</td>
-                    <td>{item.dEta}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+  <h3>BERTHING PROGRAMME</h3>
+  {loading ? (
+    <p>Loading data...</p>
+  ) : error ? (
+    <p>Error fetching data: {error}</p>
+  ) : (
+    <div className="table-container">
+      <table className="berthing-table">
+        <thead>
+          <tr>
+            <th>Vessel</th>
+            <th>ETA</th>
+          </tr>
+        </thead>
+      </table>
+      <div className="scroll-container">
+                <table className="berthing-table">
+                  <tbody className="scroll-content">
+                    {data.map((item, index) => (
+                      <tr key={index}>
+                        <td>{item.vName}</td>
+                        <td>{item.dEta}</td>
+                      </tr>
+                    ))}
+                    {/* Duplicate data for smooth scrolling */}
+                    {data.map((item, index) => (
+                      <tr key={`repeat-${index}`}>
+                        <td>{item.vName}</td>
+                        <td>{item.dEta}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          )}
-        </div>
+  )}
+</div>
       </div>
     </>
   );

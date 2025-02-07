@@ -60,19 +60,21 @@
 }
 
 .btn-left {
-  background-color: #007bff;
+  background-color: #221F45;
   color: white;
   border-radius: 5px;
 }
 
 .btn-right {
-  background-color: #007bff;
+  background-color: #221F45;
   color: white;
   border-radius: 5px;
 }
 
 .btn:hover {
   opacity: 0.8;
+  background-color: #ffc000;
+  color: white;
 }
 
 /* Content Section */
@@ -93,19 +95,45 @@
   margin: 0 auto;
 }
 
+.timeline {
+  background-color: #f4f4f4;
+}
+
 /* Vertical Timeline */
 .vertical-timeline-element {
   transition: transform 0.3s ease-in-out;
+  margin-bottom: -150px;
 }
 
 .vertical-timeline-element:hover {
   transform: scale(1.02);
 }
 
+.vertical-timeline-element-title {
+  font-family: 'poppins', sans-serif;
+  font-weight: 500;
+}
+
+/* Icon Styles */
+.vertical-timeline-element-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffc000;
+}
+
+.vertical-timeline-element-icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
 /* Swiper Styles inside Timeline */
 .timeline-swiper {
   width: 100%;
-  margin-top: 10px;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -119,15 +147,15 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #fff !important;
+  color: #ffc000 !important;
 }
 
 .swiper-pagination-bullet {
-  background: #fff !important;
+  background: #ffc000 !important;
 }
 
 /* Mobile Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .hero-content {
     width: 90%;
   }
@@ -149,7 +177,28 @@
     padding: 8px 16px;
   }
 
+  .vertical-timeline-element {
+    margin-bottom: 0; /* Prevents overlapping */
+    transform: none !important; /* Disables hover effect on mobile */
+    margin-bottom: 50px;
+  }
+
+  .vertical-timeline-element:hover {
+    transform: none; /* Ensures no scaling on hover for touch devices */
+  }
+
   .timeline-swiper img {
     height: 200px;
+  }
+
+  /* Resize the icon for mobile */
+  .vertical-timeline-element-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .vertical-timeline-element-icon img {
+    width: 40px;
+    height: 40px;
   }
 }
