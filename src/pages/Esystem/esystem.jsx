@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Esystem/esystem.css";
-import EsystemImage from "../../assets/images/esystem/e-system.jpg";
+// import EsystemImage from "../../assets/images/esystem/e-system.jpg";
 import Enav from "../../components/Enav/Enav";
 import Birthingprogram from "../../components/BirthingProgram/Birthingprogram";
 
@@ -41,73 +41,55 @@ const Esystem = () => {
   return (
     <>
       <Enav />
-      <div
-        className="esystem"
-        style={{
-          backgroundImage: `url(${EsystemImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          marginTop: "-25px",
-        }}
-      >
-        {/* Exchange Rates Section */}
-        <div className="exchange-widget">
-          <h3>EXCHANGE RATES</h3>
 
-          <form
-            className="exchange-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              fetchExchangeRate();
-            }}
-          >
-            <div className="form-group">
-              <label htmlFor="date">Date:</label>
-              <input
-                type="date"
-                id="date"
-                className="date-input"
-                value={selectedDate}
-                onChange={(e) => setSelectedDate(e.target.value)}
-              />
-            </div>
-            <div className="currency-display">
-              <span>USD</span>
-              <span className="currency-icon">🔄</span>
-              <span>LKR</span>
-            </div>
-            <button type="submit" className="search-button">
-              Search
-            </button>
-          </form>
-          {exchangeRate !== null && (
-            <p className="exchange-result">Exchange Rate: {exchangeRate} LKR</p>
-          )}
-        </div>
+      <div className="esystem-container">
+        {/* Berthing Program & Exchange Rate Section */}
+        <div className="berthing-exchange-container">
+          {/* Berthing Program */}
+          <div className="berthing-program">
+            {loading ? (
+              <p>Loading berthing program data...</p>
+            ) : error ? (
+              <p>Error: {error}</p>
+            ) : (
+              <Birthingprogram data={data} />
+            )}
+          </div>
 
-        {/* Birthing Program Section */}
-        <div
-          className="birthing-program-container"
-          style={{
-            flex: "1",
-            maxWidth: "50%",
-            textAlign: "right",
-            marginRight: "800px",
-          }}
-        >
-          {loading ? (
-            <p>Loading berthing program data...</p>
-          ) : error ? (
-            <p>Error: {error}</p>
-          ) : (
-            <Birthingprogram data={data} />
-          )}
+          {/* Exchange Rate Table */}
+          <div className="exchange-widget">
+            <h3>EXCHANGE RATES</h3>
+
+            <form
+              className="exchange-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                fetchExchangeRate();
+              }}
+            >
+              <div className="form-group">
+                <label htmlFor="date">Date:</label>
+                <input
+                  type="date"
+                  id="date"
+                  className="date-input"
+                  value={selectedDate}
+                  onChange={(e) => setSelectedDate(e.target.value)}
+                />
+              </div>
+              <div className="currency-display">
+                <span>USD</span>
+                <span className="currency-icon">🔄</span>
+                <span>LKR</span>
+              </div>
+              <button type="submit" className="search-button">
+                Search
+              </button>
+            </form>
+            {exchangeRate !== null && (
+              <p className="exchange-result">Exchange Rate: {exchangeRate} LKR</p>
+            )}
+          </div>
         </div>
       </div>
     </>
