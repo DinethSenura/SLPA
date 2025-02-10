@@ -36,37 +36,69 @@
 }
 
 
+/* Exchange Widget */
 .exchange-widget {
-    width: 400px; 
-    height: 300px; 
-    margin: 0 auto; 
-    padding: 30px;
-    background-color: #11101B;
-    color: #fff; /* Text */
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
-  
-    /* Center the box vertically and horizontally on the page */
-    position:sticky;
-    top: 100%;
-    left: 60%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
-  
-  .exchange-widget h3 {
-    font-size: 20px; 
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  
-  .exchange-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+  width: 400px;
+  padding: 20px;
+  background-color: #11101b;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Date Input */
+.date-input {
+  padding: 8px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Currency Display */
+.currency-display {
+  font-size: 18px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.currency-icon {
+  margin: 0 12px;
+  color: #ffcc00;
+  font-size: 18px;
+}
+
+/* Search Button */
+.search-button {
+  background-color: #ffcc00;
+  color: #11101b;
+  border: none;
+  margin-top: 20px;
+  border-radius: 20px;
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #ffc107;
+}
+
+/* Rate Text */
+.rate_text {
+}
+
+
+
+
+
+
   .form-group {
     display: flex;
     align-items: center;
@@ -125,7 +157,7 @@
     background-color: #FFCC00; 
     color: #11101B; 
     border: none;
-    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 20px;
     padding: 10px 30px; 
     font-size: 16px; 
