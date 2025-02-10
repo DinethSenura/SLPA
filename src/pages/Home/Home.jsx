@@ -13,7 +13,6 @@ import news1 from '../../assets/images/News/News_1.jpg';
 import news2 from '../../assets/images/News/News_2.jpg';
 import news3 from '../../assets/images/News/News_3.jpg';
 import imageAboveButton from '../../assets/images/clients/banner.jpg'; 
-import backgroundImageEsystem from '../../assets/images/esystem/e-system.jpg';
 import Birthingprogram from '../../components/BirthingProgram/Birthingprogram';
 
 
