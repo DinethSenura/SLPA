@@ -15,9 +15,11 @@
 .header-section h1,
 .header-section p {
   position: absolute;
-  text-align: right;
+  text-align:justify;
   color: white;
   margin: 0;
+  font-family: 'open sans','sans-serif';
+  font-size: 14px;
 }
 
 .header-section h1 {
@@ -161,9 +163,16 @@
   height: 100%; /* Fixed height for small ads */
 }
 
-.ad-large {
+.ad-large_1 {
   height: 600px; /* Fixed height for the large ad */
   margin-top: 90px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px;
+  font-size: 1rem;
+  margin-top: -30px;
 }
 
 /* Responsive Design */
@@ -229,9 +238,21 @@
   height: auto; /* Make the image fit the container */
   object-fit: cover; /* Maintain aspect ratio */
   border-radius: 0px; /* Add rounded corners */
-  margin-top: -5px;
+  margin-top: -20px;
   gap: 2px;
   
+}
+
+.ad-large_1 {
+  height: 600px; /* Fixed height for the large ad */
+  margin-top: 90px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px;
+  font-size: 1rem;
+  margin-top: 40px;
 }
 
 
@@ -272,7 +293,22 @@
     font-size: 0.8rem;
     left: 5px;
   }
+
+  
+  .image-container_1 {
+    width: 80%; /* Adjust container width to fit mobile screens */
+    height: auto; /* Adjust height proportionally */
+    margin: auto; /* Center align the images */
+    gap: 10px;
+  }
+
+  .image_1 {
+    border-radius: 5px; /* Slightly smaller border radius */
+  }
+
+ 
 }
+
 
 @media screen and (max-width: 480px) {
   /* Small Mobile View */
@@ -300,14 +336,14 @@
     height: 150px;
   }
 
+  .image-container_1 {
+    width: 80%; /* Adjust container width to fit mobile screens */
+    height: auto; /* Adjust height proportionally */
+    margin-bottom: 20px;/* Center align the images */
+  }
+
   .image_1 {
-    width: 100%; /* Make the image fit the container */
-    height: 120px; /* Make the image fit the container */
-    object-fit: cover; /* Maintain aspect ratio */
-    border-radius: 0px; /* Add rounded corners */
-    margin-top: 25px;
-    gap: 2px;
-    
+    border-radius: 5px; /* Slightly smaller border radius */
   }
 }
 
