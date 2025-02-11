@@ -48,7 +48,7 @@
   }
   
   .date-input::-webkit-calendar-picker-indicator {
-    filter: invert(100%); /* Changes the icon color to white */
+    filter: invert(100%);
     opacity: 1;
     cursor: pointer;
   }
@@ -189,57 +189,3 @@
   background-color: #FFC107;
 }
 
-/* ✅ Medium Screen Responsive (Max Width: 1300px - 580px) */
-/* @media screen and (max-width: 1300px) {
-  .berthing-exchange-container {
-    width: 100%;
-    max-width: 90%;
-    gap: 30px; 
-  }
-} */
-
-/* ✅ Mobile Responsive (Max Width: 580px) */
-/* @media screen and (max-width: 580px) {
-  /* ✅ Stack Berthing Program & Exchange Table *
-  .berthing-exchange-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: -150px;
-  }
-
-  .exchange-widget {
-    width: 100%;
-    max-width: 90%;
-  }
-
-  .berthing-program{
-    width: 100%;
-    max-width: 90%;
-  }
-
-  /* ✅ Ensure Both Tables Stay Below One Another *
-  .berthing-program {
-    margin-bottom: -20px; /* ✅ Adds space between the two tables *
-  }
-} */
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .berthing-exchange-container {
-    flex-direction: column; /* Stack elements */
-    align-items: center;
-    width: 100%;
-  }
-
-  .berthing-program {
-    min-width: 100%; /* Full width on small screens */
-    text-align: center;
-    margin-top: -30px; /* Adjust spacing */
-  }
-
-  .exchange-widget {
-    width: 75%; /* Adjust width for smaller screens */
-    max-width: 75%;
-    padding: 15px;
-  }
-}
