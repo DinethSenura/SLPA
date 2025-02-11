@@ -1,8 +1,12 @@
 /* General Styles */
 .project-development-progress {
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: .02em;
   background-color: #f4f4f4;
   padding-bottom: 50px;
+  text-align: justify;
 }
 
 /* Hero Section */
@@ -26,7 +30,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  text-align: center;
+  text-align: justify;
   padding: 20px;
   border-radius: 10px;
 }
@@ -53,6 +57,10 @@
 .btn {
   padding: 10px 20px;
   font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: .02em;
   font-weight: bold;
   border: none;
   cursor: pointer;
