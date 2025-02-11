@@ -10,6 +10,7 @@ import "react-vertical-timeline-component/style.min.css";
 import "../Ect/ect.css";
 import ectImage from "../../assets/images/Ports/PortColomboHero.jpg";
 
+
 // Import Slider Images
 import ect2023_1 from "../../assets/images/ect/ect 1.1.jpg";
 import ect2023_2 from "../../assets/images/ect/ect 1.2.jpg";
@@ -66,7 +67,7 @@ const EctPage = () => {
         <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element"
-            contentStyle={{ background: "#221F45", color: "#fff" }}
+            contentStyle={{ background: "#fff", color: "#fff" }}
             // contentArrowStyle={{ borderRight: "7px solid rgb(33, 150, 243)" }}
             // date="2011 - present"
             // iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
@@ -96,7 +97,8 @@ const EctPage = () => {
 
           <VerticalTimelineElement
             className="vertical-timeline-element"
-            contentStyle={{ background: "#221F45", color: "#fff" }}
+            // contentClassName="timeline-element-content"
+            contentStyle={{ background: "#fff", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">2022</h3>
             {/* <h4 className="vertical-timeline-element-subtitle"></h4> */}
@@ -119,7 +121,7 @@ const EctPage = () => {
 
           <VerticalTimelineElement
             className="vertical-timeline-elemen"
-            contentStyle={{ background: "#221F45", color: "#fff" }}
+            contentStyle={{ background: "#fff", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">2021</h3>
             {/* <h4 className="vertical-timeline-element-subtitle"></h4> */}
@@ -142,7 +144,7 @@ const EctPage = () => {
 
           <VerticalTimelineElement
             className="vertical-timeline-element"
-            contentStyle={{ background: "#221F45", color: "#fff" }}
+            contentStyle={{ background: "#fff", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">2020</h3>
             {/* <h4 className="vertical-timeline-element-subtitle"></h4> */}
@@ -166,7 +168,7 @@ const EctPage = () => {
 
           <VerticalTimelineElement
             className="vertical-timeline-element"
-            contentStyle={{ background: "#221F45", color: "#fff" }}
+            contentStyle={{ background: "#fff", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">2020</h3>
             {/* <h4 className="vertical-timeline-element-subtitle"></h4> */}
@@ -190,7 +192,7 @@ const EctPage = () => {
 
           <VerticalTimelineElement
             className="vertical-timeline-element"
-            contentStyle={{ background: "#221F45", color: "#fff" }}
+            contentStyle={{ background: "#fff", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">2020</h3>
             {/* <h4 className="vertical-timeline-element-subtitle"></h4> */}
@@ -215,7 +217,7 @@ const EctPage = () => {
 
           <VerticalTimelineElement
             className="vertical-timeline-element"
-            contentStyle={{ background: "#221F45", color: "#fff" }}
+            contentStyle={{ background: "#fff", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">2020</h3>
             {/* <h4 className="vertical-timeline-element-subtitle"></h4> */}
@@ -239,7 +241,7 @@ const EctPage = () => {
 
           <VerticalTimelineElement
             className="vertical-timeline-element"
-            contentStyle={{ background: "#221F45", color: "#fff" }}
+            contentStyle={{ background: "#fff", color: "#fff" }}
           >
             <h3 className="vertical-timeline-element-title">2020</h3>
             {/* <h4 className="vertical-timeline-element-subtitle"></h4> */}
