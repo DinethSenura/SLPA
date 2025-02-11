@@ -14,17 +14,6 @@
   text-align: center;
 }
 
-/* Exchange Widget */
-.exchange-widget {
-  width: 400px;
-  padding: 20px;
-  background-color: #11101b;
-  color: #fff;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
 /* Rate Text */
 .rate_text {
   margin-top: 10px;
