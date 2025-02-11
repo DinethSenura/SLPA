@@ -71,21 +71,21 @@ const Footer = () => {
         <div className="footer-section quick-links">
           <h4>QUICK LINKS</h4>
           <div className="quick-links-wrapper">
-            <ul>
-              <li><a href="#link-1">Mahapola Academy</a></li>
-              <li><a href="#link-1">NEWS.SLPA.LK</a></li>
-              <li><a href="#link-1">SLPAROSA</a></li>
-              <li><a href="#link-1">Site Index</a></li>
-              <li><a href="#link-1">Zero Tolerance Notice</a></li>
-            </ul>
-            <ul>
-              <li><a href="#link-1">FAQ</a></li>
-              <li><a href="#link-1">Traffic</a></li>
-              <li><a href="#link-1">Opportunistic</a></li>
-              <li><a href="#link-1">RTI</a></li>
-              <li><a href="#link-1">CSR</a></li>
-            </ul>
-          </div>
+  <ul>
+    <li><a href="/mahapola-academy">Mahapola Academy</a></li>
+    <li><a href="/news-slpa">NEWS.SLPA.LK</a></li>
+    <li><a href="/slparosa">SLPAROSA</a></li>
+    <li><a href="/site-index">Site Index</a></li>
+    <li><a href="/zero-tolerance-notice">Zero Tolerance Notice</a></li>
+  </ul>
+  <ul>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a href="/traffic">Traffic</a></li>
+    <li><a href="/opportunistic">Opportunistic</a></li>
+    <li><a href="/rti">RTI</a></li>
+    <li><a href="/csr">CSR</a></li>
+  </ul>
+</div>
         </div>
       </div>
       <div className="footer-bottom">
