@@ -46,11 +46,11 @@ const Ports = () => {
           <img src={portImage1} alt="Colombo Port View" className="content-image" />
           <h2>COLOMBO PORT</h2>
           <p>
-          Colombo Port is a rapidly growing maritime hub of the South Asia Region. Cargo originating from and destined to<br/> Europe, East and South Asia, the Persian Gulf, and East Africa is conveniently and efficiently connected through<br/>the Colombo Port.<br/>
+          Colombo Port is a rapidly growing maritime hub of the South Asia Region. Cargo originating from and destined to Europe, East and South Asia, the Persian Gulf, and East Africa is conveniently and efficiently connected through the Colombo Port.
 
-          <br/>  The Colombo Port is primarily a container port. In 2015, it handled about 5.1 million TEU of containerized cargo.
+            The Colombo Port is primarily a container port. In 2015, it handled about 5.1 million TEU of containerized cargo.
 
-          <br/>      The original port had a harbour area of 184 hectares. In 2008, the South Harbour area (285 hectares) was <br/>developed to accommodate deep water berths and the latest generation of mainline vessels. The harbour is <br/>served by a two-way channel with an initial depth of 20m and a width of 570m.<br/>
+              The original port had a harbour area of 184 hectares. In 2008, the South Harbour area (285 hectares) wasdeveloped to accommodate deep water berths and the latest generation of mainline vessels. The harbour is served by a two-way channel with an initial depth of 20m and a width of 570m.
 
 In addition to the container terminals in the original port area, SLPA planned to develop three terminals (each having capacity of 2.4 million TEU) in the South Harbour, the first of which was built and in operation on a build operate-transfer (BOT) basis by Colombo International Container Terminals Limited (CICT), a joint venture company of China Merchants Holding (International) Co. Ltd and SLPA</p>
         </div>
@@ -79,7 +79,7 @@ In addition to the container terminals in the original port area, SLPA planned t
                 </Link>
             
           </div>
-          <div className="ad_1 ad-large">Large Ad</div>
+          <div className="ad-large_1">Large Ad</div>
         </div>
       </div>
     </div>
