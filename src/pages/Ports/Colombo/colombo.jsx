@@ -3,6 +3,9 @@ import '../Colombo/colombo.css';
 import portImage from '../../../assets/images/Ports/PortColomboHero.jpg';
 import portImage1 from '../../../assets/images/Ports/colombo_prt1.jpg';
 import { Link } from 'react-router-dom'; // Import Link from React Router
+import leftImage from '../../../assets/images/jctect/left.jpg';
+import rightImage from '../../../assets/images/jctect/jct.jpg';
+import plinkImage from '../../../assets/images/jctect/plink.jpg';
 
 const Ports = () => {
   return (
@@ -57,21 +60,21 @@ In addition to the container terminals in the original port area, SLPA planned t
             <div className="ad ad-small">
                  <Link to="/ect" className="image-link_1">
                      <div className="image-container_1">
-                        <img src="src/assets/images/jctect/left.jpg" alt="Left Side" className="image_1" />
+                        <img src={leftImage} alt="Left Side" className="image_1" />
                      </div>
                  </Link>
             </div>
             <div className="ad ad-small">
                  <Link to="/jct" className="image-link_1">
                      <div className="image-container_1">
-                        <img src="src/assets/images/jctect/jct.jpg" alt="Right Side" className="image_1" />
+                        <img src={rightImage} alt="Right Side" className="image_1" />
                      </div>
                  </Link>
             </div>
             <div className="ad ad-small">
                 <Link to="/plink" className="image-link_1">
                    <div className="image-container_1">
-                      <img src="src/assets/images/jctect/plink.jpg" alt="Plink Side" className="image_1" />
+                      <img src={plinkImage} alt="Plink Side" className="image_1" />
                    </div>
                 </Link>
             
