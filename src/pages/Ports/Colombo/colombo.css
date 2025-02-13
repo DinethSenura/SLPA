@@ -1,5 +1,8 @@
 .ports-container {
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: .02em;
   margin: 0 auto;
   padding: 0;
 }
@@ -175,35 +178,6 @@
   margin-top: -30px;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 1024px) {
-  /* Tablet View */
-  .header-section h1 {
-    font-size: 2rem;
-    left: 10px;
-  }
-
-  .header-section p {
-    font-size: 0.9rem;
-    left: 10px;
-  }
-
-  .content-section h2 {
-    font-size: 1.8rem;
-  }
-
-  .content-image {
-    width: 100%;
-  }
-
-  .ads-section {
-    flex: 1;
-  }
-
-  .ad {
-    font-size: 0.9rem;
-  }
-}
 /* Container for horizontal images */
 .horizontal-images {
   display: flex;
@@ -255,6 +229,36 @@
   margin-top: 40px;
 }
 
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  /* Tablet View */
+  .header-section h1 {
+    font-size: 2rem;
+    left: 10px;
+  }
+
+  .header-section p {
+    font-size: 0.9rem;
+    left: 10px;
+  }
+
+  .content-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .content-image {
+    width: 100%;
+  }
+
+  .ads-section {
+    flex: 1;
+  }
+
+  .ad {
+    font-size: 0.9rem;
+  }
+}
 
 @media screen and (max-width: 768px) {
   /* Mobile View */
