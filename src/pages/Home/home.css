@@ -441,7 +441,10 @@
 }
 
 .news-description {
+  font-family: 'Open Sans', 'sans-serif';
   font-size: 0.85rem;
+  line-height: 26px;
+  letter-spacing: .02em;
   color: #555;
   padding-top: 20px;
   font-weight: bold;
