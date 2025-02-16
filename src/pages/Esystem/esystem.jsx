@@ -62,7 +62,9 @@ const Esystem = () => {
 
   return (
     <>
-      <Enav />
+    <div>
+    <Enav />
+    </div>
 
       <div className="esystem-container">
         {/* Berthing Program & Exchange Rate Section */}
@@ -77,6 +79,8 @@ const Esystem = () => {
               <Birthingprogram data={data} />
             )}
           </div>
+
+          <div>
 
           {/* Exchange Rate Table */}
           <div className="exchange-widget">
@@ -118,6 +122,8 @@ const Esystem = () => {
                 Search
               </button>
             </form>
+
+            </div>
           </div>
         </div>
       </div>
