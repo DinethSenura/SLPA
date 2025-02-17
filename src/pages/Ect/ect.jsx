@@ -10,22 +10,27 @@ import "react-vertical-timeline-component/style.min.css";
 import "../Ect/ect.css";
 import ectImage from "../../assets/images/Ports/PortColomboHero.jpg";
 
-const API_URL = "https://www.slpa.lk/Exchange/time_line.php";
-
 const EctPage = () => {
-  const [timelineData, setTimelineData] = useState([]);
-  const [isClient, setIsClient] = useState(false);
+  const [timeline, setTimeline] = useState(null);
 
   useEffect(() => {
-    setIsClient(true);
-    axios.get(API_URL)
+    axios.get("https://www.slpa.lk/Exchange/time_line.php")
       .then(response => {
-        setTimelineData(response.data);
+        console.log("API Response:", response.data); // Check API response
+        const decodedDescription = atob(response.data.description);
+
+        // Set the data, including the decoded description
+        setTimeline({
+          ...response.data,
+          description: decodedDescription,
+        });
       })
-      .catch(error => {
-        console.error("Error fetching timeline data:", error);
-      });
+      .catch(error => console.error("Error fetching data:", error));
   }, []);
+
+  if (!timeline) {
+    return <div>Loading...</div>; // Show loading until the timeline data is available
+  }
 
   return (
     <div className="project-development-progress">
@@ -41,31 +46,32 @@ const EctPage = () => {
 
       <div className="navigation-buttons">
         <button className="btn btn-left">COLOMBO ECT</button>
-        <button className="btn btn-right">COLOMBO JCT</button>
+        <button className="btn btn-right">COLOMBO JCT </button>
       </div>
 
       <div className="content-section">
         <h2>Pictorial Diary of ECT</h2>
-        <p>Construction of the terminal, which will be conducted in three phases, is scheduled to be completed in 2024...</p>
+        <p>
+          Construction of the terminal, which will be conducted in three phases, is scheduled to be completed in 2024. The terminal, which is spread over an area of 75 hectares, is 1,320 meters long. Once completed, the Sri Lanka Ports Authority (SLPA) will inherit a fully-fledged terminal equipped with 12 STC cranes that handle operations from ships to the land and 40 Rail Mounted Gantry (RMG) Cranes.
+        </p>
       </div>
-      
+
       <div className="timeline">
-        {isClient && (
-          <VerticalTimeline>
-            {timelineData.map((item, index) => (
-              <VerticalTimelineElement key={index} contentStyle={{ background: "#fff", color: "#000" }}>
-                <h3 className="vertical-timeline-element-title">{item.year}</h3>
-                <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop className="timeline-swiper">
-                  {item.images.map((image, imgIndex) => (
-                    <SwiperSlide key={imgIndex}>
-                      <img src={image} alt={`Slide ${imgIndex + 1}`} />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </VerticalTimelineElement>
-            ))}
-          </VerticalTimeline>
-        )}
+        <VerticalTimeline>
+          <p>{timeline.ID}</p> {/* Ensure timeline.ID is safely accessed only when timeline is available */}
+          {Array.isArray(timeline.properties) && timeline.properties.map((item, index) => (
+            <VerticalTimelineElement key={index}>
+              <h3>{item.date}</h3>
+              <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop>
+                {item.images && item.images.map((img, i) => (
+                  <SwiperSlide key={i}>
+                    <img src={img} alt={`Slide ${i}`} />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
       </div>
     </div>
   );
