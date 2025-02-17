@@ -172,10 +172,8 @@
   text-align: left;
   color: #000;
   position: relative;
-  top: 200px;
-  right: 300px;
-  margin-top: 50px;
   padding: 10px;
+  margin-left: 100px;
 }
 
 /* E-System Button Styling */
@@ -195,9 +193,10 @@
   flex: 1;
   text-align: left;
   position: relative;
-  left: 200px;
+  left: 100px;
   top: -0px;
   margin-left: 40px;
+  margin-top: 400px;
 }
 
 /* Tablet and Below */
