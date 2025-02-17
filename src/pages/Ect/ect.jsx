@@ -10,26 +10,21 @@ import "react-vertical-timeline-component/style.min.css";
 import "../Ect/ect.css";
 import ectImage from "../../assets/images/Ports/PortColomboHero.jpg";
 
-const IMAGE_API_URL = "https://www.slpa.lk/Exchange/time_line.php";
+const API_URL = "https://www.slpa.lk/Exchange/time_line.php";
 
 const EctPage = () => {
+  const [timelineData, setTimelineData] = useState([]);
   const [isClient, setIsClient] = useState(false);
-  const [images, setImages] = useState([]);
-
-  // Fetch images from API
-  useEffect(() => {
-    axios
-      .get(IMAGE_API_URL)
-      .then((response) => {
-        setImages(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching images:", error);
-      });
-  }, []);
 
   useEffect(() => {
     setIsClient(true);
+    axios.get(API_URL)
+      .then(response => {
+        setTimelineData(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching timeline data:", error);
+      });
   }, []);
 
   return (
@@ -51,33 +46,24 @@ const EctPage = () => {
 
       <div className="content-section">
         <h2>Pictorial Diary of ECT</h2>
-        <p>
-          Construction of the terminal, which will be conducted in three phases, is scheduled to be completed in 2024.
-          The terminal, which is spread over an area of 75 hectares, is 1,320 meters long. Once completed, the Sri Lanka
-          Ports Authority (SLPA) will inherit a fully-fledged terminal equipped with 12 STC cranes that handle operations
-          from ships to the land and 40 Rail Mounted Gantry (RMG) Cranes.
-        </p>
+        <p>Construction of the terminal, which will be conducted in three phases, is scheduled to be completed in 2024...</p>
       </div>
-
+      
       <div className="timeline">
         {isClient && (
           <VerticalTimeline>
-            <VerticalTimelineElement className="vertical-timeline-element" contentStyle={{ background: "#fff", color: "#fff" }}>
-              <h3 className="vertical-timeline-element-title">Project Timeline</h3>
-
-              {/* Swiper Slider for API Images */}
-              {images.length > 0 ? (
-                <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop={true} className="timeline-swiper">
-                  {images.map((img, index) => (
-                    <SwiperSlide key={index}>
-                      <img src={img.image_url} alt={`Slide ${index + 1}`} />
+            {timelineData.map((item, index) => (
+              <VerticalTimelineElement key={index} contentStyle={{ background: "#fff", color: "#000" }}>
+                <h3 className="vertical-timeline-element-title">{item.year}</h3>
+                <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop className="timeline-swiper">
+                  {item.images.map((image, imgIndex) => (
+                    <SwiperSlide key={imgIndex}>
+                      <img src={image} alt={`Slide ${imgIndex + 1}`} />
                     </SwiperSlide>
                   ))}
                 </Swiper>
-              ) : (
-                <p>Loading images...</p>
-              )}
-            </VerticalTimelineElement>
+              </VerticalTimelineElement>
+            ))}
           </VerticalTimeline>
         )}
       </div>
