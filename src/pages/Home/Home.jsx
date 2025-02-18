@@ -156,7 +156,7 @@ const Home = () => {
       <Services />
       
 
-      <div className="esystem-container">
+      <div className="esystem-container-home">
   {/* Left Section */}
   <div className="left-section">
     <h1>Explore Our E-System</h1>
