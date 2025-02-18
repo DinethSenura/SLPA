@@ -14,7 +14,7 @@
   text-align: center;
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .esystem {
     background-image: url('../../assets/images/esystem/e-system.jpg');
     background-size: contain;
@@ -33,7 +33,7 @@
     background-image: url('../../assets/images/esystem/e-system.jpg'); 
     background-position: center top;
   }
-}
+} */
 
 
 /* Berthing System */
@@ -116,17 +116,6 @@
   .hero {
     font-size: 24px; 
     height: 60vh;
-  }
-
-  /* Adjust .exchange-widget for smaller screens */
-  .exchange-widget {
-    width: 400px; 
-    height: auto; 
-    padding: 20px;
-    position: static; 
-    transform: none; 
-    margin-top: 20px; 
-  
   }
 
   /* Adjust .berthing-system for smaller screens */

@@ -201,43 +201,36 @@
   margin-top: 300px;
 }
 
-/* Tablet and Below */
-@media (max-width: 768px) {
-  .esystem-container {
-    flex-direction: column;
-    height: auto;
+@media (max-width: 768px) { 
+  .esystem-container-home {
+    flex-direction: column; 
+    height: auto; 
+    padding: 20px;
+    align-items: center;
   }
 
   .left-section {
-    text-align: center;
-    margin-left: 0;
-    padding: 10px;
-    position: static;
-    top: 0px;
+    margin-top: 50px;
+    text-align: center; 
+    padding: 10px; 
+    width: 100%; 
   }
 
   .esystem-button {
-    margin: 15px auto;
+    width: 100%; 
+    padding: 10px; 
+    font-size: 14px; 
   }
 
   .birthing-program-container {
-    text-align: center;
-    margin: 20px 0 0 0;
-    position: static;
+    left: 0; 
+    margin-left: 0; 
+    margin-top: 20px; 
+    width: 100%; 
+    text-align: center; 
+    padding: 10px; 
   }
 }
-
-/* Mobile */
-@media (max-width: 480px) {
-  .left-section {
-    margin: 0;
-  }
-
-  .esystem-button {
-    width: 100%;
-  }
-}
-
 
 /* E - system */
 /* body {
