@@ -11,22 +11,24 @@ div > .esystem-container {
 }
 
 .esystem-container {
-  width: 1550px;
-  height: 600px;
   background-image: url('../../assets/images/esystem/e-system.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  display: flex; /* Enable Flexbox */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  background-size: cover; 
+  width: 100vw; 
+  height: 100vh; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
 }
 
 .berthing-exchange-container {
   display: flex;
   justify-content: space-between;
-  width: 100%; /* Ensure the container takes full width */
-  max-width: 1200px; /* Optional: Limit the maximum width */
+  width: 100%; 
+  max-width: 1200px; 
   margin-top: 350px;
+  margin-left: 100px;
 }
 
 .berthing-program {
@@ -35,124 +37,185 @@ div > .esystem-container {
 }
 
 .exchange-widget {
-  flex: 1;
-  padding: 20px;
-  margin-right: 200px;
-}
-
-.exchange-widget h3 {
-  margin-top: 0;
-  font-size: 1.5em;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.date-input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #fff;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 1em;
-}
-
-.currency-display {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin: 20px 0;
-  font-size: 1.2em;
-}
-
-.currency-icon {
-  font-size: 1.5em;
-}
-
-.rate_text {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #ffcc00;
-  margin: 20px 0;
-}
-
-.search-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #FFCC00;
-  color: #11101B;
-  border: none;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  padding: 10px 30px; 
-  font-size: 16px; 
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.search-button:hover {
-  background-color: #FFC107;
-}
+    width: 400px; 
+    height: 300px; 
+    margin-top: 75px;
+    padding: 30px;
+    background-color: #11101B;
+    color: #fff; /* Text */
+    text-align: center;
+    position:sticky; 
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  .exchange-widget h3 {
+    font-size: 20px; 
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .exchange-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    font-size: 16px; 
+    margin-right: 10px;
+  }
+  
+  .date-input {
+    position: relative;
+    padding: 8px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 14px;
+    background-repeat: no-repeat;
+    background-size: 16px 16px; 
+    background-position: right 10px center; 
+  }
+  
+  .date-input::-webkit-calendar-picker-indicator {
+    filter: invert(100%); /* Changes the icon color to white */
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  .date-input::-webkit-inner-spin-button {
+    display: none; 
+  }
+  
+  .date-input::-moz-focus-inner {
+    border: 0;
+  }  */
+  
+  .currency-display {
+    font-size: 18px; 
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .currency-icon {
+    font-size: 1.5em;
+  }
+  
+  .rate_text {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin: 20px 0;
+  }
+  
+  .search-button {
+    background-color: #FFCC00; 
+    color: #11101B; 
+    border: none;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 10px 30px; 
+    font-size: 16px; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #FFC107; 
+  }
 
 /* Loading and Error Messages */
-p {
+.message-container {
   text-align: center;
-  color: #555;
 }
 
+/* 
 @media (max-width: 1200px) {
   .esystem-container {
-    height: auto; /* Auto height for responsiveness */
-    padding: 20px; /* Add padding for smaller screens */
+    height: auto; 
+    padding: 20px; 
   }
 
   .berthing-exchange-container {
-    margin-top: 200px; /* Adjust margin for smaller screens */
+    margin-top: 200px; 
   }
 }
 
 @media (max-width: 768px) {
   .berthing-exchange-container {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    margin-top: 100px; /* Adjust margin for mobile screens */
+    flex-direction: column;
+    margin-top: 100px; 
   }
 
   .berthing-program,
   .exchange-widget {
-    width: 100%; /* Full width for smaller screens */
-    margin-right: 0; /* Remove right margin */
+    width: 100%;
+    margin-right: 0;
   }
 
   .exchange-widget {
-    margin-top: 20px; /* Add space between sections */
+    margin-top: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .esystem-container {
-    padding: 10px; /* Reduce padding for very small screens */
+    padding: 10px;
   }
 
   .berthing-exchange-container {
-    margin-top: 50px; /* Further adjust margin for very small screens */
-  }
-
-  .date-input {
-    font-size: 0.9em; /* Reduce font size for smaller inputs */
+    margin-top: 50px;
   }
 
   .search-button {
-    font-size: 14px; /* Reduce button font size */
-    padding: 8px 20px; /* Adjust button padding */
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+} */
+
+@media (max-width: 768px) {
+  .esystem-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 30px 10px;
+  }
+
+  .berthing-exchange-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .berthing-program {
+    padding: 10px;
+  }
+
+  .exchange-widget {
+    width: 95%;
+    max-width: 350px;
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  .search-button {
+    padding: 12px 20px;
   }
 }

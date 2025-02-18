@@ -152,7 +152,7 @@
 }
 
 /* E-System Container */
-.esystem-container {
+.esystem-container-home {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -160,20 +160,23 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 400px;
+  height: 600px;
   max-width: 100%;
   color: #fff;
   position: relative;
+  background-image: url('../../assets/images/esystem/e-system.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Left Section Styling */
 .left-section {
   flex: 1;
-  text-align: left;
   color: #000;
   position: relative;
   padding: 10px;
-  margin-left: 100px;
+  margin-top: 300px;
+  text-align: right;
 }
 
 /* E-System Button Styling */
@@ -185,18 +188,17 @@
   font-weight: bold;
   text-decoration: none;
   border-radius: 5px;
-  margin-top: 20px;
 }
 
 /* Birthing Program Section */
 .birthing-program-container {
   flex: 1;
-  text-align: left;
+  text-align: center;
   position: relative;
   left: 100px;
   top: -0px;
   margin-left: 40px;
-  margin-top: 400px;
+  margin-top: 300px;
 }
 
 /* Tablet and Below */
