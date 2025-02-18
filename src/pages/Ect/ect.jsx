@@ -13,20 +13,22 @@ import ectImage from "../../assets/images/Ports/PortColomboHero.jpg";
 const EctPage = () => {
   const [timeline, setTimeline] = useState(null);
 
-  useEffect(() => {
-    axios.get("https://www.slpa.lk/Exchange/time_line.php")
-      .then(response => {
-        console.log("API Response:", response.data); // Check API response
-        const decodedDescription = atob(response.data.description);
+ useEffect(() => {
+  axios.get("https://www.slpa.lk/Exchange/time_line.php")
+    .then(response => {
+      console.log("API Response:", response.data);
+      let decodedDescription;
+      try {
+        decodedDescription = atob(response.data.description);
+      } catch (error) {
+        console.error("Error decoding description:", error);
+        decodedDescription = response.data.description; // Fallback
+      }
+      setTimeline({ ...response.data, description: decodedDescription });
+    })
+    .catch(error => console.error("Error fetching data:", error));
+}, []);
 
-        // Set the data, including the decoded description
-        setTimeline({
-          ...response.data,
-          description: decodedDescription,
-        });
-      })
-      .catch(error => console.error("Error fetching data:", error));
-  }, []);
 
   if (!timeline) {
     return <div>Loading...</div>; // Show loading until the timeline data is available
