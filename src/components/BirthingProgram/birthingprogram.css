@@ -13,8 +13,8 @@
   font-weight: bold;
   text-align: center;
 }
-
-/* @media screen and (max-width: 1200px) {
+/* 
+@media screen and (max-width: 1200px) {
   .esystem {
     background-image: url('../../assets/images/esystem/e-system.jpg');
     background-size: contain;
@@ -33,7 +33,110 @@
     background-image: url('../../assets/images/esystem/e-system.jpg'); 
     background-position: center top;
   }
-} */
+}
+
+
+.exchange-widget {
+    width: 400px; 
+    height: 300px; 
+    margin: 0 auto; 
+    padding: 30px;
+    background-color: #11101B;
+    color: #fff; /* Text *
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+  
+    /* Center the box vertically and horizontally on the page *
+    position:sticky;
+    top: 100%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  .exchange-widget h3 {
+    font-size: 20px; 
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .exchange-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    font-size: 16px; 
+    margin-right: 10px;
+  }
+  
+  .date-input {
+    position: relative;
+    padding: 8px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 14px;
+    background-repeat: no-repeat;
+    background-size: 16px 16px; 
+    background-position: right 10px center; 
+  }
+  
+  .date-input::-webkit-calendar-picker-indicator {
+    filter: invert(100%); /* Changes the icon color to white *
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  .date-input::-webkit-inner-spin-button {
+    display: none; 
+  }
+  
+  .date-input::-moz-focus-inner {
+    border: 0;
+  } 
+  
+  
+  
+  .currency-display {
+    font-size: 18px; 
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .currency-icon {
+    margin: 0 12px;
+    color: #FFCC00; 
+    font-size: 18px; 
+  }
+  
+  .search-button {
+    background-color: #FFCC00; 
+    color: #11101B; 
+    border: none;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 10px 30px; 
+    font-size: 16px; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #FFC107; 
+  } */
 
 
 /* Berthing System */
@@ -116,6 +219,17 @@
   .hero {
     font-size: 24px; 
     height: 60vh;
+  }
+
+  /* Adjust .exchange-widget for smaller screens */
+  .exchange-widget {
+    width: 400px; 
+    height: auto; 
+    padding: 20px;
+    position: static; 
+    transform: none; 
+    margin-top: 20px; 
+  
   }
 
   /* Adjust .berthing-system for smaller screens */
