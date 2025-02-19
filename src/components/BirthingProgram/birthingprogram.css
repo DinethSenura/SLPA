@@ -142,7 +142,7 @@
 /* Berthing System */
 .berthing-system {
   width: 400px;
-  height: 400px;
+  height: 460px;
   margin: 0;
   background-color: #11101B;
   padding: 30px;
@@ -162,6 +162,7 @@
   display:block;
   flex-direction: column;
   height: 100%;
+  text-align: right;
 }
 
 /* Scroll Container */
