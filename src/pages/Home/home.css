@@ -177,6 +177,7 @@
   padding: 10px;
   margin-top: 300px;
   text-align: right;
+  position: static;
 }
 
 /* E-System Button Styling */
@@ -193,13 +194,14 @@
 /* Birthing Program Section */
 .birthing-program-container {
   flex: 1;
-  text-align: center;
-  position: relative;
+  text-align: left;
   left: 100px;
   top: -0px;
   margin-left: 40px;
   margin-top: 300px;
 }
+ 
+
 
 @media (max-width: 768px) { 
   .esystem-container-home {
