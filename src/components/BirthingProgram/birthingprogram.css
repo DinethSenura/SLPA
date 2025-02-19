@@ -66,7 +66,7 @@
   overflow: hidden; /* Hide scrollbar */
   height: 300px; /* Adjust height as needed */
   position: relative;
-  width: 110%;
+  width: 100%;
 }
 .scroll-content {
   animation: scroll-up 80s linear infinite;
@@ -83,7 +83,7 @@
   }
 }
 .berthing-table {
-  width: 103%; 
+  width: 100%; 
   border-collapse: collapse;
   text-align: center;
 }
