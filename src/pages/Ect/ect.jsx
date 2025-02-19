@@ -13,29 +13,26 @@ import ectImage from "../../assets/images/Ports/PortColomboHero.jpg";
 const EctPage = () => {
   const [timeline, setTimeline] = useState(null);
 
- useEffect(() => {
-  axios.get("https://www.slpa.lk/Exchange/time_line.php")
-    .then(response => {
-      console.log("API Response:", response.data);
-      let decodedDescription;
-      try {
-        decodedDescription = atob(response.data.description);
-      } catch (error) {
-        console.error("Error decoding description:", error);
-        decodedDescription = response.data.description; // Fallback
-      }
-      setTimeline({ ...response.data, description: decodedDescription });
-    })
-    .catch(error => console.error("Error fetching data:", error));
-}, []);
-
+  useEffect(() => {
+    axios.get("https://www.slpa.lk/Exchange/time_line.php")
+      .then(response => {
+        console.log("API Response:", response.data);
+        const decodedDescription = atob(response.data.description);
+        setTimeline({
+          ...response.data,
+          description: decodedDescription,
+        });
+      })
+      .catch(error => console.error("Error fetching data:", error));
+  }, []);
 
   if (!timeline) {
-    return <div>Loading...</div>; // Show loading until the timeline data is available
+    return <div>Loading...</div>; 
   }
 
   return (
     <div className="project-development-progress">
+      {/* Hero Section */}
       <div className="hero-section">
         <img className="background-image" src={ectImage} alt="Project Background" />
         <div className="hero-content">
@@ -46,11 +43,13 @@ const EctPage = () => {
         </div>
       </div>
 
+      {/* Navigation Buttons */}
       <div className="navigation-buttons">
         <button className="btn btn-left">COLOMBO ECT</button>
-        <button className="btn btn-right">COLOMBO JCT </button>
+        <button className="btn btn-right">COLOMBO JCT</button>
       </div>
 
+      {/* Content Section */}
       <div className="content-section">
         <h2>Pictorial Diary of ECT</h2>
         <p>
@@ -58,16 +57,32 @@ const EctPage = () => {
         </p>
       </div>
 
+      {/* Timeline Section */}
       <div className="timeline">
         <VerticalTimeline>
-          <p>{timeline.ID}</p> {/* Ensure timeline.ID is safely accessed only when timeline is available */}
+          {/* <p>{timeline.ID}</p>  */}
           {Array.isArray(timeline.properties) && timeline.properties.map((item, index) => (
             <VerticalTimelineElement key={index}>
               <h3>{item.date}</h3>
-              <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }} loop>
+              <Swiper 
+                modules={[Navigation, Pagination]} 
+                navigation 
+                pagination={{ clickable: true }} 
+                loop
+                className="timeline-swiper"
+              >
                 {item.images && item.images.map((img, i) => (
                   <SwiperSlide key={i}>
-                    <img src={img} alt={`Slide ${i}`} />
+                    <img 
+                      src={img} 
+                      alt={`Slide ${i}`} 
+                      style={{ 
+                        width: "100%", 
+                        height: "300px",
+                        objectFit: "cover", 
+                        borderRadius: "10px" 
+                      }} 
+                    />
                   </SwiperSlide>
                 ))}
               </Swiper>
