@@ -223,7 +223,7 @@
   }
 
   /* Adjust .exchange-widget for smaller screens */
-  .exchange-widget {
+  /* .exchange-widget {
     width: 400px; 
     height: auto; 
     padding: 20px;
@@ -231,11 +231,12 @@
     transform: none; 
     margin-top: 20px; 
   
-  }
+  } */
 
   /* Adjust .berthing-system for smaller screens */
   .berthing-system {
-    width: 350px; 
+    width: 400px;
+    height: auto; 
     margin: 20px auto; 
     padding: 30px; 
     position: static; 

@@ -203,7 +203,7 @@
  
 
 
-@media (max-width: 768px) { 
+@media (max-width: 1400px) { 
   .esystem-container-home {
     flex-direction: column; 
     height: auto; 
@@ -219,7 +219,7 @@
   }
 
   .esystem-button {
-    width: 100%; 
+    width: 200px; 
     padding: 10px; 
     font-size: 14px; 
   }

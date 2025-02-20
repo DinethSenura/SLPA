@@ -118,7 +118,7 @@ div > .esystem-container {
     font-size: 18px;
     font-weight: bold;
     color: #ffcc00;
-    margin: 20px 0;
+    /* margin: 20px 0; */
   }
   
   .search-button {
@@ -208,8 +208,8 @@ div > .esystem-container {
   }
 
   .exchange-widget {
-    width: 350px; 
-    height: auto; 
+    width: 400px; 
+    height: 300px; 
     margin-top: 20px; 
     padding: 20px; 
     position: static; 
