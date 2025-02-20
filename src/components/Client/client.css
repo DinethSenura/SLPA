@@ -14,7 +14,7 @@
 /* Slideshow group */
 .slideshow1 {
   display: flex;
-  animation: slideEffect 10s linear infinite;
+  animation: slideEffect 20s linear infinite;
   width: fit-content;
   position: relative;
 }
