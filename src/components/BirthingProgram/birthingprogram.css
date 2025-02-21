@@ -235,7 +235,7 @@
 
   /* Adjust .berthing-system for smaller screens */
   .berthing-system {
-    width: auto;
+    width: 400px;
     height: auto; 
     margin: 20px auto; 
     padding: 30px; 
