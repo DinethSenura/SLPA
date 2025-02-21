@@ -168,6 +168,7 @@
 }
 
 .ad-large_1 {
+  width: 450px;
   height: 400px; /* Fixed height for the large ad */
   margin-top: 90px;
   background-color: #ddd;
