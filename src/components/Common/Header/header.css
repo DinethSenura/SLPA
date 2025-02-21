@@ -27,8 +27,8 @@
 /* Adjust E-SYSTEM button for mobile */
 .navbar .btn-warning {
   font-weight: bold;
-  width: 100%; /* Full width for small screens */
-  padding: 8px 12px; /* Add some padding for better appearance */
+  width: auto; 
+  padding: 2px 10px;
   white-space:inherit; /* Prevent text from breaking into two lines */
   color: #050101;
   /* margin-right: 50px; */
