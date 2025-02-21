@@ -1,7 +1,11 @@
+body {
+  font-family: Arial, sans-serif !important;
+}
+
 .ports-container {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 10px;
   letter-spacing: .02em;
   margin: 0 auto;
   padding: 0;
@@ -64,7 +68,7 @@
   z-index: 10; /* Ensures it stays above other content */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Shadow for better visibility */
   width: 90%;
-  margin-left: 70px;
+  margin-left: 20px;
 }
 
 
@@ -75,6 +79,9 @@
   background-color: #3b82f6; /* Blue color for the boxes */
   color: #ffffff;
   font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -104,12 +111,14 @@
   display: flex;
   flex-wrap: wrap; /* Allow wrapping for smaller screens */
   margin: 20px 0;
-  width: 100%;
 }
 
 .content-section {
   flex: 2; /* Take 2/3 of the space */
   padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .content-section h2 {
@@ -122,6 +131,10 @@
   line-height: 1.6;
   margin-bottom: 10px;
   width: 90%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: justify;
 }
 
 .content-image {
@@ -194,28 +207,27 @@
 }
 
 /* Image container for the 3D effect */
-/*.image-container_1 {
-  width: 90%; /* Default width for images */
- /* height: 80px; /* Default height for images */
- /* transform-style: preserve-3d; /* Enable 3D transformations */
- /* transition: transform 0.6s ease; /* Smooth transition */
- /* transform: rotateY(0deg); /* Initial position */
-  /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-/*}*/
-
+.image-container_1 {
+  width: 600px; /* Default width for images */
+  height: 80px; /* Default height for images */
+  transform-style: preserve-3d; /* Enable 3D transformations */
+  transition: transform 0.6s ease; /* Smooth transition */
+  transform: rotateY(0deg); /* Initial position */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
 
 .image-container_1:hover {
   transform: rotateY(15deg); /* Rotate on hover */
-  /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
 }
 
 /* Individual image styling */
 .image_1 {
-  width: 90%; /* Make the image fit the container */
+  max-width: 100%; /* Make the image fit the container */
   height: auto; /* Make the image fit the container */
   object-fit: cover; /* Maintain aspect ratio */
   border-radius: 0px; /* Add rounded corners */
-  margin-top: -70px;
+  margin-top: -20px;
   gap: 2px;
   
 }
