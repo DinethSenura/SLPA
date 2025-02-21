@@ -235,7 +235,7 @@
 
   /* Adjust .berthing-system for smaller screens */
   .berthing-system {
-    width: 400px;
+    width: 300px;
     height: auto; 
     margin: 20px auto; 
     padding: 30px; 
@@ -248,5 +248,6 @@
   .berthing-table td {
     font-size: 12px; 
     padding: 18px; 
+    width: 150px;
   }
 }
