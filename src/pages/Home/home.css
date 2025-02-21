@@ -153,21 +153,32 @@
 
 /* E-System Container */
 .esystem-container-home {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   height: 600px;
   max-width: 100%;
   color: #fff;
-  position: relative;
+  overflow: hidden; /* Ensures the pseudo-element stays inside */
+}
+
+.esystem-container-home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('../../assets/images/esystem/e-system.jpg');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0.7; /* Adjust this for desired transparency */
+  z-index: -1; /* Keeps it behind the content */
 }
+
 
 /* Left Section Styling */
 .left-section {
@@ -175,10 +186,12 @@
   color: #000;
   position: relative;
   padding: 10px;
-  margin-top: 300px;
-  text-align: right;
+  margin-top: 150px;
+  text-align: center;
+  letter-spacing: 5px;
   position: static;
 }
+
 
 /* E-System Button Styling */
 .esystem-button {
