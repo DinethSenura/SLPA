@@ -125,6 +125,7 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap; /* Prevent items from breaking into new lines */
+    margin-top: -5px;
   }
 
   /* Banner text */
