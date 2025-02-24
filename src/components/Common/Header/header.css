@@ -3,11 +3,29 @@
   height: 40px;
 }
 
-/* Navbar toggle button */
+/* Remove border, background, and focus outline */
 .navbar-toggler {
   border: none;
+  background: none;
+  outline: none;
+  box-shadow: none;
+  padding: 0;
   margin-right: 30px;
 }
+
+/* Ensure the icon does not show an outline on focus */
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Adjust the icon appearance if needed */
+.navbar-toggler-icon {
+  width: 24px;
+  height: 24px;
+}
+
 
 /* Navbar link styling */
 .navbar-nav .nav-link {
