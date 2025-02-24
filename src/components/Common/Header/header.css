@@ -60,6 +60,7 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
   padding: 10px 0; /* Space for items */
   min-width: 200px; /* Ensure a consistent width */
+  /* flex-direction: column;  */
 }
 
 /* Dropdown menu items */

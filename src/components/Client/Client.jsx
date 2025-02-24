@@ -14,6 +14,7 @@ import k from '../../assets/images/clients/12.jpg';
 import l from '../../assets/images/clients/13.jpg';
 import m from '../../assets/images/clients/14.jpg';
 import n from '../../assets/images/clients/15.jpg';
+
 const Client = () => {
   const [currentGroup, setCurrentGroup] = useState(1);
 
@@ -33,7 +34,7 @@ const Client = () => {
     <div className="slideshow-container1">
       <div className="slideshow1">
         {images.map((image, index) => (
-          <img key={index} src={image} alt="" className="side-image1" />
+          <img key={index} src={image} alt="Client" className="side-image1" />
         ))}
       </div>
     </div>
