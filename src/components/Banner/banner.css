@@ -116,37 +116,83 @@
     color: white;
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .banner {
-      padding: 0 10px;
-    }
-  
-    .banner-text {
-      font-size: 10px;
-    }
-  
-    .help-desk-button,
-    .language-buttons button,
-    .notice-button {
-      font-size: 10px;
-      padding: 7px 15px;
-      
-    }
-  
-    .phone-icon {
-      font-size: 18px;
-      margin-right: 10px;
-    }
-  
-    .inquiry-number {
-      font-size: 13px;
-      margin-left: 10px;
-    }
-  
-    .inquiry-label {
-      font-size: 8px;
-      margin-left: 10px;
-    }
+ /* Responsive adjustments */
+@media (max-width: 767px) {
+  .banner {
+    height: 50px; /* Reduce banner height */
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Prevent items from breaking into new lines */
   }
-  
+
+  /* Banner text */
+  .banner-text {
+    font-size: 12px; /* Decrease font size */
+    letter-spacing: 2px;
+    white-space: nowrap; /* Prevent wrapping */
+  }
+
+  /* Contact info */
+  .contact-info {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Reduce spacing */
+  }
+
+  /* Phone icon */
+  .phone-icon {
+    font-size: 16px; /* Make it smaller */
+    margin-right: 5px;
+  }
+
+  /* Inquiry number */
+  .inquiry-number {
+    font-size: 14px; /* Reduce size */
+  }
+
+  /* Inquiry label */
+  .inquiry-label {
+    font-size: 10px;
+  }
+
+  /* Buttons */
+  .notice-button,
+  .help-desk-button,
+  .language-buttons button {
+    font-size: 9px; /* Reduce button text size */
+    padding: 5px 12px; /* Adjust padding */
+  }
+}
+
+/* Even smaller screens (max-width: 500px) */
+@media (max-width: 500px) {
+  .banner {
+    height: 45px;
+    padding: 0 5px;
+  }
+
+  .banner-text {
+    font-size: 10px;
+  }
+
+  .phone-icon {
+    font-size: 14px;
+  }
+
+  .inquiry-number {
+    font-size: 12px;
+  }
+
+  .inquiry-label {
+    font-size: 8px;
+  }
+
+  .notice-button,
+  .help-desk-button,
+  .language-buttons button {
+    font-size: 8px;
+    padding: 4px 10px;
+  }
+}

@@ -6,6 +6,7 @@
 /* Navbar toggle button */
 .navbar-toggler {
   border: none;
+  margin-right: 30px;
 }
 
 /* Navbar link styling */
@@ -27,11 +28,11 @@
 /* Adjust E-SYSTEM button for mobile */
 .navbar .btn-warning {
   font-weight: bold;
-  width: auto; 
-  padding: 2px 10px;
+  width: 110px; 
+  padding: 6px 14px;
   white-space:inherit; /* Prevent text from breaking into two lines */
   color: #050101;
-  /* margin-right: 50px; */
+  /* margin-right: 20px; */
 }
 /* Dropdown menu styling */
 .dropdown-menu {
@@ -114,5 +115,61 @@
   .navbar-nav .nav-link.active {
     background-color: #007bff; /* Active link background */
     color: #fff; /* Active link text color */
+  }
+  /* jdjdfjdfjdjfk */
+  
+}
+@media (max-width: 767px) {
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Keeps elements in a row */
+    padding: 5px 10px; /* Adjust padding for small screens */
+  }
+
+  /* Logo */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    height: 30px; /* Reduce logo size */
+    width: auto; /* Keep aspect ratio */
+  }
+
+  /* Navbar Toggler */
+  .navbar-toggler {
+    order: 3; /* Ensure it's positioned last */
+    margin-left: auto;
+    width: 25px; /* Adjust size */
+    height: 25px;
+  }
+
+  /* E-SYSTEM Button */
+  .navbar .btn-warning {
+    order: 2; /* Keep it between the logo and toggler */
+    margin-right: 10px; /* Adjust spacing */
+    font-size: 12px; /* Reduce size */
+    padding: 4px 8px;
+    width: 90px; /* Adjust width */
+  }
+}
+
+/* Even smaller screens (max-width: 500px) */
+@media (max-width: 500px) {
+  .logo {
+    height: 25px;
+  }
+
+  .navbar-toggler {
+    width: 20px;
+    height: 20px;
+  }
+
+  .navbar .btn-warning {
+    font-size: 10px;
+    padding: 3px 6px;
+    width: 80px;
   }
 }
