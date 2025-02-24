@@ -125,7 +125,6 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap; /* Prevent items from breaking into new lines */
-    margin-top: -5px;
   }
 
   /* Banner text */
@@ -159,11 +158,20 @@
   }
 
   /* Buttons */
-  .notice-button,
-  .help-desk-button,
+  .notice-button{
+    font-size: 9px; /* Reduce button text size */
+    padding: 5px 12px; /* Adjust padding */
+    margin-left: 20px;
+  }
+  .help-desk-button{
+    font-size: 9px; /* Reduce button text size */
+    padding: 5px 12px; /* Adjust padding */
+    margin-right: 20px;
+  }
   .language-buttons button {
     font-size: 9px; /* Reduce button text size */
     padding: 5px 12px; /* Adjust padding */
+    margin-left: 20px;
   }
 }
 
@@ -190,8 +198,15 @@
     font-size: 8px;
   }
 
-  .notice-button,
-  .help-desk-button,
+  .notice-button{
+    font-size: 8px;
+    padding: 4px 10px;
+  }
+
+  .help-desk-button{
+    font-size: 8px;
+    padding: 4px 10px;
+  }
   .language-buttons button {
     font-size: 8px;
     padding: 4px 10px;
