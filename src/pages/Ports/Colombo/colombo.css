@@ -235,6 +235,7 @@ body {
 
 .ad-large_1 {
   height: 600px; /* Fixed height for the large ad */
+  width: 600px;
   margin-top: 90px;
   background-color: #ddd;
   border: 1px solid #ccc;
@@ -286,6 +287,10 @@ body {
     flex: none; /* Full width for content */
   }
 
+  .small-boxes-container{
+    width: 300px;
+  }
+
   .ads-section {
     flex: none; /* Full width for ads */
     margin-top: 10px;
@@ -295,10 +300,10 @@ body {
     height: 80px;
   }
 
-  .ad-large {
+  /*.ad-large_1 {
     height: 200px;
     margin-top: 10px;
-  }
+  }*/
 
   .header-section {
     height: 40vh;
@@ -325,6 +330,18 @@ body {
   .image_1 {
     border-radius: 5px; /* Slightly smaller border radius */
   }
+
+  .content-image{
+    width: 300px;
+    margin-left: -30px;
+
+  }
+
+  .content-section p{
+    width: 300px;
+    margin-left: 50px;
+  }
+
 }
 
 
@@ -332,6 +349,10 @@ body {
   /* Small Mobile View */
   .header-section {
     height: 30vh;
+  }
+
+  .header-image{
+    width: 300px;
   }
 
   .header-section h1 {
@@ -348,10 +369,14 @@ body {
 
   .ad-small {
     height: 70px;
+    width: 300px;
+    margin-left: 20px;
   }
 
-  .ad-large {
+  .ad-large_1 {
     height: 150px;
+    width: 300px;
+    
   }
 
   .image-container_1 {
@@ -363,6 +388,12 @@ body {
   .image_1 {
     border-radius: 5px; /* Slightly smaller border radius */
   }
+
+  .content-section p{
+    width: 250px;
+    margin-left: -50px;
+  }
+
 }
 
 @media screen and (max-width: 768px) {
