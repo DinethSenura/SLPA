@@ -20,7 +20,8 @@ const EctPage = () => {
         const decodedDescription = atob(response.data.description);
         setTimeline({
           ...response.data,
-          description: decodedDescription,
+          title: response.data.title, // Adding title from API
+          description: decodedDescription, // Decoded description
         });
       })
       .catch(error => console.error("Error fetching data:", error));
@@ -36,7 +37,7 @@ const EctPage = () => {
       <div className="hero-section">
         <img className="background-image" src={ectImage} alt="Project Background" />
         <div className="hero-content">
-          <h1>PROJECT DEVELOPMENT PROGRESS</h1>
+          <h1>{timeline.title}</h1> {/* API title */}
           <p>
             <span className="breadcrumb">HOME &gt; PROJECT &gt; DEVELOPMENT &gt; PROGRESS</span>
           </p>
@@ -51,16 +52,13 @@ const EctPage = () => {
 
       {/* Content Section */}
       <div className="content-section">
-        <h2>Pictorial Diary of ECT</h2>
-        <p>
-          Construction of the terminal, which will be conducted in three phases, is scheduled to be completed in 2024. The terminal, which is spread over an area of 75 hectares, is 1,320 meters long. Once completed, the Sri Lanka Ports Authority (SLPA) will inherit a fully-fledged terminal equipped with 12 STC cranes that handle operations from ships to the land and 40 Rail Mounted Gantry (RMG) Cranes.
-        </p>
+        <h2>{timeline.title}</h2> {/* API title */}
+        {timeline.description}
       </div>
 
       {/* Timeline Section */}
       <div className="timeline">
         <VerticalTimeline>
-          {/* <p>{timeline.ID}</p>  */}
           {Array.isArray(timeline.properties) && timeline.properties.map((item, index) => (
             <VerticalTimelineElement key={index}>
               <h3>{item.date}</h3>
