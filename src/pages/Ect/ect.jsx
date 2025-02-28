@@ -46,7 +46,7 @@ const EctPage = () => {
 
       {/* Navigation Buttons */}
       <div className="navigation-buttons">
-        <button className="btn btn-left">COLOMBO ECTTT</button>
+        <button className="btn btn-left">COLOMBO ECTTTAAAA</button>
         <button className="btn btn-right">COLOMBO JCT</button>
       </div>
 
