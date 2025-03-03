@@ -14,7 +14,7 @@ import Colombo from './pages/Ports/Colombo/colombo';
 import Galle from './pages/Ports/Galle/galle';
 import Ect from './pages/Ect/ect';
 import Birthingprogram from './components/BirthingProgram/Birthingprogram';
-
+import Berthingprogramme from './pages/Esystem/Esystempage/Berthingprogramme/berthingprogramme';
 
 
 function App() {
@@ -38,6 +38,8 @@ function App() {
           <Route path="galle" element={<Galle />}/>
           <Route path="ect" element={<Ect />}/>
           <Route path="birthinprogram" element={<Birthingprogram />}/>
+          <Route path="berthingprogramme" element={<Berthingprogramme />}/>
+
         </Routes>
       </div>
       <Footer />
