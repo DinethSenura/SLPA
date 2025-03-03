@@ -36,7 +36,7 @@ import ColomboCargo from './pages/Ports/Colombo/ColomboCargo/colombocargo';
 import ColomboEntrance from './pages/Ports/Colombo/ColomboEntrance/colomboentrance';
 import ColomboCompliance from './pages/Ports/Colombo/ColomboCompliance/colombocompliance';
 import ColomboMahapola from './pages/Ports/Colombo/ColomboMahapola/colombomahapola';
-
+import Slpa from './pages/About/Slpa/slpa';
 
 function App() {
   const location = useLocation();
@@ -81,6 +81,7 @@ function App() {
           <Route path="colomboentrance" element={<ColomboEntrance/>}/>
           <Route path="colombocompliance" element={<ColomboCompliance/>}/>
           <Route path="colombomahapola" element={<ColomboMahapola/>}/>
+          <Route path="slpa" element={<Slpa />}/>
         </Routes>
       </div>
       <Footer />
