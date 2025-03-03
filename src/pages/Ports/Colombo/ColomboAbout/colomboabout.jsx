@@ -1,11 +1,12 @@
 import React from 'react';
-import '../Colombo/colombo.css';
-import portImage from '../../../assets/images/Ports/PortColomboHero.jpg';
-import portImage1 from '../../../assets/images/Ports/colombo_prt1.jpg';
+import './colomboabout.css';
 import { Link } from 'react-router-dom'; // Import Link from React Router
-import leftImage from '../../../assets/images/jctect/left.jpg';
-import rightImage from '../../../assets/images/jctect/jct.jpg';
-import plinkImage from '../../../assets/images/jctect/plink.jpg';
+import portImage2 from '../../../../assets/images/Ports/PortColomboHero.jpg';
+import portImage1 from '../../../../assets/images/Ports/colombo_prt1.jpg';
+import leftImage1 from '../../../../assets/images/jctect/left.jpg';
+import rightImage1 from '../../../../assets/images/jctect/jct.jpg';
+import plinkImage1 from '../../../../assets/images/jctect/plink.jpg';
+
 
 const Ports = () => {
   return (
@@ -15,23 +16,23 @@ const Ports = () => {
         <p className="path">
           <a href="/Home">HOME</a>
           <span>&gt;</span>PORTS
-          <a href="/colombo"><span>&gt;</span>COLOMBO</a>
+          <span>&gt;</span>COLOMBO
           <span>&gt;</span>ABOUT
         </p>
-        <img src={portImage} alt="Colombo Port Overview" className="header-image" />
+        <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
       </div>
 
       {/* Small Boxes Section */}
       <div className="small-boxes-container">
   {[
-    { title: "About", path: "/colomboabout" },
+    { title: "About", path: "/'colomboabout" },
     { title: "Location", path: "/colombolocation" },
     { title: "Terminals", path: "/colomboterminals" },
     { title: "Port Facilities", path: "/colombofacilities" },
-    { title: "General Cargo Services", path: "/colombocargo" },
-    { title: "Entrance", path: "/colomboentrance" },
-    { title: "Compliance", path: "/colombocompliance" },
-    { title: "Mahapola Academy", path: "/colombomahapola" }
+    { title: "General Cargo Services", path: "" },
+    { title: "Entrance", path: "" },
+    { title: "Compliance", path: "" },
+    { title: "Mahapola Academy", path: "" }
   ].map((box, i) => (
     <Link to={box.path} key={i} className="small-box-link">
       <div className="small-box">
@@ -62,21 +63,21 @@ const Ports = () => {
             <div className="ad ad-small">
                  <Link to="/ect" className="image-link_1">
                      <div className="image-container_1">
-                        <img src={leftImage} alt="Left Side" className="image_1" />
+                        <img src={leftImage1} alt="Left Side" className="image_1" />
                      </div>
                  </Link>
             </div>
             <div className="ad ad-small">
                  <Link to="/jct" className="image-link_1">
                      <div className="image-container_1">
-                        <img src={rightImage} alt="Right Side" className="image_1" />
+                        <img src={rightImage1} alt="Right Side" className="image_1" />
                      </div>
                  </Link>
             </div>
             <div className="ad ad-small">
                 <Link to="/plink" className="image-link_1">
                    <div className="image-container_1">
-                      <img src={plinkImage} alt="Plink Side" className="image_1" />
+                      <img src={plinkImage1} alt="Plink Side" className="image_1" />
                    </div>
                 </Link>
             

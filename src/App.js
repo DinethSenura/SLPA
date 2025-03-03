@@ -15,6 +15,14 @@ import Galle from './pages/Ports/Galle/galle';
 import Ect from './pages/Ect/ect';
 import Birthingprogram from './components/BirthingProgram/Birthingprogram';
 import Berthingprogramme from './pages/Esystem/Esystempage/Berthingprogramme/berthingprogramme';
+import ColomboLocation from './pages/Ports/Colombo/ColomboLocation/colombolocation';
+import ColomboAbout from './pages/Ports/Colombo/ColomboAbout/colomboabout';
+import ColomboTerminals from './pages/Ports/Colombo/ColomboTerminals/colomboterminals';
+import ColomboFacilities from './pages/Ports/Colombo/ColomboFacilities/colombofacilities';
+import ColomboCargo from './pages/Ports/Colombo/ColomboCargo/colombocargo';
+import ColomboEntrance from './pages/Ports/Colombo/ColomboEntrance/colomboentrance';
+import ColomboCompliance from './pages/Ports/Colombo/ColomboCompliance/colombocompliance';
+import ColomboMahapola from './pages/Ports/Colombo/ColomboMahapola/colombomahapola';
 
 
 function App() {
@@ -39,6 +47,14 @@ function App() {
           <Route path="ect" element={<Ect />}/>
           <Route path="birthinprogram" element={<Birthingprogram />}/>
           <Route path="berthingprogramme" element={<Berthingprogramme />}/>
+          <Route path="colombolocation" element={<ColomboLocation/>}/>
+          <Route path="colomboabout" element={<ColomboAbout/>}/>
+          <Route path="colomboterminals" element={<ColomboTerminals/>}/>
+          <Route path="colombofacilities" element={<ColomboFacilities/>}/>
+          <Route path="colombocargo" element={<ColomboCargo/>}/>
+          <Route path="colomboentrance" element={<ColomboEntrance/>}/>
+          <Route path="colombocompliance" element={<ColomboCompliance/>}/>
+          <Route path="colombomahapola" element={<ColomboMahapola/>}/>
 
         </Routes>
       </div>
