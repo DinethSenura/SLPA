@@ -15,6 +15,7 @@ import Galle from './pages/Ports/Galle/galle';
 import Ect from './pages/Ect/ect';
 import Birthingprogram from './components/BirthingProgram/Birthingprogram';
 import Berthingprogramme from './pages/Esystem/Esystempage/Berthingprogramme/berthingprogramme';
+import Tms from './pages/Esystem/Esystempage/Tms/tms';
 
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
           <Route path="ect" element={<Ect />}/>
           <Route path="birthinprogram" element={<Birthingprogram />}/>
           <Route path="berthingprogramme" element={<Berthingprogramme />}/>
-
+          <Route path="tms" element={<Tms />}/>
         </Routes>
       </div>
       <Footer />
