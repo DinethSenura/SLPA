@@ -17,6 +17,17 @@ import Birthingprogram from './components/BirthingProgram/Birthingprogram';
 import Berthingprogramme from './pages/Esystem/Esystempage/Berthingprogramme/berthingprogramme';
 import Tms from './pages/Esystem/Esystempage/Tms/tms';
 import Import from './pages/Esystem/Esystempage/Import/import';
+import Export from './pages/Esystem/Esystempage/Export/export';
+import Roro from './pages/Esystem/Esystempage/Ro-ro/ro-ro';
+import Bulkbreakbulk from './pages/Esystem/Esystempage/Bulk&breakbulk/bulk&breakbulk';
+import Fclcutoffinfo from './pages/Esystem/Esystempage/Fclcutoffinfo/fclcutoffinfo';
+import Destuffinfo from './pages/Esystem/Esystempage/Destuffinfo/destuffinfo';
+import Emptycontainers from './pages/Esystem/Esystempage/Emptycontainers/emptycontainers';
+import Onlineentrypermits from './pages/Esystem/Esystempage/Onlineentrypermits/onlineentrypermits';
+import Vesselsinport from './pages/Esystem/Esystempage/Vesselsinport/vesselsinport';
+import Clearingpasses from './pages/Esystem/Esystempage/Clearingpasses/clearingpasses';
+import Bungalowbooking from './pages/Esystem/Esystempage/Bungalowbooking/bungalowbooking';
+import Hris from './pages/Esystem/Esystempage/Hris/hris';
 
 function App() {
   const location = useLocation();
@@ -42,6 +53,17 @@ function App() {
           <Route path="berthingprogramme" element={<Berthingprogramme />}/>
           <Route path="tms" element={<Tms />}/>
           <Route path="import" element={<Import />}/>
+          <Route path="export" element={<Export />}/>
+          <Route path="ro-ro" element={<Roro />}/>
+          <Route path="bulk&breakbulk" element={<Bulkbreakbulk />}/>
+          <Route path="fclcutoffinfo" element={<Fclcutoffinfo />}/>
+          <Route path="destuffinfo" element={<Destuffinfo />}/>
+          <Route path="emptycontainers" element={<Emptycontainers />}/>
+          <Route path="onlineentrypermits" element={<Onlineentrypermits />}/>
+          <Route path="vesselsinport" element={<Vesselsinport />}/>
+          <Route path="clearingpasses" element={<Clearingpasses />}/>
+          <Route path="bungalowbooking" element={<Bungalowbooking />}/>
+          <Route path="hris" element={<Hris />}/>
         </Routes>
       </div>
       <Footer />
