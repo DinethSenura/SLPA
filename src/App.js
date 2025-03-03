@@ -28,6 +28,7 @@ import Vesselsinport from './pages/Esystem/Esystempage/Vesselsinport/vesselsinpo
 import Clearingpasses from './pages/Esystem/Esystempage/Clearingpasses/clearingpasses';
 import Bungalowbooking from './pages/Esystem/Esystempage/Bungalowbooking/bungalowbooking';
 import Hris from './pages/Esystem/Esystempage/Hris/hris';
+import Slpa from './pages/About/Slpa/slpa';
 
 function App() {
   const location = useLocation();
@@ -64,6 +65,8 @@ function App() {
           <Route path="clearingpasses" element={<Clearingpasses />}/>
           <Route path="bungalowbooking" element={<Bungalowbooking />}/>
           <Route path="hris" element={<Hris />}/>
+
+          <Route path="slpa" element={<Slpa />}/>
         </Routes>
       </div>
       <Footer />
