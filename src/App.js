@@ -65,7 +65,6 @@ function App() {
           <Route path="clearingpasses" element={<Clearingpasses />}/>
           <Route path="bungalowbooking" element={<Bungalowbooking />}/>
           <Route path="hris" element={<Hris />}/>
-
           <Route path="slpa" element={<Slpa />}/>
         </Routes>
       </div>
