@@ -74,7 +74,7 @@ const Header = () => {
                 ABOUT
               </NavLink>
               <ul className="dropdown-menu" aria-labelledby="aboutDropdown">
-                <li><NavLink to="/about/slpa" className="dropdown-item"onClick={closeNav}> SLPA</NavLink></li>
+                <li><NavLink to="/slpa" className="dropdown-item"onClick={closeNav}> SLPA</NavLink></li>
                 <li><NavLink to="/about/vision&mission" className="dropdown-item" onClick={closeNav}>  Vision & Mission</NavLink></li>
                 <li><NavLink to="/about/bordofdirectors" className="dropdown-item" onClick={closeNav}> Bord of Directors</NavLink></li>
                 <li><NavLink to="/about/act" className="dropdown-item" onClick={closeNav}> ACT</NavLink></li>
