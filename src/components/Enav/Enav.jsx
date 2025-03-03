@@ -23,9 +23,9 @@ const Enav = () => {
         
         <ul className="link-list">
             <li><a href="/Berthingprogramme"><img src={icon1} alt="" className="icon"/>BERTHING PROGRAMME</a></li>
-            <li><a href="#link-2"><img src={icon2} alt="" className="icon"/>TMS</a></li>
-            <li><a href="#link-3"><img src={icon3} alt="" className="icon"/>IMPORT</a></li>
-            <li><a href="#link-4"><img src={icon4} alt="" className="icon"/>EXPORT</a></li>
+            <li><a href="/Tms"><img src={icon2} alt="" className="icon"/>TMS</a></li>
+            <li><a href="/Ipmort"><img src={icon3} alt="" className="icon"/>IMPORT</a></li>
+            <li><a href="/Export"><img src={icon4} alt="" className="icon"/>EXPORT</a></li>
             <li><a href="#link-5"><img src={icon5} alt="" className="icon"/>RO-RO</a></li>
             <li><a href="#link-6"><img src={icon6} alt="" className="icon"/>BULK & BREAK BULK</a></li>
             <li><a href="#link-7"><img src={icon7} alt="" className="icon"/>FCL CUTOFF INFO</a></li>

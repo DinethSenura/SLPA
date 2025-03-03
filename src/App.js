@@ -16,7 +16,7 @@ import Ect from './pages/Ect/ect';
 import Birthingprogram from './components/BirthingProgram/Birthingprogram';
 import Berthingprogramme from './pages/Esystem/Esystempage/Berthingprogramme/berthingprogramme';
 import Tms from './pages/Esystem/Esystempage/Tms/tms';
-
+import Import from './pages/Esystem/Esystempage/Import/import';
 
 function App() {
   const location = useLocation();
@@ -41,6 +41,7 @@ function App() {
           <Route path="birthinprogram" element={<Birthingprogram />}/>
           <Route path="berthingprogramme" element={<Berthingprogramme />}/>
           <Route path="tms" element={<Tms />}/>
+          <Route path="import" element={<Import />}/>
         </Routes>
       </div>
       <Footer />
