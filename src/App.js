@@ -73,8 +73,6 @@ function App() {
           <Route path="clearingpasses" element={<Clearingpasses />}/>
           <Route path="bungalowbooking" element={<Bungalowbooking />}/>
           <Route path="hris" element={<Hris />}/>
-<<<<<<< HEAD
-=======
           <Route path="colombolocation" element={<ColomboLocation/>}/>
           <Route path="colomboabout" element={<ColomboAbout/>}/>
           <Route path="colomboterminals" element={<ColomboTerminals/>}/>
@@ -83,7 +81,6 @@ function App() {
           <Route path="colomboentrance" element={<ColomboEntrance/>}/>
           <Route path="colombocompliance" element={<ColomboCompliance/>}/>
           <Route path="colombomahapola" element={<ColomboMahapola/>}/>
->>>>>>> 0e1394189dc4be64c6ff538ff100e6c8a0b9d661
           <Route path="slpa" element={<Slpa />}/>
         </Routes>
       </div>
