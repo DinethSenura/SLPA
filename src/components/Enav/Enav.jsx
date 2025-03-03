@@ -23,19 +23,19 @@ const Enav = () => {
         
         <ul className="link-list">
             <li><a href="/Berthingprogramme"><img src={icon1} alt="" className="icon"/>BERTHING PROGRAMME</a></li>
-            <li><a href="#link-2"><img src={icon2} alt="" className="icon"/>TMS</a></li>
-            <li><a href="#link-3"><img src={icon3} alt="" className="icon"/>IMPORT</a></li>
-            <li><a href="#link-4"><img src={icon4} alt="" className="icon"/>EXPORT</a></li>
-            <li><a href="#link-5"><img src={icon5} alt="" className="icon"/>RO-RO</a></li>
-            <li><a href="#link-6"><img src={icon6} alt="" className="icon"/>BULK & BREAK BULK</a></li>
-            <li><a href="#link-7"><img src={icon7} alt="" className="icon"/>FCL CUTOFF INFO</a></li>
-            <li><a href="#link-8"><img src={icon8} alt="" className="icon"/>DESTUFF INFO</a></li>
-            <li><a href="#link-9"><img src={icon9} alt="" className="icon"/>EMPTY CONTAINERS</a></li>
-            <li><a href="#link-10"><img src={icon10} alt="" className="icon"/>ONLINE ENTRY PERMITS</a></li>
-            <li><a href="#link-11"><img src={icon11} alt="" className="icon"/>VESSELS IN PORT</a></li>
-            <li><a href="#link-12"><img src={icon12} alt="" className="icon"/>CLEARING PASSES</a></li>
-            <li><a href="#link-13"><img src={icon13} alt="" className="icon"/>BUNGALOW BOOKING</a></li>
-            <li><a href="#link-14"><img src={icon14} alt="" className="icon"/>HRIS</a></li>
+            <li><a href="/Tms"><img src={icon2} alt="" className="icon"/>TMS</a></li>
+            <li><a href="/Import"><img src={icon3} alt="" className="icon"/>IMPORT</a></li>
+            <li><a href="/Export"><img src={icon4} alt="" className="icon"/>EXPORT</a></li>
+            <li><a href="/Ro-ro"><img src={icon5} alt="" className="icon"/>RO-RO</a></li>
+            <li><a href="/Bulk&breakbulk"><img src={icon6} alt="" className="icon"/>BULK & BREAK BULK</a></li>
+            <li><a href="/Fclcutoffinfo"><img src={icon7} alt="" className="icon"/>FCL CUTOFF INFO</a></li>
+            <li><a href="/Destuffinfo"><img src={icon8} alt="" className="icon"/>DESTUFF INFO</a></li>
+            <li><a href="/Emptycontainers"><img src={icon9} alt="" className="icon"/>EMPTY CONTAINERS</a></li>
+            <li><a href="/Onlineentrypermits"><img src={icon10} alt="" className="icon"/>ONLINE ENTRY PERMITS</a></li>
+            <li><a href="/Vesselsinport"><img src={icon11} alt="" className="icon"/>VESSELS IN PORT</a></li>
+            <li><a href="/Clearingpasses"><img src={icon12} alt="" className="icon"/>CLEARING PASSES</a></li>
+            <li><a href="/Bungalowbooking"><img src={icon13} alt="" className="icon"/>BUNGALOW BOOKING</a></li>
+            <li><a href="/Hris"><img src={icon14} alt="" className="icon"/>HRIS</a></li>
         </ul>
         </div>
     </div>
