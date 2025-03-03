@@ -20,8 +20,8 @@ const EctPage = () => {
         const decodedDescription = atob(response.data.description);
         setTimeline({
           ...response.data,
-          title: response.data.title, // Adding title from API
-          description: decodedDescription, // Decoded description
+          title: response.data.title, 
+          description: decodedDescription, 
         });
       })
       .catch(error => console.error("Error fetching data:", error));
@@ -33,11 +33,11 @@ const EctPage = () => {
 
   return (
     <div className="project-development-progress">
-      {/* Hero Section */}
+      
       <div className="hero-section">
         <img className="background-image" src={ectImage} alt="Project Background" />
         <div className="hero-content">
-          <h1>{timeline.title}</h1> {/* API title */}
+          <h1>{timeline.title}</h1> 
           <p>
             <span className="breadcrumb">HOME &gt; PROJECT &gt; DEVELOPMENT &gt; PROGRESS</span>
           </p>
@@ -52,7 +52,7 @@ const EctPage = () => {
 
       {/* Content Section */}
       <div className="content-section">
-        <h2>{timeline.title}</h2> {/* API title */}
+        <h2>{timeline.title}</h2> 
         {timeline.description}
       </div>
 
