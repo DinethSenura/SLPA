@@ -28,6 +28,14 @@ import Vesselsinport from './pages/Esystem/Esystempage/Vesselsinport/vesselsinpo
 import Clearingpasses from './pages/Esystem/Esystempage/Clearingpasses/clearingpasses';
 import Bungalowbooking from './pages/Esystem/Esystempage/Bungalowbooking/bungalowbooking';
 import Hris from './pages/Esystem/Esystempage/Hris/hris';
+import ColomboLocation from './pages/Ports/Colombo/ColomboLocation/colombolocation';
+import ColomboAbout from './pages/Ports/Colombo/ColomboAbout/colomboabout';
+import ColomboTerminals from './pages/Ports/Colombo/ColomboTerminals/colomboterminals';
+import ColomboFacilities from './pages/Ports/Colombo/ColomboFacilities/colombofacilities';
+import ColomboCargo from './pages/Ports/Colombo/ColomboCargo/colombocargo';
+import ColomboEntrance from './pages/Ports/Colombo/ColomboEntrance/colomboentrance';
+import ColomboCompliance from './pages/Ports/Colombo/ColomboCompliance/colombocompliance';
+import ColomboMahapola from './pages/Ports/Colombo/ColomboMahapola/colombomahapola';
 import Slpa from './pages/About/Slpa/slpa';
 
 function App() {
@@ -65,6 +73,17 @@ function App() {
           <Route path="clearingpasses" element={<Clearingpasses />}/>
           <Route path="bungalowbooking" element={<Bungalowbooking />}/>
           <Route path="hris" element={<Hris />}/>
+<<<<<<< HEAD
+=======
+          <Route path="colombolocation" element={<ColomboLocation/>}/>
+          <Route path="colomboabout" element={<ColomboAbout/>}/>
+          <Route path="colomboterminals" element={<ColomboTerminals/>}/>
+          <Route path="colombofacilities" element={<ColomboFacilities/>}/>
+          <Route path="colombocargo" element={<ColomboCargo/>}/>
+          <Route path="colomboentrance" element={<ColomboEntrance/>}/>
+          <Route path="colombocompliance" element={<ColomboCompliance/>}/>
+          <Route path="colombomahapola" element={<ColomboMahapola/>}/>
+>>>>>>> 0e1394189dc4be64c6ff538ff100e6c8a0b9d661
           <Route path="slpa" element={<Slpa />}/>
         </Routes>
       </div>
