@@ -42,9 +42,12 @@
 }
 
 .contenta p {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
   text-align: justify;
   color: #000000;
   margin-bottom: 15px;
+  
 }
 
 /* Individual image sizes with 3D effect */
@@ -130,8 +133,8 @@
   }
 
   .social-media-box a svg {
-    width: 20px; 
-    height: 20px;
+    width: 15px; 
+    height: 15px;
   }
 }
 
