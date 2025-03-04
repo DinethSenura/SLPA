@@ -75,15 +75,15 @@ const Header = () => {
               </NavLink>
               <ul className="dropdown-menu" aria-labelledby="aboutDropdown">
                 <li><NavLink to="/slpa" className="dropdown-item"onClick={closeNav}> SLPA</NavLink></li>
-                <li><NavLink to="/about/vision&mission" className="dropdown-item" onClick={closeNav}>  Vision & Mission</NavLink></li>
-                <li><NavLink to="/about/bordofdirectors" className="dropdown-item" onClick={closeNav}> Bord of Directors</NavLink></li>
-                <li><NavLink to="/about/act" className="dropdown-item" onClick={closeNav}> ACT</NavLink></li>
-                <li><NavLink to="/about/procedures" className="dropdown-item"onClick={closeNav}> Procedures</NavLink></li>
-                <li><NavLink to="/about/circulars" className="dropdown-item"onClick={closeNav}> Circulars</NavLink></li>
-                <li><NavLink to="/about/awards" className="dropdown-item"onClick={closeNav}> Awards</NavLink></li>
-                <li><NavLink to="/about/annualreports" className="dropdown-item"onClick={closeNav}> Annual Reports</NavLink></li>
-                <li><NavLink to="/about/tariff" className="dropdown-item"onClick={closeNav}> Tariff</NavLink></li>
-                <li><NavLink to="/about/righttoinformation" className="dropdown-item"onClick={closeNav}> Right To Information</NavLink></li>
+                <li><NavLink to="/visionmission" className="dropdown-item" onClick={closeNav}>  Vision & Mission</NavLink></li>
+                <li><NavLink to="/boardofdirectors" className="dropdown-item" onClick={closeNav}> Bord of Directors</NavLink></li>
+                <li><NavLink to="/act" className="dropdown-item" onClick={closeNav}> ACT</NavLink></li>
+                <li><NavLink to="/procedures" className="dropdown-item"onClick={closeNav}> Procedures</NavLink></li>
+                <li><NavLink to="/circulars" className="dropdown-item"onClick={closeNav}> Circulars</NavLink></li>
+                <li><NavLink to="/awards" className="dropdown-item"onClick={closeNav}> Awards</NavLink></li>
+                <li><NavLink to="/annualreports" className="dropdown-item"onClick={closeNav}> Annual Reports</NavLink></li>
+                <li><NavLink to="/tariff" className="dropdown-item"onClick={closeNav}> Tariff</NavLink></li>
+                <li><NavLink to="/righttoinformation" className="dropdown-item"onClick={closeNav}> Right To Information</NavLink></li>
               </ul>
             </li>
 

@@ -37,6 +37,15 @@ import ColomboEntrance from './pages/Ports/Colombo/ColomboEntrance/colomboentran
 import ColomboCompliance from './pages/Ports/Colombo/ColomboCompliance/colombocompliance';
 import ColomboMahapola from './pages/Ports/Colombo/ColomboMahapola/colombomahapola';
 import Slpa from './pages/About/Slpa/slpa';
+import Visionmission from './pages/About/Visionmission/visionmission';
+import Boardofdirectors from './pages/About/Boardofdirectors/boardofdirectors';
+import Act from './pages/About/Act/act';
+import Procedures from './pages/About/Procedures/procedures';
+import Circulars from './pages/About/Circulars/circulars';
+import Awards from './pages/About/Awards/awards';
+import Annualreports from './pages/About/Annualreports/annualreports';
+import Tariff from './pages/About/Tariff/tariff';
+import Righttoinformation from './pages/About/Righttoinformation/righttoinformation';
 
 function App() {
   const location = useLocation();
@@ -82,6 +91,15 @@ function App() {
           <Route path="colombocompliance" element={<ColomboCompliance/>}/>
           <Route path="colombomahapola" element={<ColomboMahapola/>}/>
           <Route path="slpa" element={<Slpa />}/>
+          <Route path="visionmission" element={<Visionmission />}/>
+          <Route path="act" element={<Act />}/>
+          <Route path="procedures" element={<Procedures />}/>
+          <Route path="circulars" element={<Circulars />}/>
+          <Route path="awards" element={<Awards />}/>
+          <Route path="annualreports" element={<Annualreports />}/>
+          <Route path="tariff" element={<Tariff />}/>
+          <Route path="righttoinformation" element={<Righttoinformation />}/>
+          <Route path="boardofdirectors" element={<Boardofdirectors />}/>
         </Routes>
       </div>
       <Footer />
