@@ -1,424 +1,430 @@
 body {
-    font-family: Arial, sans-serif !important;
-  }
+  font-family: Arial, sans-serif !important;
+}
+
+.ports-container {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 10px;
+  letter-spacing: .02em;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Header Section */
+.header-section {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  margin-top: 70px;
+  margin: 0;
+}
+
+.header-section h1,
+.header-section p {
+  position: absolute;
+  text-align:justify;
+  color: white;
+  margin: 0;
+  font-family: 'open sans','sans-serif';
+  font-size: 14px;
+}
+
+.header-section h1 {
+  bottom: 20px;
+  left: 20px;
+  font-size: 2.5rem;
+  padding: 10px;
+}
+
+.header-section p {
+  bottom: 10px;
+  left: 20px;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navbar {
+  margin-bottom: 0; /* Reduce extra space under the navigation bar */
+}
+
+
+/* Container for Small Boxes */
+.small-boxes-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+  padding: 15px;
+  position: sticky; /* Makes the container sticky */
+  top: 60px; /* Adjust this value to reduce/increase the gap under the navigation bar */
+  background-color: #ffffff; /* Add background to prevent overlapping */
+  z-index: 10; /* Ensures it stays above other content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Shadow for better visibility */
+  width: 90%;
+  margin-left: 20px;
+}
+
+
+/* Individual Small Box */
+.small-box {
+  width: 150px;
+  height: 50px;
+  background-color: #3b82f6; /* Blue color for the boxes */
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for the Box */
+.small-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtitle Styling */
+.small-box h4 {
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  margin: 20px 0;
+}
+
+.content-section {
+  flex: 2; /* Take 2/3 of the space */
+  padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.content-section h2 {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.content-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  width: 90%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: justify;
+}
+
+.content-image {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+/* Ads Section */
+.ads-section {
+  flex: 1; /* Take 1/3 of the space */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 70px;
+}
+
+.small-ads {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/*.ad {
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px;
+  font-size: 1rem;
+}*/
+
+.ad_1 {
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px;
+  font-size: 1rem;
+  margin-top: -30px;
+}
+
+.ad-small {
+  height: 100%; /* Fixed height for small ads */
+}
+
+.ad-large_1 {
+  width: 450px;
+  height: 400px; /* Fixed height for the large ad */
+  margin-top: 90px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px;
+  font-size: 1rem;
+  margin-top: -30px;
+}
+
+/* Container for horizontal images */
+.horizontal-images {
+  display: flex;
+  justify-content: center; /* Center the images horizontally */
+  align-items: center; /* Align images vertically */
+  width: 100%; /* Ensure it spans full width */
+  gap: 5px; /* Space between images */
+  perspective: 1000px; /* Add perspective for the 3D effect */
+  background-color: #d9d9d9; /* Light background */
+  padding: 0 20px; /* Add space on either side of the images */
+  box-sizing: border-box; /* Include padding in the container's width */
+}
+
+/* Image container for the 3D effect */
+.image-container_1 {
+  width: 600px; /* Default width for images */
+  height: 80px; /* Default height for images */
+  transform-style: preserve-3d; /* Enable 3D transformations */
+  transition: transform 0.6s ease; /* Smooth transition */
+  transform: rotateY(0deg); /* Initial position */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+.image-container_1:hover {
+  transform: rotateY(15deg); /* Rotate on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+/* Individual image styling */
+.image_1 {
+  max-width: 100%; /* Make the image fit the container */
+  height: auto; /* Make the image fit the container */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 0px; /* Add rounded corners */
+  margin-top: -20px;
+  gap: 2px;
   
-  .ports-container {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    line-height: 10px;
-    letter-spacing: .02em;
-    margin: 0 auto;
-    padding: 0;
-  }
-  
-  /* Header Section */
-  .header-section {
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    margin-top: 70px;
-    margin: 0;
-  }
-  
-  .header-section h1,
-  .header-section p {
-    position: absolute;
-    text-align:justify;
-    color: white;
-    margin: 0;
-    font-family: 'open sans','sans-serif';
-    font-size: 14px;
-  }
-  
+}
+
+.ad-large_1 {
+  height: 600px; /* Fixed height for the large ad */
+  width: 600px;
+  margin-top: 90px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px;
+  font-size: 1rem;
+  margin-top: 40px;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  /* Tablet View */
   .header-section h1 {
-    bottom: 20px;
-    left: 20px;
-    font-size: 2.5rem;
-    padding: 10px;
-  }
-  
-  .header-section p {
-    bottom: 10px;
-    left: 20px;
-    font-size: 1rem;
-    color: #ccc;
-  }
-  
-  .header-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .navbar {
-    margin-bottom: 0; /* Reduce extra space under the navigation bar */
-  }
-  
-  
-  /* Container for Small Boxes */
-  .small-boxes-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin: 20px 0;
-    padding: 15px;
-    position: sticky; /* Makes the container sticky */
-    top: 60px; /* Adjust this value to reduce/increase the gap under the navigation bar */
-    background-color: #ffffff; /* Add background to prevent overlapping */
-    z-index: 10; /* Ensures it stays above other content */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Shadow for better visibility */
-    width: 90%;
-    margin-left: 20px;
-  }
-  
-  
-  /* Individual Small Box */
-  .small-box {
-    width: 150px;
-    height: 50px;
-    background-color: #3b82f6; /* Blue color for the boxes */
-    color: #ffffff;
-    font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  /* Hover Effect for the Box */
-  .small-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Subtitle Styling */
-  .small-box h4 {
-    font-size: 12px;
-    font-weight: normal;
-    margin-top: 5px;
-  }
-  
-  /* Main Content */
-  .main-content {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    margin: 20px 0;
-  }
-  
-  .content-section {
-    flex: 2; /* Take 2/3 of the space */
-    padding: 20px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-  }
-  
-  .content-section h2 {
     font-size: 2rem;
-    margin-top: 20px;
+    left: 10px;
   }
-  
-  .content-section p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 10px;
-    width: 90%;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    line-height: 30px;
-    text-align: justify;
+
+  .header-section p {
+    font-size: 0.9rem;
+    left: 10px;
   }
-  
+
+  .content-section h2 {
+    font-size: 1.8rem;
+  }
+
   .content-image {
-    width: 80%;
-    margin-bottom: 20px;
+    width: 100%;
   }
-  
-  /* Ads Section */
+
   .ads-section {
-    flex: 1; /* Take 1/3 of the space */
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    margin-top: 70px;
+    flex: 1;
   }
-  
-  .small-ads {
-    display: flex;
+
+  .ad {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Mobile View */
+  .main-content {
     flex-direction: column;
+  }
+
+  .content-section {
+    flex: none; /* Full width for content */
+  }
+
+  .small-boxes-container{
+    width: 300px;
+  }
+
+  .ads-section {
+    flex: none; /* Full width for ads */
+    margin-top: 10px;
+  }
+
+  .ad-small {
+    height: 80px;
+  }
+
+  /*.ad-large_1 {
+    height: 200px;
+    margin-top: 10px;
+  }*/
+
+  .header-section {
+    height: 40vh;
+  }
+
+  .header-image{
+
+    width: 100%;
+}
+
+  .header-section h1 {
+    font-size: 1.8rem;
+    left: 5px;
+  }
+
+  .header-section p {
+    font-size: 0.8rem;
+    left: 5px;
+  }
+
+  
+  .image-container_1 {
+    width: 80%; /* Adjust container width to fit mobile screens */
+    height: auto; /* Adjust height proportionally */
+    margin: auto; /* Center align the images */
     gap: 10px;
   }
-  
-  /*.ad {
-    background-color: white;
-    border-radius: 5px;
-    text-align: center;
-    padding: 15px;
-    font-size: 1rem;
-  }*/
-  
-  .ad_1 {
-    background-color: #ddd;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    padding: 15px;
-    font-size: 1rem;
-    margin-top: -30px;
-  }
-  
-  .ad-small {
-    height: 100%; /* Fixed height for small ads */
-  }
-  
-  .ad-large_1 {
-    width: 450px;
-    height: 400px; /* Fixed height for the large ad */
-    margin-top: 90px;
-    background-color: #ddd;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    padding: 15px;
-    font-size: 1rem;
-    margin-top: -30px;
-  }
-  
-  /* Container for horizontal images */
-  .horizontal-images {
-    display: flex;
-    justify-content: center; /* Center the images horizontally */
-    align-items: center; /* Align images vertically */
-    width: 100%; /* Ensure it spans full width */
-    gap: 5px; /* Space between images */
-    perspective: 1000px; /* Add perspective for the 3D effect */
-    background-color: #d9d9d9; /* Light background */
-    padding: 0 20px; /* Add space on either side of the images */
-    box-sizing: border-box; /* Include padding in the container's width */
-  }
-  
-  /* Image container for the 3D effect */
-  .image-container_1 {
-    width: 600px; /* Default width for images */
-    height: 80px; /* Default height for images */
-    transform-style: preserve-3d; /* Enable 3D transformations */
-    transition: transform 0.6s ease; /* Smooth transition */
-    transform: rotateY(0deg); /* Initial position */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-  }
-  
-  .image-container_1:hover {
-    transform: rotateY(15deg); /* Rotate on hover */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
-  }
-  
-  /* Individual image styling */
+
   .image_1 {
-    max-width: 100%; /* Make the image fit the container */
-    height: auto; /* Make the image fit the container */
-    object-fit: cover; /* Maintain aspect ratio */
-    border-radius: 0px; /* Add rounded corners */
-    margin-top: -20px;
-    gap: 2px;
-    
+    border-radius: 5px; /* Slightly smaller border radius */
   }
-  
+
+  .content-image{
+    width: 300px;
+    margin-left: -10px;
+
+  }
+
+  .content-section p{
+    width: 300px;
+    margin-left: 250px;
+  }
+
+}
+
+
+@media screen and (max-width: 480px) {
+  /* Small Mobile View */
+  .header-section {
+    height: 30vh;
+  }
+
+  .header-image {
+    width: 100% !important;
+    height: auto;
+  }
+
+  .header-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-section p {
+    font-size: 0.7rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .ad-small {
+    height: 70px;
+    width: 300px;
+    margin-left: 20px;
+  }
+
   .ad-large_1 {
-    height: 600px; /* Fixed height for the large ad */
-    width: 600px;
-    margin-top: 90px;
-    background-color: #ddd;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    padding: 15px;
-    font-size: 1rem;
-    margin-top: 40px;
-  }
-  
-  
-  /* Responsive Design */
-  @media screen and (max-width: 1024px) {
-    /* Tablet View */
-    .header-section h1 {
-      font-size: 2rem;
-      left: 10px;
-    }
-  
-    .header-section p {
-      font-size: 0.9rem;
-      left: 10px;
-    }
-  
-    .content-section h2 {
-      font-size: 1.8rem;
-    }
-  
-    .content-image {
-      width: 100%;
-    }
-  
-    .ads-section {
-      flex: 1;
-    }
-  
-    .ad {
-      font-size: 0.9rem;
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    /* Mobile View */
-    .main-content {
-      flex-direction: column;
-    }
-  
-    .content-section {
-      flex: none; /* Full width for content */
-    }
-  
-    .small-boxes-container{
-      width: 300px;
-    }
-  
-    .ads-section {
-      flex: none; /* Full width for ads */
-      margin-top: 10px;
-    }
-  
-    .ad-small {
-      height: 80px;
-    }
-  
-    /*.ad-large_1 {
-      height: 200px;
-      margin-top: 10px;
-    }*/
-  
-    .header-section {
-      height: 40vh;
-    }
-  
-    .header-section h1 {
-      font-size: 1.8rem;
-      left: 5px;
-    }
-  
-    .header-section p {
-      font-size: 0.8rem;
-      left: 5px;
-    }
-  
+    height: 150px;
+    width: 300px;
     
-    .image-container_1 {
-      width: 80%; /* Adjust container width to fit mobile screens */
-      height: auto; /* Adjust height proportionally */
-      margin: auto; /* Center align the images */
-      gap: 10px;
-    }
-  
-    .image_1 {
-      border-radius: 5px; /* Slightly smaller border radius */
-    }
-  
-    .content-image{
-      width: 300px;
-      margin-left: -30px;
-  
-    }
-  
-    .content-section p{
-      width: 300px;
-      margin-left: 50px;
-    }
-  
   }
-  
-  
-  @media screen and (max-width: 480px) {
-    /* Small Mobile View */
-    .header-section {
-      height: 30vh;
-    }
-  
-    .header-image{
-      width: 300px;
-    }
-  
-    .header-section h1 {
-      font-size: 1.5rem;
-    }
-  
-    .header-section p {
-      font-size: 0.7rem;
-    }
-  
-    .content-section h2 {
-      font-size: 1.5rem;
-    }
-  
-    .ad-small {
-      height: 70px;
-      width: 300px;
-      margin-left: 20px;
-    }
-  
-    .ad-large_1 {
-      height: 150px;
-      width: 300px;
-      
-    }
-  
-    .image-container_1 {
-      width: 80%; /* Adjust container width to fit mobile screens */
-      height: auto; /* Adjust height proportionally */
-      margin-bottom: 20px;/* Center align the images */
-    }
-  
-    .image_1 {
-      border-radius: 5px; /* Slightly smaller border radius */
-    }
-  
-    .content-section p{
-      width: 250px;
-      margin-left: -50px;
-    }
-  
+
+  .image-container_1 {
+    width: 80%; /* Adjust container width to fit mobile screens */
+    height: auto; /* Adjust height proportionally */
+    margin-bottom: 20px;/* Center align the images */
   }
-  
-  @media screen and (max-width: 768px) {
-    .small-boxes-container {
-      flex-wrap: wrap; /* Allow buttons to wrap into multiple lines */
-      overflow-x: auto; /* Allow horizontal scrolling if needed */
-      padding: 10px; /* Reduce padding for smaller screens */
-      gap: 10px;
-    }
-  
-    .small-box {
-      width: 80px;
-      height: 40px;
-      font-size: 10px;
-    }
+
+  .image_1 {
+    border-radius: 5px; /* Slightly smaller border radius */
   }
-  
-  @media screen and (max-width: 480px) {
-    .small-boxes-container {
-      flex-wrap: wrap; /* Ensure wrapping behavior on smaller screens */
-    }
-  
-    .small-box {
-      width: 80px;
-      height: 35px;
-      font-size: 10px;
-    }
+
+  .content-section p{
+    width: 250px;
+    margin-left: -50px;
   }
+
+}
+
+@media screen and (max-width: 768px) {
+  .small-boxes-container {
+    flex-wrap: wrap; /* Allow buttons to wrap into multiple lines */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    padding: 10px; /* Reduce padding for smaller screens */
+    gap: 10px;
+  }
+
+  .small-box {
+    width: 80px;
+    height: 40px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .small-boxes-container {
+    flex-wrap: wrap; /* Ensure wrapping behavior on smaller screens */
+  }
+
+  .small-box {
+    width: 80px;
+    height: 35px;
+    font-size: 10px;
+  }
+}
