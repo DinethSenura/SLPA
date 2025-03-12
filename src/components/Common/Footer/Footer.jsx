@@ -49,7 +49,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-section address-section">
           <img src={logo} alt="" className="logo1" />
-          <p><FaMapMarkerAlt /> Level 7, HQ Colombo, No. 464, <br /> T.B. Jaya Mawatha, Colombo 10.</p>
+          <p><FaMapMarkerAlt /> Level 7, HQ Colombo, No. 464, <br /> T.B. Jaya Mawatha, Colombo 10, SriLanka.</p>
           <p><FaPhoneAlt /> <a href="tel:+94112421231">+94 112 42 12 31 / +94 112 42 12 01</a></p>
           <p><FaEnvelope /> <a href="mailto:info@slpa.lk">info@slpa.lk</a></p>
           <p><FaTelegramPlane /> <a href="https://t.me/PORTSLANKA" target="_blank" rel="noreferrer">Telegrams : PORTS LANKA</a></p>
@@ -87,14 +87,14 @@ const Footer = () => {
   <ul>
     <li><a href="/mahapola-academy">Mahapola Academy</a></li>
     <li><a href="/news-slpa">NEWS.SLPA.LK</a></li>
-    <li><a href="/slparosa">SLPAROSA</a></li>
+    <li><a href="/slparosa">SLPARSOA</a></li>
     <li><a href="/site-index">Site Index</a></li>
     <li><a href="/zero-tolerance-notice">Zero Tolerance Notice</a></li>
   </ul>
   <ul>
     <li><a href="/faq">FAQ</a></li>
     <li><a href="/traffic">Traffic</a></li>
-    <li><a href="/opportunistic">Opportunistic</a></li>
+    <li><a href="/opportunistic">Opportunities</a></li>
     <li><a href="/rti">RTI</a></li>
     <li><a href="/csr">CSR</a></li>
   </ul>
