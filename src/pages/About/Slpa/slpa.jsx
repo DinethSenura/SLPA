@@ -1,10 +1,9 @@
 import React from 'react'
 
-
 const berthingprogramme = () => {
   return (
     <div>
-  
+     
       <div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet, nunc a tristique facilisis, mi nisi dapibus dui, eget tempor metus elit nec sapien. Aliquam erat volutpat. Proin euismod, arcu non scelerisque aliquet, risus purus scelerisque risus, eget ullamcorper libero risus eget arcu. Integer volutpat, felis at vehicula varius, ante leo tincidunt arcu, vel varius tortor sem et mi. Integer tincidunt suscipit tortor id iaculis. Suspendisse tincidunt, purus vel laoreet feugiat, ligula risus pharetra lorem, at efficitur ipsum risus vel enim. Quisque vel libero sed nulla aliquet pharetra. In rhoncus urna a ligula venenatis, sed tempor turpis venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
