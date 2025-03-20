@@ -1,30 +1,88 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import DOMPurify from 'dompurify';
 
-const berthingprogramme = () => {
-  return (
+const Slpa = () => { // ✅ Component name starts with uppercase
+  const [htmlContent, setHtmlContent] = useState('');
+
+  useEffect(() => {
+    fetch('https://www.slpa.lk/WEBAPI/V1/Articles/get_article_info')
+      .then(response => response.json())
+      .then(data => setHtmlContent(DOMPurify.sanitize(data.message)))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
+  return ( 
     <div>
-     
-      <div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet, nunc a tristique facilisis, mi nisi dapibus dui, eget tempor metus elit nec sapien. Aliquam erat volutpat. Proin euismod, arcu non scelerisque aliquet, risus purus scelerisque risus, eget ullamcorper libero risus eget arcu. Integer volutpat, felis at vehicula varius, ante leo tincidunt arcu, vel varius tortor sem et mi. Integer tincidunt suscipit tortor id iaculis. Suspendisse tincidunt, purus vel laoreet feugiat, ligula risus pharetra lorem, at efficitur ipsum risus vel enim. Quisque vel libero sed nulla aliquet pharetra. In rhoncus urna a ligula venenatis, sed tempor turpis venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+      <h4 style={{ color: '#236F86' }}>&nbsp;</h4> 
 
-          Curabitur euismod nunc sed orci gravida, non ullamcorper nunc venenatis. Nam ut varius nunc, ac tempor nulla. Nulla facilisi. Morbi sit amet ante nunc. Donec vestibulum purus eu enim gravida, ut auctor sapien tempus. Nulla rutrum augue at lectus vehicula tristique. Mauris quis turpis et arcu feugiat finibus. Aenean nec enim eget libero iaculis placerat. Proin posuere orci nisl, vitae tempus purus efficitur vitae. Nulla malesuada euismod arcu, sit amet ultricies leo lacinia id. Donec efficitur, tortor sit amet aliquet posuere, nisi mi lacinia magna, nec bibendum ante velit vel mauris. Vivamus cursus malesuada eros, vel blandit mi malesuada sit amet. Ut faucibus feugiat ex, non elementum magna feugiat non. Morbi non velit risus.
+      <p>
+        <iframe
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          frameBorder="0"
+          height="444"
+          scrolling="yes"
+          src="https://www.youtube.com/embed/jvRH8dcbLpg"
+          title="YouTube video player"
+          width="790"
+        ></iframe>
+      </p>
 
-          Donec id mauris interdum, cursus ligula in, aliquam sapien. In euismod orci sit amet mauris malesuada sollicitudin. Sed et ligula ipsum. Fusce volutpat ac odio nec sodales. In pretium libero id arcu dapibus, nec volutpat eros condimentum. Curabitur at sollicitudin nunc. Etiam malesuada sem non risus dignissim, ut vehicula libero interdum. Ut id suscipit orci. Aliquam tincidunt felis metus, nec tincidunt nulla interdum eu. Integer et justo eros. Etiam euismod erat vitae arcu scelerisque, at ullamcorper ipsum auctor. Nam suscipit, enim ac egestas feugiat, justo orci viverra felis, ac feugiat orci orci sit amet ante.
+      <h4 style={{ color: '#236F86' }}>
+        <strong>History</strong>
+      </h4>
 
-          Vivamus non lorem leo. Fusce sit amet ex sed nisi sodales tincidunt. Phasellus non interdum magna. Aenean maximus felis at mauris feugiat ultricies. Curabitur vestibulum augue id cursus scelerisque. Nullam viverra felis in eros auctor tempus. Integer in justo eu felis tincidunt auctor ut vel velit. Suspendisse potenti. Quisque vitae massa ut risus tincidunt varius non vel ante. Proin ut ante sit amet neque cursus feugiat. Curabitur tempor lorem vel libero efficitur, eu interdum purus vehicula. Donec mollis lacus sit amet ante tincidunt tincidunt. Sed pretium nunc id tortor tempor, id dapibus felis tincidunt.
+      <p style={{ textAlign: 'justify' }}>
+        Since 1918, the Port of Colombo had been administered by the Colombo Port Commission, a Government Department which was made responsible for the supply and maintenance of cargo-handling equipment and other infrastructure, pilotage services, docking, and slipping. The government had funded all its activities. Stevedoring and shore handling activities were in the hands of several private wharfage companies. In 1958, the Port Cargo Corporation was set up to take over these activities performed by a multiplicity of operators. The Port Tally and Protective Services Corporation was formed in 1967 in order to perform on-board tallying and watchmen services on behalf of Agents.
+      </p>
 
-          Maecenas egestas laoreet est, sit amet venenatis dui blandit vel. Fusce sollicitudin ligula eu lectus maximus, nec tempor odio vulputate. Fusce imperdiet metus ac turpis scelerisque auctor. Aliquam non ex quis nulla sodales tincidunt. Nulla viverra purus ac urna volutpat, non dapibus neque eleifend. Vivamus euismod arcu sed dolor consequat, at luctus ante pharetra. Ut aliquet placerat turpis id dapibus. Sed et ante tortor. Donec elementum purus id lorem pellentesque, ac tempus sem sollicitudin. Fusce cursus sapien id ipsum malesuada, id maximus magna euismod. Phasellus eu ante ut leo lobortis consequat. Curabitur rhoncus volutpat eros eu placerat.
+      <p style={{ textAlign: 'justify' }}>
+        The Sri Lanka Ports Authority was constituted under the provisions of the Sri Lanka Ports Authority Act, No. 51 of 1979 (subsequently amended by Act No. 7 of 1984 and Act No. 35 of 1984) on the 1st of August 1979, effecting the merger of the Colombo Port Commission Department and the two existing statutory Corporations. This resulted in a unified organization with a streamlined structure. The Ports Authority does not receive financial allocations from the government but operates on its own revenue and resources.
+      </p>
 
-          Nulla viverra venenatis dui, non dictum orci cursus vitae. Ut felis dui, tincidunt ut volutpat ac, luctus non est. Ut cursus velit dui, id pretium dui facilisis id. Aliquam tincidunt euismod ipsum sit amet fermentum. Donec ut ante et neque pharetra sodales non id ligula. Integer scelerisque dui orci, vitae mollis lacus gravida a. Vivamus sodales, dui et venenatis placerat, risus ligula malesuada neque, sed pretium nulla enim ac elit. Vivamus pretium velit lorem, ac condimentum lorem fringilla in. Cras sit amet felis urna. Donec id velit malesuada, maximus urna sed, fermentum ante. Etiam posuere varius augue, ac convallis lorem ultricies ac.
+      <p>&nbsp;</p>
 
-          Sed ut dolor magna. Curabitur a felis vulputate, malesuada arcu id, consequat metus. Nunc lacinia nunc eget eros viverra, ut hendrerit dui tincidunt. Morbi et mollis eros. Integer posuere neque lectus, vel efficitur turpis eleifend in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer finibus felis sed vestibulum tempor. Nullam vel erat nec sapien viverra gravida ac ut lorem. Proin convallis nisi et libero tincidunt, vitae auctor erat interdum. Curabitur at arcu eget dolor malesuada mollis sed id risus. In ac nisi ac nunc aliquet suscipit. Integer ac varius lorem. Vivamus fermentum, arcu vitae elementum lacinia, dui erat feugiat ligula, ac posuere arcu sapien nec purus.
+      <h4 style={{ color: '#236F86', marginBottom: '20px' }}>
+        <strong>Milestones</strong>
+      </h4>
 
-          Nam interdum velit ut risus laoreet sollicitudin. Etiam vestibulum in nunc at hendrerit. Integer molestie arcu non purus condimentum ultricies. Morbi volutpat quam sit amet dolor rhoncus, sit amet facilisis urna volutpat. Ut laoreet eros orci, ut maximus sapien tempus nec. Nam vehicula dolor vel ante tincidunt, non rhoncus felis volutpat. Ut vel augue magna. Donec suscipit auctor felis, euismod tempus felis iaculis eu. Sed auctor urna in fringilla pharetra. Nunc facilisis dolor at justo scelerisque, et convallis odio tincidunt. Sed efficitur lorem sit amet odio finibus, ut dictum nunc tincidunt. Donec eget libero justo.
-        </p>
-      </div>
+      <table cellPadding="2" cellSpacing="4" width="100%" border="1">
+        <tbody>
+          <tr>
+            <td align="left" valign="top" width="10%">1505 -</td>
+            <td align="left" valign="top" width="88%">Port of Colombo was known to the Western World</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" width="10%">1912 -</td>
+            <td align="left" valign="top" width="88%">Colombo Port was converted to a sheltered harbour</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" width="10%">1913 -</td>
+            <td align="left" valign="top" width="88%">Colombo Port Commission Established</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" width="10%">1954 -</td>
+            <td align="left" valign="top" width="88%">Inauguration of the Queen Elizabeth Quay</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" width="10%">1954 -</td>
+            <td align="left" valign="top" width="88%">Completion of 16 alongside berths, transit sheds, and warehouses</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" width="10%">1958 -</td>
+            <td align="left" valign="top" width="88%">Port (Cargo) Corporation was founded</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" width="10%">1979 -</td>
+            <td align="left" valign="top" width="88%">Sri Lanka Ports Authority was Formed</td>
+          </tr>
+        </tbody>
+      </table>
+
+      {/* Inject API content safely */}
+      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
     </div>
-  )
-}
+  );
+};
 
-export default berthingprogramme
+export default Slpa; // ✅ Use correct component name
