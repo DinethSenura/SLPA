@@ -1,30 +1,210 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import DOMPurify from 'dompurify';
 
-const berthingprogramme = () => {
-  return (
-    <div>
-     
-      <div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet, nunc a tristique facilisis, mi nisi dapibus dui, eget tempor metus elit nec sapien. Aliquam erat volutpat. Proin euismod, arcu non scelerisque aliquet, risus purus scelerisque risus, eget ullamcorper libero risus eget arcu. Integer volutpat, felis at vehicula varius, ante leo tincidunt arcu, vel varius tortor sem et mi. Integer tincidunt suscipit tortor id iaculis. Suspendisse tincidunt, purus vel laoreet feugiat, ligula risus pharetra lorem, at efficitur ipsum risus vel enim. Quisque vel libero sed nulla aliquet pharetra. In rhoncus urna a ligula venenatis, sed tempor turpis venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+const BoardOfDirectors = () => {
+  const [htmlContent, setHtmlContent] = useState('');
 
-          Curabitur euismod nunc sed orci gravida, non ullamcorper nunc venenatis. Nam ut varius nunc, ac tempor nulla. Nulla facilisi. Morbi sit amet ante nunc. Donec vestibulum purus eu enim gravida, ut auctor sapien tempus. Nulla rutrum augue at lectus vehicula tristique. Mauris quis turpis et arcu feugiat finibus. Aenean nec enim eget libero iaculis placerat. Proin posuere orci nisl, vitae tempus purus efficitur vitae. Nulla malesuada euismod arcu, sit amet ultricies leo lacinia id. Donec efficitur, tortor sit amet aliquet posuere, nisi mi lacinia magna, nec bibendum ante velit vel mauris. Vivamus cursus malesuada eros, vel blandit mi malesuada sit amet. Ut faucibus feugiat ex, non elementum magna feugiat non. Morbi non velit risus.
+  useEffect(() => {
+    // Directly set the provided HTML content.  No fetch needed.
+    const apiData = {
+      title: "Board Of Directors",
+      sub_title: "",
+      image: "article_image_2016_04_27_1461722881.jpg",
+      content: `<div class="row">
+      <h2>Board Of Directors</h2>
+<div class="col-md-6">
+<div class="col-md-4"><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2024_10_03_1727947468.jpg" style="width:150%" /></strong></div>
 
-          Donec id mauris interdum, cursus ligula in, aliquam sapien. In euismod orci sit amet mauris malesuada sollicitudin. Sed et ligula ipsum. Fusce volutpat ac odio nec sodales. In pretium libero id arcu dapibus, nec volutpat eros condimentum. Curabitur at sollicitudin nunc. Etiam malesuada sem non risus dignissim, ut vehicula libero interdum. Ut id suscipit orci. Aliquam tincidunt felis metus, nec tincidunt nulla interdum eu. Integer et justo eros. Etiam euismod erat vitae arcu scelerisque, at ullamcorper ipsum auctor. Nam suscipit, enim ac egestas feugiat, justo orci viverra felis, ac feugiat orci orci sit amet ante.
+<div class="col-md-8">
+<div class="col-md-12">
+<h5><strong>Admiral Sirimewan Ranasinghe &nbsp;<span style="font-size:9px;">(Rtd)<br />
+WWV, RWP, VSV,USP</span></strong></h5>
 
-          Vivamus non lorem leo. Fusce sit amet ex sed nisi sodales tincidunt. Phasellus non interdum magna. Aenean maximus felis at mauris feugiat ultricies. Curabitur vestibulum augue id cursus scelerisque. Nullam viverra felis in eros auctor tempus. Integer in justo eu felis tincidunt auctor ut vel velit. Suspendisse potenti. Quisque vitae massa ut risus tincidunt varius non vel ante. Proin ut ante sit amet neque cursus feugiat. Curabitur tempor lorem vel libero efficitur, eu interdum purus vehicula. Donec mollis lacus sit amet ante tincidunt tincidunt. Sed pretium nunc id tortor tempor, id dapibus felis tincidunt.
+<h6><strong>(Chairman)</strong></h6>
+</div>
 
-          Maecenas egestas laoreet est, sit amet venenatis dui blandit vel. Fusce sollicitudin ligula eu lectus maximus, nec tempor odio vulputate. Fusce imperdiet metus ac turpis scelerisque auctor. Aliquam non ex quis nulla sodales tincidunt. Nulla viverra purus ac urna volutpat, non dapibus neque eleifend. Vivamus euismod arcu sed dolor consequat, at luctus ante pharetra. Ut aliquet placerat turpis id dapibus. Sed et ante tortor. Donec elementum purus id lorem pellentesque, ac tempus sem sollicitudin. Fusce cursus sapien id ipsum malesuada, id maximus magna euismod. Phasellus eu ante ut leo lobortis consequat. Curabitur rhoncus volutpat eros eu placerat.
+<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2325559</span><br />
+<span style="font-size:12px;">Fax: +94&nbsp;11&nbsp;2451916</span></div>
 
-          Nulla viverra venenatis dui, non dictum orci cursus vitae. Ut felis dui, tincidunt ut volutpat ac, luctus non est. Ut cursus velit dui, id pretium dui facilisis id. Aliquam tincidunt euismod ipsum sit amet fermentum. Donec ut ante et neque pharetra sodales non id ligula. Integer scelerisque dui orci, vitae mollis lacus gravida a. Vivamus sodales, dui et venenatis placerat, risus ligula malesuada neque, sed pretium nulla enim ac elit. Vivamus pretium velit lorem, ac condimentum lorem fringilla in. Cras sit amet felis urna. Donec id velit malesuada, maximus urna sed, fermentum ante. Etiam posuere varius augue, ac convallis lorem ultricies ac.
+<div class="col-md-12"><span style="font-size:12px;">chairman@slpa.lk</span></div>
+</div>
+</div>
 
-          Sed ut dolor magna. Curabitur a felis vulputate, malesuada arcu id, consequat metus. Nunc lacinia nunc eget eros viverra, ut hendrerit dui tincidunt. Morbi et mollis eros. Integer posuere neque lectus, vel efficitur turpis eleifend in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer finibus felis sed vestibulum tempor. Nullam vel erat nec sapien viverra gravida ac ut lorem. Proin convallis nisi et libero tincidunt, vitae auctor erat interdum. Curabitur at arcu eget dolor malesuada mollis sed id risus. In ac nisi ac nunc aliquet suscipit. Integer ac varius lorem. Vivamus fermentum, arcu vitae elementum lacinia, dui erat feugiat ligula, ac posuere arcu sapien nec purus.
+<div class="col-md-6">
+<div class="col-md-4"><strong><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2024_10_04_1728027763.jpg" style="width:150%" /></strong></strong></div>
 
-          Nam interdum velit ut risus laoreet sollicitudin. Etiam vestibulum in nunc at hendrerit. Integer molestie arcu non purus condimentum ultricies. Morbi volutpat quam sit amet dolor rhoncus, sit amet facilisis urna volutpat. Ut laoreet eros orci, ut maximus sapien tempus nec. Nam vehicula dolor vel ante tincidunt, non rhoncus felis volutpat. Ut vel augue magna. Donec suscipit auctor felis, euismod tempus felis iaculis eu. Sed auctor urna in fringilla pharetra. Nunc facilisis dolor at justo scelerisque, et convallis odio tincidunt. Sed efficitur lorem sit amet odio finibus, ut dictum nunc tincidunt. Donec eget libero justo.
-        </p>
-      </div>
-    </div>
-  )
-}
+<div class="col-md-8">
+<div class="col-md-12">
+<h5><a href="vicechairman"><strong>Eng. Herath M.P. Jayawardhana</strong></a></h5>
 
-export default berthingprogramme
+<h6><strong><strong>(Vice Chairman)</strong></strong></h6>
+</div>
+
+<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2380849</span><br />
+<span style="font-size:12px;">Fax: +94&nbsp;11&nbsp;2344766</span></div>
+
+<div class="col-md-12"><span style="font-size:12px;">vc@slpa.lk</span></div>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="row">
+<div class="col-md-6">
+<div class="col-md-4"><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2025_03_07_1741333134.jpg" style="width:150%" /></strong></div>
+
+<div class="col-md-8">
+<div class="col-md-12">
+<h5><strong>Mr. Ganaka Hemachandra</strong></h5>
+
+<h6><strong>(Managing Director)</strong></h6>
+</div>
+
+<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2323213<br />
+Fax: +94&nbsp;11&nbsp;2435637</span></div>
+
+<div class="col-md-12"><span style="font-size:12px;">md@slpa.lk</span></div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="col-md-4"><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2022_08_15_1660558111.jpg" style="width:150%" /></strong></div>
+
+<div class="col-md-8">
+<div class="col-md-12">
+<h5><strong><strong><strong>Mr. P. B. S. C. Nonis</strong></strong></strong></h5>
+
+<h6><strong><strong><strong>(Director)</strong></strong></strong></h6>
+</div>
+
+<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2143434<br />
+Fax: +94&nbsp;11&nbsp;2446364</span></div>
+
+<div class="col-md-12"><span style="font-size:12px;">dgc@customs.gov.lk</span></div>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="row">
+<div class="col-md-6">
+<div class="col-md-4"><img alt="Director Port Authority" class="img-responsive" src="" /></div>
+
+<div class="col-md-8">
+<div class="col-md-12">
+<h5><strong><strong><strong><strong><strong>Mrs. R. M. Damihta Kumari Rathnayake</strong></strong></strong></strong></strong></h5>
+
+<h6><strong>(Director - representing Treasury)</strong></h6>
+</div>
+
+<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2484617<br />
+Fax: +94&nbsp;11&nbsp;2484624</span></div>
+
+<div class="col-md-12"><span style="font-size:12px;">kumari.rm@tod.treasury.gov.lk<br />
+damitharm@gmail.com</span></div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="col-md-4"><strong><strong><img alt="Director port authority" class="img-responsive" src="../uploads/article/article_image_ext_2020_02_05_1580886256.JPG" /></strong></strong></div>
+
+<div class="col-md-8">
+<div class="col-md-12">
+<h5><strong><strong><strong>Mrs. N.A.A.P.S. Nissanka</strong></strong></strong></h5>
+
+<h6><strong><strong><strong>(Director)</strong></strong></strong></h6>
+</div>
+
+<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2441537<br />
+Fax: +94&nbsp;11&nbsp;2445088</span></div>
+
+<div class="col-md-12"><span style="font-size:12px;">nissankaapsara@gmail.com</span></div>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="row">
+<div class="col-md-6">
+<div class="col-md-4"><strong><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2024_01_30_1706609496.jpg" /></strong></strong></div>
+
+<div class="col-md-8">
+<div class="col-md-12">
+<h5><strong>Mr. E. M. S. B. Jayasundara</strong></h5>
+
+<h6><strong>(Director)</strong></h6>
+</div>
+
+<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2395119<br />
+Fax: +94&nbsp;11&nbsp;2322648</span></div>
+
+<div class="col-md-12"><span style="font-size:12px;">emsbshantha800@gmail.com</span></div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="col-md-4"><strong><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2022_11_04_1667558292.jpg" /></strong></strong></div>
+
+<div class="col-md-8">
+<div class="col-md-12">
+<h5><strong>Mr. Upul Jayatissa</strong></h5>
+
+<h6><strong>(Director)</strong></h6>
+</div>
+
+<div class="col-md-12"><span style="font-size:12px;">Mobile: +94&nbsp;071&nbsp;8688322</span></div>
+
+<div class="col-md-12"><span style="font-size:12px;">jayatissaupul@gmail.com</span></div>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="row">
+<div class="col-md-6">
+<div class="col-md-4"><strong><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2024_10_23_1729665485.jpg" /></strong></strong></div>
+
+<div class="col-md-8">
+<div class="col-md-12">
+<h5><strong>Mr. U. L. Anura Bandara</strong></h5>
+
+<h6><strong>(Director)</strong></h6>
+</div>
+
+<div class="col-md-12"><span style="font-size:12px;">Mobile: +94&nbsp;071&nbsp;8688359</span></div>
+
+<div class="col-md-12"><span style="font-size:12px;">udawela1967@hotmail.com</span></div>
+</div>
+</div>
+</div>
+
+<p>&nbsp;</p>
+
+<hr />
+<p><strong><strong><span style="font-size:16px"><strong>Secretary to the Board &nbsp;</strong></span></strong></strong></p>
+
+<p>&nbsp;</p>
+
+<div class="row">
+<div class="col-md-6">
+<div class="col-md-12">
+<div class="col-md-12">
+<h5><strong><strong><strong>Mrs. Shehara Y. Nawaratne</strong></strong></strong></h5>
+</div>
+
+<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2421530<br />
+Fax: +94&nbsp;11&nbsp;2421530</span></div>
+
+<div class="col-md-12"><span style="font-size:12px;">boardroom@slpa.lk</span></div>
+</div>
+</div>
+</div>`
+    };
+
+    setHtmlContent(DOMPurify.sanitize(apiData.content));
+  }, []);
+
+  return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+};
+
+export default BoardOfDirectors;
