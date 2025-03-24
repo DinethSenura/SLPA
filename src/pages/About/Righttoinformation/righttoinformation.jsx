@@ -1,9 +1,44 @@
 import React from 'react'
+import { Link } from 'react-router-dom'; // Add this line
+import './righttoinformation.css'; // Import CSS import
+import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg'; // Replace with the actual path
 
 const berthingprogramme = () => {
   return (
     <div>
      
+     <div className="header-section">
+        <h1>SLPA</h1>
+        <p className="path">
+          <Link to="/Home">HOME</Link>
+          <span>&gt;</span>ABOUT
+          <span>&gt;</span>SLPA
+        </p>
+        <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
+      </div>
+
+      {/* Small Boxes Section */}
+      <div className="small-boxes-container">
+        {[
+          { title: "SLPA", path: "/Slpa" },
+          { title: "Vision and Mission", path: "/Visionmission" },
+          { title: "Board of Directors", path: "/Boardofdirectors" },
+          { title: "ACT", path: "/Act" },
+          { title: "Procedures", path: "/Procedures" },
+          { title: "Circular", path: "/Circlular" },
+          { title: "Awards", path: "Awards" },
+          { title: "Annual Reports", path: "Annualreport" },
+          { title: "Tariff", path: "Tariff" },
+          { title: "Right to Information", path: "Righttoinformation" }
+        ].map((box, i) => (
+          <Link to={box.path} key={i} className="small-box-link">
+            <div className="small-box">
+              {box.title}
+            </div>
+          </Link>
+        ))}
+      </div>
+
       <div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet, nunc a tristique facilisis, mi nisi dapibus dui, eget tempor metus elit nec sapien. Aliquam erat volutpat. Proin euismod, arcu non scelerisque aliquet, risus purus scelerisque risus, eget ullamcorper libero risus eget arcu. Integer volutpat, felis at vehicula varius, ante leo tincidunt arcu, vel varius tortor sem et mi. Integer tincidunt suscipit tortor id iaculis. Suspendisse tincidunt, purus vel laoreet feugiat, ligula risus pharetra lorem, at efficitur ipsum risus vel enim. Quisque vel libero sed nulla aliquet pharetra. In rhoncus urna a ligula venenatis, sed tempor turpis venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
