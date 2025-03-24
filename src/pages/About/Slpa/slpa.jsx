@@ -48,44 +48,43 @@ const Slpa = () => {
 
         <h4 style={{ color: '#236F86' }}> </h4>
 
-        <div className='his_con'>
-        <div className='his'>
-        <p>
-          <iframe
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            frameBorder="0"
-            height="444"
-            scrolling="yes"
-            src="https://www.youtube.com/embed/jvRH8dcbLpg"
-            title="YouTube video player"
-            width="790"
-          ></iframe>
-        </p>
+        <div className="his_con">
+          <div className="his video-container">
+            <iframe
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              frameBorder="0"
+              height="444"
+              scrolling="yes"
+              src="https://www.youtube.com/embed/jvRH8dcbLpg"
+              title="YouTube video player"
+              width="790"
+            ></iframe>
+          </div>
+
+          <div className="his history-container">
+            <h4 style={{ color: '#236F86' }}>
+              <strong>History</strong>
+            </h4>
+
+            <p style={{ textAlign: 'justify' }}>
+              Since 1918, the Port of Colombo had been administered by the Colombo Port Commission, a Government Department which was made responsible for the supply and maintenance of cargo-handling equipment and other infrastructure, pilotage services, docking, and slipping. The government had funded all its activities. Stevedoring and shore handling activities were in the hands of several private wharfage companies. In 1958, the Port Cargo Corporation was set up to take over these activities performed by a multiplicity of operators. The Port Tally and Protective Services Corporation was formed in 1967 in order to perform on-board tallying and watchmen services on behalf of Agents.
+            </p>
+
+            <p style={{ textAlign: 'justify' }}>
+              The Sri Lanka Ports Authority was constituted under the provisions of the Sri Lanka Ports Authority Act, No. 51 of 1979 (subsequently amended by Act No. 7 of 1984 and Act No. 35 of 1984) on the 1st of August 1979, effecting the merger of the Colombo Port Commission Department and the two existing statutory Corporations. This resulted in a unified organization with a streamlined structure. The Ports Authority does not receive financial allocations from the government but operates on its own revenue and resources.
+            </p>
+
+            <p> </p>
+          </div>
         </div>
 
-        <div className='his'>
-        <h4 style={{ color: '#236F86' }}>
-          <strong>History</strong>
-        </h4>
+        
+     <div className='abouttable'>
 
-        <p style={{ textAlign: 'justify' }}>
-          Since 1918, the Port of Colombo had been administered by the Colombo Port Commission, a Government Department which was made responsible for the supply and maintenance of cargo-handling equipment and other infrastructure, pilotage services, docking, and slipping. The government had funded all its activities. Stevedoring and shore handling activities were in the hands of several private wharfage companies. In 1958, the Port Cargo Corporation was set up to take over these activities performed by a multiplicity of operators. The Port Tally and Protective Services Corporation was formed in 1967 in order to perform on-board tallying and watchmen services on behalf of Agents.
-        </p>
-
-        <p style={{ textAlign: 'justify' }}>
-          The Sri Lanka Ports Authority was constituted under the provisions of the Sri Lanka Ports Authority Act, No. 51 of 1979 (subsequently amended by Act No. 7 of 1984 and Act No. 35 of 1984) on the 1st of August 1979, effecting the merger of the Colombo Port Commission Department and the two existing statutory Corporations. This resulted in a unified organization with a streamlined structure. The Ports Authority does not receive financial allocations from the government but operates on its own revenue and resources.
-        </p>
-
-        <p> </p>
-
-        </div>
-        </div>
-
-        <h4 style={{ color: '#236F86', marginBottom: '20px' }}>
+     <h4 style={{ color: '#236F86', marginBottom: '20px' }}>
           <strong>Milestones</strong>
         </h4>
-     <div className='abouttable'>
         <table  cellPadding="2" cellSpacing="4" width="100%" border="1">
           <tbody >
             <tr><td>1505</td><td>Port of Colombo was known to the Western World</td></tr>
