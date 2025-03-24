@@ -9,7 +9,7 @@ const Slpa = () => {
       <div className="header-section">
         <h1>SLPA</h1>
         <p className="path">
-          <Link to="/Home">HOME</Link>
+        <span></span>HOME
           <span>&gt;</span>ABOUT
           <span>&gt;</span>SLPA
         </p>
@@ -45,23 +45,6 @@ const Slpa = () => {
         </h4>
 
         <p> </p>
-
-        <div className="gallery-photos-lightbox">
-          <ul className="clearfix gallery-photos">
-            <li className="col-md-6 col-sm-6 col-xs-12" style={{ textAlign: 'center' }}>
-              <a
-                className="photo-box image-link"
-                href="../uploads/article/article_image_ext_2016_07_29_1469814031.jpg"
-                style={{
-                  backgroundImage: "url('../uploads/article/article_image_ext_2016_07_29_1469814031.jpg')",
-                  backgroundSize: 'auto 100%',
-                }}
-              >
-                .
-              </a>
-            </li>
-          </ul>
-        </div>
 
         <h4 style={{ color: '#236F86' }}> </h4>
 
@@ -102,9 +85,9 @@ const Slpa = () => {
         <h4 style={{ color: '#236F86', marginBottom: '20px' }}>
           <strong>Milestones</strong>
         </h4>
-
-        <table cellPadding="2" cellSpacing="4" width="100%" border="1">
-          <tbody>
+     <div className='abouttable'>
+        <table  cellPadding="2" cellSpacing="4" width="100%" border="1">
+          <tbody >
             <tr><td>1505</td><td>Port of Colombo was known to the Western World</td></tr>
             <tr><td>1912</td><td>Colombo Port was converted to a sheltered harbour</td></tr>
             <tr><td>1913</td><td>Colombo Port Commission Established</td></tr>
@@ -199,6 +182,7 @@ const Slpa = () => {
     <tr><td>2023</td><td>SLPA won prestigious GPF Awards for Port Authority of the Year and Best Public Container Terminal of the Year 2023</td></tr>
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );
