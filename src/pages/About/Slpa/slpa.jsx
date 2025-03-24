@@ -1,7 +1,7 @@
 import React from 'react';
-import './slpa.css'; // Import CSS import
+import './slpa.css'; 
 import { Link } from 'react-router-dom';
-import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg'; // Replace with the actual path
+import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg'; 
 
 const Slpa = () => {
   return (
@@ -16,7 +16,7 @@ const Slpa = () => {
         <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
       </div>
 
-      {/* Small Boxes Section */}
+    
       <div className="small-boxes-container">
         {[
           { title: "SLPA", path: "/Slpa" },
@@ -38,7 +38,7 @@ const Slpa = () => {
         ))}
       </div>
 
-      {/* Content from the Slpa component */}
+      
       <div>
         <h4 style={{ color: '#236F86' }}>
           <strong>Ports managed by SLPA</strong>
