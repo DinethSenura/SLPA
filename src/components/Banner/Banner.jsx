@@ -12,7 +12,7 @@ const Banner = () => {
     <div className="banner d-flex align-items-center justify-content-between">
       {/* Banner Text (Hidden on small screens, replaced with Notice button) */}
       <div className="d-none d-md-block flex-grow-1 text-center">
-        <p className="banner-text">Sri Lanka Port Authority</p>
+        <p className="banner-text">Sri Lanka Ports Authority</p>
       </div>
       <div className="d-md-none">
         <button className="notice-button" onClick={handleNoticeClick}>
