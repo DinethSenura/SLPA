@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import DOMPurify from 'dompurify';
+import { Link } from 'react-router-dom';
+import './boardofdirectors.css';
+import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
 
 const BoardOfDirectors = () => {
-  const [htmlContent, setHtmlContent] = useState('');
+    const [htmlContent, setHtmlContent] = useState('');
 
-  useEffect(() => {
-    // Directly set the provided HTML content.  No fetch needed.
-    const apiData = {
-      title: "Board Of Directors",
+    useEffect(() => {
+        const apiData = {
+            // Your API Data here. If you have no html content, leave it empty.
+            title: "Board Of Directors",
       sub_title: "",
       image: "article_image_2016_04_27_1461722881.jpg",
       content: `<div class="row">
@@ -199,12 +202,50 @@ Fax: +94&nbsp;11&nbsp;2421530</span></div>
 </div>
 </div>
 </div>`
-    };
 
-    setHtmlContent(DOMPurify.sanitize(apiData.content));
-  }, []);
+        };
 
-  return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+        setHtmlContent(DOMPurify.sanitize(apiData.content));
+    }, []);
+
+    return (
+        <div>
+            <div className="header-section">
+                <h1>SLPA</h1>
+                <p className="path">
+                    <Link to="/Home">HOME</Link>
+                    <span>&gt;</span>ABOUT
+                    <span>&gt;</span>SLPA
+                </p>
+                <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
+            </div>
+
+            {/* Small Boxes Section */}
+            <div className="small-boxes-container">
+                {[
+                    { title: "SLPA", path: "/Slpa" },
+                    { title: "Vision and Mission", path: "/Visionmission" },
+                    { title: "Board of Directors", path: "/Boardofdirectors" },
+                    { title: "ACT", path: "/Act" },
+                    { title: "Procedures", path: "/Procedures" },
+                    { title: "Circular", path: "/Circlular" },
+                    { title: "Awards", path: "Awards" },
+                    { title: "Annual Reports", path: "Annualreport" },
+                    { title: "Tariff", path: "Tariff" },
+                    { title: "Right to Information", path: "Righttoinformation" }
+                ].map((box, i) => (
+                    <Link to={box.path} key={i} className="small-box-link">
+                        <div className="small-box">
+                            {box.title}
+                        </div>
+                    </Link>
+                ))}
+            </div>
+
+            {/* Inject API content safely */}
+            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        </div>
+    );
 };
 
 export default BoardOfDirectors;
