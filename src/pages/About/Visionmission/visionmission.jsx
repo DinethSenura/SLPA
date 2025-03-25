@@ -18,11 +18,11 @@ const VisionMission = () => {
         <div>
 
 <div className="header-section">
-        <h1>SLPA</h1>
+        <h1>VISION & MISSION</h1>
         <p className="path">
-          <Link to="/Home">HOME</Link>
+          <span></span>HOME
           <span>&gt;</span>ABOUT
-          <span>&gt;</span>SLPA
+          <span>&gt;</span>VISION & MISSION
         </p>
         <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
       </div>
@@ -35,9 +35,9 @@ const VisionMission = () => {
           { title: "Board of Directors", path: "/Boardofdirectors" },
           { title: "ACT", path: "/Act" },
           { title: "Procedures", path: "/Procedures" },
-          { title: "Circular", path: "/Circlular" },
+          { title: "Circular", path: "/Circlulars" },
           { title: "Awards", path: "Awards" },
-          { title: "Annual Reports", path: "Annualreport" },
+          { title: "Annual Reports", path: "Annualreports" },
           { title: "Tariff", path: "Tariff" },
           { title: "Right to Information", path: "Righttoinformation" }
         ].map((box, i) => (
@@ -49,18 +49,18 @@ const VisionMission = () => {
         ))}
       </div>
 
-
-            <h2>Vision & Mission</h2>
-            <img src="article_image_2016_04_27_1461723025.png" alt="Vision & Mission" style={{ width: "100%", height: "auto" }} />
+          <div classname='vision-mission-con'>
+            <h2 className="vision-mission-h2">Vision & Mission</h2>
+            {/*<img src="article_image_2016_04_27_1461723025.png" alt="Vision & Mission" style={{ width: "100%", height: "auto" }} />*/}
             
-            <h4 style={{ color: "#236F86" }}><strong>Our Vision</strong></h4>
-            <p style={{ textAlign: "justify" }}><strong>"To be the premier green maritime and logistics hub in South Asia and ranked among the top 15 busiest container ports in the world."</strong></p>
+            <h4 className="vision-mission-h4" style={{ color: "#236F86" }}><strong>Our Vision</strong></h4>
+            <p className="vision-mission-p" style={{ textAlign: "justify" }}><strong>"To be the premier green maritime and logistics hub in South Asia and ranked among the top 15 busiest container ports in the world."</strong></p>
             
-            <h4 style={{ color: "#236F86" }}><strong>Our Mission</strong></h4>
-            <p style={{ textAlign: "justify" }}><strong>"To provide competitive port facilities and logistics services, fostering seamless international trade connections while prioritizing innovation, sustainability, customer-centric agility and committed to contribute to Sri Lanka's economic growth and prosperity."</strong></p>
+            <h4 className="vision-mission-h4" style={{ color: "#236F86" }}><strong>Our Mission</strong></h4>
+            <p className="vision-mission-p" style={{ textAlign: "justify" }}><strong>"To provide competitive port facilities and logistics services, fostering seamless international trade connections while prioritizing innovation, sustainability, customer-centric agility and committed to contribute to Sri Lanka's economic growth and prosperity."</strong></p>
             
-            <h4 style={{ color: "#236F86", marginBottom: "24px", marginTop: "30px" }}><strong>Our Corporate Goals</strong></h4>
-            <ul>
+            <h4 className="vision-mission-h4" style={{ color: "#236F86", marginBottom: "24px", marginTop: "30px" }}><strong>Our Corporate Goals</strong></h4>
+            <ul className="vision-mission-ul">
                 <li>Build a Smart Port by improving the capacity of infrastructure and superstructure with modern technology and ICT innovations.</li>
                 <li>Uplift the rank of Port of Colombo to be among the top twenty (20) container ports during the next three years.</li>
                 <li>Enhance the competency of human capital to improve productivity, quality and performance of SLPA.</li>
@@ -69,6 +69,8 @@ const VisionMission = () => {
                 <li>Develop organizational specific governance framework, systems and procedures.</li>
                 <li>Achieve a Green and Sustainable Status for Port of Colombo adopting United Nations Sustainable Development Goals (UNSDGs).</li>
             </ul>
+
+            </div>
             
             {/* Inject API content safely */}
             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />

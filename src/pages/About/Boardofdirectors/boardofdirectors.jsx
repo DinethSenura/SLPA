@@ -9,7 +9,7 @@ const BoardOfDirectors = () => {
 
     useEffect(() => {
         const apiData = {
-            // Your API Data here. If you have no html content, leave it empty.
+
             title: "Board Of Directors",
       sub_title: "",
       image: "article_image_2016_04_27_1461722881.jpg",
@@ -163,9 +163,9 @@ Fax: +94&nbsp;11&nbsp;2322648</span></div>
 </div>
 
 <hr />
-<div class="row">
+<div class="row1">
 <div class="col-md-6">
-<div class="col-md-4"><strong><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2024_10_23_1729665485.jpg" /></strong></strong></div>
+<div class="col-md-41"><strong><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2024_10_23_1729665485.jpg" /></strong></strong></div>
 
 <div class="col-md-8">
 <div class="col-md-12">
@@ -184,21 +184,21 @@ Fax: +94&nbsp;11&nbsp;2322648</span></div>
 <p>&nbsp;</p>
 
 <hr />
-<p><strong><strong><span style="font-size:16px"><strong>Secretary to the Board &nbsp;</strong></span></strong></strong></p>
+<p class="under-title"><strong><strong><span style="font-size:28px"><strong>Secretary to the Board &nbsp;</strong></span></strong></strong></p>
 
 <p>&nbsp;</p>
 
 <div class="row">
 <div class="col-md-6">
 <div class="col-md-12">
-<div class="col-md-12">
-<h5><strong><strong><strong>Mrs. Shehara Y. Nawaratne</strong></strong></strong></h5>
+<div class="col-md-12-2">
+<h5><strong>Mrs. Shehara Y. Nawaratne</strong></h5>
 </div>
 
-<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2421530<br />
+<div class="col-md-12-2"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2421530<br />
 Fax: +94&nbsp;11&nbsp;2421530</span></div>
 
-<div class="col-md-12"><span style="font-size:12px;">boardroom@slpa.lk</span></div>
+<div class="col-md-12-2"><span style="font-size:12px;">boardroom@slpa.lk</span></div>
 </div>
 </div>
 </div>`
