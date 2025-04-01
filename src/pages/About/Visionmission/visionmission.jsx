@@ -28,7 +28,7 @@ const VisionMission = () => {
       </div>
 
       {/* Small Boxes Section */}
-      <div className="small-boxes-container">
+      <div className="vm-small-boxes-container">
         {[
           { title: "SLPA", path: "/Slpa" },
           { title: "Vision and Mission", path: "/Visionmission" },
@@ -41,8 +41,8 @@ const VisionMission = () => {
           { title: "Tariff", path: "Tariff" },
           { title: "Right to Information", path: "Righttoinformation" }
         ].map((box, i) => (
-          <Link to={box.path} key={i} className="small-box-link">
-            <div className="small-box">
+          <Link to={box.path} key={i} className="vm-small-box-link">
+            <div className="vm-small-box">
               {box.title}
             </div>
           </Link>

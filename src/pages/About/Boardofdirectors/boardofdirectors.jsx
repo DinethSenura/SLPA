@@ -221,7 +221,7 @@ Fax: +94&nbsp;11&nbsp;2421530</span></div>
             </div>
 
             {/* Small Boxes Section */}
-            <div className="small-boxes-container">
+            <div className="bod-small-boxes-container">
                 {[
                     { title: "SLPA", path: "/Slpa" },
                     { title: "Vision and Mission", path: "/Visionmission" },
@@ -234,8 +234,8 @@ Fax: +94&nbsp;11&nbsp;2421530</span></div>
                     { title: "Tariff", path: "Tariff" },
                     { title: "Right to Information", path: "Righttoinformation" }
                 ].map((box, i) => (
-                    <Link to={box.path} key={i} className="small-box-link">
-                        <div className="small-box">
+                    <Link to={box.path} key={i} className="bod-small-box-link">
+                        <div className="bod-small-box">
                             {box.title}
                         </div>
                     </Link>

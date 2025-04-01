@@ -86,7 +86,8 @@ const MyComponent = () => {
             </div>
 
             {/* Small Boxes Section */}
-            <div className="small-boxes-container">
+            <div className="act-wrapper">
+            <div className="procedures-small-boxes-container">
                 {[
                     { title: "SLPA", path: "/Slpa" },
                     { title: "Vision and Mission", path: "/Visionmission" },
@@ -99,8 +100,8 @@ const MyComponent = () => {
                     { title: "Tariff", path: "Tariff" },
                     { title: "Right to Information", path: "Righttoinformation" }
                 ].map((box, i) => (
-                    <Link to={box.path} key={i} className="small-box-link">
-                        <div className="small-box">
+                    <Link to={box.path} key={i} className="procedures-small-box-link">
+                        <div className="procedures-small-box">
                             {box.title}
                         </div>
                     </Link>
@@ -109,6 +110,7 @@ const MyComponent = () => {
 
             {/* Inject API content safely */}
             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            </div>
         </div>
     );
 };
