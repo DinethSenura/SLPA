@@ -86,6 +86,7 @@ const MyComponent = () => {
             </div>
 
             {/* Small Boxes Section */}
+            <div className="act-wrapper">
             <div className="small-boxes-container">
                 {[
                     { title: "SLPA", path: "/Slpa" },
@@ -109,6 +110,7 @@ const MyComponent = () => {
 
             {/* Inject API content safely */}
             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            </div>
         </div>
     );
 };

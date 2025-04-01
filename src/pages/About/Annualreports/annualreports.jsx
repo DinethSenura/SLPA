@@ -111,6 +111,7 @@ const berthingprogramme = () => {
         <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
       </div>
 
+      <div className="annualreports-wrapper">
       <div className="small-boxes-container">
         {[
           { title: 'SLPA', path: '/Slpa' },
@@ -132,6 +133,7 @@ const berthingprogramme = () => {
 
       <div>
         <div dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
+      </div>
       </div>
     </div>
   );
