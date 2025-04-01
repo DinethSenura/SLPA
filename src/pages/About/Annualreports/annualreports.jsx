@@ -112,7 +112,7 @@ const berthingprogramme = () => {
       </div>
 
       <div className="annualreports-wrapper">
-      <div className="small-boxes-container">
+      <div className="annualreports-small-boxes-container">
         {[
           { title: 'SLPA', path: '/Slpa' },
           { title: 'Vision and Mission', path: '/Visionmission' },
@@ -121,12 +121,12 @@ const berthingprogramme = () => {
           { title: 'Procedures', path: '/Procedures' },
           { title: 'Circular', path: '/Circlular' },
           { title: 'Awards', path: '/Awards' },
-          { title: 'Annual Reports', path: '/Annualreports' },
+          { title: 'Annual Reports', path: '/Annualreport' },
           { title: 'Tariff', path: '/Tariff' },
           { title: 'Right to Information', path: '/Righttoinformation' },
         ].map((box, i) => (
-          <Link to={box.path} key={i} className="small-box-link">
-            <div className="small-box">{box.title}</div>
+          <Link to={box.path} key={i} className="annualreports-small-box-link">
+            <div className="annualreports-small-box">{box.title}</div>
           </Link>
         ))}
       </div>

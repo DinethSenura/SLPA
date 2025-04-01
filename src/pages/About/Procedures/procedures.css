@@ -14,9 +14,9 @@
     margin-top: 70px;
 }
 
-/* Small Boxes Container (Default) */
+
 /* Container for Small Boxes */
-.procedure-small-boxes-container {
+.procedures-small-boxes-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -33,13 +33,18 @@
   }
 
 /* Individual Small Box */
-.procedure-small-box {
+.procedures-small-box {
+    width: 150px;
     height: 50px;
-    background-color: #3b82f6;
+    background-color: #3b82f6; 
     color: #ffffff;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
+    line-height: 20px;
     text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
@@ -49,7 +54,7 @@
 }
 
 /* Hover Effect */
-.procedure-small-box:hover {
+.procedures-small-box:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
