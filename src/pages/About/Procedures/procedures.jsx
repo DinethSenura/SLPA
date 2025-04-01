@@ -87,7 +87,7 @@ const MyComponent = () => {
 
             {/* Small Boxes Section */}
             <div className="act-wrapper">
-            <div className="small-boxes-container">
+            <div className="procedure-small-boxes-container">
                 {[
                     { title: "SLPA", path: "/Slpa" },
                     { title: "Vision and Mission", path: "/Visionmission" },
@@ -100,8 +100,8 @@ const MyComponent = () => {
                     { title: "Tariff", path: "Tariff" },
                     { title: "Right to Information", path: "Righttoinformation" }
                 ].map((box, i) => (
-                    <Link to={box.path} key={i} className="small-box-link">
-                        <div className="small-box">
+                    <Link to={box.path} key={i} className="procedure-small-box-link">
+                        <div className="procedure-small-box">
                             {box.title}
                         </div>
                     </Link>

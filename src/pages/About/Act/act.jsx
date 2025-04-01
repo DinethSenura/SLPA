@@ -42,7 +42,7 @@ const ActOfSLPA = () => {
 
       {/* Small Boxes Section */}
       <div className="act-wrapper">
-      <div className="small-boxes-container">
+      <div className="act-small-boxes-container">
         {[
           { title: "SLPA", path: "/Slpa" },
           { title: "Vision and Mission", path: "/Visionmission" },
@@ -55,8 +55,8 @@ const ActOfSLPA = () => {
           { title: "Tariff", path: "Tariff" },
           { title: "Right to Information", path: "Righttoinformation" },
         ].map((box, i) => (
-          <Link to={box.path} key={i} className="small-box-link">
-            <div className="small-box">{box.title}</div>
+          <Link to={box.path} key={i} className="act-small-box-link">
+            <div className="act-small-box">{box.title}</div>
           </Link>
         ))}
       </div>

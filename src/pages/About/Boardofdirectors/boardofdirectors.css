@@ -49,25 +49,25 @@ body {
   
 
    /* Container for Small Boxes */
-.small-boxes-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin: 20px 0;
-    padding: 15px;
-    position: sticky; /* Makes the container sticky */
-    top: 60px; /* Adjust this value to reduce/increase the gap under the navigation bar */
-    background-color: #ffffff; /* Add background to prevent overlapping */
-    z-index: 10; /* Ensures it stays above other content */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Shadow for better visibility */
-    width: 90%;
-    margin-left: 20px;
-  }
+   .bod-small-boxes-container {
+       display: flex;
+       justify-content: center;
+       flex-wrap: wrap;
+       gap: 15px;
+       margin: 10px 0;
+       padding: 15px;
+       position: sticky; 
+       top: 60px; 
+       background-color: #ffffff; 
+       z-index: 10; 
+       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+       width: 90%;
+       margin-left: 80px;
+     }
   
   
   /* Individual Small Box */
-  .small-box {
+  .bod-small-box {
     width: 150px;
     height: 50px;
     background-color: #3b82f6; /* Blue color for the boxes */
@@ -88,7 +88,7 @@ body {
   }
   
   /* Hover Effect for the Box */
-  .small-box:hover {
+  .bod-small-box:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }

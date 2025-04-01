@@ -120,10 +120,10 @@ const berthingprogramme = () => {
           { title: 'ACT', path: '/Act' },
           { title: 'Procedures', path: '/Procedures' },
           { title: 'Circular', path: '/Circlular' },
-          { title: 'Awards', path: 'Awards' },
-          { title: 'Annual Reports', path: 'Annualreport' },
-          { title: 'Tariff', path: 'Tariff' },
-          { title: 'Right to Information', path: 'Righttoinformation' },
+          { title: 'Awards', path: '/Awards' },
+          { title: 'Annual Reports', path: '/Annualreports' },
+          { title: 'Tariff', path: '/Tariff' },
+          { title: 'Right to Information', path: '/Righttoinformation' },
         ].map((box, i) => (
           <Link to={box.path} key={i} className="small-box-link">
             <div className="small-box">{box.title}</div>
