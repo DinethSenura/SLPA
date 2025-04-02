@@ -222,6 +222,11 @@ iframe {
 
 
 
+
+
+
+
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .header-section {
@@ -277,7 +282,7 @@ iframe {
 
 /* Responsive Table */
 .abouttable {
-  width: 90%;
+  width: 80%;
   border-collapse: collapse;
   margin-top: 20px;
   border: 1px solid #ddd;
