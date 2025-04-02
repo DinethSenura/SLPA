@@ -1,7 +1,7 @@
 import React from 'react';
 import './slpa.css'; 
-import { Link } from 'react-router-dom';
-import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg'; 
+import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
+import Aboutbanner from '../../../components/AboutBanner/Aboutbanner' 
 
 const Slpa = () => {
   return (
@@ -17,26 +17,7 @@ const Slpa = () => {
       </div>
 
     
-      <div className="slpa-small-boxes-container">
-        {[
-          { title: "SLPA", path: "/Slpa" },
-          { title: "Vision and Mission", path: "/Visionmission" },
-          { title: "Board of Directors", path: "/Boardofdirectors" },
-          { title: "ACT", path: "/Act" },
-          { title: "Procedures", path: "/Procedures" },
-          { title: "Circular", path: "/Circlulars" },
-          { title: "Awards", path: "Awards" },
-          { title: "Annual Reports", path: "Annualreports" },
-          { title: "Tariff", path: "Tariff" },
-          { title: "Right to Information", path: "Righttoinformation" }
-        ].map((box, i) => (
-          <Link to={box.path} key={i} className="slpa-small-box-link">
-            <div className="slpa-small-box">
-              {box.title}
-            </div>
-          </Link>
-        ))}
-      </div>
+      <Aboutbanner />
 
       
       <div>

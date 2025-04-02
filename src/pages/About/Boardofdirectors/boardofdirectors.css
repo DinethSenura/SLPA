@@ -45,60 +45,6 @@ body {
   .navbar {
     margin-bottom: 0; /* Reduce extra space under the navigation bar */
   }
-  
-  
-
-   /* Container for Small Boxes */
-   .bod-small-boxes-container {
-       display: flex;
-       justify-content: center;
-       flex-wrap: wrap;
-       gap: 15px;
-       margin: 10px 0;
-       padding: 15px;
-       position: sticky; 
-       top: 60px; 
-       background-color: #ffffff; 
-       z-index: 10; 
-       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-       width: 90%;
-       margin-left: 80px;
-     }
-  
-  
-  /* Individual Small Box */
-  .bod-small-box {
-    width: 150px;
-    height: 50px;
-    background-color: #3b82f6; /* Blue color for the boxes */
-    color: #ffffff;
-    font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  /* Hover Effect for the Box */
-  .bod-small-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Subtitle Styling */
-  .small-box h4 {
-    font-size: 12px;
-    font-weight: normal;
-    margin-top: 5px;
-  }
 
   .row h2{
     text-align: center;

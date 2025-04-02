@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import DOMPurify from "dompurify";
-import { Link } from 'react-router-dom'; // Add this line
-import './visionmission.css'; // Import CSS import
-import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg'; // Replace with the actual path
+import './visionmission.css'; 
+import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg'; 
+import Aboutbanner from '../../../components/AboutBanner/Aboutbanner'
 
 const VisionMission = () => {
     const [htmlContent, setHtmlContent] = useState("");
@@ -27,27 +27,7 @@ const VisionMission = () => {
         <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
       </div>
 
-      {/* Small Boxes Section */}
-      <div className="vm-small-boxes-container">
-        {[
-          { title: "SLPA", path: "/Slpa" },
-          { title: "Vision and Mission", path: "/Visionmission" },
-          { title: "Board of Directors", path: "/Boardofdirectors" },
-          { title: "ACT", path: "/Act" },
-          { title: "Procedures", path: "/Procedures" },
-          { title: "Circular", path: "/Circlulars" },
-          { title: "Awards", path: "Awards" },
-          { title: "Annual Reports", path: "Annualreports" },
-          { title: "Tariff", path: "Tariff" },
-          { title: "Right to Information", path: "Righttoinformation" }
-        ].map((box, i) => (
-          <Link to={box.path} key={i} className="vm-small-box-link">
-            <div className="vm-small-box">
-              {box.title}
-            </div>
-          </Link>
-        ))}
-      </div>
+      <Aboutbanner />
 
           <div classname='vision-mission-con'>
             <h2 className="vision-mission-h2">Vision & Mission</h2>

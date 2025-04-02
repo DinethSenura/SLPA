@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './righttoinformation.css';
 import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
 import DOMPurify from 'dompurify';
+import Aboutbanner from '../../../components/AboutBanner/Aboutbanner'
 
 const berthingprogramme = () => {
   const htmlContent = `<p><span style="color:#000000;"><span style="font-size:18px;"><strong>IMPLEMENTATION OF THE RIGHT TO INFORMATION ACT, NO.12 OF 2016</strong></span></span></p>
@@ -29,24 +30,7 @@ const berthingprogramme = () => {
         <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
       </div>
 
-      <div className="small-boxes-container">
-        {[
-          { title: 'SLPA', path: '/Slpa' },
-          { title: 'Vision and Mission', path: '/Visionmission' },
-          { title: 'Board of Directors', path: '/Boardofdirectors' },
-          { title: 'ACT', path: '/Act' },
-          { title: 'Procedures', path: '/Procedures' },
-          { title: 'Circular', path: '/Circlular' },
-          { title: 'Awards', path: 'Awards' },
-          { title: 'Annual Reports', path: 'Annualreport' },
-          { title: 'Tariff', path: 'Tariff' },
-          { title: 'Right to Information', path: 'Righttoinformation' },
-        ].map((box, i) => (
-          <Link to={box.path} key={i} className="small-box-link">
-            <div className="small-box">{box.title}</div>
-          </Link>
-        ))}
-      </div>
+      <Aboutbanner />
 
       <div>
         <div dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
