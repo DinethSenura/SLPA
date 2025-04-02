@@ -3,6 +3,7 @@ import DOMPurify from 'dompurify';
 import { Link } from 'react-router-dom';
 import './boardofdirectors.css';
 import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
+import Aboutbanner from '../../../components/AboutBanner/Aboutbanner'
 
 const BoardOfDirectors = () => {
     const [htmlContent, setHtmlContent] = useState('');
@@ -220,27 +221,7 @@ Fax: +94&nbsp;11&nbsp;2421530</span></div>
                 <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
             </div>
 
-            {/* Small Boxes Section */}
-            <div className="bod-small-boxes-container">
-                {[
-                    { title: "SLPA", path: "/Slpa" },
-                    { title: "Vision and Mission", path: "/Visionmission" },
-                    { title: "Board of Directors", path: "/Boardofdirectors" },
-                    { title: "ACT", path: "/Act" },
-                    { title: "Procedures", path: "/Procedures" },
-                    { title: "Circular", path: "/Circlular" },
-                    { title: "Awards", path: "Awards" },
-                    { title: "Annual Reports", path: "Annualreport" },
-                    { title: "Tariff", path: "Tariff" },
-                    { title: "Right to Information", path: "Righttoinformation" }
-                ].map((box, i) => (
-                    <Link to={box.path} key={i} className="bod-small-box-link">
-                        <div className="bod-small-box">
-                            {box.title}
-                        </div>
-                    </Link>
-                ))}
-            </div>
+            <Aboutbanner />
 
             {/* Inject API content safely */}
             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />

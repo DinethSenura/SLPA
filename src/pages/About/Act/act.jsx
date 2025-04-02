@@ -3,6 +3,7 @@ import DOMPurify from "dompurify";
 import { Link } from "react-router-dom";
 import "./act.css"; // Import CSS import
 import portImage2 from "../../../assets/images/Ports/PortColomboHero.jpg";
+import AboutBanner from "../../../components/AboutBanner/Aboutbanner";
 
 const ActOfSLPA = () => {
   const [htmlContent, setHtmlContent] = useState("");
@@ -40,8 +41,10 @@ const ActOfSLPA = () => {
         />
       </div>
 
+      <AboutBanner />
+
       {/* Small Boxes Section */}
-      <div className="act-wrapper">
+      {/* <div className="act-wrapper">
       <div className="act-small-boxes-container">
         {[
           { title: "SLPA", path: "/Slpa" },
@@ -59,14 +62,13 @@ const ActOfSLPA = () => {
             <div className="act-small-box">{box.title}</div>
           </Link>
         ))}
-      </div>
+      </div> */}
 
       {/* Inject API content safely */}
       <div className="act-content">
         <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
       </div>
       </div>
-    </div>
   );
 };
 

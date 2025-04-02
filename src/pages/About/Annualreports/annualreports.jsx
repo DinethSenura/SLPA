@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './annualreports.css';
 import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
 import DOMPurify from 'dompurify'; // Import DOMPurify
+import AboutBanner from "../../../components/AboutBanner/Aboutbanner"
 
 const berthingprogramme = () => {
   const htmlContent = `<p>&nbsp;</p>
@@ -110,32 +111,13 @@ const berthingprogramme = () => {
         </p>
         <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
       </div>
-
-      <div className="annualreports-wrapper">
-      <div className="annualreports-small-boxes-container">
-        {[
-          { title: 'SLPA', path: '/Slpa' },
-          { title: 'Vision and Mission', path: '/Visionmission' },
-          { title: 'Board of Directors', path: '/Boardofdirectors' },
-          { title: 'ACT', path: '/Act' },
-          { title: 'Procedures', path: '/Procedures' },
-          { title: 'Circular', path: '/Circlular' },
-          { title: 'Awards', path: '/Awards' },
-          { title: 'Annual Reports', path: '/Annualreport' },
-          { title: 'Tariff', path: '/Tariff' },
-          { title: 'Right to Information', path: '/Righttoinformation' },
-        ].map((box, i) => (
-          <Link to={box.path} key={i} className="annualreports-small-box-link">
-            <div className="annualreports-small-box">{box.title}</div>
-          </Link>
-        ))}
-      </div>
-
+       
+       <AboutBanner />
+       
       <div>
         <div dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
       </div>
       </div>
-    </div>
   );
 };
 
