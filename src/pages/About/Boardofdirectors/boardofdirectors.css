@@ -73,13 +73,20 @@ body {
     margin-left: 0px;
   }
 
-  .raw1 .col-md-41{
-    align-items: left;
-   /* margin-left: 200px;
-    margin-right: 50px;*/
-    width: 150px !important;
-    height: 300px !important;
-  }
+.img-responsive11 {
+    width: 50%;
+    height: 80%;
+    object-fit: cover;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+@media (max-width: 768px) {
+    .raw1 .col-md-41 {
+        width: 120px !important;
+        height: 150px !important;
+        margin-left: 50px;
+    }
+}
 
   .col-md-12-2{
     margin-left: 0px;

@@ -166,7 +166,7 @@ Fax: +94&nbsp;11&nbsp;2322648</span></div>
 <hr />
 <div class="row1">
 <div class="col-md-6">
-<div class="col-md-41"><strong><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2024_10_23_1729665485.jpg" /></strong></strong></div>
+<div class="col-md-41"><strong><strong><img alt="Director port authority" class="img-responsive11" src="https://www.slpa.lk/uploads/article/article_image_ext_2024_10_23_1729665485.jpg" /></strong></strong></div>
 
 <div class="col-md-8">
 <div class="col-md-12">
