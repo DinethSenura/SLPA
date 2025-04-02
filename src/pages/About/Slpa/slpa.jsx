@@ -21,7 +21,7 @@ const Slpa = () => {
 
       
       <div>
-        <h4 style={{ color: '#236F86' }}>
+      <h4 style={{ color: '#236F86' }} className='title'>
           <strong>Ports managed by SLPA</strong>
         </h4>
 
