@@ -81,7 +81,28 @@ const Slpa = () => {
     <tr><td>1985</td><td>Jaye Container Terminal - I was Built</td></tr>
     <tr><td>1987</td><td>Jaye Container Terminal - II was Built</td></tr>
     <tr><td>1995</td><td>Jaye Container Terminal - III was Built</td></tr>
-    <tr><td>1996</td><td></td></tr>
+    <tr><td>1996</td><td>Jaye Container Terminal - IV was Built</td></tr>
+    <tr><td>1996</td><td>Deepening of Main Channel to 15M depth</td></tr>
+    <tr><td>1996</td><td>Handling of the 1,000,000th Container TEU with a year</td></tr>
+    <tr><td>1997</td><td>Inauguration Oil Berth</td></tr>
+    <tr><td>1997</td><td>Handling of the 1,500,000th Container TEU with a year</td></tr>
+    <tr><td>1998</td><td>Inauguration Unity Container Terminal I</td></tr>
+    <tr><td>1998</td><td>Signing of an agreement to foster friendly relationship</td></tr>
+    <tr><td>1999</td><td>Commissioning of empty Container Yard</td></tr>
+    <tr><td>1999</td><td>Commissioning of the Oluvil Lighthouse</td></tr>
+    <tr><td>1999</td><td>Opening of the Oluvil Maritime Training Centre</td></tr>
+    <tr><td>1999</td><td>Commencement – South Asia Gateway Terminal</td></tr>
+    <tr><td>1999</td><td>Commencement of construction of 50,000 dwt. alongside berth</td></tr>
+    <tr><td>2000</td><td>Commencement of Colombo South Harbour feasibility study</td></tr>
+    <tr><td>2000</td><td>Commencement of Construction of third Berth in Galle Port</td></tr>
+    <tr><td>2000</td><td>Inaugaration of Peliyagoda CFS</td></tr>
+    <tr><td>2000</td><td>Commencement of a feasibility study - Port of Galle development</td></tr>
+    <tr><td>2000</td><td>Commencement of North Pier Development Phase II</td></tr>
+    <tr><td>2000</td><td>Inauguration of the One-Stop Documentation Centre</td></tr>
+    <tr><td>2001</td><td>Inauguration of the New Jetty in Port of Galle</td></tr>
+    <tr><td>2001</td><td>Completion of Stage I of QEQ(SAGT) development project</td></tr>
+    <tr><td>2001</td><td>Commissioning of the dredger "Hansakawa"</td></tr>
+    <tr><td>2001</td><td>Boom extension of Gantry Cranes at JCT III and IV</td></tr>
     <tr><td>2001</td><td>Commencement of the feasibility study for Port of Hambantota and inauguration of the new training Institute and project Office</td></tr>
     <tr><td>2002</td><td>Inauguration of the Ashraff Quay (multi purpose Alongside Berth) in the Port of Trincomalee</td></tr>
     <tr><td>2003</td><td>Inauguration of Customer service Centre for LCL and break-bulk cargo</td></tr>
