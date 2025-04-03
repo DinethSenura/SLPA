@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'; 
+// import { Link } from 'react-router-dom'; 
 import './circulars.css'; 
 import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg'; 
 import Aboutbanner from '../../../components/AboutBanner/Aboutbanner'
@@ -9,11 +9,11 @@ const berthingprogramme = () => {
     <div>
 
 <div className="header-section">
-        <h1>SLPA</h1>
+        <h1>CIRCULARS</h1>
         <p className="path">
-          <Link to="/Home">HOME</Link>
+        <span></span>HOME
           <span>&gt;</span>ABOUT
-          <span>&gt;</span>SLPA
+          <span>&gt;</span>CIRCULARS
         </p>
         <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
       </div>
@@ -21,6 +21,7 @@ const berthingprogramme = () => {
       <Aboutbanner />
      
       <div>
+      <div className="act-wrapper">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet, nunc a tristique facilisis, mi nisi dapibus dui, eget tempor metus elit nec sapien. Aliquam erat volutpat. Proin euismod, arcu non scelerisque aliquet, risus purus scelerisque risus, eget ullamcorper libero risus eget arcu. Integer volutpat, felis at vehicula varius, ante leo tincidunt arcu, vel varius tortor sem et mi. Integer tincidunt suscipit tortor id iaculis. Suspendisse tincidunt, purus vel laoreet feugiat, ligula risus pharetra lorem, at efficitur ipsum risus vel enim. Quisque vel libero sed nulla aliquet pharetra. In rhoncus urna a ligula venenatis, sed tempor turpis venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 
@@ -38,6 +39,7 @@ const berthingprogramme = () => {
 
           Nam interdum velit ut risus laoreet sollicitudin. Etiam vestibulum in nunc at hendrerit. Integer molestie arcu non purus condimentum ultricies. Morbi volutpat quam sit amet dolor rhoncus, sit amet facilisis urna volutpat. Ut laoreet eros orci, ut maximus sapien tempus nec. Nam vehicula dolor vel ante tincidunt, non rhoncus felis volutpat. Ut vel augue magna. Donec suscipit auctor felis, euismod tempus felis iaculis eu. Sed auctor urna in fringilla pharetra. Nunc facilisis dolor at justo scelerisque, et convallis odio tincidunt. Sed efficitur lorem sit amet odio finibus, ut dictum nunc tincidunt. Donec eget libero justo.
         </p>
+      </div>
       </div>
     </div>
   )
