@@ -30,6 +30,7 @@ const VisionMission = () => {
       <Aboutbanner />
 
           <div classname='vision-mission-con'>
+          <div className="act-wrapper">
             <h2 className="vision-mission-h2">Vision & Mission</h2>
             {/*<img src="article_image_2016_04_27_1461723025.png" alt="Vision & Mission" style={{ width: "100%", height: "auto" }} />*/}
             
@@ -54,6 +55,7 @@ const VisionMission = () => {
             
             {/* Inject API content safely */}
             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            </div>
         </div>
     );
 };

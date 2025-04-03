@@ -19,7 +19,7 @@ const Slpa = () => {
     
       <Aboutbanner />
 
-      
+      <div className="act-wrapper">
       <div>
       <h4 style={{ color: '#236F86' }} className='title'>
           <strong>Ports managed by SLPA</strong>
@@ -184,6 +184,7 @@ const Slpa = () => {
           </tbody>
         </table>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -224,7 +224,9 @@ Fax: +94&nbsp;11&nbsp;2421530</span></div>
             <Aboutbanner />
 
             {/* Inject API content safely */}
+            <div className="act-wrapper">
             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            </div>
         </div>
     );
 };
