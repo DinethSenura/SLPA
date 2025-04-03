@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './tariff.css';
 import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
 import DOMPurify from 'dompurify';
@@ -19,11 +19,11 @@ const berthingprogramme = () => {
   return (
     <div>
       <div className="header-section">
-        <h1>SLPA</h1>
+        <h1>TARIFF</h1>
         <p className="path">
-          <Link to="/Home">HOME</Link>
+        <span></span>HOME
           <span>&gt;</span>ABOUT
-          <span>&gt;</span>SLPA
+          <span>&gt;</span>TARIFF
         </p>
         <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
       </div>
