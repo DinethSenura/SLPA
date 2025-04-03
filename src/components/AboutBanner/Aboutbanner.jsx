@@ -12,7 +12,7 @@ const Aboutbanner = () => {
           { title: "Board of Directors", path: "/Boardofdirectors" },
           { title: "ACT", path: "/Act" },
           { title: "Procedures", path: "/Procedures" },
-          { title: "Circular", path: "/Circlulars" },
+          { title: "Circular", path: "/circulars" },
           { title: "Awards", path: "/Awards" },
           { title: "Annual Reports", path: "/Annualreports" },
           { title: "Tariff", path: "/Tariff" },

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DOMPurify from "dompurify";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./act.css"; // Import CSS import
 import portImage2 from "../../../assets/images/Ports/PortColomboHero.jpg";
 import AboutBanner from "../../../components/AboutBanner/Aboutbanner";
@@ -28,11 +28,11 @@ const ActOfSLPA = () => {
   return (
     <div className="">
       <div className="header-section">
-        <h1>SLPA</h1>
+        <h1>ACT</h1>
         <p className="path">
-          <Link to="/Home">HOME</Link>
+        <span></span>HOME
           <span>&gt;</span>ABOUT
-          <span>&gt;</span>SLPA
+          <span>&gt;</span>ACT
         </p>
         <img
           src={portImage2}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import DOMPurify from 'dompurify';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './procedures.css';
 import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
 import Aboutbanner from '../../../components/AboutBanner/Aboutbanner'
@@ -77,11 +77,11 @@ const MyComponent = () => {
     return (
         <div>
             <div className="header-section">
-                <h1>SLPA</h1>
+                <h1>PROCEDURES</h1>
                 <p className="path">
-                    <Link to="/Home">HOME</Link>
+                <span></span>HOME
                     <span>&gt;</span>ABOUT
-                    <span>&gt;</span>SLPA
+                    <span>&gt;</span>PROCEDURES
                 </p>
                 <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
             </div>
