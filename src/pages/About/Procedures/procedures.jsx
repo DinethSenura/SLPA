@@ -89,7 +89,9 @@ const MyComponent = () => {
             <Aboutbanner />
 
             {/* Inject API content safely */}
+            <div className="act-wrapper">
             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            </div>
             </div>
     );
 };
