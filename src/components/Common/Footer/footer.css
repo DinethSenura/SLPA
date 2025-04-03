@@ -15,7 +15,7 @@
 .footer-section {
   flex: 1;
   text-align: left; /* Default alignment for larger screens */
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .address-section h4,
@@ -168,6 +168,7 @@
     flex-direction: column; /* Stack footer bottom items vertically */
     align-items: center;
     text-align: center;
+    margin-bottom: -20px;
   }
 }
 
@@ -188,5 +189,6 @@
 
   .footer-bottom {
     font-size: 10px; /* Reduce font size for very small screens */
+    margin-bottom: -40px;
   }
 }
