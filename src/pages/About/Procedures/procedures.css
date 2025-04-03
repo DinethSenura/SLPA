@@ -89,10 +89,18 @@ body {
   th {
     background-color: #f1f1f1;
   }
-  
-  tr:nth-child(odd) {
-    background-color: #f9f9f9;
+  /* Change colors of the table rows */
+tr:nth-child(odd) {
+    background-color: #f6fcff; /* Light blue for odd rows */
   }
+  
+  tr:nth-child(even) {
+    background-color: #e8e8e8; /* Light peach for even rows */
+  }
+  
+  /* tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  } */
   
   a {
     color: #003366;
