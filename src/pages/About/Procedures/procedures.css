@@ -1,4 +1,4 @@
-.act-title {
+/* .act-title {
     text-align: center;
     color: black;
 }
@@ -12,12 +12,12 @@
 
 .header-section {
     margin-top: 70px;
-}
+} */
 
 
 
 /* Two Columns on Small Phones */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     .header-section h1 {
         font-size: 22px;
     }
@@ -29,4 +29,104 @@
     .act-content {
         padding: 10px;
     }
+} */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header-section {
+    margin-top: 70px;
 }
+  
+  .header-section h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  .path {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  /* .header-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    margin-top: 20px;
+  } */
+  
+  .about-banner {
+    margin-top: 30px;
+  }
+  
+  /* Procedures Section */
+  .act-wrapper {
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 8px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 20px;
+    text-align: left;
+    color: #6A6969;
+    font-size: 14px;
+  }
+  
+  th {
+    background-color: #f1f1f1;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    color: #ff9800;
+  }
+  
+  /* Path Navigation */
+  .path {
+    font-size: 12px;
+}
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .path {
+      font-size: 0.9rem;
+    }
+  
+    .act-wrapper {
+      padding: 20px;
+      margin: 10px;
+    }
+  
+    table {
+      font-size: 12px;
+    }
+  
+    th, td {
+      padding: 10px;
+    }
+  }
+  
+  
