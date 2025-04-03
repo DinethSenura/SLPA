@@ -76,3 +76,13 @@ body {
     line-height: 1.9;
     
   }
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+
+  .vision-mission-ul{
+    text-align: left;
+    margin-left: 20px;
+  }
+
+}
