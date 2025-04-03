@@ -65,8 +65,10 @@ const ActOfSLPA = () => {
       </div> */}
 
       {/* Inject API content safely */}
+      <div className="act-wrapper">
       <div className="act-content">
         <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      </div>
       </div>
       </div>
   );

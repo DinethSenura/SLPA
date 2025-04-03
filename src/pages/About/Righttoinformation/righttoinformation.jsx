@@ -33,7 +33,9 @@ const berthingprogramme = () => {
       <Aboutbanner />
 
       <div>
+      <div className="act-wrapper">
         <div dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
+      </div>
       </div>
     </div>
   );
