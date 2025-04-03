@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './annualreports.css';
+import '../Annualreports/annualreports.css';
 import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
 import DOMPurify from 'dompurify'; // Import DOMPurify
 import AboutBanner from "../../../components/AboutBanner/Aboutbanner"
