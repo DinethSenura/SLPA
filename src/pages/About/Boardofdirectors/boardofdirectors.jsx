@@ -14,7 +14,10 @@ const BoardOfDirectors = () => {
             title: "Board Of Directors",
       sub_title: "",
       image: "article_image_2016_04_27_1461722881.jpg",
-      content: `<div class="row">
+      content: `
+      
+      <div class="col-md-6 offset-md-3">
+      <div class="row">
       <h2>Board Of Directors</h2>
 <div class="col-md-6">
 <div class="col-md-4"><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2024_10_03_1727947468.jpg" style="width:150%" /></strong></div>
@@ -200,6 +203,7 @@ Fax: +94&nbsp;11&nbsp;2322648</span></div>
 Fax: +94&nbsp;11&nbsp;2421530</span></div>
 
 <div class="col-md-12-2"><span style="font-size:12px;">boardroom@slpa.lk</span></div>
+</div>
 </div>
 </div>
 </div>`

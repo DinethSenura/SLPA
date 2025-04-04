@@ -8,6 +8,7 @@ import AboutBanner from "../../../components/AboutBanner/Aboutbanner"
 const berthingprogramme = () => {
   const htmlContent = `<p>&nbsp;</p>
 
+<div class="col-md-6 offset-md-3">
 <div class="row">
 <div class="col-md-6">
 <div class="col-md-4"><img alt="" class="img-responsive" src="https://www.slpa.lk/uploads/article_attachment/attachment_2024_12_26_17352123961735214392.jpg" width="150%" /></div>
@@ -94,6 +95,7 @@ const berthingprogramme = () => {
 <h5 style="text-align: center;"><span style="font-size:18px;"><strong>&quot;Ready for the World&quot;</strong></span><br />
 <span style="font-size:16px;"><strong><a href="https://www.slpa.lk/uploads/article_attachment/2017.pdf" target="_blank">Annual Report - 2017</a></strong><br />
 <strong>Sri Lanka Ports Authority</strong></span></h5>
+</div>
 </div>
 </div>
 </div>
