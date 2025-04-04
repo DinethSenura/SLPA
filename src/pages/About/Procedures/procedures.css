@@ -102,14 +102,14 @@ tr:nth-child(odd) {
     background-color: #f9f9f9;
   } */
   
-  a {
-    color: #003366;
+  /* a {
+    color: #f5f6f7;
     text-decoration: none;
     font-weight: bold;
-  }
+  } */
   
   a:hover {
-    color: #ff9800;
+    color: #ffcc00;
   }
   
   /* Path Navigation */

@@ -55,26 +55,32 @@
   transform: scale(1.2);
 }
 
-.quick-links-wrapper {
+.footer-section-quick-links-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   text-align: left;
 }
 
-.quick-links ul {
+.footer-section-quick-links ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.quick-links li {
+.footer-section-quick-links li {
   margin-bottom: 4px;
 }
 
-.quick-links li:hover {
+.footer-section-quick-links li:hover {
   color: #FFC000;
   cursor: pointer;
+}
+
+.a {
+  color: #fbfdfe;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .logo1 {
@@ -157,7 +163,7 @@
     margin-top: 10px; /* Add spacing above icons */
   }
 
-  .quick-links-wrapper {
+  .footer-section-quick-links-wrapper {
     order: 3; /* Place quick links below the social icons */
     flex-direction: column; /* Stack quick links vertically */
     text-align: center; /* Center-align quick links */
