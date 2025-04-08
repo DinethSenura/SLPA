@@ -1,7 +1,7 @@
 import React from 'react';
-import './hip.css';
-import PortImage3 from '../../../assets/images/Ports/PortColomboHero.jpg';
-import HIPBanner from '../../../components/HIPBanner/hipbanner';
+import './trincoterminal.css';
+import PortImage3 from '../../../../assets/images/Ports/PortColomboHero.jpg';
+import TrincoBanner from '../../../../components/trincobanner/Trincobanner';
 
 const ColomboLocation = () => {
   console.log("✅ Colombo Location Component Loaded!");
@@ -9,18 +9,18 @@ const ColomboLocation = () => {
   return (
     <div className="colombo-location-container">
       <div className="header-section">
-        <h1>ABOUT</h1>
+        <h1>TERMINAL</h1>
         <p className="path">
           <a href="/">HOME</a>
           <span> &gt; </span> PORTS
-          <span> &gt; </span> HIP
-          <span> &gt; </span> ABOUT
+          <span> &gt; </span> TRINCOMALEE
+          <span> &gt; </span> TERMINAL
         </p>
         <img src={PortImage3} alt="Colombo Port Overview" className="header-image" />
       </div>
 
     
-      <HIPBanner />
+      <TrincoBanner />
       
       
     </div>

@@ -1,0 +1,83 @@
+/* Container for Small Boxes */
+.colombobanner-small-boxes-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 10px 0;
+    padding: 15px;
+    position: sticky; 
+    top: 60px; 
+    background-color: #ffffff; 
+    z-index: 10; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    width: 90%;
+    margin-left: 80px;
+}
+  
+  
+/* Individual Small Box */
+ .colombobanner-small-box {
+    width: 150px;
+    height: 50px;
+    background-color: #3b82f6; 
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.colombobanner-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Two Columns on Mobile */
+@media (max-width: 768px) {
+    .colombobanner-small-boxes-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablets & mobile */
+        width: 100%;
+        margin: 0 auto;
+        position: static;
+    }
+
+    .colombobanner-small-box {
+        display: block; /* Removes flex */
+        text-align: center; /* Keeps the text centered */
+        font-size: 12px;
+        height: 45px;
+    }
+}
+
+/* Two Columns on Small Phones */
+@media (max-width: 480px) {
+
+    .colombobanner-boxes-container {
+        grid-template-columns: repeat(2, 1fr) !important; /* Two columns on tablets & mobile */
+        width: 100%;
+        margin: 0 auto;
+        position: static;
+    }
+
+    .colombobanner-small-box {
+        display: block; /* Removes flex */
+        text-align: center; /* Keeps the text centered */
+        font-size: 12px;
+        height: 40px;
+        width: 80px;
+        gap: 5px;
+    }
+}
+
+

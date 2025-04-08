@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'; // Import Link from React Router
 import leftImage from '../../../assets/images/jctect/left.jpg';
 import rightImage from '../../../assets/images/jctect/jct.jpg';
 import plinkImage from '../../../assets/images/jctect/plink.jpg';
+import ColomboBanner from '../../../components/colombobanner/Colombobanner';
 
 const Ports = () => {
   return (
@@ -21,26 +22,7 @@ const Ports = () => {
         <img src={portImage} alt="Colombo Port Overview" className="header-image" />
       </div>
 
-      {/* Small Boxes Section */}
-      <div className="small-boxes-container">
-  {[
-    { title: "About", path: "/colomboabout" },
-    { title: "Location", path: "/colombolocation" },
-    { title: "Terminals", path: "/colomboterminals" },
-    { title: "Port Facilities", path: "/colombofacilities" },
-    { title: "General Cargo Services", path: "/colombocargo" },
-    { title: "Entrance", path: "/colomboentrance" },
-    { title: "Compliance", path: "/colombocompliance" },
-    { title: "Mahapola Academy", path: "/colombomahapola" }
-  ].map((box, i) => (
-    <Link to={box.path} key={i} className="small-box-link">
-      <div className="small-box">
-        {box.title}
-      </div>
-    </Link>
-  ))}
-</div>
-
+     <ColomboBanner />
 
       {/* Content Section */}
       <div className="main-content">
