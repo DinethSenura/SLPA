@@ -46,6 +46,8 @@ import Awards from './pages/About/Awards/awards';
 import Annualreports from './pages/About/Annualreports/annualreports';
 import Tariff from './pages/About/Tariff/tariff';
 import Righttoinformation from './pages/About/Righttoinformation/righttoinformation';
+import Ministry from './pages/Contact/Ministry/Ministry';
+import Managementteam from './pages/Contact/Managementteam/Managementteam';
 
 function App() {
   const location = useLocation();
@@ -100,6 +102,8 @@ function App() {
           <Route path="tariff" element={<Tariff />}/>
           <Route path="righttoinformation" element={<Righttoinformation />}/>
           <Route path="boardofdirectors" element={<Boardofdirectors />}/>
+          <Route path="ministry" element={<Ministry />}/>
+          <Route path="managementteam" element={<Managementteam />}/>
         </Routes>
       </div>
       <Footer />

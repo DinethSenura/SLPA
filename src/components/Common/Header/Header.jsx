@@ -160,9 +160,9 @@ const Header = () => {
                 CONTACT
               </NavLink>
               <ul className="dropdown-menu" aria-labelledby="contactDropdown">
-                <li><NavLink to="/contact/ministry" className="dropdown-item" onClick={closeNav}>Ministry</NavLink></li>
+                <li><NavLink to="/ministry" className="dropdown-item" onClick={closeNav}>Ministry</NavLink></li>
                 <li><NavLink to="/contact/chairman&directors" className="dropdown-item" onClick={closeNav}>Chairman & Directors</NavLink></li>
-                <li><NavLink to="/contact/managementteam" className="dropdown-item" onClick={closeNav}>Management Team</NavLink></li>
+                <li><NavLink to="/managementteam" className="dropdown-item" onClick={closeNav}>Management Team</NavLink></li>
                 <li><NavLink to="/contact/mahapolaacademy" className="dropdown-item" onClick={closeNav}>Mahapola Academy</NavLink></li>
                 <li><NavLink to="/contact/helpdesk" className="dropdown-item" onClick={closeNav}>Help Desk</NavLink></li>
                 <li><NavLink to="/contact/slpaports" className="dropdown-item" onClick={closeNav}>SLPA Ports</NavLink></li>

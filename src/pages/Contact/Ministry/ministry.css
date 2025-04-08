@@ -1,0 +1,86 @@
+.ministry-page {
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+  }
+  
+  .ministry-content {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .ministry-content .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    align-items: center;
+  }
+  
+  .ministry-content .col-md-6 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .ministry-content .col-md-4 {
+    flex: 0 0 30%;
+    max-width: 30%;
+    padding: 0 15px;
+  }
+  
+  .ministry-content .col-md-8 {
+    flex: 0 0 70%;
+    max-width: 70%;
+    padding: 0 15px;
+  }
+  
+  .ministry-content img.img-responsive {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ministry-content h5,
+  .ministry-content h6 {
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  .ministry-content h5 {
+    font-size: 1.25rem;
+    color: #333;
+  }
+  
+  .ministry-content h6 {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+  }
+  
+  .ministry-content span {
+    display: block;
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 0.25rem;
+  }
+  
+  @media (max-width: 768px) {
+    .ministry-content .col-md-6 {
+      flex-direction: column;
+    }
+  
+    .ministry-content .col-md-4,
+    .ministry-content .col-md-8 {
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+  
+    .ministry-content {
+      padding: 1.5rem;
+    }
+  }
+  
