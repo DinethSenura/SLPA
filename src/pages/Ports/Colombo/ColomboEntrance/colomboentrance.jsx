@@ -1,7 +1,7 @@
 import React from 'react';
 import './colomboentrance.css';
 import portImage1 from '../../../../assets/images/Ports/PortColomboHero.jpg'; // ✅ Fixed import path
-import { Link } from 'react-router-dom';
+import ColomboBanner from '../../../../components/colombobanner/Colombobanner';
 
 const ColomboLocation = () => {
   console.log("✅ Colombo Location Component Loaded!");
@@ -19,22 +19,7 @@ const ColomboLocation = () => {
         <img src={portImage1} alt="Colombo Port Overview" className="header-image" />
       </div>
 
-      <div className="small-boxes-container">
-        {[
-          { title: "About", path: "/colomboabout" },
-          { title: "Location", path: "/colombolocation" },
-          { title: "Terminals", path: "/colomboterminals" },
-          { title: "Port Facilities", path: "/colombofacilities" },
-          { title: "General Cargo Services", path: "/colombocargo" },
-          { title: "Entrance", path: "/colomboentrance" },
-          { title: "Compliance", path: "/colombocompliance" },
-          { title: "Mahapola Academy", path: "/colombomahapola" }
-        ].map((box, i) => (
-          <Link to={box.path} key={i} className="small-box-link">
-            <div className="small-box">{box.title}</div>
-          </Link>
-        ))}
-      </div>
+     <ColomboBanner />
 
       
       

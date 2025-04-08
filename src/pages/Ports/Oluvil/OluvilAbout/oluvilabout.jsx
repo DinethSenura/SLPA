@@ -1,7 +1,8 @@
 import React from 'react';
-import './hip.css';
-import PortImage3 from '../../../assets/images/Ports/PortColomboHero.jpg';
-import HIPBanner from '../../../components/HIPBanner/hipbanner';
+import './oluvilabout.css';
+import PortImage3 from '../../../../assets/images/Ports/PortColomboHero.jpg';
+import OluvilBanner from '../../../../components/OluvilBanner/oluvilbanner';
+
 
 const ColomboLocation = () => {
   console.log("✅ Colombo Location Component Loaded!");
@@ -13,15 +14,14 @@ const ColomboLocation = () => {
         <p className="path">
           <a href="/">HOME</a>
           <span> &gt; </span> PORTS
-          <span> &gt; </span> HIP
+          <span> &gt; </span> OLUVIL
           <span> &gt; </span> ABOUT
         </p>
         <img src={PortImage3} alt="Colombo Port Overview" className="header-image" />
       </div>
 
     
-      <HIPBanner />
-      
+    <OluvilBanner />
       
     </div>
   );

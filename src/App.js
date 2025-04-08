@@ -46,6 +46,25 @@ import Awards from './pages/About/Awards/awards';
 import Annualreports from './pages/About/Annualreports/annualreports';
 import Tariff from './pages/About/Tariff/tariff';
 import Righttoinformation from './pages/About/Righttoinformation/righttoinformation';
+import GalleAbout from './pages/Ports/Galle/GalleAbout/galleabout';
+import GalleLocation from './pages/Ports/Galle/GalleLocation/gallelocation';
+import GalleCompliance from './pages/Ports/Galle/GalleCompliance/gallecompliane';
+import TrincoAbout from './pages/Ports/Trincomalee/TrincoAbout/trincoabout';
+import TrincoLocation from './pages/Ports/Trincomalee/TrincoLocation/trincolocation';
+import TrincoCompliance from './pages/Ports/Trincomalee/TrincoCompliance/trincocompliane';
+import TrincoTerminal from './pages/Ports/Trincomalee/TrincoTerminal/trincoterminal';
+import Trinco from './pages/Ports/Trincomalee/trincomalee';
+import HIP from './pages/Ports/HIP/hip';
+import HIPAbout from './pages/Ports/HIP/HIPAbout/hipabout';
+import HIPLocation from './pages/Ports/HIP/HIPLocation/hiplocation';
+import Oluvil from './pages/Ports/Oluvil/oluvil';
+import OluvilAbout from './pages/Ports/Oluvil/OluvilAbout/oluvilabout';
+import OluvilLocation from './pages/Ports/Oluvil/OluvilLocation/oluvillocation';
+import Kankasanthurai from './pages/Ports/Kankesanthurai/kankesanthurai';
+import KankasanthuraiAbout from './pages/Ports/Kankesanthurai/KankasanthuraiAbout/kankasanthuraiabout';
+import KankasanthuraiLocation from './pages/Ports/Kankesanthurai/KankasanthuraiLocation/kankasanthurailocation';
+import KankasanthuraiCompliance from './pages/Ports/Kankesanthurai/KankasanthuraiCompliance/kankasanthuraicompliance';
+
 
 function App() {
   const location = useLocation();
@@ -100,6 +119,24 @@ function App() {
           <Route path="tariff" element={<Tariff />}/>
           <Route path="righttoinformation" element={<Righttoinformation />}/>
           <Route path="boardofdirectors" element={<Boardofdirectors />}/>
+          <Route path="gallelocation" element={<GalleLocation/>}/>
+          <Route path="galleabout" element={<GalleAbout/>}/>
+          <Route path="gallecompliane" element={<GalleCompliance/>}/>
+          <Route path="trincolocation" element={<TrincoLocation/>}/>
+          <Route path="trincoabout" element={<TrincoAbout/>}/>
+          <Route path="trincocompliane" element={<TrincoCompliance/>}/>
+          <Route path="trincoterminal" element={<TrincoTerminal/>}/>
+          <Route path="trincomalee" element={<Trinco/>}/>
+          <Route path="hiplocation" element={<HIPLocation/>}/>
+          <Route path="hipabout" element={<HIPAbout/>}/>
+          <Route path="hip" element={<HIP/>}/>
+          <Route path="oluvillocation" element={<OluvilLocation/>}/>
+          <Route path="oluvilabout" element={<OluvilAbout/>}/>
+          <Route path="oluvil" element={<Oluvil/>}/>
+          <Route path="kankesanthurai" element={<Kankasanthurai />}/>
+          <Route path="kankasanthuraiabout" element={<KankasanthuraiAbout />}/>
+          <Route path="kankasanthurailocation" element={<KankasanthuraiLocation />}/>
+          <Route path="kankasanthuraicompliane" element={<KankasanthuraiCompliance />}/>
         </Routes>
       </div>
       <Footer />

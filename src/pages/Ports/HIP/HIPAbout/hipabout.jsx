@@ -1,7 +1,7 @@
 import React from 'react';
-import './hip.css';
-import PortImage3 from '../../../assets/images/Ports/PortColomboHero.jpg';
-import HIPBanner from '../../../components/HIPBanner/hipbanner';
+import './hipabout.css';
+import PortImage3 from '../../../../assets/images/Ports/PortColomboHero.jpg';
+import HIPBanner from '../../../../components/HIPBanner/hipbanner';
 
 const ColomboLocation = () => {
   console.log("✅ Colombo Location Component Loaded!");
