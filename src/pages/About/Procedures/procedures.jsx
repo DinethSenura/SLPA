@@ -34,7 +34,7 @@ const MyComponent = () => {
                     color: #ff9800;
                 }
             </style>
-            <table>
+            <table class="my-component-table">
                 <tbody>
                     <tr>
                         <th><span style="color:#444444;"><span style="font-family:arial,helvetica,sans-serif;"><strong>NO.</strong></span></span></th>
