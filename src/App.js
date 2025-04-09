@@ -68,6 +68,10 @@ import ChairmanDirectors from './pages/Contact/ChairmanDirectors/chairmananddire
 import ManagementTeam from './pages/Contact/ManagementTeam/managementteam';
 import EducationalVisit from './pages/Contact/EducationalVisit/educationalvisit';
 import GeneralInformation from './pages/Procurement/GeneralInformation/generalinformation';
+import Helpdesk from './pages/Contact/Helpdesk/Helpdesk';
+import Isps from './pages/Contact/ISPS/Isps';
+import Mahapolaacademy from './pages/Contact/MahapolaAcademy/Mahapolaacademy';
+import Ministry from './pages/Contact/Ministry/Ministry';
 
 
 function App() {
@@ -145,7 +149,10 @@ function App() {
           <Route path="managementteam" element={<ManagementTeam />}/>
           <Route path="educationalvisit" element={<EducationalVisit />}/>
           <Route path="generalinformation" element={<GeneralInformation />}/>
-
+          <Route path="helpdesk" element={<Helpdesk />}/>
+          <Route path="isps" element={<Isps />}/>
+          <Route path="mahapolaacademy" element={<Mahapolaacademy />}/>
+          <Route path="ministry" element={<Ministry />}/>
         </Routes>
       </div>
       <Footer />
