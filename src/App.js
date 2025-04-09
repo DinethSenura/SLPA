@@ -64,6 +64,10 @@ import Kankasanthurai from './pages/Ports/Kankesanthurai/kankesanthurai';
 import KankasanthuraiAbout from './pages/Ports/Kankesanthurai/KankasanthuraiAbout/kankasanthuraiabout';
 import KankasanthuraiLocation from './pages/Ports/Kankesanthurai/KankasanthuraiLocation/kankasanthurailocation';
 import KankasanthuraiCompliance from './pages/Ports/Kankesanthurai/KankasanthuraiCompliance/kankasanthuraicompliance';
+import ChairmanDirectors from './pages/Contact/ChairmanDirectors/chairmananddirectors';
+import ManagementTeam from './pages/Contact/ManagementTeam/managementteam';
+import EducationalVisit from './pages/Contact/EducationalVisit/educationalvisit';
+import GeneralInformation from './pages/Procurement/GeneralInformation/generalinformation';
 
 
 function App() {
@@ -137,6 +141,11 @@ function App() {
           <Route path="kankasanthuraiabout" element={<KankasanthuraiAbout />}/>
           <Route path="kankasanthurailocation" element={<KankasanthuraiLocation />}/>
           <Route path="kankasanthuraicompliane" element={<KankasanthuraiCompliance />}/>
+          <Route path="chairmananddirectors" element={<ChairmanDirectors />}/>
+          <Route path="managementteam" element={<ManagementTeam />}/>
+          <Route path="educationalvisit" element={<EducationalVisit />}/>
+          <Route path="generalinformation" element={<GeneralInformation />}/>
+
         </Routes>
       </div>
       <Footer />
