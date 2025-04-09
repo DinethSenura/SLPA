@@ -141,9 +141,9 @@ const Header = () => {
               </NavLink>
               <ul className="dropdown-menu" aria-labelledby="procurementDropdown">
                 <li><NavLink to="/generalinformation" className="dropdown-item" onClick={closeNav}>Contacts-General Info</NavLink></li>
-                <li><NavLink to="/procurement/foreignpurchases" className="dropdown-item" onClick={closeNav}>Foreign-Purchases</NavLink></li>
-                <li><NavLink to="/procurement/localpurchases" className="dropdown-item" onClick={closeNav}>Local Purchases</NavLink></li>
-                <li><NavLink to="/procurement/other" className="dropdown-item" onClick={closeNav}>Other</NavLink></li>
+                <li><NavLink to="/foreignpurchases" className="dropdown-item" onClick={closeNav}>Foreign-Purchases</NavLink></li>
+                <li><NavLink to="/localpurchases" className="dropdown-item" onClick={closeNav}>Local Purchases</NavLink></li>
+                <li><NavLink to="/other" className="dropdown-item" onClick={closeNav}>Other</NavLink></li>
               </ul>
             </li>
 
@@ -160,14 +160,14 @@ const Header = () => {
                 CONTACT
               </NavLink>
               <ul className="dropdown-menu" aria-labelledby="contactDropdown">
-                <li><NavLink to="/contact/ministry" className="dropdown-item" onClick={closeNav}>Ministry</NavLink></li>
+                <li><NavLink to="/ministry" className="dropdown-item" onClick={closeNav}>Ministry</NavLink></li>
                 <li><NavLink to="/chairmananddirectors" className="dropdown-item" onClick={closeNav}>Chairman & Directors</NavLink></li>
                 <li><NavLink to="/managementteam" className="dropdown-item" onClick={closeNav}>Management Team</NavLink></li>
-                <li><NavLink to="/contact/mahapolaacademy" className="dropdown-item" onClick={closeNav}>Mahapola Academy</NavLink></li>
-                <li><NavLink to="/contact/helpdesk" className="dropdown-item" onClick={closeNav}>Help Desk</NavLink></li>
-                <li><NavLink to="/contact/slpaports" className="dropdown-item" onClick={closeNav}>SLPA Ports</NavLink></li>
-                <li><NavLink to="/contact/shippingdirectory" className="dropdown-item" onClick={closeNav}>Shipping Directory</NavLink></li>
-                <li><NavLink to="/contact/isps" className="dropdown-item" onClick={closeNav}>ISPS</NavLink></li>
+                <li><NavLink to="/mahapolaacademy" className="dropdown-item" onClick={closeNav}>Mahapola Academy</NavLink></li>
+                <li><NavLink to="/helpdesk" className="dropdown-item" onClick={closeNav}>Help Desk</NavLink></li>
+                <li><NavLink to="/slpaports" className="dropdown-item" onClick={closeNav}>SLPA Ports</NavLink></li>
+                <li><NavLink to="/shippingdirectory" className="dropdown-item" onClick={closeNav}>Shipping Directory</NavLink></li>
+                <li><NavLink to="/isps" className="dropdown-item" onClick={closeNav}>ISPS</NavLink></li>
                 <li><NavLink to="/educationalvisit" className="dropdown-item" onClick={closeNav}>Educational Visits</NavLink></li>
               </ul>
             </li>
