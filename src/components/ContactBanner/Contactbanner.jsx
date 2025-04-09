@@ -4,22 +4,21 @@ import { Link } from 'react-router-dom';
 
 const Contactbanner = () => {
   return (
-    <div className="aboutbanner-wrapper">
-          <div className="aboutbanner-small-boxes-container">
+    <div className="contactbanner-wrapper">
+          <div className="contactbanner-small-boxes-container">
             {[
-              { title: "SLPA", path: "/Slpa" },
-              { title: "Vision and Mission", path: "/Visionmission" },
-              { title: "Board of Directors", path: "/Boardofdirectors" },
-              { title: "ACT", path: "/Act" },
-              { title: "Procedures", path: "/Procedures" },
-              { title: "Circular", path: "/circulars" },
-              { title: "Awards", path: "/Awards" },
-              { title: "Annual Reports", path: "/Annualreports" },
-              { title: "Tariff", path: "/Tariff" },
-              { title: "Right to Information", path: "/Righttoinformation" },
+              { title: "Ministry", path: "/ministry" },
+              { title: "Chairman & Directors", path: "/chairman&directors" },
+              { title: "Management Team", path: "/managementteam" },
+              { title: "Mahapola Academy", path: "/mahapolaacademy" },
+              { title: "Help Disk", path: "/helpdisk" },
+              { title: "SLPA Ports", path: "/slpaports" },
+              { title: "Shipping Directory", path: "/shippingdirectory" },
+              { title: " ISPS", path: "/isps" },
+              { title: "Educational Visits", path: "/educationalvisits" },
             ].map((box, i) => (
-              <Link to={box.path} key={i} className="aboutbanner-small-box-link">
-                <div className="aboutbanner-small-box">{box.title}</div>
+              <Link to={box.path} key={i} className="contactbanner-small-box-link">
+                <div className="contactbanner-small-box">{box.title}</div>
               </Link>
             ))}
           </div>
