@@ -47,7 +47,9 @@ import Annualreports from './pages/About/Annualreports/annualreports';
 import Tariff from './pages/About/Tariff/tariff';
 import Righttoinformation from './pages/About/Righttoinformation/righttoinformation';
 import Ministry from './pages/Contact/Ministry/Ministry';
-import Managementteam from './pages/Contact/Managementteam/Managementteam';
+import Mahapolaacademy from './pages/Contact/Mahapolaacademy/Mahapolaacadem';
+import Helpdesk from './pages/Contact/Helpdesk/helpdesk';
+import Isps from './pages/Contact/ISPS/Isps';
 
 function App() {
   const location = useLocation();
@@ -103,7 +105,9 @@ function App() {
           <Route path="righttoinformation" element={<Righttoinformation />}/>
           <Route path="boardofdirectors" element={<Boardofdirectors />}/>
           <Route path="ministry" element={<Ministry />}/>
-          <Route path="managementteam" element={<Managementteam />}/>
+          <Route path="mahapolaacademy" element={<Mahapolaacademy />}/>
+          <Route path="helpdesk" element={<Helpdesk />}/>
+          <Route path="isps" element={<Isps />}/>
         </Routes>
       </div>
       <Footer />

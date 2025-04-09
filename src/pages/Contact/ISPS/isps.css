@@ -1,0 +1,78 @@
+.isps-page {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .isps-content {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+  }
+  
+  /* Remove default center tag behavior */
+  .isps-content center {
+    display: block;
+    text-align: inherit;
+  }
+  
+  /* Style for all tables inside isps-content */
+  .isps-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .isps-content table td,
+  .isps-content table th {
+    padding: 12px;
+    border: 1px solid #ccc;
+    vertical-align: top;
+    text-align: left;
+  }
+  
+  .isps-content table th {
+    background-color: #2980b9;
+    color: white;
+    text-align: center;
+  }
+  
+  .isps-content table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .isps-content table tr:hover {
+    background-color: #e3f2fd;
+  }
+  
+  .isps-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    text-align: center;
+  }
+  
+  .isps-content strong {
+    color: #2c3e50;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .isps-content {
+      padding: 1rem;
+    }
+  
+    .isps-content table,
+    .isps-content table td,
+    .isps-content table th {
+      font-size: 0.85rem;
+      padding: 8px;
+    }
+  
+    .isps-content h4 {
+      font-size: 1.2rem;
+    }
+  }
+  
