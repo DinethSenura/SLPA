@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Helpdesk/helpdesk.css';
 import Contactbanner from '../../../components/ContactBanner/Contactbanner';
+import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
 
 const htmlContent = `
   <table cellpadding="4" cellspacing="0" style="width:100%">
@@ -33,6 +34,18 @@ const htmlContent = `
 const Helpdesk = () => {
   return (
     <div className="helpdesk-page">
+
+            <div className="header-section">
+                <h1>BOARD OF DIRECTORS</h1>
+                <p className="path">
+                <span></span>HOME
+                    <span>&gt;</span>ABOUT
+                    <span>&gt;</span>BOARD OF DIRECTORS
+                </p>
+                <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
+            </div>
+
+
       <Contactbanner />
       <div className="act-wrapper">
       <div
