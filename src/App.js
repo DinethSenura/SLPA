@@ -72,7 +72,7 @@ import Helpdesk from './pages/Contact/Helpdesk/Helpdesk';
 import Isps from './pages/Contact/ISPS/Isps';
 import Mahapolaacademy from './pages/Contact/MahapolaAcademy/Mahapolaacademy';
 import Ministry from './pages/Contact/Ministry/Ministry';
-
+import Localpurchases from './pages/Procurement/LocalPurchases/Localpurchases';
 
 function App() {
   const location = useLocation();
@@ -153,6 +153,7 @@ function App() {
           <Route path="isps" element={<Isps />}/>
           <Route path="mahapolaacademy" element={<Mahapolaacademy />}/>
           <Route path="ministry" element={<Ministry />}/>
+          <Route path="localpurchases" element={<Localpurchases />}/>
         </Routes>
       </div>
       <Footer />
