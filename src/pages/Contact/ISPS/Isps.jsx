@@ -1,6 +1,7 @@
 import React from 'react';
 import '../ISPS/isps.css';
 import Contactbanner from '../../../components/ContactBanner/Contactbanner';
+import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
 
 const ispsContent = `
   <h4><strong>Sri Lanka Ports Authority ISPS related contact details</strong></h4>
@@ -77,6 +78,18 @@ const ispsContent = `
 const Isps = () => {
   return (
     <div className="isps-page">
+
+      <div className="header-section">
+          <h1>BOARD OF DIRECTORS</h1>
+          <p className="path">
+          <span></span>HOME
+              <span>&gt;</span>ABOUT
+              <span>&gt;</span>BOARD OF DIRECTORS
+          </p>
+          <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
+      </div>
+
+      
       <Contactbanner />
       <div className="act-wrapper">
       <div

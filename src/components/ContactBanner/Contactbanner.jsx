@@ -11,7 +11,7 @@ const Contactbanner = () => {
               { title: "Chairman & Directors", path: "/chairman&directors" },
               { title: "Management Team", path: "/managementteam" },
               { title: "Mahapola Academy", path: "/mahapolaacademy" },
-              { title: "Help Disk", path: "/helpdisk" },
+              { title: "Help Desk", path: "/helpdesk" },
               { title: "SLPA Ports", path: "/slpaports" },
               { title: "Shipping Directory", path: "/shippingdirectory" },
               { title: " ISPS", path: "/isps" },

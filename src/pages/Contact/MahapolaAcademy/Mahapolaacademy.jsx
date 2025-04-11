@@ -1,6 +1,7 @@
 import React from 'react';
 import '../MahapolaAcademy/mahapolaacademy.css';
 import Contactbanner from '../../../components/ContactBanner/Contactbanner';
+import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
 
 const htmlContent = `
   <p>&nbsp;</p>
@@ -35,6 +36,17 @@ const htmlContent = `
 const Mahapolaacadem = () => {
   return (
     <div className="mahapola-page">
+
+      <div className="header-section">
+          <h1>BOARD OF DIRECTORS</h1>
+          <p className="path">
+          <span></span>HOME
+              <span>&gt;</span>ABOUT
+              <span>&gt;</span>BOARD OF DIRECTORS
+          </p>
+          <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
+      </div>
+
       <Contactbanner />
       <div className="act-wrapper">
       <div
