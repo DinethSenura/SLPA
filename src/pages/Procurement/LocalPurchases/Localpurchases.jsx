@@ -26,6 +26,17 @@ const LocalPurchasesWithAuth = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const getToken = async () => {
+    try {
+      const response = await axios.post(LOGIN_URL, { USERNAME, PASSWORD });
+      const { token } = response.data;
+      localStorage.setItem('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdGF0dXMiOnRydWUsInVzZXJuYW1lIjoiVEVTVCIsInRpbWVzdGFtcCI6IjIwMjUtMDQtMTcgMDk6MzQ6MTgifQ.5EaQ1D1SP_NQEiX7UlPCnA0AUm-KkhqEGNMbtespg3U', token); // Save token in localStorage
+      setToken(token); // Set the token to state
+    } catch (err) {
+      setError('Authentication failed. Please check your credentials.');
+    }
+  };
+
   // Auto login if token is missing, called once on mount
   useEffect(() => {
 
