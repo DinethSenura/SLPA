@@ -4,7 +4,6 @@ import './localpurchases.css';
 import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
 
 const LOGIN_URL = 'https://www.slpa.lk/WEBAPI/V1/Auth/Login';
-
 const USERNAME = "TEST";
 const PASSWORD = "123";
 
@@ -18,11 +17,14 @@ const LocalPurchasesWithAuth = () => {
     try {
       setLoading(true);
 
-      
-      const response = await axios.post(LOGIN_URL, {
+      const requestData = {
         username: USERNAME,
         password: PASSWORD
-      }, {
+      };
+
+      console.log('Sending Login Request:', requestData);
+
+      const response = await axios.post(LOGIN_URL, requestData, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -31,11 +33,10 @@ const LocalPurchasesWithAuth = () => {
       console.log('Full Login Response:', response);
       setFullResponse(response);
 
-      
       const tokenFromAPI = response.data.Token || response.data.token;
 
       if (tokenFromAPI) {
-        localStorage.setItem('authToken', tokenFromAPI); 
+        localStorage.setItem('authToken', tokenFromAPI); // Save token permanently
         setToken(tokenFromAPI);
         console.log('Token saved:', tokenFromAPI);
       } else {
