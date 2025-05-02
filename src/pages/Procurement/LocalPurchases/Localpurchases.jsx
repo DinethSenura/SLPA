@@ -3,7 +3,9 @@ import axios from 'axios';
 import './localpurchases.css';
 import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
 
+// Full login URL
 const LOGIN_URL = 'https://www.slpa.lk/WEBAPI/V1/Auth/Login';
+
 const USERNAME = "TEST";
 const PASSWORD = "123";
 
@@ -13,32 +15,27 @@ const LocalPurchasesWithAuth = () => {
   const [error, setError] = useState('');
   const [fullResponse, setFullResponse] = useState(null);
 
+  const data={};
+
   const loginAndGetToken = async () => {
     try {
       setLoading(true);
-
-      const requestData = {
-        username: USERNAME,
-        password: PASSWORD
-      };
-
-      console.log('Sending Login Request:', requestData);
-
-      const response = await axios.post(LOGIN_URL, requestData, {
+      const response = await axios.post(LOGIN_URL,data,
+       {
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Username':USERNAME,
+          'Password': PASSWORD
         }
       });
 
       console.log('Full Login Response:', response);
       setFullResponse(response);
 
-      const tokenFromAPI = response.data.Token || response.data.token;
-
-      if (tokenFromAPI) {
-        localStorage.setItem('authToken', tokenFromAPI); // Save token permanently
-        setToken(tokenFromAPI);
-        console.log('Token saved:', tokenFromAPI);
+      if (response.data.Token) {
+        localStorage.setItem('authToken', response.data.Token);
+        setToken(response.data.token);
+        console.log(localStorage.getItem('authToken'));
       } else {
         setError('Token not found in response: ' + JSON.stringify(response.data));
       }
@@ -82,8 +79,8 @@ const LocalPurchasesWithAuth = () => {
             {fullResponse && (
               <div style={{ marginTop: '15px' }}>
                 <h4>Full Response:</h4>
-                <pre style={{
-                  wordBreak: 'break-all',
+                <pre style={{ 
+                  wordBreak: 'break-all', 
                   whiteSpace: 'pre-wrap',
                   backgroundColor: '#f5f5f5',
                   padding: '10px',
@@ -95,17 +92,17 @@ const LocalPurchasesWithAuth = () => {
             )}
           </div>
         ) : token ? (
-          <div style={{
-            margin: '20px 0',
-            padding: '15px',
+          <div style={{ 
+            margin: '20px 0', 
+            padding: '15px', 
             backgroundColor: '#f0f0f0',
             border: '1px solid #ddd',
             borderRadius: '4px'
           }}>
             <h3>Authentication Successful</h3>
             <h4>Token:</h4>
-            <pre style={{
-              wordBreak: 'break-all',
+            <pre style={{ 
+              wordBreak: 'break-all', 
               whiteSpace: 'pre-wrap',
               backgroundColor: '#fff',
               padding: '10px',
