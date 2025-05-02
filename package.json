@@ -55,9 +55,6 @@
   },
   "devDependencies": {
     "webpack": "^5.98.0"
-  },
-
-  "proxy": [ "https://www.slpa.lk"
-  ]
+  }
   
 }

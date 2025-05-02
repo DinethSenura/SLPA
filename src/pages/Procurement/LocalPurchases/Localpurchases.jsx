@@ -3,10 +3,8 @@ import axios from 'axios';
 import './localpurchases.css';
 import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
 
-// API endpoint
-const LOGIN_URL = '/WEBAPI/V1/Auth/login';
+const LOGIN_URL = 'https://www.slpa.lk/WEBAPI/V1/Auth/Login';
 
-// Hardcoded credentials
 const USERNAME = "TEST";
 const PASSWORD = "123";
 
@@ -16,10 +14,11 @@ const LocalPurchasesWithAuth = () => {
   const [error, setError] = useState('');
   const [fullResponse, setFullResponse] = useState(null);
 
-  // Function to login and get token
   const loginAndGetToken = async () => {
     try {
       setLoading(true);
+
+      
       const response = await axios.post(LOGIN_URL, {
         username: USERNAME,
         password: PASSWORD
@@ -29,20 +28,25 @@ const LocalPurchasesWithAuth = () => {
         }
       });
 
-      console.log('Full Login Response:', response); // Debugging
+      console.log('Full Login Response:', response);
       setFullResponse(response);
 
-      if (response.data && response.data.token) {
-        const { token } = response.data;
-        localStorage.setItem('authToken', token);
-        setToken(token);
+      
+      const tokenFromAPI = response.data.Token || response.data.token;
+
+      if (tokenFromAPI) {
+        localStorage.setItem('authToken', tokenFromAPI); 
+        setToken(tokenFromAPI);
+        console.log('Token saved:', tokenFromAPI);
       } else {
-        setError('Failed to get token. Response: ' + JSON.stringify(response.data));
+        setError('Token not found in response: ' + JSON.stringify(response.data));
       }
+
     } catch (err) {
       console.error('Login Error:', err);
       if (err.response) {
-        setError(`Authentication failed (${err.response.status}): ${err.response.data.message || 'Unknown error'}`);
+        setError(`Authentication failed (${err.response.status}): ${err.response.data?.message || 'Unknown error'}`);
+        setFullResponse(err.response);
       } else {
         setError('Authentication failed: ' + err.message);
       }
@@ -51,7 +55,6 @@ const LocalPurchasesWithAuth = () => {
     }
   };
 
-  // Login on mount if no token
   useEffect(() => {
     if (!token) {
       loginAndGetToken();
@@ -63,9 +66,7 @@ const LocalPurchasesWithAuth = () => {
       <div className="header-section">
         <h1>Token Fetching Page</h1>
         <p className="path">
-          <span></span>HOME
-          <span>&gt;</span>LOGIN
-          <span>&gt;</span>TOKEN
+          <span></span>HOME <span>&gt;</span>LOGIN <span>&gt;</span>TOKEN
         </p>
         <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
       </div>
@@ -80,8 +81,8 @@ const LocalPurchasesWithAuth = () => {
             {fullResponse && (
               <div style={{ marginTop: '15px' }}>
                 <h4>Full Response:</h4>
-                <pre style={{ 
-                  wordBreak: 'break-all', 
+                <pre style={{
+                  wordBreak: 'break-all',
                   whiteSpace: 'pre-wrap',
                   backgroundColor: '#f5f5f5',
                   padding: '10px',
@@ -93,17 +94,17 @@ const LocalPurchasesWithAuth = () => {
             )}
           </div>
         ) : token ? (
-          <div style={{ 
-            margin: '20px 0', 
-            padding: '15px', 
+          <div style={{
+            margin: '20px 0',
+            padding: '15px',
             backgroundColor: '#f0f0f0',
             border: '1px solid #ddd',
             borderRadius: '4px'
           }}>
             <h3>Authentication Successful</h3>
             <h4>Token:</h4>
-            <pre style={{ 
-              wordBreak: 'break-all', 
+            <pre style={{
+              wordBreak: 'break-all',
               whiteSpace: 'pre-wrap',
               backgroundColor: '#fff',
               padding: '10px',
