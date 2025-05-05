@@ -6,6 +6,8 @@ import portImage1 from '../../../../assets/images/Ports/colombo_prt1.jpg';
 import leftImage1 from '../../../../assets/images/jctect/left.jpg';
 import rightImage1 from '../../../../assets/images/jctect/jct.jpg';
 import plinkImage1 from '../../../../assets/images/jctect/plink.jpg';
+import ColomboBanner from '../../../../components/colombobanner/Colombobanner';
+
 
 
 const Ports = () => {
@@ -23,24 +25,8 @@ const Ports = () => {
       </div>
 
       {/* Small Boxes Section */}
-      <div className="small-boxes-container">
-  {[
-    { title: "About", path: "/'colomboabout" },
-    { title: "Location", path: "/colombolocation" },
-    { title: "Terminals", path: "/colomboterminals" },
-    { title: "Port Facilities", path: "/colombofacilities" },
-    { title: "General Cargo Services", path: "" },
-    { title: "Entrance", path: "" },
-    { title: "Compliance", path: "" },
-    { title: "Mahapola Academy", path: "" }
-  ].map((box, i) => (
-    <Link to={box.path} key={i} className="small-box-link">
-      <div className="small-box">
-        {box.title}
-      </div>
-    </Link>
-  ))}
-</div>
+     
+     <ColomboBanner />
 
 
       {/* Content Section */}
