@@ -1,122 +1,175 @@
-import React from 'react'
-//import DOMPurify from 'dompurify';
-// import { Link } from 'react-router-dom';
-import './generalinformation.css';
-import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import axios from 'axios';
 
-const GeneralInformation = () => {
+// Full login URL for fetching token
+const LOGIN_URL = 'https://www.slpa.lk/WEBAPI/V1/Auth/Login';
+const USERNAME = 'TEST';
+const PASSWORD = '123';
+
+// API URL for fetching data
+const DATA_URL = 'https://www.slpa.lk/WEBAPI/V1/Articles/get_article_info';
+
+// Component that handles fetching the token
+const ApiToken = ({ setToken }) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [fullResponse, setFullResponse] = useState(null);
+
+  const data = {}; // Data for the API request
+
+  // Memoize the loginAndGetToken function using useCallback
+  const loginAndGetToken = useCallback(async () => {
+    try {
+      setLoading(true);
+
+      const response = await axios.post(LOGIN_URL, data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Username': USERNAME,
+          'Password': PASSWORD,
+        },
+      });
+
+      console.log('Full Login Response:', response);
+      setFullResponse(response);
+
+      if (response.data.Token) {
+        localStorage.setItem('authToken', response.data.Token); // Store token in localStorage
+        setToken(response.data.Token); // Set the token in the parent component
+        console.log('Token saved to localStorage:', response.data.Token); // Debugging
+      } else {
+        setError('Token not found in response: ' + JSON.stringify(response.data));
+      }
+    } catch (err) {
+      console.error('Login Error:', err);
+      if (err.response) {
+        setError(`Authentication failed (${err.response.status}): ${err.response.data?.message || 'Unknown error'}`);
+        setFullResponse(err.response);
+      } else {
+        setError('Authentication failed: ' + err.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [data, setToken]);
+
+  useEffect(() => {
+    loginAndGetToken(); // Fetch the token when the component mounts
+  }, [loginAndGetToken]);
+
+  if (loading) {
+    return <p>Logging in and fetching token...</p>;
+  }
+
+  if (error) {
+    return (
+      <div style={{ color: 'red', margin: '20px', padding: '15px', border: '1px solid #ffcccc', backgroundColor: '#fff0f0' }}>
+        <h3>Error</h3>
+        <p>{error}</p>
+        {fullResponse && (
+          <div style={{ marginTop: '15px' }}>
+            <h4>Full Response:</h4>
+            <pre
+              style={{
+                wordBreak: 'break-all',
+                whiteSpace: 'pre-wrap',
+                backgroundColor: '#f5f5f5',
+                padding: '10px',
+                borderRadius: '4px',
+              }}
+            >
+              {JSON.stringify(fullResponse.data, null, 2)}
+            </pre>
+          </div>
+        )}
+      </div>
+    );
+  }
+
   return (
-
-    <div >
-            <div className="header-section">
-                <h1>BOARD OF DIRECTORS</h1>
-                <p className="path">
-                <span></span>HOME
-                    <span>&gt;</span>ABOUT
-                    <span>&gt;</span>BOARD OF DIRECTORS
-                </p>
-                <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
-            </div>
-
     <div>
-      <div style={{ textAlign: 'center' }}>
-        <img
-          alt=""
-          className="img-responsive"
-          src="https://www.slpa.lk/uploads/article/article_image_ext_2022_11_18_1668762030.jpg"
-          width="98%"
-        />
-      </div>
-
-      <p>&nbsp;</p>
-
-      <div style={{ backgroundColor: '#f8f365', color: 'black', padding: '20px' }}>
-        <p style={{ textAlign: 'center' }}>
-          <span style={{ fontSize: '18px' }}>
-            <strong>
-              Sri Lanka Ports Authority, we welcome you all.<br />
-              We offer free educational guided tours to explore the development of our port and understand how we work.<br />
-              Visit us and enhance your knowledge.
-            </strong>
-          </span>
-        </p>
-      </div>
-
-      <p style={{ textAlign: 'justify' }}>
-        These visits are aimed at Government or Private Schools, Tertiary Educational Institutes and Universities.
-      </p>
-
-      <p style={{ textAlign: 'justify' }}>
-        Visits must be booked in advance by calling or sending an email to the person responsible for this activity.
-      </p>
-
-      <p style={{ textAlign: 'justify' }}>
-        <strong>For inquiries</strong> (During office hours only):
-      </p>
-
-      <p>&nbsp;</p>
-
-      <table
-        align="center"
-        border="1"
-        cellpadding="4"
-        cellspacing="0"
-        className="table table-hover"
-        style={{ height: '75%', width: '75%' }}
-      >
-        <tbody>
-          <tr>
-            <td>
-              <strong>Director (Security) Office</strong><br /><br />
-              Tel: +94 11 2483781<br />
-              E-Mail: <u>snilmini@slpa.lk</u>
-            </td>
-            <td>
-              <strong>Deputy Chief Security Manager's Office</strong><br /><br />
-              Tel: +94 11 2482305<br />
-              E-Mail: <u>upaligamage@slpa.lk</u>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p>&nbsp;</p>
-
-      <p style={{ textAlign: 'justify' }}>
-        Download the form required to obtain permission to visit the Port of Colombo here:
-      </p>
-
-      <p style={{ textAlign: 'center' }}>
-        <strong>
-          Permission to visit the Port of Colombo Form - &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <a
-            href="https://www.slpa.lk/uploads/article_attachment/attachment_2023_02_15_16764512651676451293.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            English
-          </a>
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <a
-            href="https://www.slpa.lk/uploads/article_attachment/attachment_2023_02_15_16764512651676451338.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Sinhala
-          </a>
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <a
-            href="https://www.slpa.lk/uploads/article_attachment/attachment_2023_02_15_16764512651676451359.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tamil
-          </a>
-        </strong>
-      </p>
-    </div>
+      <h3>Authentication Successful</h3>
+      <p>Token has been fetched and saved successfully.</p>
     </div>
   );
 };
 
-export default GeneralInformation;
+// Component to fetch data using the token
+const FetchDataPage = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [token, setToken] = useState(localStorage.getItem('authToken') || ''); // Initialize with token from localStorage
+
+  const requestData = useMemo(() => ({
+    data: [
+      {
+        article_menu: 'Local-Purchases-1',
+        article_code: 'TWVjaGFuaWNhbCBFcXVpcG1lbnQ=',
+        article_content: 'NULL',
+      },
+    ],
+  }), []); // Memoize requestData to avoid unnecessary re-renders
+
+  // Log and display the token to confirm it's being passed correctly
+  console.log('Sending Token:', token); // Ensure token is available before making the request
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!token) {
+        setError('No token available. Please log in to proceed.');
+        return; // If no token, don't make the request
+      }
+
+      setLoading(true);
+      try {
+        const response = await axios.post(DATA_URL, requestData, {
+          headers: {
+           // Authorization: 'Bearer ${token}', // Pass token in the Authorization header
+            Authorization: token, // Pass token in the Authorization header
+            
+            'Content-Type': 'application/json',
+          },
+        });
+
+        setData(response.data);  // Save fetched data to state
+      } catch (err) {
+        if (err.response && err.response.status === 401) {
+          setError('Authorization failed. Please login again. '+token);
+        } else {
+          setError('Failed to fetch data: ' + err.message);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData(); // Make the API request
+  }, [token, requestData]); // Re-run effect when token or requestData changes
+
+  if (loading) {
+    return <p>Loading data...</p>;
+  }
+
+  if (error) {
+    return <p style={{ color: 'red' }}>{error}</p>;
+  }
+
+  return (
+    <div>
+      <h2>Fetched Data:</h2>
+      {data ? (
+        <pre style={{ backgroundColor: '#f5f5f5', padding: '10px', borderRadius: '4px' }}>
+          {JSON.stringify(data, null, 2)}
+        </pre>
+      ) : (
+        <p>No data found.</p>
+      )}
+
+      {/* Token component to fetch token */}
+      <ApiToken setToken={setToken} /> {/* Pass setToken as prop to update token */}
+    </div>
+  );
+};
+
+export default FetchDataPage;
