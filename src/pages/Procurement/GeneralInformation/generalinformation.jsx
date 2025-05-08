@@ -17,11 +17,9 @@ const ApiToken = ({ setToken }) => {
 
   const data = {}; // Data for the API request
 
-  // Memoize the loginAndGetToken function using useCallback
   const loginAndGetToken = useCallback(async () => {
     try {
       setLoading(true);
-
       const response = await axios.post(LOGIN_URL, data, {
         headers: {
           'Content-Type': 'application/json',
@@ -36,7 +34,7 @@ const ApiToken = ({ setToken }) => {
       if (response.data.Token) {
         localStorage.setItem('authToken', response.data.Token); // Store token in localStorage
         setToken(response.data.Token); // Set the token in the parent component
-        console.log('Token saved to localStorage:', response.data.Token); // Debugging
+        console.log('Token saved to localStorage:', response.data.Token);
       } else {
         setError('Token not found in response: ' + JSON.stringify(response.data));
       }
@@ -51,7 +49,7 @@ const ApiToken = ({ setToken }) => {
     } finally {
       setLoading(false);
     }
-  }, [data, setToken]);
+  }, [setToken]);
 
   useEffect(() => {
     loginAndGetToken(); // Fetch the token when the component mounts
@@ -69,15 +67,7 @@ const ApiToken = ({ setToken }) => {
         {fullResponse && (
           <div style={{ marginTop: '15px' }}>
             <h4>Full Response:</h4>
-            <pre
-              style={{
-                wordBreak: 'break-all',
-                whiteSpace: 'pre-wrap',
-                backgroundColor: '#f5f5f5',
-                padding: '10px',
-                borderRadius: '4px',
-              }}
-            >
+            <pre style={{ wordBreak: 'break-all', whiteSpace: 'pre-wrap', backgroundColor: '#f5f5f5', padding: '10px', borderRadius: '4px' }}>
               {JSON.stringify(fullResponse.data, null, 2)}
             </pre>
           </div>
@@ -104,15 +94,12 @@ const FetchDataPage = () => {
   const requestData = useMemo(() => ({
     data: [
       {
-        article_menu: 'Local-Purchases-1',
-        article_code: 'TWVjaGFuaWNhbCBFcXVpcG1lbnQ=',
+        article_menu: 'Vision & Mission',
+        article_code: 'VmlzaW9uICYgTWlzc2lvbg==',
         article_content: 'NULL',
       },
     ],
   }), []); // Memoize requestData to avoid unnecessary re-renders
-
-  // Log and display the token to confirm it's being passed correctly
-  console.log('Sending Token:', token); // Ensure token is available before making the request
 
   useEffect(() => {
     const fetchData = async () => {
@@ -125,17 +112,16 @@ const FetchDataPage = () => {
       try {
         const response = await axios.post(DATA_URL, requestData, {
           headers: {
-           // Authorization: 'Bearer ${token}', // Pass token in the Authorization header
             Authorization: token, // Pass token in the Authorization header
-            
             'Content-Type': 'application/json',
           },
         });
 
-        setData(response.data);  // Save fetched data to state
+        console.log('Fetched API Data:', response.data);
+        setData(response.data); // Save fetched data to state
       } catch (err) {
         if (err.response && err.response.status === 401) {
-          setError('Authorization failed. Please login again. '+token);
+          setError('Authorization failed. Please login again.');
         } else {
           setError('Failed to fetch data: ' + err.message);
         }
@@ -144,26 +130,43 @@ const FetchDataPage = () => {
       }
     };
 
-    fetchData(); // Make the API request
-  }, [token, requestData]); // Re-run effect when token or requestData changes
+    fetchData();
+  }, [token, requestData]);
 
-  if (loading) {
-    return <p>Loading data...</p>;
-  }
-
-  if (error) {
-    return <p style={{ color: 'red' }}>{error}</p>;
-  }
+  if (loading) return <p>Loading data...</p>;
+  if (error) return <p style={{ color: 'red' }}>{error}</p>;
 
   return (
     <div>
-      <h2>Fetched Data:</h2>
-      {data ? (
-        <pre style={{ backgroundColor: '#f5f5f5', padding: '10px', borderRadius: '4px' }}>
-          {JSON.stringify(data, null, 2)}
-        </pre>
+      <h2>Fetched Articles:</h2>
+
+      {data && data.status && data.data && data.data.article_info ? (
+        <div>
+          <h3>{data.data.article_info.title || 'No Title'}</h3>
+          {data.data.article_info.image && (
+            <img
+              src={data.data.article_info.image}
+              alt={data.data.article_info.title}
+              style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+            />
+          )}
+
+          {/* Render HTML content */}
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.data.article_info.content || 'No content available.',
+            }}
+            style={{
+              backgroundColor: '#f5f5f5',
+              padding: '10px',
+              borderRadius: '4px',
+              wordBreak: 'break-word',
+              whiteSpace: 'pre-wrap',
+            }}
+          />
+        </div>
       ) : (
-        <p>No data found.</p>
+        <p>No articles found.</p>
       )}
 
       {/* Token component to fetch token */}
