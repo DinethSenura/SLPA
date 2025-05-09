@@ -1,77 +1,203 @@
-import React, { useEffect, useState } from "react";
-import DOMPurify from "dompurify";
-// import { Link } from "react-router-dom";
-import "./act.css"; // Import CSS import
-import portImage2 from "../../../assets/images/Ports/PortColomboHero.jpg";
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import axios from 'axios';
 import AboutBanner from "../../../components/AboutBanner/Aboutbanner";
+import '../Act/act.css';
 
-const ActOfSLPA = () => {
-  const [htmlContent, setHtmlContent] = useState("");
+// Full login URL for fetching token
+const LOGIN_URL = 'https://www.slpa.lk/WEBAPI/V1/Auth/Login';
+const USERNAME = 'TEST';
+const PASSWORD = '123';
+
+// API URL for fetching data
+const DATA_URL = 'https://www.slpa.lk/WEBAPI/V1/Articles/get_article_info';
+
+// Component that handles fetching the token
+const ApiToken = ({ setToken }) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [fullResponse, setFullResponse] = useState(null);
+
+  // Memoize the 'data' object to prevent unnecessary re-renders
+  const data = useMemo(() => {
+    return {}; // Data for the API request
+  }, []); // Only recreate this object when required (currently it's static)
+
+  // Memoize the loginAndGetToken function using useCallback
+  const loginAndGetToken = useCallback(async () => {
+    try {
+      setLoading(true);
+
+      const response = await axios.post(LOGIN_URL, data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Username': USERNAME,
+          'Password': PASSWORD,
+        },
+      });
+
+      console.log('Full Login Response:', response);
+      setFullResponse(response);
+
+      if (response.data.Token) {
+        localStorage.setItem('authToken', response.data.Token); // Store token in localStorage
+        setToken(response.data.Token); // Set the token in the parent component
+        console.log('Token saved to localStorage:', response.data.Token);
+      } else {
+        setError('Token not found in response: ' + JSON.stringify(response.data));
+      }
+    } catch (err) {
+      console.error('Login Error:', err);
+      if (err.response) {
+        setError(`Authentication failed (${err.response.status}): ${err.response.data?.message || 'Unknown error'}`);
+        setFullResponse(err.response);
+      } else {
+        setError('Authentication failed: ' + err.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [setToken, data]); // Now 'data' is stable due to useMemo, so it's safe to use here
 
   useEffect(() => {
-    const apiData = {
-      title: "ACT of SLPA",
-      sub_title: "",
-      image: "article_image_2019_06_04_1559624237.jpg",
-      content: `<h2 style="color: #black;" className="act-title">
-                  <strong>ACT of SLPA</strong>
-                </h2> 
-                <p style="text-align: justify;">
-                  <strong>AN ACT</strong>&nbsp;to provide for the establishment of the Sri Lanka Ports Authority to develop, maintain, operate and provide port and other services in the ports of Colombo, Galle and Trincomalee and any other port as may be declared hereafter by the minister by order, to be a port to which this Act shall apply ; for the exercise, performance and discharge by that authority of the powers, duties and functions of the Port Commissioner, the Port (Cargo) Corporation, and the Port Tally and Protective Services Corporation and such other powers, duties and functions as may be conferred, assigned or imposed on that authority by law; for matters in relation to the officers and servants, property, rights, obligations and liabilities of the Port (Cargo) Corporation and the Port Tally and Protective Services Corporation and the public officers of, the property held by, and the rights. obligations and liabilities of, the department of the Port Commissioner; for the repeal of the Port of Colombo (Administration) act, the Port (Cargo) Corporation Act and the port tally and protective services corporation act; for the modification of certain laws in their application to the ports of Colombo, Galle and Trincomalee and any other port as may be declared hereafter by the Minister by order, to be a port to which this act shall apply; and for connected matters.
-                </p>
-                <p>[Date of Commencement:&nbsp;1st&nbsp;August, 1979]</p>`,
+    loginAndGetToken(); // Fetch the token when the component mounts
+  }, [loginAndGetToken]);
+
+  if (loading) {
+    return <p>Logging in and fetching token...</p>;
+  }
+
+  if (error) {
+    return (
+      <div style={{ color: 'red', margin: '20px', padding: '15px', border: '1px solid #ffcccc', backgroundColor: '#fff0f0' }}>
+        <h3>Error</h3>
+        <p>{error}</p>
+        {fullResponse && (
+          <div style={{ marginTop: '15px' }}>
+            <h4>Full Response:</h4>
+            <pre style={{ wordBreak: 'break-all', whiteSpace: 'pre-wrap', backgroundColor: '#f5f5f5', padding: '10px', borderRadius: '4px' }}>
+              {JSON.stringify(fullResponse.data, null, 2)}
+            </pre>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  return <div>{/* Empty placeholder for the token component */}</div>;
+};
+
+// Component to fetch data using the token
+const FetchDataPage = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [token, setToken] = useState(localStorage.getItem('authToken') || ''); // Initialize with token from localStorage
+
+  const requestData = useMemo(() => ({
+    data: [
+      {
+        article_menu: 'ACT',
+        article_code: 'QUNUIG9mIFNMUEE=',
+        article_content: 'NULL',
+      },
+    ],
+  }), []); // Memoize requestData to avoid unnecessary re-renders
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!token) {
+        setError('No token available. Please log in to proceed.');
+        return; // If no token, don't make the request
+      }
+
+      setLoading(true);
+      try {
+        const response = await axios.post(DATA_URL, requestData, {
+          headers: {
+            Authorization: token, // Pass token in the Authorization header
+            'Content-Type': 'application/json',
+          },
+        });
+
+        console.log('Fetched API Data:', response.data);
+        setData(response.data); // Save fetched data to state
+      } catch (err) {
+        if (err.response && err.response.status === 401) {
+          setError('Authorization failed. Please login again.');
+        } else {
+          setError('Failed to fetch data: ' + err.message);
+        }
+      } finally {
+        setLoading(false);
+      }
     };
 
-    setHtmlContent(DOMPurify.sanitize(apiData.content));
-  }, []);
+    fetchData();
+  }, [token, requestData]);
+
+  if (loading) return <p>Loading data...</p>;
+  if (error) return <p style={{ color: 'red' }}>{error}</p>;
 
   return (
-    <div className="">
-      <div className="header-section">
-        <h1>ACT</h1>
+    <div>
+      {data && data.status && data.data && data.data.article_info ? (
+        <div>
+          <div className="header-section">
+          {data.data.article_info.image && (
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
+        <h1>ANNUAL REPORTS</h1>
         <p className="path">
-        <span></span>HOME
+          {/* <Link to="/Home">HOME</Link> */}
+          <span></span>HOME
           <span>&gt;</span>ABOUT
-          <span>&gt;</span>ACT
+          <span>&gt;</span>ANNUAL REPORTS
         </p>
-        <img
-          src={portImage2}
-          alt="Colombo Port Overview"
-          className="header-image"
-        />
-      </div>
+        </div>
+            
+            {data.data.article_info.image && (
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
 
-      <AboutBanner />
+          <AboutBanner />
 
-      {/* Small Boxes Section */}
-      {/* <div className="act-wrapper">
-      <div className="act-small-boxes-container">
-        {[
-          { title: "SLPA", path: "/Slpa" },
-          { title: "Vision and Mission", path: "/Visionmission" },
-          { title: "Board of Directors", path: "/Boardofdirectors" },
-          { title: "ACT", path: "/Act" },
-          { title: "Procedures", path: "/Procedures" },
-          { title: "Circular", path: "/Circlulars" },
-          { title: "Awards", path: "Awards" },
-          { title: "Annual Reports", path: "Annualreports" },
-          { title: "Tariff", path: "Tariff" },
-          { title: "Right to Information", path: "Righttoinformation" },
-        ].map((box, i) => (
-          <Link to={box.path} key={i} className="act-small-box-link">
-            <div className="act-small-box">{box.title}</div>
-          </Link>
-        ))}
-      </div> */}
+            <h3>{data.data.article_info.title || 'No Title'}</h3>
 
-      {/* Inject API content safely */}
-      <div className="act-wrapper">
-      <div className="act-content">
-        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-      </div>
-      </div>
-      </div>
+            <div className="act-wrapper"> {/* Add the wrapper */}
+              <div className="act-content"> {/* Add the content container */}
+
+            {/* Render HTML content inside the wrapper */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.data.article_info.content || 'No content available.',
+              }}
+              style={{
+                // backgroundColor: '#f5f5f5',
+                // padding: '10px',
+                // borderRadius: '4px',
+                // wordBreak: 'break-word',
+                // whiteSpace: 'pre-wrap',
+              }}
+            />
+          </div>
+          </div>
+        </div>
+      ) : (
+        <p>No articles found.</p>
+      )}
+
+      {/* Token component to fetch token */}
+      <ApiToken setToken={setToken} /> {/* Pass setToken as prop to update token */}
+    </div>
   );
 };
 
-export default ActOfSLPA;
+export default FetchDataPage;

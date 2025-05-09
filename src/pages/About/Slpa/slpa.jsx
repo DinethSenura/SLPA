@@ -1,193 +1,203 @@
-import React from 'react';
-import './slpa.css'; 
-import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
-import Aboutbanner from '../../../components/AboutBanner/Aboutbanner' 
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import axios from 'axios';
+import AboutBanner from "../../../components/AboutBanner/Aboutbanner";
+import '../Slpa/slpa.css';
 
-const Slpa = () => {
+// Full login URL for fetching token
+const LOGIN_URL = 'https://www.slpa.lk/WEBAPI/V1/Auth/Login';
+const USERNAME = 'TEST';
+const PASSWORD = '123';
+
+// API URL for fetching data
+const DATA_URL = 'https://www.slpa.lk/WEBAPI/V1/Articles/get_article_info';
+
+// Component that handles fetching the token
+const ApiToken = ({ setToken }) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [fullResponse, setFullResponse] = useState(null);
+
+  // Memoize the 'data' object to prevent unnecessary re-renders
+  const data = useMemo(() => {
+    return {}; // Data for the API request
+  }, []); // Only recreate this object when required (currently it's static)
+
+  // Memoize the loginAndGetToken function using useCallback
+  const loginAndGetToken = useCallback(async () => {
+    try {
+      setLoading(true);
+
+      const response = await axios.post(LOGIN_URL, data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Username': USERNAME,
+          'Password': PASSWORD,
+        },
+      });
+
+      console.log('Full Login Response:', response);
+      setFullResponse(response);
+
+      if (response.data.Token) {
+        localStorage.setItem('authToken', response.data.Token); // Store token in localStorage
+        setToken(response.data.Token); // Set the token in the parent component
+        console.log('Token saved to localStorage:', response.data.Token);
+      } else {
+        setError('Token not found in response: ' + JSON.stringify(response.data));
+      }
+    } catch (err) {
+      console.error('Login Error:', err);
+      if (err.response) {
+        setError(`Authentication failed (${err.response.status}): ${err.response.data?.message || 'Unknown error'}`);
+        setFullResponse(err.response);
+      } else {
+        setError('Authentication failed: ' + err.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [setToken, data]); // Now 'data' is stable due to useMemo, so it's safe to use here
+
+  useEffect(() => {
+    loginAndGetToken(); // Fetch the token when the component mounts
+  }, [loginAndGetToken]);
+
+  if (loading) {
+    return <p>Logging in and fetching token...</p>;
+  }
+
+  if (error) {
+    return (
+      <div style={{ color: 'red', margin: '20px', padding: '15px', border: '1px solid #ffcccc', backgroundColor: '#fff0f0' }}>
+        <h3>Error</h3>
+        <p>{error}</p>
+        {fullResponse && (
+          <div style={{ marginTop: '15px' }}>
+            <h4>Full Response:</h4>
+            <pre style={{ wordBreak: 'break-all', whiteSpace: 'pre-wrap', backgroundColor: '#f5f5f5', padding: '10px', borderRadius: '4px' }}>
+              {JSON.stringify(fullResponse.data, null, 2)}
+            </pre>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  return <div>{/* Empty placeholder for the token component */}</div>;
+};
+
+// Component to fetch data using the token
+const FetchDataPage = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [token, setToken] = useState(localStorage.getItem('authToken') || ''); // Initialize with token from localStorage
+
+  const requestData = useMemo(() => ({
+    data: [
+      {
+        article_menu: 'SLPA',
+        article_code: 'SGlzdG9yeSAmIE1pbGVzdG9uZXM=',
+        article_content: 'NULL',
+      },
+    ],
+  }), []); // Memoize requestData to avoid unnecessary re-renders
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!token) {
+        setError('No token available. Please log in to proceed.');
+        return; // If no token, don't make the request
+      }
+
+      setLoading(true);
+      try {
+        const response = await axios.post(DATA_URL, requestData, {
+          headers: {
+            Authorization: token, // Pass token in the Authorization header
+            'Content-Type': 'application/json',
+          },
+        });
+
+        console.log('Fetched API Data:', response.data);
+        setData(response.data); // Save fetched data to state
+      } catch (err) {
+        if (err.response && err.response.status === 401) {
+          setError('Authorization failed. Please login again.');
+        } else {
+          setError('Failed to fetch data: ' + err.message);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [token, requestData]);
+
+  if (loading) return <p>Loading data...</p>;
+  if (error) return <p style={{ color: 'red' }}>{error}</p>;
+
   return (
-    <div className="ports-container">
-      <div className="header-section">
-        <h1>SLPA</h1>
+    <div>
+      {data && data.status && data.data && data.data.article_info ? (
+        <div>
+          <div className="header-section">
+          {data.data.article_info.image && (
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
+        <h1>ANNUAL REPORTS</h1>
         <p className="path">
-        <span></span>HOME
+          {/* <Link to="/Home">HOME</Link> */}
+          <span></span>HOME
           <span>&gt;</span>ABOUT
-          <span>&gt;</span>SLPA
+          <span>&gt;</span>ANNUAL REPORTS
         </p>
-        <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
-      </div>
+        </div>
+            
+            {data.data.article_info.image && (
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
 
-    
-      <Aboutbanner />
+          <AboutBanner />
 
-      <div className="act-wrapper">
-      <div>
-      <h4 style={{ color: '#236F86' }} className='title'>
-          <strong>Ports managed by SLPA</strong>
-        </h4>
+            <h3>{data.data.article_info.title || 'No Title'}</h3>
 
-        <p> </p>
+            <div className="act-wrapper"> {/* Add the wrapper */}
+              <div className="act-content"> {/* Add the content container */}
 
-        <h4 style={{ color: '#236F86' }}> </h4>
-
-        <div className="his_con">
-          <div className="his video-container">
-            <iframe
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              frameBorder="0"
-              height="444"
-              scrolling="yes"
-              src="https://www.youtube.com/embed/jvRH8dcbLpg"
-              title="YouTube video player"
-              width="790"
-            ></iframe>
+            {/* Render HTML content inside the wrapper */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.data.article_info.content || 'No content available.',
+              }}
+              style={{
+                // backgroundColor: '#f5f5f5',
+                // padding: '10px',
+                // borderRadius: '4px',
+                // wordBreak: 'break-word',
+                // whiteSpace: 'pre-wrap',
+              }}
+            />
           </div>
-
-          <div className="his history-container">
-            <h4 style={{ color: '#236F86' }}>
-              <strong>History</strong>
-            </h4>
-
-            <p style={{ textAlign: 'justify' }}>
-              Since 1918, the Port of Colombo had been administered by the Colombo Port Commission, a Government Department which was made responsible for the supply and maintenance of cargo-handling equipment and other infrastructure, pilotage services, docking, and slipping. The government had funded all its activities. Stevedoring and shore handling activities were in the hands of several private wharfage companies. In 1958, the Port Cargo Corporation was set up to take over these activities performed by a multiplicity of operators. The Port Tally and Protective Services Corporation was formed in 1967 in order to perform on-board tallying and watchmen services on behalf of Agents.
-            </p>
-
-            <p style={{ textAlign: 'justify' }}>
-              The Sri Lanka Ports Authority was constituted under the provisions of the Sri Lanka Ports Authority Act, No. 51 of 1979 (subsequently amended by Act No. 7 of 1984 and Act No. 35 of 1984) on the 1st of August 1979, effecting the merger of the Colombo Port Commission Department and the two existing statutory Corporations. This resulted in a unified organization with a streamlined structure. The Ports Authority does not receive financial allocations from the government but operates on its own revenue and resources.
-            </p>
-
-            <p> </p>
           </div>
         </div>
+      ) : (
+        <p>No articles found.</p>
+      )}
 
-        
-     <div className='abouttable'>
-
-     <h4 style={{ color: '#236F86', marginBottom: '20px' }}>
-          <strong>Milestones</strong>
-        </h4>
-        <table  cellPadding="2" cellSpacing="4" width="100%" border="1">
-          <tbody >
-            <tr><td>1505</td><td>Port of Colombo was known to the Western World</td></tr>
-            <tr><td>1912</td><td>Colombo Port was converted to a sheltered harbour</td></tr>
-            <tr><td>1913</td><td>Colombo Port Commission Established</td></tr>
-    <tr><td>1954</td><td>Inauguration of the Queen Elizabeth Quay</td></tr>
-    <tr><td>1954</td><td>Completion of 16 alongside berths, transit sheds, and warehouses</td></tr>
-    <tr><td>1958</td><td>Port (Cargo) Corporation was founded</td></tr>
-    <tr><td>1979</td><td>Sri Lanka Ports Authority was Formed</td></tr>
-    <tr><td>1980</td><td>Inauguration Queen Elizabeth Terminal</td></tr>
-    <tr><td>1982</td><td>Opening of New Bridge (Hartal Bridge over the Harbour Canal)</td></tr>
-    <tr><td>1982</td><td>Installation of first Gantry Crane</td></tr>
-    <tr><td>1985</td><td>Jaye Container Terminal - I was Built</td></tr>
-    <tr><td>1987</td><td>Jaye Container Terminal - II was Built</td></tr>
-    <tr><td>1995</td><td>Jaye Container Terminal - III was Built</td></tr>
-    <tr><td>1996</td><td>Jaye Container Terminal - IV was Built</td></tr>
-    <tr><td>1996</td><td>Deepening of Main Channel to 15M depth</td></tr>
-    <tr><td>1996</td><td>Handling of the 1,000,000th Container TEU with a year</td></tr>
-    <tr><td>1997</td><td>Inauguration Oil Berth</td></tr>
-    <tr><td>1997</td><td>Handling of the 1,500,000th Container TEU with a year</td></tr>
-    <tr><td>1998</td><td>Inauguration Unity Container Terminal I</td></tr>
-    <tr><td>1998</td><td>Signing of an agreement to foster friendly relationship</td></tr>
-    <tr><td>1999</td><td>Commissioning of empty Container Yard</td></tr>
-    <tr><td>1999</td><td>Commissioning of the Oluvil Lighthouse</td></tr>
-    <tr><td>1999</td><td>Opening of the Oluvil Maritime Training Centre</td></tr>
-    <tr><td>1999</td><td>Commencement – South Asia Gateway Terminal</td></tr>
-    <tr><td>1999</td><td>Commencement of construction of 50,000 dwt. alongside berth</td></tr>
-    <tr><td>2000</td><td>Commencement of Colombo South Harbour feasibility study</td></tr>
-    <tr><td>2000</td><td>Commencement of Construction of third Berth in Galle Port</td></tr>
-    <tr><td>2000</td><td>Inaugaration of Peliyagoda CFS</td></tr>
-    <tr><td>2000</td><td>Commencement of a feasibility study - Port of Galle development</td></tr>
-    <tr><td>2000</td><td>Commencement of North Pier Development Phase II</td></tr>
-    <tr><td>2000</td><td>Inauguration of the One-Stop Documentation Centre</td></tr>
-    <tr><td>2001</td><td>Inauguration of the New Jetty in Port of Galle</td></tr>
-    <tr><td>2001</td><td>Completion of Stage I of QEQ(SAGT) development project</td></tr>
-    <tr><td>2001</td><td>Commissioning of the dredger "Hansakawa"</td></tr>
-    <tr><td>2001</td><td>Boom extension of Gantry Cranes at JCT III and IV</td></tr>
-    <tr><td>2001</td><td>Commencement of the feasibility study for Port of Hambantota and inauguration of the new training Institute and project Office</td></tr>
-    <tr><td>2002</td><td>Inauguration of the Ashraff Quay (multi purpose Alongside Berth) in the Port of Trincomalee</td></tr>
-    <tr><td>2003</td><td>Inauguration of Customer service Centre for LCL and break-bulk cargo</td></tr>
-    <tr><td>2003</td><td>Opening of SLPA Maritime Museum</td></tr>
-    <tr><td>2003</td><td>Ceremonial inauguration of Unity container Terminal with the completion of the civil works</td></tr>
-    <tr><td>2003</td><td>Ceremonial inauguration of container handling operations at Unity Container Terminal</td></tr>
-    <tr><td>2004</td><td>The Port of Colombo has crossed the 2.2 million TEUs marks for the year 2004</td></tr>
-    <tr><td>2005</td><td>Commencement of constructions of the Port and Housing Scheme in Oluwil</td></tr>
-    <tr><td>2005</td><td>Handled 2.45 million TEUs and achieved 10.6% against year 2004</td></tr>
-    <tr><td>2006</td><td>Commissioning of Container security Initiative and Megaport Initiative in the POC</td></tr>
-    <tr><td>2006</td><td>Signing of MOU for the proposed CMB Port Expansion project</td></tr>
-    <tr><td>2006</td><td>Signing of MOU concerning detailed design works of Hambantota Port Dev. Project</td></tr>
-    <tr><td>2006</td><td>Handling of Three Million Containers in the Port of Colombo</td></tr>
-    <tr><td>2007</td><td>Commencement of Construction work of the Hambantota Port Dev. Project</td></tr>
-    <tr><td>2008</td><td>Commencement of Construction work of Oluvil Port Project</td></tr>
-    <tr><td>2008</td><td>Commencement of Construction work of Colombo Port Expansion Project</td></tr>
-    <tr><td>2008</td><td>Signing of Contract agreement for construction of Bunkering facility and Tank farm at Hambantota</td></tr>
-    <tr><td>2009</td><td>Signing of MOU with APL shipping line</td></tr>
-    <tr><td>2009</td><td>Commencement of New Terminal Management IT System (NAVIS)</td></tr>
-    <tr><td>2010</td><td>Ceremony of Sea Water filling to the Basin of Magampura Port (Hambantota) - 15-08-2010</td></tr>
-    <tr><td>2010</td><td>Ceremonial inauguration of cargo handling operations at Magampura Port (Hambantota) - 18-11-2010</td></tr>
-    <tr><td>2010</td><td>Handling of 2 Million Containers at the Jaya Container Terminal - (JCT)</td></tr>
-    <tr><td>2010</td><td>Handling of 4 Million Containers at the port of Colombo</td></tr>
-    <tr><td>2011</td><td>Arrival of 06 Nos. New Gantry Cranes and 30 Nos. Transfer Cranes</td></tr>
-    <tr><td>2011</td><td>Capacity enhancement at colombo Oil Terminal of SLPA</td></tr>
-    <tr><td>2011</td><td>Arrival of 50 Nos. Terminal Tractors</td></tr>
-    <tr><td>2011</td><td>Arrival of 2nd Batch of Terminal Equipment - 03 Nos Gantry Cranes & 11 Nos. Transfer Cranes</td></tr>
-    <tr><td>2011</td><td>Signing of Agreement for Colombo Port Expansion Project - South Container Terminal</td></tr>
-    <tr><td>2011</td><td>Ground Breaking Ceremony at Magam Ruhunupura Mahinda Rajapaksha Port to open new business ventures</td></tr>
-    <tr><td>2011</td><td>Ground Breaking Ceremony for commencement of construction work of Colombo South Container Terminal</td></tr>
-    <tr><td>2012</td><td>Commencement of handling Ro - RO Vessels at Magam Ruhunupura Mahinda Rajapaksha Port</td></tr>
-    <tr><td>2012</td><td>Replacing the dilapidated existing bunker fuel pipe line from the Bloemendhal Oil Terminal to the Port of Colombo</td></tr>
-    <tr><td>2013</td><td>Vision 2020 - The corporate plan of Sri Lanka Ports Authority (SLPA) was launched</td></tr>
-    <tr><td>2013</td><td>Ceremonial Inauguration of the Colombo Port Expansion Project with a monumental breakwater of 6.8 k.m. and the 1st Terminal - (Colombo International Container Terminal (CICT))</td></tr>
-    <tr><td>2013</td><td>Ceremonial Inauguration of Port of Oluvil</td></tr>
-    <tr><td>2013</td><td>Implementation of Import FCL Module of Cargo Management System</td></tr>
-    <tr><td>2013</td><td>Ceremonial Inauguration of Administration Building at MRMR Port</td></tr>
-    <tr><td>2014</td><td>Colombo International Container Terminal (CICT) fully operational in April</td></tr>
-    <tr><td>2014</td><td>Implementation of Vessel Traffic Management System (VTMS) in May</td></tr>
-    <tr><td>2014</td><td>Ceremonial Inauguration of Tank Farm Complex and Bunkering Terminal at Magam Ruhunupura Mahinda Rajapaksa Port - 22.06.2014</td></tr>
-    <tr><td>2014</td><td>Ceremonial Inauguration of Administration Building at MRMR Port</td></tr>
-    <tr><td>2014</td><td>Opening of New Fire Brigade Building - 01.08.2014 - Port of Colombo</td></tr>
-    <tr><td>2014</td><td>Arrival of 02 Gantry Cranes and 02 Tugs at MRMR Port</td></tr>
-    <tr><td>2014</td><td>Inauguration of the Colombo Port City development project - 17.09.2014</td></tr>
-    <tr><td>2015</td><td>Handling of 05 Millionth containers by the Port of Colombo</td></tr>
-    <tr><td>2016</td><td>Opening of New CFS Stage 1 Port of Colombo</td></tr>
-    <tr><td>2016</td><td>Launched SLPA new Web site - 10.08.2016</td></tr>
-    <tr><td>2017</td><td>Operations of Fully Re-constructed Container Freight Station 01 (CFS 1)</td></tr>
-    <tr><td>2017</td><td>Concession Agreement between SLPA and CM Port for Port Operations of the Port of Hambantota signed</td></tr>
-    <tr><td>2017</td><td>The First Public Private Partnership for Port Operation inaugurated</td></tr>
-    <tr><td>2017</td><td>SLPA hosts the 19th Symposium on International Network of Affiliated Ports (INAP) Conference</td></tr>
-    <tr><td>2017</td><td>Signing of Shareholders Agreement & Land Lease Agreement of the Port of Hambantota</td></tr>
-    <tr><td>2017</td><td>Generation of 01st Payment under Hambantota Port Concession Agreement between Sri Lanka Ports Authority and China Merchants Port Holdings Company Ltd</td></tr>
-    <tr><td>2017</td><td>Handling of 6 Millionth TEUs (Twenty-foot Equivalent Unit) by the Port of Colombo</td></tr>
-    <tr><td>2017</td><td>Recorded the highest ever net profit of Rs. 13.3 Billion</td></tr>
-    <tr><td>2018</td><td>Generation of 02nd Payment under Hambantota Port Concession Agreement between Sri Lanka Ports Authority and China Merchants Port Holdings Company Ltd</td></tr>
-    <tr><td>2018</td><td>SLPA enters into MOU with SAGT and CICT to collectively promote the Port of Colombo</td></tr>
-    <tr><td>2018</td><td>SLPA won Ports Authority of the Year 2018 Award at Global Ports Forum</td></tr>
-    <tr><td>2018</td><td>Generation of last tranche under Hambantota Port Concession Agreement between Sri Lanka Ports Authority and China Merchants Port Holdings Company Ltd</td></tr>
-    <tr><td>2018</td><td>The Port of Colombo organised the first ever Colombo Port Award Night</td></tr>
-    <tr><td>2018</td><td>Port of Colombo Ranked as the World’s Highest Container Growth Port in the first half of 2018 – Alphaliner</td></tr>
-    <tr><td>2019</td><td>Handling of 7 Million TEUs by the Port of Colombo</td></tr>
-    <tr><td>2019</td><td>Sri Lanka Ports Authority celebrated its 40th anniversary on August 2019</td></tr>
-    <tr><td>2020</td><td>Sri Lanka Ports Authority’s East Container Terminal commissioned</td></tr>
-    <tr><td>2020</td><td>SLPA won the GPF Awards for 'Port Authority of The Year & Port Infrastructure Development of the Year 2020'</td></tr>
-    <tr><td>2020</td><td>A new sports complex for the Sri Lanka Ports Authority</td></tr>
-    <tr><td>2020</td><td>Sri Lanka: East Container Terminal Inaugurated for Operations</td></tr>
-    <tr><td>2020</td><td>SLPA commenced Phase V of JCT</td></tr>
-    <tr><td>2021</td><td>SLPA laid foundation stone for a new Container Freight Station</td></tr>
-    <tr><td>2021</td><td>SLPA Female Crane Operators Received Excellence Award</td></tr>
-    <tr><td>2021</td><td>Sri Lanka Ports Authority launched 'Theertha' Magazine</td></tr>
-    <tr><td>2021</td><td>SLPA Upgraded its Terminal Management System(TMS) to N4</td></tr>
-    <tr><td>2021</td><td>Colombo Port is the top-ranked port in South Asia (CPPI)</td></tr>
-    <tr><td>2021</td><td>Sri Lanka Ports Authority Celebrated 42nd Anniversary</td></tr>
-    <tr><td>2021</td><td>World’s largest container ship in Colombo Port</td></tr>
-    <tr><td>2022</td><td>The construction of the second phase of the Eastern Terminal of the Colombo Port commenced</td></tr>
-    <tr><td>2022</td><td>SLPA won the Best Port Authority and the Best Public Container Terminal of the Year 2021 Award at Global Ports Forum</td></tr>
-    <tr><td>2023</td><td>SLPA won prestigious GPF Awards for Port Authority of the Year and Best Public Container Terminal of the Year 2023</td></tr>
-          </tbody>
-        </table>
-        </div>
-      </div>
-      </div>
+      {/* Token component to fetch token */}
+      <ApiToken setToken={setToken} /> {/* Pass setToken as prop to update token */}
     </div>
   );
 };
 
-export default Slpa;
+export default FetchDataPage;

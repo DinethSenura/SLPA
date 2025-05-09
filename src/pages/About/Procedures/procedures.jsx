@@ -1,99 +1,203 @@
-import React, { useEffect, useState } from 'react';
-import DOMPurify from 'dompurify';
-// import { Link } from 'react-router-dom';
-import './procedures.css';
-import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
-import Aboutbanner from '../../../components/AboutBanner/Aboutbanner'
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import axios from 'axios';
+import AboutBanner from "../../../components/AboutBanner/Aboutbanner";
+import '../Procedures/procedures.css';
 
-const MyComponent = () => {
-    const [htmlContent, setHtmlContent] = useState('');
+// Full login URL for fetching token
+const LOGIN_URL = 'https://www.slpa.lk/WEBAPI/V1/Auth/Login';
+const USERNAME = 'TEST';
+const PASSWORD = '123';
 
-    useEffect(() => {
-        const staticHtml = `
-            <style type="text/css">
-                table {
-                    border-collapse: collapse;
-                    width: 100%;
-                }
+// API URL for fetching data
+const DATA_URL = 'https://www.slpa.lk/WEBAPI/V1/Articles/get_article_info';
 
-                th, td {
-                    color: #6A6969;
-                    text-align: left;
-                    padding: 20px;
-                }
+// Component that handles fetching the token
+const ApiToken = ({ setToken }) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [fullResponse, setFullResponse] = useState(null);
 
-                tr:nth-child(odd) {
-                    background-color: #f2f2f2;
-                }
+  // Memoize the 'data' object to prevent unnecessary re-renders
+  const data = useMemo(() => {
+    return {}; // Data for the API request
+  }, []); // Only recreate this object when required (currently it's static)
 
-                a:visited {
-                    color: #6A6969;
-                }
+  // Memoize the loginAndGetToken function using useCallback
+  const loginAndGetToken = useCallback(async () => {
+    try {
+      setLoading(true);
 
-                a:hover {
-                    color: #ff9800;
-                }
-            </style>
-            <table class="my-component-table">
-                <tbody>
-                    <tr>
-                        <th><span style="color:#444444;"><span style="font-family:arial,helvetica,sans-serif;"><strong>NO.</strong></span></span></th>
-                        <th><span style="color:#444444;"><span style="font-family:arial,helvetica,sans-serif;"><strong>PROCEDURE</strong></span></span></th>
-                    </tr>
-                    <tr>
-                        <td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;"><strong>1</strong></span></span></td>
-                        <td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;"><strong><a href="https://www.slpa.lk/uploads/article_attachment/attachment_2019_07_24_15639478511563947922.pdf" target="_blank">CLAIM PROCUDURE FOR SHORTAGE OF CARGO-WIC1</a></strong></span></span></td>
-                    </tr>
-                    <tr>
-                        <td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;"><strong>2</strong></span></span></td>
-                        <td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;"><strong><a href="https://www.slpa.lk/uploads/article_attachment/attachment_2019_07_24_15639479271563948374.pdf" target="_blank">CLAIM PROCUDURE FOR DAMAGED CARGO - WIC 2</a></strong></span></span></td>
-                    </tr>
-                    <tr>
-                        <td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;"><strong>3</strong></span></span></td>
-                        <td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;"><strong><a href="https://www.slpa.lk/uploads/article_attachment/attachment_2019_07_24_15639483771563948432.pdf" target="_blank">EXPORT CONTAINER REMOVAL OUT PROCEDURE</a></strong></span></span></td>
-                    </tr>
-                    <tr>
-                        <td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;"><strong>4</strong></span></span></td>
-                        <td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;"><strong><a href="https://www.slpa.lk/uploads/article_attachment/attachment_2019_07_24_15639484351563948503.pdf" target="_blank">FORMAT FOR AMENDMENTS IN STUFFING DETAILS</a></strong></span></span></td>
-                    </tr>
-                    <tr>
-                        <td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;"><strong>5</strong></span></span></td>
-                        <td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;"><strong><a href="https://www.slpa.lk/uploads/article_attachment/attachment_2019_07_24_1563948741.pdf" target="_blank">RENT WAIVER PROCEDURE</a></strong></span></span></td>
-                    </tr>
-                    <tr>
-                        <td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;"><strong>6</strong></span></span></td>
-                        <td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;"><strong><a href="https://www.slpa.lk/uploads/article_attachment/attachment_2019_07_24_15639485531563948814.pdf" target="_blank">SALES PROCEDURE OF FCL CARGO (NON PERISHABLE)</a></strong></span></span></td>
-                    </tr>
-                    <tr>
-                        <td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;"><strong>7</strong></span></span></td>
-                        <td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;"><strong><a href="https://www.slpa.lk/uploads/article_attachment/attachment_2019_07_24_15639488251563948878.pdf" target="_blank">SALES PROCEDURE OF LCL CARGO (NON PERISHABLE)</a></strong></span></span></td>
-                    </tr>
-                </tbody>
-            </table>
-        `;
-        setHtmlContent(DOMPurify.sanitize(staticHtml));
-    }, []);
+      const response = await axios.post(LOGIN_URL, data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Username': USERNAME,
+          'Password': PASSWORD,
+        },
+      });
 
+      console.log('Full Login Response:', response);
+      setFullResponse(response);
+
+      if (response.data.Token) {
+        localStorage.setItem('authToken', response.data.Token); // Store token in localStorage
+        setToken(response.data.Token); // Set the token in the parent component
+        console.log('Token saved to localStorage:', response.data.Token);
+      } else {
+        setError('Token not found in response: ' + JSON.stringify(response.data));
+      }
+    } catch (err) {
+      console.error('Login Error:', err);
+      if (err.response) {
+        setError(`Authentication failed (${err.response.status}): ${err.response.data?.message || 'Unknown error'}`);
+        setFullResponse(err.response);
+      } else {
+        setError('Authentication failed: ' + err.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [setToken, data]); // Now 'data' is stable due to useMemo, so it's safe to use here
+
+  useEffect(() => {
+    loginAndGetToken(); // Fetch the token when the component mounts
+  }, [loginAndGetToken]);
+
+  if (loading) {
+    return <p>Logging in and fetching token...</p>;
+  }
+
+  if (error) {
     return (
-        <div>
-            <div className="header-section">
-                <h1>PROCEDURES</h1>
-                <p className="path">
-                <span></span>HOME
-                    <span>&gt;</span>ABOUT
-                    <span>&gt;</span>PROCEDURES
-                </p>
-                <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
-            </div>
-
-            <Aboutbanner />
-
-            {/* Inject API content safely */}
-            <div className="act-wrapper">
-            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-            </div>
-            </div>
+      <div style={{ color: 'red', margin: '20px', padding: '15px', border: '1px solid #ffcccc', backgroundColor: '#fff0f0' }}>
+        <h3>Error</h3>
+        <p>{error}</p>
+        {fullResponse && (
+          <div style={{ marginTop: '15px' }}>
+            <h4>Full Response:</h4>
+            <pre style={{ wordBreak: 'break-all', whiteSpace: 'pre-wrap', backgroundColor: '#f5f5f5', padding: '10px', borderRadius: '4px' }}>
+              {JSON.stringify(fullResponse.data, null, 2)}
+            </pre>
+          </div>
+        )}
+      </div>
     );
+  }
+
+  return <div>{/* Empty placeholder for the token component */}</div>;
 };
 
-export default MyComponent;
+// Component to fetch data using the token
+const FetchDataPage = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [token, setToken] = useState(localStorage.getItem('authToken') || ''); // Initialize with token from localStorage
+
+  const requestData = useMemo(() => ({
+    data: [
+      {
+        article_menu: 'Procedures',
+        article_code: 'UFJPQ0VEVVJFUw==',
+        article_content: 'NULL',
+      },
+    ],
+  }), []); // Memoize requestData to avoid unnecessary re-renders
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!token) {
+        setError('No token available. Please log in to proceed.');
+        return; // If no token, don't make the request
+      }
+
+      setLoading(true);
+      try {
+        const response = await axios.post(DATA_URL, requestData, {
+          headers: {
+            Authorization: token, // Pass token in the Authorization header
+            'Content-Type': 'application/json',
+          },
+        });
+
+        console.log('Fetched API Data:', response.data);
+        setData(response.data); // Save fetched data to state
+      } catch (err) {
+        if (err.response && err.response.status === 401) {
+          setError('Authorization failed. Please login again.');
+        } else {
+          setError('Failed to fetch data: ' + err.message);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [token, requestData]);
+
+  if (loading) return <p>Loading data...</p>;
+  if (error) return <p style={{ color: 'red' }}>{error}</p>;
+
+  return (
+    <div>
+      {data && data.status && data.data && data.data.article_info ? (
+        <div>
+          <div className="header-section">
+          {data.data.article_info.image && (
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
+        <h1>ANNUAL REPORTS</h1>
+        <p className="path">
+          {/* <Link to="/Home">HOME</Link> */}
+          <span></span>HOME
+          <span>&gt;</span>ABOUT
+          <span>&gt;</span>ANNUAL REPORTS
+        </p>
+        </div>
+            
+            {data.data.article_info.image && (
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
+
+          <AboutBanner />
+
+            <h3>{data.data.article_info.title || 'No Title'}</h3>
+
+            <div className="act-wrapper"> {/* Add the wrapper */}
+              <div className="act-content"> {/* Add the content container */}
+
+            {/* Render HTML content inside the wrapper */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.data.article_info.content || 'No content available.',
+              }}
+              style={{
+                // backgroundColor: '#f5f5f5',
+                // padding: '10px',
+                // borderRadius: '4px',
+                // wordBreak: 'break-word',
+                // whiteSpace: 'pre-wrap',
+              }}
+            />
+          </div>
+          </div>
+        </div>
+      ) : (
+        <p>No articles found.</p>
+      )}
+
+      {/* Token component to fetch token */}
+      <ApiToken setToken={setToken} /> {/* Pass setToken as prop to update token */}
+    </div>
+  );
+};
+
+export default FetchDataPage;

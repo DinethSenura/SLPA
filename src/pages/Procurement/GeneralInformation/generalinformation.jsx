@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import axios from 'axios';
+import '../GeneralInformation/generalinformation.css'
 
 // Full login URL for fetching token
 const LOGIN_URL = 'https://www.slpa.lk/WEBAPI/V1/Auth/Login';
@@ -15,11 +16,16 @@ const ApiToken = ({ setToken }) => {
   const [error, setError] = useState('');
   const [fullResponse, setFullResponse] = useState(null);
 
-  const data = {}; // Data for the API request
+  // Memoize the 'data' object to prevent unnecessary re-renders
+  const data = useMemo(() => {
+    return {}; // Data for the API request
+  }, []); // Only recreate this object when required (currently it's static)
 
+  // Memoize the loginAndGetToken function using useCallback
   const loginAndGetToken = useCallback(async () => {
     try {
       setLoading(true);
+
       const response = await axios.post(LOGIN_URL, data, {
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +55,7 @@ const ApiToken = ({ setToken }) => {
     } finally {
       setLoading(false);
     }
-  }, [setToken]);
+  }, [setToken, data]); // Now 'data' is stable due to useMemo, so it's safe to use here
 
   useEffect(() => {
     loginAndGetToken(); // Fetch the token when the component mounts
@@ -76,12 +82,7 @@ const ApiToken = ({ setToken }) => {
     );
   }
 
-  return (
-    <div>
-      <h3>Authentication Successful</h3>
-      <p>Token has been fetched and saved successfully.</p>
-    </div>
-  );
+  return <div>{/* Empty placeholder for the token component */}</div>;
 };
 
 // Component to fetch data using the token
@@ -138,8 +139,6 @@ const FetchDataPage = () => {
 
   return (
     <div>
-      <h2>Fetched Articles:</h2>
-
       {data && data.status && data.data && data.data.article_info ? (
         <div>
           <h3>{data.data.article_info.title || 'No Title'}</h3>
@@ -157,11 +156,11 @@ const FetchDataPage = () => {
               __html: data.data.article_info.content || 'No content available.',
             }}
             style={{
-              backgroundColor: '#f5f5f5',
-              padding: '10px',
-              borderRadius: '4px',
-              wordBreak: 'break-word',
-              whiteSpace: 'pre-wrap',
+              // backgroundColor: '#f5f5f5',
+              // padding: '10px',
+              // borderRadius: '4px',
+              // wordBreak: 'break-word',
+              // whiteSpace: 'pre-wrap',
             }}
           />
         </div>

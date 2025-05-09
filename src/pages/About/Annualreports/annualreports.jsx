@@ -1,110 +1,155 @@
-import React from 'react';
-// import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import axios from 'axios';
+import AboutBanner from "../../../components/AboutBanner/Aboutbanner";
 import '../Annualreports/annualreports.css';
-import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
-import DOMPurify from 'dompurify'; // Import DOMPurify
-import AboutBanner from "../../../components/AboutBanner/Aboutbanner"
 
-const berthingprogramme = () => {
-  const htmlContent = `<p>&nbsp;</p>
+// Full login URL for fetching token
+const LOGIN_URL = 'https://www.slpa.lk/WEBAPI/V1/Auth/Login';
+const USERNAME = 'TEST';
+const PASSWORD = '123';
 
-<div class="col-md-6 offset-md-3">
-<div class="row">
-<div class="col-md-6">
-<div class="col-md-4"><img alt="" class="img-responsive" src="https://www.slpa.lk/uploads/article_attachment/attachment_2024_12_26_17352123961735214392.jpg" width="150%" /></div>
+// API URL for fetching data
+const DATA_URL = 'https://www.slpa.lk/WEBAPI/V1/Articles/get_article_info';
 
-<div class="col-md-8">
-<div class="col-md-12">
-<h5 style="text-align: center;"><span style="font-size:18px;"><strong><a href="https://www.slpa.lk/application_resources/other/2023-annual_report.pdf" target="_blank">Annual Report - 2023</a></strong></span><br />
-<span style="font-size:16px;"><strong>Sri Lanka Ports Authority</strong></span></h5>
-</div>
-</div>
-</div>
+// Component that handles fetching the token
+const ApiToken = ({ setToken }) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [fullResponse, setFullResponse] = useState(null);
 
-<div class="col-md-6">
-<div class="col-md-4"><img alt="" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2023_11_03_1698996554.jpg" width="150%" /></div>
+  // Memoize the 'data' object to prevent unnecessary re-renders
+  const data = useMemo(() => {
+    return {}; // Data for the API request
+  }, []); // Only recreate this object when required (currently it's static)
 
-<div class="col-md-8">
-<div class="col-md-12">
-<h5 style="text-align: center;"><span style="font-size:18px;"><strong><a href="https://www.slpa.lk/uploads/article_attachment/2022.pdf" target="_blank">Annual Report - 2022</a></strong></span><br />
-<span style="font-size:16px;"><strong>Sri Lanka Ports Authority</strong></span></h5>
-</div>
-</div>
-</div>
-</div>
+  // Memoize the loginAndGetToken function using useCallback
+  const loginAndGetToken = useCallback(async () => {
+    try {
+      setLoading(true);
 
-<hr />
-<div class="row">
-<div class="col-md-6">
-<div class="col-md-4"><img alt="" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2024_07_09_1720527070.jpg" width="150%" /></div>
+      const response = await axios.post(LOGIN_URL, data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Username': USERNAME,
+          'Password': PASSWORD,
+        },
+      });
 
-<div class="col-md-8">
-<div class="col-md-12">
-<h5 style="text-align: center;"><span style="font-size:18px;"><strong><a href="https://www.slpa.lk/uploads/article_attachment/attachment_2023_02_06_16756683311675668600.pdf" target="_blank">Annual Report - 2021</a></strong></span><br />
-<span style="font-size:16px;"><strong>Sri Lanka Ports Authority</strong></span></h5>
-</div>
-</div>
-</div>
+      console.log('Full Login Response:', response);
+      setFullResponse(response);
 
-<div class="col-md-6">
-<div class="col-md-4"><img alt="" class="img-responsive" src="https://www.slpa.lk/uploads/article_attachment/attachment_2023_09_22_16953637571695364407.jpg" width="150%" /></div>
+      if (response.data.Token) {
+        localStorage.setItem('authToken', response.data.Token); // Store token in localStorage
+        setToken(response.data.Token); // Set the token in the parent component
+        console.log('Token saved to localStorage:', response.data.Token);
+      } else {
+        setError('Token not found in response: ' + JSON.stringify(response.data));
+      }
+    } catch (err) {
+      console.error('Login Error:', err);
+      if (err.response) {
+        setError(`Authentication failed (${err.response.status}): ${err.response.data?.message || 'Unknown error'}`);
+        setFullResponse(err.response);
+      } else {
+        setError('Authentication failed: ' + err.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [setToken, data]); // Now 'data' is stable due to useMemo, so it's safe to use here
 
-<div class="col-md-8">
-<div class="col-md-12">
-<h5 style="text-align: center;"><span style="font-size:18px;"><strong><a href="https://www.slpa.lk/uploads/article_attachment/2020.pdf" target="_blank">Annual Report - 2020</a></strong></span><br />
-<span style="font-size:16px;"><strong>Sri Lanka Ports Authority</strong></span></h5>
-</div>
-</div>
-</div>
-</div>
+  useEffect(() => {
+    loginAndGetToken(); // Fetch the token when the component mounts
+  }, [loginAndGetToken]);
 
-<hr />
-<div class="row">
-<div class="col-md-6">
-<div class="col-md-4"><img alt="" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2023_02_06_1675668120.jpg" width="150%" /></div>
+  if (loading) {
+    return <p>Logging in and fetching token...</p>;
+  }
 
-<div class="col-md-8">
-<div class="col-md-12">
-<h5 style="text-align: center;"><span style="font-size:18px;"><strong>&quot;Moving the World&quot;</strong></span><br />
-<span style="font-size:16px;"><strong><a href="https://www.slpa.lk/uploads/article_attachment/2019.pdf" target="_blank">Annual Report - 2019</a></strong><br />
-<strong>Sri Lanka Ports Authority</strong></span></h5>
-</div>
-</div>
-</div>
+  if (error) {
+    return (
+      <div style={{ color: 'red', margin: '20px', padding: '15px', border: '1px solid #ffcccc', backgroundColor: '#fff0f0' }}>
+        <h3>Error</h3>
+        <p>{error}</p>
+        {fullResponse && (
+          <div style={{ marginTop: '15px' }}>
+            <h4>Full Response:</h4>
+            <pre style={{ wordBreak: 'break-all', whiteSpace: 'pre-wrap', backgroundColor: '#f5f5f5', padding: '10px', borderRadius: '4px' }}>
+              {JSON.stringify(fullResponse.data, null, 2)}
+            </pre>
+          </div>
+        )}
+      </div>
+    );
+  }
 
-<div class="col-md-6">
-<div class="col-md-4"><img alt="" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2023_02_06_1675665198.jpg" width="150%" /></div>
+  return <div>{/* Empty placeholder for the token component */}</div>;
+};
 
-<div class="col-md-8">
-<div class="col-md-12">
-<h5 style="text-align: center;"><span style="font-size:18px;"><strong>&quot;Endless Possibilities&quot;</strong></span><br />
-<span style="font-size:16px;"><strong><a href="https://www.slpa.lk/uploads/article_attachment/2018.pdf" target="_blank">Annual Report - 2018</a></strong><br />
-<strong>Sri Lanka Ports Authority</strong></span></h5>
-</div>
-</div>
-</div>
-</div>
+// Component to fetch data using the token
+const FetchDataPage = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [token, setToken] = useState(localStorage.getItem('authToken') || ''); // Initialize with token from localStorage
 
-<hr />
-<div class="row">
-<div class="col-md-6">
-<div class="col-md-4"><img alt="" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2023_02_06_1675665059.jpg" width="150%" /></div>
+  const requestData = useMemo(() => ({
+    data: [
+      {
+        article_menu: 'Annual Reports',
+        article_code: 'QW5udWFsIFJlcG9ydHMgb2YgU0xQQQ==',
+        article_content: 'NULL',
+      },
+    ],
+  }), []); // Memoize requestData to avoid unnecessary re-renders
 
-<div class="col-md-8">
-<div class="col-md-12">
-<h5 style="text-align: center;"><span style="font-size:18px;"><strong>&quot;Ready for the World&quot;</strong></span><br />
-<span style="font-size:16px;"><strong><a href="https://www.slpa.lk/uploads/article_attachment/2017.pdf" target="_blank">Annual Report - 2017</a></strong><br />
-<strong>Sri Lanka Ports Authority</strong></span></h5>
-</div>
-</div>
-</div>
-</div>
-</div>`;
-  const sanitizedHtml = DOMPurify.sanitize(htmlContent);
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!token) {
+        setError('No token available. Please log in to proceed.');
+        return; // If no token, don't make the request
+      }
+
+      setLoading(true);
+      try {
+        const response = await axios.post(DATA_URL, requestData, {
+          headers: {
+            Authorization: token, // Pass token in the Authorization header
+            'Content-Type': 'application/json',
+          },
+        });
+
+        console.log('Fetched API Data:', response.data);
+        setData(response.data); // Save fetched data to state
+      } catch (err) {
+        if (err.response && err.response.status === 401) {
+          setError('Authorization failed. Please login again.');
+        } else {
+          setError('Failed to fetch data: ' + err.message);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [token, requestData]);
+
+  if (loading) return <p>Loading data...</p>;
+  if (error) return <p style={{ color: 'red' }}>{error}</p>;
 
   return (
     <div>
-      <div className="header-section">
+      {data && data.status && data.data && data.data.article_info ? (
+        <div>
+          <div className="header-section">
+          {data.data.article_info.image && (
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
         <h1>ANNUAL REPORTS</h1>
         <p className="path">
           {/* <Link to="/Home">HOME</Link> */}
@@ -112,18 +157,47 @@ const berthingprogramme = () => {
           <span>&gt;</span>ABOUT
           <span>&gt;</span>ANNUAL REPORTS
         </p>
-        <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
-      </div>
-       
-       <AboutBanner />
-       
-      <div>
-      <div className="act-wrapper">
-        <div dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
         </div>
-      </div>
-      </div>
+            
+            {data.data.article_info.image && (
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
+
+          <AboutBanner />
+
+            <h3>{data.data.article_info.title || 'No Title'}</h3>
+
+            <div className="act-wrapper"> {/* Add the wrapper */}
+              <div className="act-content"> {/* Add the content container */}
+
+            {/* Render HTML content inside the wrapper */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.data.article_info.content || 'No content available.',
+              }}
+              style={{
+                // backgroundColor: '#f5f5f5',
+                // padding: '10px',
+                // borderRadius: '4px',
+                // wordBreak: 'break-word',
+                // whiteSpace: 'pre-wrap',
+              }}
+            />
+          </div>
+          </div>
+        </div>
+      ) : (
+        <p>No articles found.</p>
+      )}
+
+      {/* Token component to fetch token */}
+      <ApiToken setToken={setToken} /> {/* Pass setToken as prop to update token */}
+    </div>
   );
 };
 
-export default berthingprogramme;
+export default FetchDataPage;
