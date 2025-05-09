@@ -1,237 +1,203 @@
-import React, { useEffect, useState } from 'react';
-import DOMPurify from 'dompurify';
-// import { Link } from 'react-router-dom';
-import './chairmananddirectors.css';
-import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import axios from 'axios';
+import ContactBanner from '../../../components/ContactBanner/Contactbanner';
+import '../ChairmanDirectors/chairmananddirectors.css';
 
-const BoardOfDirectors = () => {
-    const [htmlContent, setHtmlContent] = useState('');
+// Full login URL for fetching token
+const LOGIN_URL = 'https://www.slpa.lk/WEBAPI/V1/Auth/Login';
+const USERNAME = 'TEST';
+const PASSWORD = '123';
 
-    useEffect(() => {
-        const apiData = {
+// API URL for fetching data
+const DATA_URL = 'https://www.slpa.lk/WEBAPI/V1/Articles/get_article_info';
 
-            title: "Board Of Directors",
-      sub_title: "",
-      image: "article_image_2016_04_27_1461722881.jpg",
-      content: `
-      
-      <div class="col-md-6 offset-md-3">
-      <div class="row">
-      <h2>Chairman and Directors</h2>
-<div class="col-md-6">
-<div class="col-md-4"><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2024_10_03_1727947468.jpg" style="width:150%" /></strong></div>
+// Component that handles fetching the token
+const ApiToken = ({ setToken }) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [fullResponse, setFullResponse] = useState(null);
 
-<div class="col-md-8">
-<div class="col-md-12">
-<h5><strong>Admiral Sirimewan Ranasinghe &nbsp;<span style="font-size:9px;">(Rtd)<br />
-WWV, RWP, VSV,USP</span></strong></h5>
+  // Memoize the 'data' object to prevent unnecessary re-renders
+  const data = useMemo(() => {
+    return {}; // Data for the API request
+  }, []); // Only recreate this object when required (currently it's static)
 
-<h6><strong>(Chairman)</strong></h6>
-</div>
+  // Memoize the loginAndGetToken function using useCallback
+  const loginAndGetToken = useCallback(async () => {
+    try {
+      setLoading(true);
 
-<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2325559</span><br />
-<span style="font-size:12px;">Fax: +94&nbsp;11&nbsp;2451916</span></div>
+      const response = await axios.post(LOGIN_URL, data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Username': USERNAME,
+          'Password': PASSWORD,
+        },
+      });
 
-<div class="col-md-12"><span style="font-size:12px;">chairman@slpa.lk</span></div>
-</div>
-</div>
+      console.log('Full Login Response:', response);
+      setFullResponse(response);
 
-<div class="col-md-6">
-<div class="col-md-4"><strong><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2024_10_04_1728027763.jpg" style="width:150%" /></strong></strong></div>
+      if (response.data.Token) {
+        localStorage.setItem('authToken', response.data.Token); // Store token in localStorage
+        setToken(response.data.Token); // Set the token in the parent component
+        console.log('Token saved to localStorage:', response.data.Token);
+      } else {
+        setError('Token not found in response: ' + JSON.stringify(response.data));
+      }
+    } catch (err) {
+      console.error('Login Error:', err);
+      if (err.response) {
+        setError(`Authentication failed (${err.response.status}): ${err.response.data?.message || 'Unknown error'}`);
+        setFullResponse(err.response);
+      } else {
+        setError('Authentication failed: ' + err.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [setToken, data]); // Now 'data' is stable due to useMemo, so it's safe to use here
 
-<div class="col-md-8">
-<div class="col-md-12">
-<h5><a href="vicechairman"><strong>Eng. Herath M.P. Jayawardhana</strong></a></h5>
+  useEffect(() => {
+    loginAndGetToken(); // Fetch the token when the component mounts
+  }, [loginAndGetToken]);
 
-<h6><strong><strong>(Vice Chairman)</strong></strong></h6>
-</div>
+  if (loading) {
+    return <p>Logging in and fetching token...</p>;
+  }
 
-<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2380849</span><br />
-<span style="font-size:12px;">Fax: +94&nbsp;11&nbsp;2344766</span></div>
-
-<div class="col-md-12"><span style="font-size:12px;">vc@slpa.lk</span></div>
-</div>
-</div>
-</div>
-
-<hr />
-<div class="row">
-<div class="col-md-6">
-<div class="col-md-4"><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2025_03_07_1741333134.jpg" style="width:150%" /></strong></div>
-
-<div class="col-md-8">
-<div class="col-md-12">
-<h5><strong>Mr. Ganaka Hemachandra</strong></h5>
-
-<h6><strong>(Managing Director)</strong></h6>
-</div>
-
-<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2323213<br />
-Fax: +94&nbsp;11&nbsp;2435637</span></div>
-
-<div class="col-md-12"><span style="font-size:12px;">md@slpa.lk</span></div>
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="col-md-4"><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2022_08_15_1660558111.jpg" style="width:150%" /></strong></div>
-
-<div class="col-md-8">
-<div class="col-md-12">
-<h5><strong><strong><strong>Mr. P. B. S. C. Nonis</strong></strong></strong></h5>
-
-<h6><strong><strong><strong>(Director)</strong></strong></strong></h6>
-</div>
-
-<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2143434<br />
-Fax: +94&nbsp;11&nbsp;2446364</span></div>
-
-<div class="col-md-12"><span style="font-size:12px;">dgc@customs.gov.lk</span></div>
-</div>
-</div>
-</div>
-
-<hr />
-<div class="row">
-<div class="col-md-6">
-<div class="col-md-4"><img alt="Director Port Authority" class="img-responsive" src="" /></div>
-
-<div class="col-md-8">
-<div class="col-md-12">
-<h5><strong><strong><strong><strong><strong>Mrs. R. M. Damihta Kumari Rathnayake</strong></strong></strong></strong></strong></h5>
-
-<h6><strong>(Director - representing Treasury)</strong></h6>
-</div>
-
-<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2484617<br />
-Fax: +94&nbsp;11&nbsp;2484624</span></div>
-
-<div class="col-md-12"><span style="font-size:12px;">kumari.rm@tod.treasury.gov.lk<br />
-damitharm@gmail.com</span></div>
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="col-md-4"><strong><strong><img alt="Director port authority" class="img-responsive" src="../uploads/article/article_image_ext_2020_02_05_1580886256.JPG" /></strong></strong></div>
-
-<div class="col-md-8">
-<div class="col-md-12">
-<h5><strong><strong><strong>Mrs. N.A.A.P.S. Nissanka</strong></strong></strong></h5>
-
-<h6><strong><strong><strong>(Director)</strong></strong></strong></h6>
-</div>
-
-<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2441537<br />
-Fax: +94&nbsp;11&nbsp;2445088</span></div>
-
-<div class="col-md-12"><span style="font-size:12px;">nissankaapsara@gmail.com</span></div>
-</div>
-</div>
-</div>
-
-<hr />
-<div class="row">
-<div class="col-md-6">
-<div class="col-md-4"><strong><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2024_01_30_1706609496.jpg" /></strong></strong></div>
-
-<div class="col-md-8">
-<div class="col-md-12">
-<h5><strong>Mr. E. M. S. B. Jayasundara</strong></h5>
-
-<h6><strong>(Director)</strong></h6>
-</div>
-
-<div class="col-md-12"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2395119<br />
-Fax: +94&nbsp;11&nbsp;2322648</span></div>
-
-<div class="col-md-12"><span style="font-size:12px;">emsbshantha800@gmail.com</span></div>
-</div>
-</div>
-
-<div class="col-md-6">
-<div class="col-md-4"><strong><strong><img alt="Director port authority" class="img-responsive" src="https://www.slpa.lk/uploads/article/article_image_ext_2022_11_04_1667558292.jpg" /></strong></strong></div>
-
-<div class="col-md-8">
-<div class="col-md-12">
-<h5><strong>Mr. Upul Jayatissa</strong></h5>
-
-<h6><strong>(Director)</strong></h6>
-</div>
-
-<div class="col-md-12"><span style="font-size:12px;">Mobile: +94&nbsp;071&nbsp;8688322</span></div>
-
-<div class="col-md-12"><span style="font-size:12px;">jayatissaupul@gmail.com</span></div>
-</div>
-</div>
-</div>
-
-<hr />
-<div class="row1">
-<div class="col-md-6">
-<div class="col-md-4"><strong><strong><img alt="Director port authority" class="img-responsive11" src="https://www.slpa.lk/uploads/article/article_image_ext_2024_10_23_1729665485.jpg" /></strong></strong></div>
-
-<div class="col-md-8">
-<div class="col-md-12">
-<h5><strong>Mr. U. L. Anura Bandara</strong></h5>
-
-<h6><strong>(Director)</strong></h6>
-</div>
-
-<div class="col-md-12"><span style="font-size:12px;">Mobile: +94&nbsp;071&nbsp;8688359</span></div>
-
-<div class="col-md-12"><span style="font-size:12px;">udawela1967@hotmail.com</span></div>
-</div>
-</div>
-</div>
-
-<p>&nbsp;</p>
-
-<hr />
-<p class="under-title"><strong><strong><span style="font-size:28px"><strong>Secretary to the Board &nbsp;</strong></span></strong></strong></p>
-
-<p>&nbsp;</p>
-
-<div class="row">
-<div class="col-md-6">
-<div class="col-md-12">
-<div class="col-md-12-2">
-<h5><strong>Mrs. Shehara Y. Nawaratne</strong></h5>
-</div>
-
-<div class="col-md-12-2"><span style="font-size:12px;">T.P: +94&nbsp;11&nbsp;2421530<br />
-Fax: +94&nbsp;11&nbsp;2421530</span></div>
-
-<div class="col-md-12-2"><span style="font-size:12px;">boardroom@slpa.lk</span></div>
-</div>
-</div>
-</div>
-</div>`
-
-        };
-
-        setHtmlContent(DOMPurify.sanitize(apiData.content));
-    }, []);
-
+  if (error) {
     return (
-        <div>
-            <div className="header-section">
-                <h1>BOARD OF DIRECTORS</h1>
-                <p className="path">
-                <span></span>HOME
-                    <span>&gt;</span>ABOUT
-                    <span>&gt;</span>BOARD OF DIRECTORS
-                </p>
-                <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
-            </div>
-
-            
-
-            {/* Inject API content safely */}
-            <div className="act-wrapper">
-            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-            </div>
-        </div>
+      <div style={{ color: 'red', margin: '20px', padding: '15px', border: '1px solid #ffcccc', backgroundColor: '#fff0f0' }}>
+        <h3>Error</h3>
+        <p>{error}</p>
+        {fullResponse && (
+          <div style={{ marginTop: '15px' }}>
+            <h4>Full Response:</h4>
+            <pre style={{ wordBreak: 'break-all', whiteSpace: 'pre-wrap', backgroundColor: '#f5f5f5', padding: '10px', borderRadius: '4px' }}>
+              {JSON.stringify(fullResponse.data, null, 2)}
+            </pre>
+          </div>
+        )}
+      </div>
     );
+  }
+
+  return <div>{/* Empty placeholder for the token component */}</div>;
 };
 
-export default BoardOfDirectors;
+// Component to fetch data using the token
+const FetchDataPage = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [token, setToken] = useState(localStorage.getItem('authToken') || ''); // Initialize with token from localStorage
+
+  const requestData = useMemo(() => ({
+    data: [
+      {
+        article_menu: 'Chairman and Directors',
+        article_code: 'Q2hhaXJtYW4gYW5kIERpcmVjdG9ycw==',
+        article_content: 'NULL',
+      },
+    ],
+  }), []); // Memoize requestData to avoid unnecessary re-renders
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!token) {
+        setError('No token available. Please log in to proceed.');
+        return; // If no token, don't make the request
+      }
+
+      setLoading(true);
+      try {
+        const response = await axios.post(DATA_URL, requestData, {
+          headers: {
+            Authorization: token, // Pass token in the Authorization header
+            'Content-Type': 'application/json',
+          },
+        });
+
+        console.log('Fetched API Data:', response.data);
+        setData(response.data); // Save fetched data to state
+      } catch (err) {
+        if (err.response && err.response.status === 401) {
+          setError('Authorization failed. Please login again.');
+        } else {
+          setError('Failed to fetch data: ' + err.message);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [token, requestData]);
+
+  if (loading) return <p>Loading data...</p>;
+  if (error) return <p style={{ color: 'red' }}>{error}</p>;
+
+  return (
+    <div>
+      {data && data.status && data.data && data.data.article_info ? (
+        <div>
+          <div className="header-section">
+          {data.data.article_info.image && (
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
+        <h1>ANNUAL REPORTS</h1>
+        <p className="path">
+          {/* <Link to="/Home">HOME</Link> */}
+          <span></span>HOME
+          <span>&gt;</span>ABOUT
+          <span>&gt;</span>ANNUAL REPORTS
+        </p>
+        </div>
+            
+            {data.data.article_info.image && (
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
+
+          <ContactBanner />
+
+            <h3>{data.data.article_info.title || 'No Title'}</h3>
+
+            <div className="act-wrapper"> {/* Add the wrapper */}
+              <div className="act-content"> {/* Add the content container */}
+
+            {/* Render HTML content inside the wrapper */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.data.article_info.content || 'No content available.',
+              }}
+              style={{
+                // backgroundColor: '#f5f5f5',
+                // padding: '10px',
+                // borderRadius: '4px',
+                // wordBreak: 'break-word',
+                // whiteSpace: 'pre-wrap',
+              }}
+            />
+          </div>
+          </div>
+        </div>
+      ) : (
+        <p>No articles found.</p>
+      )}
+
+      {/* Token component to fetch token */}
+      <ApiToken setToken={setToken} /> {/* Pass setToken as prop to update token */}
+    </div>
+  );
+};
+
+export default FetchDataPage;

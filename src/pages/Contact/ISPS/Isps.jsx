@@ -1,104 +1,203 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import axios from 'axios';
+import ContactBanner from "../../../components/ContactBanner/Contactbanner";
 import '../ISPS/isps.css';
-import Contactbanner from '../../../components/ContactBanner/Contactbanner';
-import portImage2 from '../../../assets/images/Ports/PortColomboHero.jpg';
 
-const ispsContent = `
-  <h4><strong>Sri Lanka Ports Authority ISPS related contact details</strong></h4>
-  <p>&nbsp;</p>
-  <table border="0" cellpadding="4" cellspacing="0" style="width:100%">
-    <tbody>
-      <tr>
-        <td><strong>Capt. Nirmal Silva</strong><br />
-        Harbour Master (Sri Lanka Ports Authority)<br />
-        Colombo 02.<br />
-        Tel: +94 11 2385401<br />
-        E-mail : nirmalsilva@slpa.lk</td>
-        <td><strong>Capt. Lakshi Wasantha</strong><br />
-        Senior Deputy Harbour Master (Sri Lanka Ports Authority)<br />
-        Tel: +94 11 2434120<br />
-        E-mail : lakshi@slpa.lk</td>
-      </tr>
-      
-      <tr>
-        <td><strong>Capt. Harsha Weerasuriya</strong><br />
-        Port Facility Security Officer - Vigilance (Sri Lanka Ports Authority)<br />
-        Tel: +94 11 3075290<br />
-        Email: hou-siu@slpa.lk</td>
-        <td>&nbsp;</td>
-      </tr>
-    </tbody>
-  </table>
-  <p>&nbsp;</p>
-  <center>
-    <table border="1" cellpadding="4" cellspacing="0" class="table table-hover" style="width:100%">
-      <tbody>
-        <tr>
-          <td style="text-align: center;"><strong>Name of the Port</strong></td>
-          <td style="text-align: center;"><strong>Deputy Harbour Master</strong><br />Sri Lanka Ports Authority</td>
-          <td style="text-align: center; background-color:#AED6F1"><strong>Port Facility Security Officer (PFSO)</strong></td>
-        </tr>
-        <tr>
-          <td><strong>Colombo</strong></td>
-          <td><strong>Capt. Lakshi Wasantha</strong><br />Senior Deputy Harbour Master<br />(Sri Lanka Ports Authority)<br />Tel: +94 11 2434120<br />Email: lakshi@slpa.lk</td>
-          <td style="background-color:#AED6F1"><strong>Commodore Buddhika Jayaweera</strong><br />Port Facility Security Officer (PFSO)<br />(Sri Lanka Navy)<br />Tel: +94 76 9104333<br /><br />
-          <strong>Lt Commander Sandun Wijerathna</strong><br />Assistant Port Facility Security Officer (APFSO)<br />(Sri Lanka Navy)<br />Tel: +94 71 3523220<br /><br />
-          <strong>Lieutenant Tharindu Balasooriya</strong><br />ISPS Officer<br />(Sri Lanka Navy)<br />Tel: +94 76 3159239, +94 11 2333378<br />
-          Email: pfsocbo@navy.lk, ispscbo@navy.lk</td>
-        </tr>
-        <tr>
-          <td><strong>Galle</strong></td>
-          <td><strong>Capt. Sajeewa Wimalasiri</strong><br />Deputy Harbour Master<br />(Sri Lanka Ports Authority)<br />Tel: +94 91 2234824<br />Email: sajeewawimalasiri@slpa.lk</td>
-          <td style="background-color:#AED6F1"><strong>Commodore H.I.A.Gunawardana</strong><br />Port Facility Security Officer (PFSO)<br />(Sri Lanka Navy)<br />Tel: +94 71 8499464<br />
-          Email: pfsogalle@navy.lk, ispsgalle@gmail.com</td>
-        </tr>
-        <tr>
-          <td><strong>Trincomalee</strong></td>
-          <td><strong>Capt. A.M.S.P. Arampath</strong><br />Deputy Harbour Master<br />(Sri Lanka Ports Authority)<br />Tel: +94 26 2222472<br />Email: dhm-trinco@slpa.lk</td>
-          <td style="background-color:#AED6F1"><strong>Commodore B. Liyanagama</strong><br />Port Facility Security Officer (PFSO)<br />(Sri Lanka Navy)<br />Tel: +94 26 7766167<br />Email: pfsotco@navy.lk, pfsotco@gmail.com</td>
-        </tr>
-        <tr>
-          <td><strong>Hambanthota</strong></td>
-          <td><strong>Capt. P K S K Pattiwila</strong><br />Deputy Harbour Master<br />(Sri Lanka Ports Authority)<br />Tel: +94 72 2972269<br />Email: sugath.pattiwila@gmail.com</td>
-          <td style="background-color:#AED6F1"><strong>Commodore E.W.C.E. Mendis</strong><br />Port Facility Security Officer (PFSO)<br />(Sri Lanka Navy)<br />Tel: +94 76 3015037, +94 11 7199100<br />Email: pfsohambantota@gmail.com</td>
-        </tr>
-        <tr>
-          <td><strong>Kankasanthurai</strong></td>
-          <td><strong>Overlooked by the Sri Lanka Navy</strong></td>
-          <td style="background-color:#AED6F1"><strong>Rear Admiral H.R.F.M. Thissera</strong><br />Port Facility Security Officer (PFSO)<br />(Sri Lanka Navy)<br />Tel: +94 26 77 6101113<br /><br />
-          <strong>Lt Commander T.H.C. Isuru</strong><br />Assistant Port Facility Security Officer (APFSO)<br />(Sri Lanka Navy)<br />Tel: +94 71 0932728<br /><br />
-          <strong>ISPS Officer</strong><br />Tel: +94 76 3357788<br />Email: pfsokks@navy.lk, pfsokksn@gmail.com</td>
-        </tr>
-      </tbody>
-    </table>
-  </center>
-  <p>&nbsp;</p>
-`;
+// Full login URL for fetching token
+const LOGIN_URL = 'https://www.slpa.lk/WEBAPI/V1/Auth/Login';
+const USERNAME = 'TEST';
+const PASSWORD = '123';
 
-const Isps = () => {
+// API URL for fetching data
+const DATA_URL = 'https://www.slpa.lk/WEBAPI/V1/Articles/get_article_info';
+
+// Component that handles fetching the token
+const ApiToken = ({ setToken }) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [fullResponse, setFullResponse] = useState(null);
+
+  // Memoize the 'data' object to prevent unnecessary re-renders
+  const data = useMemo(() => {
+    return {}; // Data for the API request
+  }, []); // Only recreate this object when required (currently it's static)
+
+  // Memoize the loginAndGetToken function using useCallback
+  const loginAndGetToken = useCallback(async () => {
+    try {
+      setLoading(true);
+
+      const response = await axios.post(LOGIN_URL, data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Username': USERNAME,
+          'Password': PASSWORD,
+        },
+      });
+
+      console.log('Full Login Response:', response);
+      setFullResponse(response);
+
+      if (response.data.Token) {
+        localStorage.setItem('authToken', response.data.Token); // Store token in localStorage
+        setToken(response.data.Token); // Set the token in the parent component
+        console.log('Token saved to localStorage:', response.data.Token);
+      } else {
+        setError('Token not found in response: ' + JSON.stringify(response.data));
+      }
+    } catch (err) {
+      console.error('Login Error:', err);
+      if (err.response) {
+        setError(`Authentication failed (${err.response.status}): ${err.response.data?.message || 'Unknown error'}`);
+        setFullResponse(err.response);
+      } else {
+        setError('Authentication failed: ' + err.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [setToken, data]); // Now 'data' is stable due to useMemo, so it's safe to use here
+
+  useEffect(() => {
+    loginAndGetToken(); // Fetch the token when the component mounts
+  }, [loginAndGetToken]);
+
+  if (loading) {
+    return <p>Logging in and fetching token...</p>;
+  }
+
+  if (error) {
+    return (
+      <div style={{ color: 'red', margin: '20px', padding: '15px', border: '1px solid #ffcccc', backgroundColor: '#fff0f0' }}>
+        <h3>Error</h3>
+        <p>{error}</p>
+        {fullResponse && (
+          <div style={{ marginTop: '15px' }}>
+            <h4>Full Response:</h4>
+            <pre style={{ wordBreak: 'break-all', whiteSpace: 'pre-wrap', backgroundColor: '#f5f5f5', padding: '10px', borderRadius: '4px' }}>
+              {JSON.stringify(fullResponse.data, null, 2)}
+            </pre>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  return <div>{/* Empty placeholder for the token component */}</div>;
+};
+
+// Component to fetch data using the token
+const FetchDataPage = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [token, setToken] = useState(localStorage.getItem('authToken') || ''); // Initialize with token from localStorage
+
+  const requestData = useMemo(() => ({
+    data: [
+      {
+        article_menu: 'ISPS',
+        article_code: 'SVNQUw==',
+        article_content: 'NULL',
+      },
+    ],
+  }), []); // Memoize requestData to avoid unnecessary re-renders
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!token) {
+        setError('No token available. Please log in to proceed.');
+        return; // If no token, don't make the request
+      }
+
+      setLoading(true);
+      try {
+        const response = await axios.post(DATA_URL, requestData, {
+          headers: {
+            Authorization: token, // Pass token in the Authorization header
+            'Content-Type': 'application/json',
+          },
+        });
+
+        console.log('Fetched API Data:', response.data);
+        setData(response.data); // Save fetched data to state
+      } catch (err) {
+        if (err.response && err.response.status === 401) {
+          setError('Authorization failed. Please login again.');
+        } else {
+          setError('Failed to fetch data: ' + err.message);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [token, requestData]);
+
+  if (loading) return <p>Loading data...</p>;
+  if (error) return <p style={{ color: 'red' }}>{error}</p>;
+
   return (
-    <div className="isps-page">
-
-      <div className="header-section">
-          <h1>BOARD OF DIRECTORS</h1>
-          <p className="path">
+    <div>
+      {data && data.status && data.data && data.data.article_info ? (
+        <div>
+          <div className="header-section">
+          {data.data.article_info.image && (
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
+        <h1>ANNUAL REPORTS</h1>
+        <p className="path">
+          {/* <Link to="/Home">HOME</Link> */}
           <span></span>HOME
-              <span>&gt;</span>ABOUT
-              <span>&gt;</span>BOARD OF DIRECTORS
-          </p>
-          <img src={portImage2} alt="Colombo Port Overview" className="header-image" />
-      </div>
+          <span>&gt;</span>ABOUT
+          <span>&gt;</span>ANNUAL REPORTS
+        </p>
+        </div>
+            
+            {data.data.article_info.image && (
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
 
-      
-      <Contactbanner />
-      <div className="act-wrapper">
-      <div
-        className="isps-content"
-        dangerouslySetInnerHTML={{ __html: ispsContent }}
-      />
-      </div>
+          <ContactBanner />
+
+            <h3>{data.data.article_info.title || 'No Title'}</h3>
+
+            <div className="act-wrapper"> {/* Add the wrapper */}
+              <div className="act-content"> {/* Add the content container */}
+
+            {/* Render HTML content inside the wrapper */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.data.article_info.content || 'No content available.',
+              }}
+              style={{
+                // backgroundColor: '#f5f5f5',
+                // padding: '10px',
+                // borderRadius: '4px',
+                // wordBreak: 'break-word',
+                // whiteSpace: 'pre-wrap',
+              }}
+            />
+          </div>
+          </div>
+        </div>
+      ) : (
+        <p>No articles found.</p>
+      )}
+
+      {/* Token component to fetch token */}
+      <ApiToken setToken={setToken} /> {/* Pass setToken as prop to update token */}
     </div>
   );
 };
 
-export default Isps;
+export default FetchDataPage;
