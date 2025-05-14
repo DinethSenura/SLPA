@@ -5,6 +5,7 @@
   padding: 20px 15px;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 /* Reset link styles inside the footer */

@@ -53,23 +53,33 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .slideshow-container1 {
-    padding: 0 5px; /* Smaller padding for tablets */
+    padding: 0 5px;
   }
 
   .side-image1 {
-    max-height: 120px; /* Reduce image height for tablets */
-    margin-right: 8px; /* Adjust spacing between images */
+    max-height: 60px;   /* tablets: shrink more */
+    margin-right: 5px;
   }
 }
 
 @media (max-width: 576px) {
   .slideshow-container1 {
-    flex-direction: column; /* Stack images vertically if needed */
-    padding: 0; /* No padding for very small screens */
+    /* you could stack them, but we'll keep the row for animation */
+    padding: 0;
   }
 
   .side-image1 {
-    max-height: 100px; /* Further reduce image height for mobile */
-    margin-right: 5px; /* Narrow spacing between images */
+    max-height: 40px;   /* mobile: smallest height */
+    margin-right: 3px;
+    max-width: 60px;
+  }
+}
+
+/* If you also want to constrain width explicitly on phones: */
+@media (max-width: 576px) {
+  .side-image1 {
+    width: auto;
+    max-width: 80px;    /* cap width */
+    max-height: 60px;
   }
 }
