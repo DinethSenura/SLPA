@@ -3,13 +3,44 @@
   background-color: #10181F;
   color: #ffffff;
   padding: 20px 15px;
+  display: flex;
+  flex-wrap: wrap;
 }
+
+/* Reset link styles inside the footer */
+.footer a {
+  color: #fbfdfe; /* or whatever your base footer text color is */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+/* Optional: Highlight on hover */
+.footer a:hover {
+  color: #ffc000; /* Match your highlight color */
+  text-decoration: underline;
+}
+
+.quick-links-wrapper {
+  display: grid;
+  /* two equal columns */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 20px;             /* horizontal gutter between columns */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 
 .footer-container {
   display: flex;
   flex-wrap: wrap; /* Allow wrapping for smaller screens */
   justify-content: space-between; /* Default layout for larger screens */
   gap: 20px;
+
+  max-width: 1200px;  /* or any width you prefer */
+  margin: 0 auto;     /* centers the container */
+  width: 100%;        /* ensures full width up to max-width */
+
 }
 
 .footer-section {
@@ -24,6 +55,19 @@
   color: #ffffff;
   margin-bottom: 10px;
   font-size: 16px;
+  position: relative;
+  padding-bottom: 8px;
+  margin-bottom: 16px; /* space between title and its list */
+}
+.media-section h4::after,
+.quick-links h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;           /* underline length */
+  height: 3px;           /* thickness of the line */
+  background-color: #FFC000; /* match your accent */
 }
 
 .footer-section p,
