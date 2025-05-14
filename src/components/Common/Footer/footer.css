@@ -145,7 +145,7 @@
   color: #ffffff;
   /* margin-top: 0px; */
   position: absolute; /* Stick to the bottom */
-  bottom: 0;
+  bottom: -10px;
   left: 0; 
 }
 
@@ -220,6 +220,28 @@
     text-align: center;
     margin-bottom: -20px;
   }
+  .media-section h4::after,
+  .quick-links h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* center under the title */
+    width: 40px;
+    height: 3px;
+    background-color: #FFC000;
+  }
+  
+  /* ensure the titles themselves remain positioned relative */
+  .media-section h4,
+  .quick-links h4 {
+    position: relative;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+
+
+
 }
 
 @media (max-width: 576px) {
