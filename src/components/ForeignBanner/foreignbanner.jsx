@@ -7,7 +7,7 @@ const Aboutbanner = () => {
       <div className="aboutbanner-wrapper">
       <div className="aboutbanner-small-boxes-container">
         {[
-          { title: "Other Materials & Equipment", path: "/ForeignPurchases" },
+          { title: "Other Materials & Equipment", path: "/foreignpurchases" },
           { title: "Mechanical Equipment", path: "/foreignsecond" },
           { title: "Electrical equipment", path: "/foreignthird" },
         ].map((box, i) => (
