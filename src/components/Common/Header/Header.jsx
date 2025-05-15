@@ -144,7 +144,7 @@ const Header = () => {
                 <li><NavLink to="/foreignpurchases" className="dropdown-item" onClick={closeNav}>Foreign-Purchases</NavLink></li>
                 <li><NavLink to="/localpurchases" className="dropdown-item" onClick={closeNav}>Local Purchases</NavLink></li>
                 <li><NavLink to="/other" className="dropdown-item" onClick={closeNav}>Other</NavLink></li>
-              </ul>
+                </ul>
             </li>
 
             {/* Contact */}

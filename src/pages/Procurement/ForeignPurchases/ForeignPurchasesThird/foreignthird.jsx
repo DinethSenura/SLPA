@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import axios from 'axios';
-import ForeignBanner from "../../../components/ForeignBanner/foreignbanner";
-import '../ForeignPurchases/foreignpurchases.css';
+import ForeignBanner from "../../../../components/ForeignBanner/foreignbanner"
+import '../ForeignPurchasesThird/foreignthird.css';
 
 // Full login URL for fetching token
 const LOGIN_URL = 'https://www.slpa.lk/WEBAPI/V1/Auth/Login';
@@ -96,8 +96,8 @@ const FetchDataPage = () => {
   const requestData = useMemo(() => ({
     data: [
       {
-        article_menu: "Foreign-Purchases-1",
-        article_code: "T3RoZXIgTWF0ZXJpYWxzICYgRXF1aXBtZW50",
+        article_menu: "Foreign-Purchases-3",
+        article_code: "RWxlY3RyaWNhbCBlcXVpcG1lbnQ=",
         article_content: 'NULL',
       },
     ],
@@ -150,12 +150,12 @@ const FetchDataPage = () => {
                 style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
               />
             )}
-        <h1>OTHER MATERIALS & EQUIPMENT</h1>
+        <h1>ELECTRICAL EQUIPMENT</h1>
         <p className="path">
           {/* <Link to="/Home">HOME</Link> */}
           <span></span>HOME
           <span>&gt;</span>PROCUREMENT
-          <span>&gt;</span>OTHER MATERIALS & EQUIPMENT
+          <span>&gt;</span>ELECTRICAL EQUIPMENT
         </p>
         </div>
             

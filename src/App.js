@@ -73,6 +73,9 @@ import Isps from './pages/Contact/ISPS/Isps';
 import Mahapolaacademy from './pages/Contact/MahapolaAcademy/Mahapolaacademy';
 import Ministry from './pages/Contact/Ministry/Ministry';
 import Localpurchases from './pages/Procurement/LocalPurchases/Localpurchases';
+import Foreignpurchases from './pages/Procurement/ForeignPurchases/foreignpurchases';
+import Foreignsecond from './pages/Procurement/ForeignPurchases/ForeignPurchasesSecond/foreignsecond';
+import Foreignthird from './pages/Procurement/ForeignPurchases/ForeignPurchasesThird/foreignthird';
 
 function App() {
   const location = useLocation();
@@ -154,6 +157,11 @@ function App() {
           <Route path="mahapolaacademy" element={<Mahapolaacademy />}/>
           <Route path="ministry" element={<Ministry />}/>
           <Route path="localpurchases" element={<Localpurchases />}/>
+          <Route path="foreignpurchases" element={<Foreignpurchases />}/>
+          <Route path="foreignsecond" element={<Foreignsecond />}/>
+          <Route path="foreignthird" element={<Foreignthird />}/>
+
+
         </Routes>
       </div>
       <Footer />
