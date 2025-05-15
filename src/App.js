@@ -76,6 +76,8 @@ import Localpurchases from './pages/Procurement/LocalPurchases/Localpurchases';
 import Foreignpurchases from './pages/Procurement/ForeignPurchases/foreignpurchases';
 import Foreignsecond from './pages/Procurement/ForeignPurchases/ForeignPurchasesSecond/foreignsecond';
 import Foreignthird from './pages/Procurement/ForeignPurchases/ForeignPurchasesThird/foreignthird';
+import ElectricalEquipment from './pages/Procurement/LocalPurchases/ElectricalEquipment/Electricalequipment';
+import OtherMeterialsEquipment from './pages/Procurement/LocalPurchases/OtherMeterialsEquipment/Othermeterialsequipment';
 
 function App() {
   const location = useLocation();
@@ -160,6 +162,8 @@ function App() {
           <Route path="foreignpurchases" element={<Foreignpurchases />}/>
           <Route path="foreignsecond" element={<Foreignsecond />}/>
           <Route path="foreignthird" element={<Foreignthird />}/>
+          <Route path="electricalequipment" element={<ElectricalEquipment />}/>
+          <Route path="othermeterialseqipment" element={<OtherMeterialsEquipment />}/>
 
 
         </Routes>
