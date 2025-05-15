@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import axios from 'axios';
-import '../GeneralInformation/generalinformation.css'
+import AboutBanner from "../../../components/AboutBanner/Aboutbanner";
+import '../GeneralInformation/generalinformation.css';
 
 // Full login URL for fetching token
 const LOGIN_URL = 'https://www.slpa.lk/WEBAPI/V1/Auth/Login';
@@ -95,8 +96,8 @@ const FetchDataPage = () => {
   const requestData = useMemo(() => ({
     data: [
       {
-        article_menu: 'Vision & Mission',
-        article_code: 'VmlzaW9uICYgTWlzc2lvbg==',
+        article_menu: 'General Information-Procurement',
+        article_code: 'R2VuZXJhbCBJbmZvcm1hdGlvbiAtIFByb2N1cmVtZW50',
         article_content: 'NULL',
       },
     ],
@@ -141,28 +142,53 @@ const FetchDataPage = () => {
     <div>
       {data && data.status && data.data && data.data.article_info ? (
         <div>
-          <h3>{data.data.article_info.title || 'No Title'}</h3>
+          <div className="header-section">
           {data.data.article_info.image && (
-            <img
-              src={data.data.article_info.image}
-              alt={data.data.article_info.title}
-              style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
-            />
-          )}
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
+        <h1>ANNUAL REPORTS</h1>
+        <p className="path">
+          {/* <Link to="/Home">HOME</Link> */}
+          <span></span>HOME
+          <span>&gt;</span>ABOUT
+          <span>&gt;</span>ANNUAL REPORTS
+        </p>
+        </div>
+            
+            {data.data.article_info.image && (
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
 
-          {/* Render HTML content */}
-          <div
-            dangerouslySetInnerHTML={{
-              __html: data.data.article_info.content || 'No content available.',
-            }}
-            style={{
-              // backgroundColor: '#f5f5f5',
-              // padding: '10px',
-              // borderRadius: '4px',
-              // wordBreak: 'break-word',
-              // whiteSpace: 'pre-wrap',
-            }}
-          />
+          <AboutBanner />
+
+            <h3>{data.data.article_info.title || 'No Title'}</h3>
+
+            <div className="act-wrapper"> {/* Add the wrapper */}
+              <div className="act-content"> {/* Add the content container */}
+
+            {/* Render HTML content inside the wrapper */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.data.article_info.content || 'No content available.',
+              }}
+              style={{
+                // backgroundColor: '#f5f5f5',
+                // padding: '10px',
+                // borderRadius: '4px',
+                // wordBreak: 'break-word',
+                // whiteSpace: 'pre-wrap',
+              }}
+            />
+          </div>
+          </div>
         </div>
       ) : (
         <p>No articles found.</p>
