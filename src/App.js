@@ -76,8 +76,9 @@ import Localpurchases from './pages/Procurement/LocalPurchases/Localpurchases';
 import Foreignpurchases from './pages/Procurement/ForeignPurchases/foreignpurchases';
 import Foreignsecond from './pages/Procurement/ForeignPurchases/ForeignPurchasesSecond/foreignsecond';
 import Foreignthird from './pages/Procurement/ForeignPurchases/ForeignPurchasesThird/foreignthird';
-import ElectricalEquipment from './pages/Procurement/LocalPurchases/ElectricalEquipment/Electricalequipment';
-import OtherMeterialsEquipment from './pages/Procurement/LocalPurchases/OtherMeterialsEquipment/Othermeterialsequipment';
+import Localsecond from './pages/Procurement/LocalPurchases/LocalPurchasesSecond/Localpurchasessecond';
+import Localthird from './pages/Procurement/LocalPurchases/LocalPurchasesThird/Localpurchasesthird';
+
 
 function App() {
   const location = useLocation();
@@ -161,10 +162,9 @@ function App() {
           <Route path="localpurchases" element={<Localpurchases />}/>
           <Route path="foreignpurchases" element={<Foreignpurchases />}/>
           <Route path="foreignsecond" element={<Foreignsecond />}/>
-          <Route path="foreignthird" element={<Foreignthird />}/>
-          <Route path="electricalequipment" element={<ElectricalEquipment />}/>
-          <Route path="othermeterialseqipment" element={<OtherMeterialsEquipment />}/>
-
+          <Route path="foreignpurchasesthird" element={<Foreignthird />}/>
+          <Route path="localpurchasessecond" element={<Localsecond />}/>
+          <Route path="localpurchasesthird" element={<Localthird />}/>
 
         </Routes>
       </div>
