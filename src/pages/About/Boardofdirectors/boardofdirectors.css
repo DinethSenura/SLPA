@@ -41,6 +41,10 @@ body {
     height: 100%;
     object-fit: cover;
   }
+
+  h3{
+  text-align: center;
+}
   
   .navbar {
     margin-bottom: 0; /* Reduce extra space under the navigation bar */

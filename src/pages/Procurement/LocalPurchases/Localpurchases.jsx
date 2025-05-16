@@ -100,16 +100,6 @@ const FetchDataPage = () => {
       article_code: 'TWVjaGFuaWNhbCBFcXVpcG1lbnQ=',
       article_content: 'NULL',
     },
-    // {
-    //   article_menu: 'Local-Purchases-2',
-    //   article_code: 'RWxlY3RyaWNhbCBFcXVpcG1lbnQ=',
-    //   article_content: 'NULL',
-    // },
-    // {
-    //   article_menu: 'Local-Purchases-3',
-    //   article_code: 'T3RoZXIgTWF0ZXJpYWxzICYgRXF1aXBtZW50',
-    //   article_content: 'NULL',
-    // }
   ],
 }), []) // Memoize requestData to avoid unnecessary re-renders
 

@@ -55,7 +55,9 @@ body {
   margin-bottom: 0; /* Reduce extra space under the navigation bar */
 }
   
-
+h3{
+  text-align: center;
+}
 
 @media screen and (max-width: 768px) {
   /* Mobile View */
