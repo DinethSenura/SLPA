@@ -59,7 +59,10 @@ const Esystem = () => {
               </tbody>
             </table>
           </div>
-          <a href="Brething-program">More</a>
+          <a href="http://www.slpa.lk/berthing-programme/" target="_blank" rel="noopener noreferrer"
+>
+  More
+</a>
         </div>
       )}
     </div>
