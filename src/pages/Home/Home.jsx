@@ -234,6 +234,9 @@ const Home = () => {
               e.target.style.backgroundColor = '#221F45';
               e.target.style.transform = 'scale(1)';
             }}
+            onClick={() => {
+              window.location.href = 'educationalvisit'; // put your target URL here
+            }}
           >
             GUIDED PORT TOURS FOR EDUCATIONAL ESTABLISHMENTS
           </button>
