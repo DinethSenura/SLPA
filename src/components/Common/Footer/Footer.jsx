@@ -85,15 +85,15 @@ const Footer = () => {
           <h4>QUICK LINKS</h4>
           <div className="quick-links-wrapper">
   <ul>
-    <li><a href="/mahapola-academy">Mahapola Academy</a></li>
-    <li><a href="/news-slpa">NEWS.SLPA.LK</a></li>
-    <li><a href="/slparosa">SLPARSOA</a></li>
+    <li><a href="http://mpma.slpa.lk/" target="_blank" rel="noopener noreferrer">Mahapola Academy</a></li>
+    <li><a href="https://news.slpa.lk/" target="_blank" rel="noopener noreferrer">NEWS.SLPA.LK</a></li>
+    <li><a href="http://portcom.slpa.lk/slparsoa/" target="_blank" rel="noopener noreferrer">SLPARSOA</a></li>
     <li><a href="/site-index">Site Index</a></li>
     <li><a href="/zero-tolerance-notice">Zero Tolerance Notice</a></li>
   </ul>
   <ul>
     <li><a href="/faq">FAQ</a></li>
-    <li><a href="/traffic">Traffic</a></li>
+    <li><a href="/traffic">Tariff</a></li>
     <li><a href="/opportunistic">Opportunities</a></li>
     <li><a href="/rti">RTI</a></li>
     <li><a href="/csr">CSR</a></li>
