@@ -64,19 +64,19 @@ const Footer = () => {
             <li className="media-gallery"><a href="#link-1">Gallery</a></li>
           </ul>
           <div className="social-icons">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+            <a href="https://www.slpa.lk/port-colombo/slpa" target="_blank" rel="noreferrer">
               <img src={facebook} alt="Facebook" className="social-icon" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer">
+            <a href="https://twitter.com/slpauthority" target="_blank" rel="noreferrer">
               <img src={twitter} alt="Twitter" className="social-icon" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/company/srilankaportsauthority" target="_blank" rel="noreferrer">
               <img src={linkdin} alt="LinkedIn" className="social-icon" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/srilankaportsauthority/" target="_blank" rel="noreferrer">
               <img src={instagram} alt="Instagram" className="social-icon" />
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer">
+            <a href="https://www.youtube.com/channel/UCaSwlDCurdJ-rx-m2-ATwqw/videos" target="_blank" rel="noreferrer">
               <img src={youtube} alt="YouTube" className="social-icon" />
             </a>
           </div>
