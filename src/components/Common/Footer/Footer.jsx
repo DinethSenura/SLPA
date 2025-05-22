@@ -64,19 +64,19 @@ const Footer = () => {
             <li className="media-gallery"><a href="#link-1">Gallery</a></li>
           </ul>
           <div className="social-icons">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+            <a href="https://www.slpa.lk/port-colombo/slpa" target="_blank" rel="noreferrer">
               <img src={facebook} alt="Facebook" className="social-icon" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer">
+            <a href="https://twitter.com/slpauthority" target="_blank" rel="noreferrer">
               <img src={twitter} alt="Twitter" className="social-icon" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/company/srilankaportsauthority" target="_blank" rel="noreferrer">
               <img src={linkdin} alt="LinkedIn" className="social-icon" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/srilankaportsauthority/" target="_blank" rel="noreferrer">
               <img src={instagram} alt="Instagram" className="social-icon" />
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer">
+            <a href="https://www.youtube.com/channel/UCaSwlDCurdJ-rx-m2-ATwqw/videos" target="_blank" rel="noreferrer">
               <img src={youtube} alt="YouTube" className="social-icon" />
             </a>
           </div>
@@ -85,15 +85,15 @@ const Footer = () => {
           <h4>QUICK LINKS</h4>
           <div className="quick-links-wrapper">
   <ul>
-    <li><a href="/mahapola-academy">Mahapola Academy</a></li>
-    <li><a href="/news-slpa">NEWS.SLPA.LK</a></li>
-    <li><a href="/slparosa">SLPARSOA</a></li>
+    <li><a href="http://mpma.slpa.lk/" target="_blank" rel="noopener noreferrer">Mahapola Academy</a></li>
+    <li><a href="https://news.slpa.lk/" target="_blank" rel="noopener noreferrer">NEWS.SLPA.LK</a></li>
+    <li><a href="http://portcom.slpa.lk/slparsoa/" target="_blank" rel="noopener noreferrer">SLPARSOA</a></li>
     <li><a href="/site-index">Site Index</a></li>
     <li><a href="/zero-tolerance-notice">Zero Tolerance Notice</a></li>
   </ul>
   <ul>
     <li><a href="/faq">FAQ</a></li>
-    <li><a href="/traffic">Traffic</a></li>
+    <li><a href="/traffic">Tariff</a></li>
     <li><a href="/opportunistic">Opportunities</a></li>
     <li><a href="/rti">RTI</a></li>
     <li><a href="/csr">CSR</a></li>
