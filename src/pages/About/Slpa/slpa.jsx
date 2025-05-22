@@ -26,7 +26,6 @@ const ApiToken = ({ setToken }) => {
   const loginAndGetToken = useCallback(async () => {
     try {
       setLoading(true);
-
       const response = await axios.post(LOGIN_URL, data, {
         headers: {
           'Content-Type': 'application/json',
@@ -111,6 +110,7 @@ const FetchDataPage = () => {
       }
 
       setLoading(true);
+
       try {
         const response = await axios.post(DATA_URL, requestData, {
           headers: {
@@ -143,51 +143,40 @@ const FetchDataPage = () => {
       {data && data.status && data.data && data.data.article_info ? (
         <div>
           <div className="header-section">
-          {data.data.article_info.image && (
-              <img
-                src={data.data.article_info.image}
-                alt={data.data.article_info.title}
-                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
-              />
-            )}
-        <h1>ANNUAL REPORTS</h1>
-        <p className="path">
-          {/* <Link to="/Home">HOME</Link> */}
-          <span></span>HOME
-          <span>&gt;</span>ABOUT
-          <span>&gt;</span>ANNUAL REPORTS
-        </p>
-        </div>
-            
             {data.data.article_info.image && (
               <img
-                src={data.data.article_info.image}
+                src={`https://www.slpa.lk/uploads/article_main/${data.data.article_info.image}`}
                 alt={data.data.article_info.title}
-                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+                style={{ width: '100%', height: '300px', marginTop: '70px', borderRadius: '6px', marginBottom: '10px' }}
               />
             )}
+
+            <h1>ANNUAL REPORTS</h1>
+            <p className="path">
+              <span></span>HOME
+              <span>&gt;</span>ABOUT
+              <span>&gt;</span>ANNUAL REPORTS
+            </p>
+          </div>
 
           <AboutBanner />
 
-            <h3>{data.data.article_info.title || 'No Title'}</h3>
+          <h3>{data.data.article_info.title || 'No Title'}</h3>
 
-            <div className="act-wrapper"> {/* Add the wrapper */}
-              <div className="act-content"> {/* Add the content container */}
-
-            {/* Render HTML content inside the wrapper */}
-            <div
-              dangerouslySetInnerHTML={{
-                __html: data.data.article_info.content || 'No content available.',
-              }}
-              style={{
-                // backgroundColor: '#f5f5f5',
-                // padding: '10px',
-                // borderRadius: '4px',
-                // wordBreak: 'break-word',
-                // whiteSpace: 'pre-wrap',
-              }}
-            />
-          </div>
+          <div className="act-wrapper">
+            <div className="act-content">
+              {/* Render HTML content inside the wrapper */}
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.data.article_info.content || 'No content available.',
+                }}
+                // style={{
+                //   width: '100%',
+                //   maxWidth: '800px',
+                //   margin: '0 auto',
+                // }}
+              />
+            </div>
           </div>
         </div>
       ) : (
