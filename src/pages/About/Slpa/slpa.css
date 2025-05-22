@@ -59,6 +59,15 @@ h3{
   text-align: center;
 }
 
+/* In slpa.css */
+iframe {
+  width: 100% !important; /* Makes the iframe responsive */
+  /* Max width */
+  height: 100%; /* Fixed height for the iframe */
+  margin: 0 auto; /* Centers the iframe */
+}
+
+
 @media screen and (max-width: 768px) {
   /* Mobile View */
   .main-content {
