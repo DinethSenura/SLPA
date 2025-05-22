@@ -64,7 +64,7 @@ const Footer = () => {
             <li className="media-gallery"><a href="#link-1">Gallery</a></li>
           </ul>
           <div className="social-icons">
-            <a href="https://www.slpa.lk/port-colombo/slpa" target="_blank" rel="noreferrer">
+            <a href="https://www.facebook.com/Sri-Lanka-Ports-Authority-262882857392875" target="_blank" rel="noreferrer">
               <img src={facebook} alt="Facebook" className="social-icon" />
             </a>
             <a href="https://twitter.com/slpauthority" target="_blank" rel="noreferrer">

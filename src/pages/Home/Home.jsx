@@ -37,7 +37,7 @@ const SocialMediaBox = () => {
       }}
     >
       <a
-        href="https://facebook.com"
+        href="https://www.facebook.com/Sri-Lanka-Ports-Authority-262882857392875"
         target="_blank"
         rel="noopener noreferrer"
         style={{ display: 'block', marginBottom: '10px', textAlign: 'center' }}
@@ -45,7 +45,7 @@ const SocialMediaBox = () => {
         <FaFacebook size={30} color="#1877F2" />
       </a>
       <a
-        href="https://twitter.com"
+        href="https://twitter.com/slpauthority"
         target="_blank"
         rel="noopener noreferrer"
         style={{ display: 'block', marginBottom: '10px', textAlign: 'center' }}
@@ -53,7 +53,7 @@ const SocialMediaBox = () => {
         <FaTwitter size={30} color="#1DA1F2" />
       </a>
       <a
-        href="https://linkedin.com"
+        href="https://www.linkedin.com/company/srilankaportsauthority"
         target="_blank"
         rel="noopener noreferrer"
         style={{ display: 'block', marginBottom: '10px', textAlign: 'center' }}
@@ -61,7 +61,7 @@ const SocialMediaBox = () => {
         <FaLinkedin size={30} color="#0077B5" />
       </a>
       <a
-        href="https://instagram.com"
+        href="https://www.instagram.com/srilankaportsauthority/"
         target="_blank"
         rel="noopener noreferrer"
         style={{ display: 'block', marginBottom: '10px', textAlign: 'center' }}
@@ -69,7 +69,7 @@ const SocialMediaBox = () => {
         <FaInstagram size={30} color="#E1306C" />
       </a>
       <a
-        href="https://youtube.com"
+        href="https://www.youtube.com/channel/UCaSwlDCurdJ-rx-m2-ATwqw/videos"
         target="_blank"
         rel="noopener noreferrer"
         style={{ display: 'block', textAlign: 'center' }}
