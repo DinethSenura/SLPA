@@ -147,7 +147,11 @@ const FetchDataPage = () => {
               <img
                 src={`https://www.slpa.lk/uploads/article_main/${data.data.article_info.image}`}
                 alt={data.data.article_info.title}
-                style={{ width: '100%', height: '350px', borderRadius: '6px', marginBottom: '10px', marginTop: '70px' }}
+<<<<<<< HEAD
+                style={{ width: '100%', height: '350px', marginBottom: '10px', marginTop: '70px' }}
+=======
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+>>>>>>> fc7fbb8eeefd3489f4b1a162d2b1cdc5c1e77de0
               />
             )}
 
@@ -160,14 +164,7 @@ const FetchDataPage = () => {
         </p>
         </div>
             
-            {/* {data.data.article_info.image && (
-                <img
-                  src={`https://www.slpa.lk/uploads/article_main${data.data.article_info.image}`}
-                  alt={data.data.article_info.title}
-                  style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
-                />
-              )} */}
-
+            
           <LocalPurchasesBanner />
 
             <h3>{data.data.article_info.title || 'No Title'}</h3>
