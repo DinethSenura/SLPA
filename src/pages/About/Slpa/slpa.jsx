@@ -3,26 +3,18 @@ import axios from 'axios';
 import AboutBanner from "../../../components/AboutBanner/Aboutbanner";
 import '../Slpa/slpa.css';
 
-// Full login URL for fetching token
 const LOGIN_URL = 'https://www.slpa.lk/WEBAPI/V1/Auth/Login';
 const USERNAME = 'TEST';
 const PASSWORD = '123';
-
-// API URL for fetching data
 const DATA_URL = 'https://www.slpa.lk/WEBAPI/V1/Articles/get_article_info';
 
-// Component that handles fetching the token
 const ApiToken = ({ setToken }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [fullResponse, setFullResponse] = useState(null);
 
-  // Memoize the 'data' object to prevent unnecessary re-renders
-  const data = useMemo(() => {
-    return {}; // Data for the API request
-  }, []); // Only recreate this object when required (currently it's static)
+  const data = useMemo(() => ({}), []);
 
-  // Memoize the loginAndGetToken function using useCallback
   const loginAndGetToken = useCallback(async () => {
     try {
       setLoading(true);
@@ -38,9 +30,8 @@ const ApiToken = ({ setToken }) => {
       setFullResponse(response);
 
       if (response.data.Token) {
-        localStorage.setItem('authToken', response.data.Token); // Store token in localStorage
-        setToken(response.data.Token); // Set the token in the parent component
-        console.log('Token saved to localStorage:', response.data.Token);
+        localStorage.setItem('authToken', response.data.Token);
+        setToken(response.data.Token);
       } else {
         setError('Token not found in response: ' + JSON.stringify(response.data));
       }
@@ -55,15 +46,13 @@ const ApiToken = ({ setToken }) => {
     } finally {
       setLoading(false);
     }
-  }, [setToken, data]); // Now 'data' is stable due to useMemo, so it's safe to use here
+  }, [setToken, data]);
 
   useEffect(() => {
-    loginAndGetToken(); // Fetch the token when the component mounts
+    loginAndGetToken();
   }, [loginAndGetToken]);
 
-  if (loading) {
-    return <p>Logging in and fetching token...</p>;
-  }
+  if (loading) return <p>Logging in and fetching token...</p>;
 
   if (error) {
     return (
@@ -82,31 +71,28 @@ const ApiToken = ({ setToken }) => {
     );
   }
 
-  return <div>{/* Empty placeholder for the token component */}</div>;
+  return <div />;
 };
 
-// Component to fetch data using the token
 const FetchDataPage = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [token, setToken] = useState(localStorage.getItem('authToken') || ''); // Initialize with token from localStorage
+  const [token, setToken] = useState(localStorage.getItem('authToken') || '');
 
   const requestData = useMemo(() => ({
-    data: [
-      {
-        article_menu: 'SLPA',
-        article_code: 'SGlzdG9yeSAmIE1pbGVzdG9uZXM=',
-        article_content: 'NULL',
-      },
-    ],
-  }), []); // Memoize requestData to avoid unnecessary re-renders
+    data: [{
+      article_menu: 'SLPA',
+      article_code: 'SGlzdG9yeSAmIE1pbGVzdG9uZXM=',
+      article_content: 'NULL',
+    }],
+  }), []);
 
   useEffect(() => {
     const fetchData = async () => {
       if (!token) {
         setError('No token available. Please log in to proceed.');
-        return; // If no token, don't make the request
+        return;
       }
 
       setLoading(true);
@@ -114,13 +100,13 @@ const FetchDataPage = () => {
       try {
         const response = await axios.post(DATA_URL, requestData, {
           headers: {
-            Authorization: token, // Pass token in the Authorization header
+            Authorization: token,
             'Content-Type': 'application/json',
           },
         });
 
         console.log('Fetched API Data:', response.data);
-        setData(response.data); // Save fetched data to state
+        setData(response.data);
       } catch (err) {
         if (err.response && err.response.status === 401) {
           setError('Authorization failed. Please login again.');
@@ -143,35 +129,38 @@ const FetchDataPage = () => {
       {data && data.status && data.data && data.data.article_info ? (
         <div>
           <div className="header-section">
-            {data.data.article_info.image && (
+            <div className="image-wrapper">
               <img
                 src={`https://www.slpa.lk/uploads/article_main/${data.data.article_info.image}`}
                 alt={data.data.article_info.title}
-                style={{ width: '100%', height: '300px', marginTop: '70px', borderRadius: '6px', marginBottom: '10px' }}
+                className="responsive-article-image"
               />
-            )}
-
-            <h1>ANNUAL REPORTS</h1>
-            <p className="path">
-              <span></span>HOME
-              <span>&gt;</span>ABOUT
-              <span>&gt;</span>ANNUAL REPORTS
-            </p>
+              <div className="overlay-text">
+                <h1>SLPA</h1>
+                <p className="path">
+                  <span></span>HOME
+                  <span>&gt;</span>ABOUT
+                  <span>&gt;</span>SLPA
+                </p>
+              </div>
+            </div>
           </div>
 
-          <AboutBanner />
-
-          <h3>{data.data.article_info.title || 'No Title'}</h3>
+<div className="about-banner-container">
+  <AboutBanner />
+</div>
+          <h3 className="article-title">
+            {data.data.article_info.title || 'No Title'}
+          </h3>
 
           <div className="act-wrapper">
             <div className="act-content">
-              {/* Render HTML content inside the wrapper */}
               <div
                 dangerouslySetInnerHTML={{
                   __html: data.data.article_info.content || 'No content available.',
                 }}
                 // style={{
-                //   width: '100%',
+                //   width: '200%',
                 //   maxWidth: '800px',
                 //   margin: '0 auto',
                 // }}
@@ -183,8 +172,7 @@ const FetchDataPage = () => {
         <p>No articles found.</p>
       )}
 
-      {/* Token component to fetch token */}
-      <ApiToken setToken={setToken} /> {/* Pass setToken as prop to update token */}
+      <ApiToken setToken={setToken} />
     </div>
   );
 };
