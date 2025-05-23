@@ -147,7 +147,7 @@ const FetchDataPage = () => {
               <img
                 src={`https://www.slpa.lk/uploads/article_main/${data.data.article_info.image}`}
                 alt={data.data.article_info.title}
-                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+                style={{ width: '100%', height: '350px', borderRadius: '6px', marginBottom: '10px', marginTop: '70px' }}
               />
             )}
 
@@ -160,13 +160,13 @@ const FetchDataPage = () => {
         </p>
         </div>
             
-            {data.data.article_info.image && (
+            {/* {data.data.article_info.image && (
                 <img
                   src={`https://www.slpa.lk/uploads/article_main${data.data.article_info.image}`}
                   alt={data.data.article_info.title}
                   style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
                 />
-              )}
+              )} */}
 
           <LocalPurchasesBanner />
 
