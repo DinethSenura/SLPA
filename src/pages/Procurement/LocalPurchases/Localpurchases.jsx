@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import axios from 'axios';
-import LocalPurchasesBanner from "../../../components/LocalPurchasesBanner/Localpurchasesbanner";
+import AboutBanner from "../../../components/AboutBanner/Aboutbanner";
 import '../LocalPurchases/localpurchases.css';
 
 // Full login URL for fetching token
@@ -48,7 +48,7 @@ const ApiToken = ({ setToken }) => {
     } catch (err) {
       console.error('Login Error:', err);
       if (err.response) {
-        setError(Authentication failed (${err.response.status}): ${err.response.data?.message || 'Unknown error'});
+        setError(`Authentication failed (${err.response.status}): ${err.response.data?.message || 'Unknown error'}`);
         setFullResponse(err.response);
       } else {
         setError('Authentication failed: ' + err.message);
@@ -93,15 +93,15 @@ const FetchDataPage = () => {
   const [error, setError] = useState('');
   const [token, setToken] = useState(localStorage.getItem('authToken') || ''); // Initialize with token from localStorage
 
- const requestData = useMemo(() => ({
-  data: [
-    {
-      article_menu: 'Local-Purchases-1',
-      article_code: 'TWVjaGFuaWNhbCBFcXVpcG1lbnQ=',
-      article_content: 'NULL',
-    },
-  ],
-}), []) // Memoize requestData to avoid unnecessary re-renders
+  const requestData = useMemo(() => ({
+    data: [
+      {
+        article_menu: 'Local-Purchases-1',
+        article_code: 'TWVjaGFuaWNhbCBFcXVpcG1lbnQ=',
+        article_content: 'NULL',
+      },
+    ],
+  }), []); // Memoize requestData to avoid unnecessary re-renders
 
   useEffect(() => {
     const fetchData = async () => {
@@ -145,12 +145,11 @@ const FetchDataPage = () => {
           <div className="header-section">
           {data.data.article_info.image && (
               <img
-                src={https://www.slpa.lk/uploads/article_main/${data.data.article_info.image}}
+                src={`https://www.slpa.lk/uploads/article_main/${data.data.article_info.image}`}
                 alt={data.data.article_info.title}
                 style={{ width: '100%', height: '350px', marginBottom: '10px', marginTop: '70px' }}
               />
             )}
-
         <h1>ANNUAL REPORTS</h1>
         <p className="path">
           {/* <Link to="/Home">HOME</Link> */}
@@ -160,15 +159,15 @@ const FetchDataPage = () => {
         </p>
         </div>
             
-            {/* {data.data.article_info.image && (
-                <img
-                  src={https://www.slpa.lk/uploads/article_main${data.data.article_info.image}}
-                  alt={data.data.article_info.title}
-                  style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
-                />
-              )} */}
+            {data.data.article_info.image && (
+              <img
+                src={data.data.article_info.image}
+                alt={data.data.article_info.title}
+                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
+              />
+            )}
 
-          <LocalPurchasesBanner />
+          <AboutBanner />
 
             <h3>{data.data.article_info.title || 'No Title'}</h3>
 
