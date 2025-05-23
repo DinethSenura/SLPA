@@ -160,14 +160,7 @@ const FetchDataPage = () => {
         </p>
         </div>
             
-            {data.data.article_info.image && (
-                <img
-                  src={`https://www.slpa.lk/uploads/article_main${data.data.article_info.image}`}
-                  alt={data.data.article_info.title}
-                  style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
-                />
-              )}
-
+            
           <LocalPurchasesBanner />
 
             <h3>{data.data.article_info.title || 'No Title'}</h3>

@@ -145,10 +145,10 @@ const FetchDataPage = () => {
           <div className="header-section">
           {data.data.article_info.image && (
               <img
-                src={data.data.article_info.image}
-                alt={data.data.article_info.title}
-                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
-              />
+              src={`https://www.slpa.lk/uploads/article_main/${data.data.article_info.image}`}
+              alt={data.data.article_info.title}
+              style={{ width: '100%', height:'350px', marginTop:'70px', marginBottom: '10px' }}
+            />
             )}
         <h1>ANNUAL REPORTS</h1>
         <p className="path">
@@ -158,14 +158,6 @@ const FetchDataPage = () => {
           <span>&gt;</span>ANNUAL REPORTS
         </p>
         </div>
-            
-            {data.data.article_info.image && (
-              <img
-                src={data.data.article_info.image}
-                alt={data.data.article_info.title}
-                style={{ width: '100%', maxWidth: '400px', borderRadius: '6px', marginBottom: '10px' }}
-              />
-            )}
 
           <ContactBanner />
 
