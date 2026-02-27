@@ -113,7 +113,6 @@ function App() {
           <Route path="onlineentrypermits" element={<Onlineentrypermits />}/>
           <Route path="vesselsinport" element={<Vesselsinport />}/>
           <Route path="clearingpasses" element={<Clearingpasses />}/>
-          <Route path="bungalowbooking" element={<Bungalowbooking />}/>
           <Route path="hris" element={<Hris />}/>
           <Route path="colombolocation" element={<ColomboLocation/>}/>
           <Route path="colomboabout" element={<ColomboAbout/>}/>
